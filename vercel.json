@@ -1,7 +1,8 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "zadiraka.cc" }], "destination": "/zadiraka/index.html" },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "destination": "/zadiraka/index.html" },
-    { "source": "/privacy", "destination": "/privacy.html" }
+  "routes": [
+    { "src": "/(.*)", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/zadiraka/index.html" },
+    { "src": "/(.*)", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/zadiraka/index.html" },
+    { "handle": "filesystem" },
+    { "src": "/privacy", "dest": "/privacy.html" }
   ]
 }
