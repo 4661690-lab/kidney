@@ -111,6 +111,11 @@ strong{color:var(--txt);font-weight:600}
 .rev p{font-size:15px;color:var(--txt)}
 .rev .who{margin-top:14px;font-size:13.5px;color:var(--muted)}
 .rev-note{font-size:13px;color:var(--muted);margin-top:18px;text-align:center;opacity:.7}
+.rev-strip{display:flex;gap:16px;overflow-x:auto;padding:8px 2px 18px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.rev-strip::-webkit-scrollbar{height:8px}
+.rev-strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+.rev-strip img{height:clamp(430px,66vh,600px);width:auto;border-radius:var(--rad);border:1px solid var(--line);flex:0 0 auto;scroll-snap-align:start;box-shadow:0 14px 44px rgba(0,0,0,.4)}
+.rev-hint{font-size:13px;color:var(--muted);opacity:.75;margin-top:2px}
 
 /* HOW */
 .how-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -269,12 +274,18 @@ footer a{color:var(--gold);text-decoration:none;margin:0 8px}
 <section class="author">
   <div class="wrap">
     <h2>Отзывы участников</h2>
-    <div class="rev-grid">
-      <div class="rev"><div class="stars">★★★★★</div><p>«К третьему дню утренние отёки на лице заметно ушли, а голос Влада по утрам — отдельная поддержка.»</p><div class="who">— замени на свой скрин отзыва</div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>«Тяжесть в пояснице отпустила уже на первой неделе. Практики мягкие, делаю прямо дома.»</p><div class="who">— замени на свой скрин отзыва</div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>«Давление стало ровнее, вернулась энергия. И всё это без жёсткого детокса.»</p><div class="who">— замени на свой скрин отзыва</div></div>
+    <div class="rev-strip">
+      <img src="/assets/rev1.png" alt="Отзыв участника марафона" loading="lazy">
+      <img src="/assets/rev2.png" alt="Отзыв участника марафона" loading="lazy">
+      <img src="/assets/rev3.png" alt="Отзыв участника марафона" loading="lazy">
+      <img src="/assets/rev4.png" alt="Отзыв участника марафона" loading="lazy">
+      <img src="/assets/rev5.png" alt="Отзыв участника марафона" loading="lazy">
+      <img src="/assets/rev6.png" alt="Отзыв участника марафона" loading="lazy">
+      <img src="/assets/rev7.png" alt="Отзыв участника марафона" loading="lazy">
+      <img src="/assets/rev8.png" alt="Отзыв участника марафона" loading="lazy">
+      <img src="/assets/rev9.png" alt="Отзыв участника марафона" loading="lazy">
     </div>
-    <p class="rev-note">Сюда вставляются реальные скриншоты отзывов из переписок и сторис.</p>
+    <p class="rev-hint">Листайте вбок → Это реальные сообщения из директа и сторис.</p>
   </div>
 </section>
 
