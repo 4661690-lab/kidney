@@ -116,6 +116,12 @@ strong{color:var(--txt);font-weight:600}
 .rev-strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
 .rev-strip img{height:clamp(430px,66vh,600px);width:auto;border-radius:var(--rad);border:1px solid var(--line);flex:0 0 auto;scroll-snap-align:start;box-shadow:0 14px 44px rgba(0,0,0,.4)}
 .rev-hint{font-size:13px;color:var(--muted);opacity:.75;margin-top:2px}
+.rev-wrap{position:relative}
+.rev-nav{position:absolute;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;background:var(--gold);color:#1a140a;border:none;display:flex;align-items:center;justify-content:center;font-size:30px;line-height:1;cursor:pointer;z-index:5;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:.2s}
+.rev-nav:hover{background:var(--gold2);transform:translateY(-50%) scale(1.07)}
+.rev-nav.prev{left:-6px;padding-right:3px}
+.rev-nav.next{right:-6px;padding-left:3px}
+@media(max-width:600px){.rev-nav{width:44px;height:44px;font-size:25px}.rev-nav.prev{left:2px}.rev-nav.next{right:2px}}
 
 /* HOW */
 .how-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -274,7 +280,9 @@ footer a{color:var(--gold);text-decoration:none;margin:0 8px}
 <section class="author">
   <div class="wrap">
     <h2>Отзывы участников</h2>
-    <div class="rev-strip">
+    <div class="rev-wrap">
+      <button class="rev-nav prev" aria-label="Листать назад">&#8249;</button>
+      <div class="rev-strip">
       <img src="/assets/rev1.jpg" alt="Отзыв участника марафона" loading="lazy">
       <img src="/assets/rev2.jpg" alt="Отзыв участника марафона" loading="lazy">
       <img src="/assets/rev3.jpg" alt="Отзыв участника марафона" loading="lazy">
@@ -284,8 +292,10 @@ footer a{color:var(--gold);text-decoration:none;margin:0 8px}
       <img src="/assets/rev7.jpg" alt="Отзыв участника марафона" loading="lazy">
       <img src="/assets/rev8.jpg" alt="Отзыв участника марафона" loading="lazy">
       <img src="/assets/rev9.jpg" alt="Отзыв участника марафона" loading="lazy">
+      </div>
+      <button class="rev-nav next" aria-label="Листать вперёд">&#8250;</button>
     </div>
-    <p class="rev-hint">Листайте вбок → Это реальные сообщения из директа и сторис.</p>
+    <p class="rev-hint">← Листайте стрелками или свайпом. Это реальные сообщения из директа и сторис.</p>
   </div>
 </section>
 
@@ -372,6 +382,7 @@ footer a{color:var(--gold);text-decoration:none;margin:0 8px}
 
 <script>
 document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){this.parentElement.classList.toggle('open');});});
+document.querySelectorAll('.rev-wrap').forEach(function(w){var s=w.querySelector('.rev-strip');function step(){return Math.min(s.clientWidth*0.85,440);}var p=w.querySelector('.prev'),n=w.querySelector('.next');if(p)p.onclick=function(){s.scrollBy({left:-step(),behavior:'smooth'});};if(n)n.onclick=function(){s.scrollBy({left:step(),behavior:'smooth'});};});
 (function(){
   var total=11*3600+59*60+59;
   var hh=document.getElementById('hh'),mm=document.getElementById('mm'),ss=document.getElementById('ss');
