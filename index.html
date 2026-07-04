@@ -70,10 +70,7 @@ strong{color:var(--txt);font-weight:600}
 /* AUTHOR */
 .author{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .author-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
-.author-photo{width:100%;aspect-ratio:4/5;border-radius:var(--rad);border:1px solid var(--line);
-  background:radial-gradient(circle at 50% 35%,rgba(224,184,122,.14),transparent 55%),linear-gradient(160deg,#241d12,#14110b);
-  display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;
-  text-transform:uppercase;letter-spacing:.16em;text-align:center;padding:20px}
+.author-photo{width:100%;aspect-ratio:4/5;border-radius:var(--rad);border:1px solid var(--line);background:url('/assets/author.jpg') center 58%/cover no-repeat;box-shadow:0 16px 44px rgba(0,0,0,.4)}
 .author p{margin-bottom:14px}
 
 /* PROGRAM */
@@ -219,7 +216,7 @@ footer a{color:var(--gold);text-decoration:none;margin:0 8px}
   <div class="wrap">
     <h2>Кто ведёт марафон</h2>
     <div class="author-grid">
-      <div class="author-photo">Фото Влада<br>(замени на своё)</div>
+      <div class="author-photo"></div>
       <div>
         <p><strong>Влад Задирака</strong> — автор марафона «Почки. Лёгкость тела». Веду мягко и по-человечески: каждый день — живой голосовой настрой и поддержка, а не сухая теория.</p>
         <p>Марафон построен на бережной работе с телом: дыхание как массаж почек изнутри, звук и вибрация, работа с эмоциями и поясницей. Всё, что можно делать дома, без оборудования.</p>
