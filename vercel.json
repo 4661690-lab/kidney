@@ -1,1 +1,7 @@
-{"rewrites":[{"source":"/privacy","destination":"/privacy.html"}]}
+{
+  "rewrites": [
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "zadiraka.cc" }], "destination": "/zadiraka/index.html" },
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "destination": "/zadiraka/index.html" },
+    { "source": "/privacy", "destination": "/privacy.html" }
+  ]
+}
