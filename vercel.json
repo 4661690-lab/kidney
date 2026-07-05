@@ -1,5 +1,7 @@
 {
   "routes": [
+    { "src": "/happy", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/happy.html" },
+    { "src": "/happy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/happy.html" },
     { "src": "/(.*)", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/zadiraka/index.html" },
     { "src": "/(.*)", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/zadiraka/index.html" },
     { "handle": "filesystem" },
