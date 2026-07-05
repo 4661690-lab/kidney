@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Жить в радости — мини-курс для женщин 30+</title>
+<meta name="description" content="Всё вроде есть, а радоваться не получается? Мини-курс с пошаговыми практиками, который можно начать уже сегодня. 7 дней, по 20 минут в день.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141414;
+    --bg2:#1c1c1c;
+    --card:#232323;
+    --orange:#F07A2E;
+    --orange-d:#d9661c;
+    --text:#f4f1ec;
+    --muted:#a9a39b;
+    --line:#333;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+  section{padding:64px 0}
+  h1,h2,h3{line-height:1.12;letter-spacing:-.01em}
+  .eyebrow{color:var(--orange);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:14px;margin-bottom:18px}
+  .btn{
+    display:inline-block;background:var(--orange);color:#111;font-weight:800;
+    text-transform:uppercase;letter-spacing:.03em;font-size:16px;text-decoration:none;
+    padding:18px 34px;border-radius:12px;border:none;cursor:pointer;transition:.15s;
+  }
+  .btn:hover{background:var(--orange-d);transform:translateY(-2px)}
+  .btn.big{font-size:18px;padding:20px 44px}
+  .micro{color:var(--muted);font-size:14px;margin-top:16px}
+  .accent{color:var(--orange)}
+
+  /* HERO */
+  .hero{background:var(--bg);border-bottom:1px solid var(--line);padding:78px 0 70px}
+  .hero h1{font-size:clamp(30px,5.2vw,52px);font-weight:900;text-transform:uppercase;margin-bottom:22px}
+  .hero .desc{font-size:20px;color:var(--muted);max-width:640px;margin-bottom:32px}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .badge{display:inline-block;background:var(--bg2);border:1px solid var(--line);color:var(--muted);
+    font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;margin:4px 6px 0 0}
+
+  /* PAINS */
+  .pains{background:var(--bg2)}
+  h2.sec{font-size:clamp(24px,3.6vw,34px);font-weight:900;text-transform:uppercase;margin-bottom:28px}
+  .plist{list-style:none;display:grid;gap:14px}
+  .plist li{background:var(--card);border-left:4px solid var(--orange);padding:16px 20px;border-radius:8px;font-weight:500}
+
+  /* REFRAME */
+  .reframe p{font-size:19px;color:var(--muted);max-width:720px}
+  .reframe strong{color:var(--text)}
+
+  /* METHOD */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:10px}
+  .col{background:var(--card);padding:26px 22px;border-radius:14px;border-top:3px solid var(--orange)}
+  .col h3{font-size:19px;font-weight:800;margin-bottom:10px;text-transform:uppercase}
+  .col p{color:var(--muted);font-size:15px}
+
+  /* PROGRAM */
+  .program{background:var(--bg2)}
+  .day{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .day:last-child{border-bottom:none}
+  .daynum{font-size:34px;font-weight:900;color:var(--orange);line-height:1}
+  .day h3{font-size:19px;font-weight:800;margin-bottom:4px}
+  .day p{color:var(--muted);font-size:15px}
+
+  /* INSIDE */
+  .inside ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .inside li{padding-left:30px;position:relative;font-weight:500}
+  .inside li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:900}
+
+  /* FORMAT */
+  .format{background:var(--bg2)}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fgrid div{background:var(--card);padding:18px 20px;border-radius:10px;font-size:15px}
+  .fgrid b{color:var(--orange)}
+
+  /* RESULTS */
+  .results ul{list-style:none;display:grid;gap:12px}
+  .results li{padding-left:30px;position:relative;font-size:17px}
+  .results li:before{content:"→";position:absolute;left:0;color:var(--orange);font-weight:900}
+
+  /* FIT */
+  .fit{background:var(--bg2)}
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .fit-card{background:var(--card);padding:24px;border-radius:14px}
+  .fit-card h3{font-size:18px;margin-bottom:12px;text-transform:uppercase}
+  .fit-card.yes{border-top:3px solid var(--orange)}
+  .fit-card.no{border-top:3px solid #555}
+  .fit-card p{color:var(--muted);font-size:15px}
+
+  /* REVIEWS */
+  .rev{background:var(--card);border-radius:14px;padding:26px;margin-bottom:16px;border-left:4px solid var(--orange)}
+  .rev p{font-size:17px;font-style:italic;margin-bottom:10px}
+  .rev span{color:var(--muted);font-size:14px}
+
+  /* PRICE */
+  .price{background:var(--bg2)}
+  .pcard{background:linear-gradient(180deg,var(--card),#1e1e1e);border:1px solid var(--line);
+    border-radius:20px;padding:44px;max-width:560px;margin:0 auto;text-align:center}
+  .pcard .amount{font-size:64px;font-weight:900;color:var(--orange);line-height:1}
+  .pcard .amount small{font-size:22px;color:var(--muted);font-weight:600}
+  .pcard h3{font-size:22px;font-weight:800;margin:6px 0 22px;text-transform:uppercase}
+  .pcard ul{list-style:none;display:grid;gap:12px;text-align:left;max-width:380px;margin:0 auto 28px}
+  .pcard li{padding-left:28px;position:relative}
+  .pcard li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:900}
+
+  /* FAQ */
+  .faq details{background:var(--card);border-radius:12px;padding:2px 22px;margin-bottom:12px}
+  .faq summary{cursor:pointer;font-weight:700;padding:18px 0;list-style:none;font-size:17px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";float:right;color:var(--orange);font-weight:900;font-size:22px}
+  .faq details[open] summary:after{content:"–"}
+  .faq p{color:var(--muted);padding:0 0 20px;font-size:15px}
+
+  /* FINAL */
+  .final{background:var(--orange);color:#141414;text-align:center}
+  .final h2{font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;margin-bottom:18px;color:#141414}
+  .final p{font-size:19px;max-width:620px;margin:0 auto 28px;color:#2a1c10}
+  .final .btn{background:#141414;color:var(--orange)}
+  .final .btn:hover{background:#000}
+
+  footer{background:var(--bg);text-align:center;padding:34px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+
+  @media(max-width:720px){
+    .cols{grid-template-columns:1fr}
+    .inside ul,.fgrid,.fit-grid{grid-template-columns:1fr}
+    section{padding:48px 0}
+    .pcard{padding:32px 24px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Мини-курс · поток для женщин 30+</div>
+    <h1>Всё вроде есть, а радоваться не получается? Вот как вернуть себе вкус к жизни за 7 дней</h1>
+    <p class="desc">Мини-курс с пошаговыми практиками, который можно начать уже сегодня. По 20 минут в день — мышление, тело и дыхание.</p>
+    <div class="cta-row">
+      <a href="#order" class="btn big">Занять место в потоке →</a>
+    </div>
+    <div style="margin-top:20px">
+      <span class="badge">Старт [дата]</span>
+      <span class="badge">Доступ навсегда</span>
+      <span class="badge">Всего €9</span>
+    </div>
+  </div>
+</header>
+
+<!-- PAINS -->
+<section class="pains">
+  <div class="wrap">
+    <h2 class="sec">Если хотя бы три пункта — про тебя, ты по адресу</h2>
+    <ul class="plist">
+      <li>Утром просыпаешься с мыслью «опять всё по кругу».</li>
+      <li>Делаешь для всех, а на себя не остаётся ни времени, ни сил.</li>
+      <li>Радость стала редким гостем — и то по особому поводу.</li>
+      <li>Внутри поселилась глухая усталость, которую не лечит даже выходной.</li>
+      <li>Сравниваешь себя с другими и почти всегда проигрываешь.</li>
+      <li>Улыбаешься на автомате, а внутри давно пусто.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- REFRAME -->
+<section class="reframe">
+  <div class="wrap">
+    <h2 class="sec">Почему так происходит</h2>
+    <p>Дело не в том, что ты слабая или неблагодарная. Ты годами тренировала выносливость, а не радость. Мозг закрепил привычку терпеть и обесценивать хорошее. <strong>Радость — такая же мышца: если её не тренировать, она атрофируется.</strong> Хорошая новость — её можно вернуть в любом возрасте. Это вопрос практики, а не характера.</p>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section>
+  <div class="wrap">
+    <h2 class="sec">Три опоры курса</h2>
+    <div class="cols">
+      <div class="col"><h3>Мышление</h3><p>Перестать сравнивать, выйти из роли жертвы и увидеть изобилие вместо дефицита.</p></div>
+      <div class="col"><h3>Тело</h3><p>Мягкие практики цигун, дыхание и движение, которые меняют состояние быстрее любых уговоров.</p></div>
+      <div class="col"><h3>Смысл</h3><p>Бережные опоры — благодарность, отдача, вера в добро — без религиозного давления.</p></div>
+    </div>
+    <p style="color:var(--muted);margin-top:22px">Без эзотерики и волшебных обещаний. Только то, что работает, если делать.</p>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="program">
+  <div class="wrap">
+    <h2 class="sec">Программа: 7 дней</h2>
+    <div class="day"><div class="daynum">1</div><div><h3>Радость — это навык</h3><p>Четыре опоры радости. Радость как выбор, а не обстоятельство.</p></div></div>
+    <div class="day"><div class="daynum">2</div><div><h3>Гибкость и слом шаблонов</h3><p>Перестать сравнивать и требовать от себя идеала.</p></div></div>
+    <div class="day"><div class="daynum">3</div><div><h3>Выйти из роли жертвы</h3><p>Вернуть себе ответственность и внутреннюю силу.</p></div></div>
+    <div class="day"><div class="daynum">4</div><div><h3>Тело — ворота к радости</h3><p>Менять состояние через движение, дыхание и музыку.</p></div></div>
+    <div class="day"><div class="daynum">5</div><div><h3>Мышление изобилия</h3><p>Отношения с деньгами и достатком без тревоги и вины.</p></div></div>
+    <div class="day"><div class="daynum">6</div><div><h3>Эмоции и стресс</h3><p>Принимать неподвластное, переводить проблему в задачу.</p></div></div>
+    <div class="day"><div class="daynum">7</div><div><h3>Отдавать и благодарить</h3><p>Собрать личный ритуал радости и план на 30 дней.</p></div></div>
+  </div>
+</section>
+
+<!-- INSIDE -->
+<section class="inside">
+  <div class="wrap">
+    <h2 class="sec">Что внутри каждого дня</h2>
+    <ul>
+      <li>Видео-урок 15–20 минут — одна идея и как применить её сегодня.</li>
+      <li>Аудио-практика — медитация или короткий цигун (7–12 минут).</li>
+      <li>Рабочий лист (PDF) — одно упражнение по теме дня.</li>
+      <li>Домашнее задание — маленькое действие, максимум 15 минут.</li>
+      <li>Чат потока — поддержка куратора и женщин рядом.</li>
+      <li>Доступ навсегда — проходи в своём ритме.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FORMAT -->
+<section class="format">
+  <div class="wrap">
+    <h2 class="sec">Формат потока</h2>
+    <div class="fgrid">
+      <div><b>Для кого.</b> Женщины 30+, которым важно проживать это не в одиночку.</div>
+      <div><b>Длительность.</b> 7 дней, по 20–30 минут в день.</div>
+      <div><b>Сопровождение.</b> Куратор в чате, ответы на вопросы, мягкие напоминания.</div>
+      <div><b>Группа.</b> Закрытый поток — общий ритм и чувство «я не одна».</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results">
+  <div class="wrap">
+    <h2 class="sec">Что ты получишь к концу недели</h2>
+    <ul>
+      <li>Семь рабочих инструментов радости, а не мотивацию на один вечер.</li>
+      <li>Свой утренний ритуал из дыхания и движения на 5–10 минут.</li>
+      <li>Привычку замечать хорошее вместо привычки терпеть.</li>
+      <li>Личный план на 30 дней, чтобы результат не растворился.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FIT -->
+<section class="fit">
+  <div class="wrap">
+    <h2 class="sec">Кому подойдёт, а кому — нет</h2>
+    <div class="fit-grid">
+      <div class="fit-card yes">
+        <h3 class="accent">Подойдёт, если</h3>
+        <p>Ты устала и хочешь мягко, но по-настоящему что-то изменить; готова уделять 20–30 минут в день; тебе ближе практика, а не бесконечная теория.</p>
+      </div>
+      <div class="fit-card no">
+        <h3>Не подойдёт, если</h3>
+        <p>Ты ищешь волшебную таблетку без действий; ждёшь медицинской помощи при депрессии (курс её не заменяет); не готова уделить себе даже 20 минут в день.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <div class="wrap">
+    <h2 class="sec">Что говорят участницы</h2>
+    <div class="rev"><p>«Я думала, это очередная мотивация. А поймала себя на том, что впервые за год танцую на кухне.»</p><span>— [Имя, возраст]</span></div>
+    <div class="rev"><p>«Практики по 10 минут, но к пятому дню меня будто вернули саму себе.»</p><span>— [Имя, возраст]</span></div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price" id="order">
+  <div class="wrap">
+    <h2 class="sec" style="text-align:center">Стоимость участия</h2>
+    <div class="pcard">
+      <div class="amount">€9</div>
+      <h3>Мини-курс «Жить в радости»</h3>
+      <ul>
+        <li>7 уроков + аудио-практики</li>
+        <li>Рабочие листы (PDF) на каждый день</li>
+        <li>Чат потока с куратором</li>
+        <li>Доступ ко всем материалам навсегда</li>
+      </ul>
+      <a href="#" class="btn big">Занять место за €9 →</a>
+      <div class="micro">Старт [дата] · количество мест в потоке ограничено</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <h2 class="sec">Частые вопросы</h2>
+    <details><summary>Сколько времени нужно в день?</summary><p>20–30 минут. Можно проходить в удобное время.</p></details>
+    <details><summary>Я не гибкая и не занималась цигун — справлюсь?</summary><p>Да. Все практики базовые, показаны по шагам и подходят для любого тела.</p></details>
+    <details><summary>Это религиозный курс?</summary><p>Нет. Мы берём смысловые опоры бережно, без догм и требований во что-то верить.</p></details>
+    <details><summary>Что, если не успею за 7 дней?</summary><p>Доступ остаётся навсегда — пройдёшь в своём ритме.</p></details>
+    <details><summary>Поможет ли при депрессии?</summary><p>Курс поддерживает, но не заменяет помощь специалиста. При тяжёлом состоянии сначала обратись к врачу.</p></details>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2>Подари себе 7 дней</h2>
+    <p>Можно прожить ещё один год на автопилоте. А можно вспомнить, каково это — радоваться. Выбор за тобой. Как всегда.</p>
+    <a href="#order" class="btn big">Хочу в поток за €9 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © <span id="y"></span> Жить в радости · zadiraka.cc/happy · <a href="#" style="color:var(--orange)">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
