@@ -131,6 +131,13 @@
   footer{background:#0d0d0d;text-align:center;padding:26px 20px;color:#6f6a63;font-size:12px;line-height:1.7}
   footer a{color:var(--orange)}
   footer .legal{margin-top:12px;font-size:11px;color:#555}
+
+  .author-photo{width:100%;border-radius:16px;margin-bottom:16px;display:block}
+  .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .reviews-grid img{width:100%;border-radius:10px;display:block;border:1px solid var(--line)}
+  .band{padding:0;margin:0}
+  .band img{width:100%;display:block}
+  .closing-photo{width:100%;border-radius:16px;margin-bottom:18px;display:block}
 </style>
 </head>
 <body>
@@ -186,6 +193,8 @@
   </ul>
 </div></section>
 
+<div class="band"><img src="/assets/vlad2.jpg" alt="Ежедневный ритуал" loading="lazy"></div>
+
 <section class="proof"><div class="wrap">
   <div class="big">[N]+</div>
   <p>женщин уже возвращают себе радость по этой системе</p>
@@ -194,7 +203,7 @@
 
 <section class="author"><div class="wrap">
   <h2 class="sec">Автор курса</h2>
-  <div class="ph" style="text-align:center;padding:60px 16px">[ фото автора ]</div>
+  <img class="author-photo" src="/assets/author.jpg" alt="Автор курса">
   <h3>[Имя автора]</h3>
   <ul class="ticks">
     <li>[опыт: сколько лет практики цигун и телесных практик]</li>
@@ -218,9 +227,17 @@
 
 <section class="reviews"><div class="wrap">
   <h2 class="sec">Отзывы участниц</h2>
-  <div class="rev"><p>«Я думала, это очередная мотивация. А поймала себя на том, что впервые за год танцую на кухне.»</p><span>— [Имя, возраст]</span></div>
-  <div class="rev"><p>«Практики по 10 минут, но к пятому дню меня будто вернули саму себе.»</p><span>— [Имя, возраст]</span></div>
-  <div class="ph" style="text-align:center">[ сюда — скриншоты реальных отзывов ]</div>
+  <div class="reviews-grid">
+    <img src="/assets/rev1.jpg" alt="Отзыв участницы" loading="lazy">
+    <img src="/assets/rev2.jpg" alt="Отзыв участницы" loading="lazy">
+    <img src="/assets/rev3.jpg" alt="Отзыв участницы" loading="lazy">
+    <img src="/assets/rev4.jpg" alt="Отзыв участницы" loading="lazy">
+    <img src="/assets/rev5.jpg" alt="Отзыв участницы" loading="lazy">
+    <img src="/assets/rev6.jpg" alt="Отзыв участницы" loading="lazy">
+    <img src="/assets/rev7.jpg" alt="Отзыв участницы" loading="lazy">
+    <img src="/assets/rev8.jpg" alt="Отзыв участницы" loading="lazy">
+    <img src="/assets/rev9.jpg" alt="Отзыв участницы" loading="lazy">
+  </div>
 </div></section>
 
 <section class="format"><div class="wrap">
@@ -261,6 +278,7 @@
 </div></section>
 
 <section class="closing"><div class="wrap">
+  <img class="closing-photo" src="/assets/vlad3.jpg" alt="" loading="lazy">
   <h2>Ты — автор своей радости</h2>
   <p>Работа над собой — ежедневный маленький шаг. Пусть небольшой, пусть один, но каждый день. И у тебя всё получится.</p>
 </div></section>
