@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПЕЧІНКА. 7 уроків — міні-курс очищення печінки і тіла</title>
+<style>
+:root{
+  --bg:#0d0e0c;--bg2:#15170f;--card:#1a1c13;--line:#2b2e20;
+  --txt:#eef0e4;--muted:#a6aa93;--acc:#9fd14a;--acc2:#c8f06a;
+  --warn:#e2603a;--gold:#d9b25a;--rad:18px;--maxw:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);color:var(--txt);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:60px 0}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+h1{font-size:clamp(30px,6vw,56px);font-weight:800;text-transform:uppercase}
+h2{font-size:clamp(24px,4.4vw,40px);font-weight:800;text-transform:uppercase;margin-bottom:26px}
+h3{font-size:clamp(18px,2.6vw,24px);font-weight:700}
+p{color:var(--muted);font-size:clamp(15px,2vw,18px)}
+.acc{color:var(--acc)}.warn{color:var(--warn)}
+strong{color:var(--txt);font-weight:700}
+.center{text-align:center}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--acc);font-weight:700;margin-bottom:16px;border:1px solid var(--line);
+  padding:7px 14px;border-radius:100px;background:rgba(159,209,74,.06)}
+.btn{display:inline-block;background:var(--acc);color:#10120a;font-weight:800;text-transform:uppercase;
+  letter-spacing:.04em;text-decoration:none;font-size:17px;padding:18px 38px;border-radius:100px;
+  border:none;cursor:pointer;transition:.2s;box-shadow:0 8px 30px rgba(159,209,74,.25)}
+.btn:hover{background:var(--acc2);transform:translateY(-2px)}
+.btn-lg{font-size:19px;padding:22px 50px}
+.start{display:inline-block;color:var(--muted);font-size:14px;text-transform:uppercase;letter-spacing:.12em;margin:6px 0 20px}
+.start b{color:var(--acc)}
+.hero{background:radial-gradient(900px 500px at 80% -10%,rgba(159,209,74,.12),transparent 60%),
+   linear-gradient(180deg,var(--bg2),var(--bg));border-bottom:1px solid var(--line);padding:70px 0 60px}
+.hero .wrap{text-align:center;max-width:900px}
+.hero h1 span{color:var(--acc)}
+.hero .lead{font-size:clamp(16px,2.2vw,20px);margin:22px auto 4px;color:var(--txt);max-width:720px}
+.q{font-size:clamp(17px,2.4vw,22px);color:var(--txt);max-width:720px;margin:0 auto 8px;font-weight:600}
+.price{display:flex;align-items:baseline;gap:14px;margin:30px 0 24px;flex-wrap:wrap;justify-content:center}
+.price .now{font-size:52px;font-weight:800;color:var(--acc)}
+.price .old{font-size:24px;color:var(--muted);text-decoration:line-through}
+.price .tag{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.bonus{display:inline-flex;gap:14px;align-items:center;margin-top:34px;background:var(--card);
+  border:1px solid var(--line);border-radius:100px;padding:12px 22px 12px 14px;text-align:left}
+.bonus .g{width:44px;height:44px;border-radius:50%;background:rgba(159,209,74,.12);display:flex;
+  align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.bonus b{color:var(--txt);font-size:14px;display:block}
+.bonus span{color:var(--muted);font-size:13px}
+.offer{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.offer .wrap{text-align:center;max-width:760px}
+.offer h3{margin-bottom:10px}
+.offer .price{margin:20px 0}
+.forwho-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:10px}
+.fw{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:20px 22px}
+.fw .d{width:12px;height:12px;border-radius:50%;background:var(--acc);flex-shrink:0;margin-top:6px}
+.fw p{color:var(--txt);font-size:15.5px}
+.author{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.author-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
+.author-photo{width:100%;aspect-ratio:4/5;border-radius:var(--rad);border:1px solid var(--line);
+  background:radial-gradient(circle at 50% 35%,rgba(159,209,74,.14),transparent 55%),
+   linear-gradient(160deg,#20241a,#12140d);display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.14em;text-align:center;padding:20px}
+.author p{margin-bottom:14px}
+.author .creds{list-style:none;margin-top:16px}
+.author .creds li{position:relative;padding-left:26px;margin-bottom:10px;color:var(--muted);font-size:15px}
+.author .creds li::before{content:"✓";position:absolute;left:0;color:var(--acc);font-weight:800}
+.lessons{display:flex;flex-direction:column;gap:16px}
+.lesson{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
+.lesson summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:62px 1fr 28px;gap:18px;
+  align-items:center;padding:22px 26px}
+.lesson summary::-webkit-details-marker{display:none}
+.lesson .ln{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);font-weight:800;
+  border:1px solid var(--line);border-radius:10px;padding:10px 6px;text-align:center;line-height:1.1}
+.lesson .ln b{display:block;font-size:24px}
+.lesson h3{font-size:19px}
+.lesson .chev{color:var(--acc);font-size:24px;transition:.2s;text-align:center}
+.lesson[open] .chev{transform:rotate(45deg)}
+.lesson .body{padding:0 26px 24px 106px}
+.lesson .body p{font-size:15.5px;margin-bottom:12px}
+.lesson .act{border-left:3px solid var(--acc);padding:10px 16px;margin-top:8px;background:rgba(159,209,74,.05);border-radius:0 10px 10px 0}
+.lesson .act b{color:var(--acc)}
+@media(max-width:620px){.lesson .body{padding-left:26px}}
+.myth-box{background:linear-gradient(180deg,rgba(226,96,58,.08),transparent);
+  border:1px solid rgba(226,96,58,.35);border-radius:var(--rad);padding:28px 30px;margin-bottom:28px}
+.myth-box h3{color:var(--warn);margin-bottom:12px}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.phase{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:24px}
+.phase .ph-n{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.phase h4{font-size:18px;margin:8px 0;color:var(--txt)}
+.phase p{font-size:14.5px}
+.video{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.video .frame{margin-top:8px;width:100%;aspect-ratio:16/9;border-radius:var(--rad);border:1px solid var(--line);
+  background:radial-gradient(circle at 50% 45%,rgba(159,209,74,.14),transparent 60%),linear-gradient(160deg,#1b1e14,#101208);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:var(--muted)}
+.video .play{width:76px;height:76px;border-radius:50%;background:var(--acc);color:#10120a;display:flex;
+  align-items:center;justify-content:center;font-size:30px}
+.res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.res{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:26px 28px}
+.res .ico{font-size:34px;margin-bottom:10px}
+.res p{font-size:15.5px}
+.honest{margin-top:26px;border:1px dashed var(--line);border-radius:var(--rad);padding:22px 26px}
+.honest p{font-size:15px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:24px}
+.rev .stars{color:var(--gold);letter-spacing:3px;margin-bottom:10px;font-size:15px}
+.rev p{font-size:15px;color:var(--txt)}
+.rev .who{margin-top:14px;font-size:13.5px;color:var(--muted)}
+.rev-note{font-size:13px;color:var(--muted);margin-top:18px;text-align:center;opacity:.7}
+.how-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.how{display:grid;grid-template-columns:auto 1fr;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:24px 26px}
+.how .h-n{font-size:26px;font-weight:800;color:var(--acc);opacity:.6}
+.how h4{font-size:17px;margin-bottom:6px;color:var(--txt)}
+.how p{font-size:14.5px}
+.guar{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.guar-box{display:grid;grid-template-columns:120px 1fr;gap:30px;align-items:center;
+  background:var(--card);border:1px solid var(--gold);border-radius:var(--rad);padding:34px 36px}
+.guar .badge{width:120px;height:120px;border-radius:50%;border:2px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--gold);text-align:center;line-height:1.1}
+.guar .badge b{font-size:34px;font-weight:800}
+.guar .badge span{font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.faq-item{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:var(--card);overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--txt);font-size:16.5px;font-weight:600;
+  padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq-q .ic{color:var(--acc);font-size:24px;transition:.2s;flex-shrink:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 24px}
+.faq-a p{padding-bottom:20px;font-size:15.5px}
+.faq-item.open .faq-a{max-height:360px}
+.faq-item.open .ic{transform:rotate(45deg)}
+.form-sec{background:radial-gradient(700px 400px at 50% -20%,rgba(159,209,74,.14),transparent 60%),var(--bg2);border-top:1px solid var(--line)}
+.form-box{max-width:560px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:38px 34px;text-align:center}
+.timer{display:flex;justify-content:center;gap:12px;margin:20px 0 26px}
+.timer .cell{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:66px}
+.timer .cell b{display:block;font-size:30px;font-weight:800;color:var(--acc);line-height:1}
+.timer .cell span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.form-box input{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;
+  padding:15px 18px;color:var(--txt);font-size:16px;margin-bottom:12px;outline:none}
+.form-box input:focus{border-color:var(--acc)}
+.form-box .priceline{font-size:20px;margin:6px 0 18px}
+.form-box .priceline b{color:var(--acc);font-size:28px}
+.form-box .priceline s{color:var(--muted);font-size:18px}
+.form-box .btn{width:100%}
+.privacy{font-size:12.5px;color:var(--muted);margin-top:16px;opacity:.8}
+footer{padding:40px 0;border-top:1px solid var(--line);background:var(--bg)}
+footer p{font-size:13px;color:var(--muted);margin-bottom:8px}
+footer a{color:var(--muted)}
+.disclaimer{font-size:11.5px;color:#777a66;margin-top:18px;line-height:1.6}
+@media(max-width:860px){
+  .forwho-grid,.phases,.res-grid,.how-grid,.rev-grid,.author-grid{grid-template-columns:1fr}
+  .guar-box{grid-template-columns:1fr;justify-items:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Онлайн міні-курс · очищення печінки і тіла</span>
+    <div class="start">Старт — <b>одразу після оплати</b></div>
+    <p class="q">Тяжкість справа, набряки зранку, туман у голові та втома, яка не минає після сну?</p>
+    <h1>ПЕЧІНКА. <span>Розвантаж свій мовчазний завод</span></h1>
+    <p class="lead">Сім коротких уроків, після яких ти розумієш, як печінка працює насправді, і щодня робиш те, що реально знімає з неї навантаження. Без тазиків, флашів і голоду — на перевіреній механіці.</p>
+    <div class="price">
+      <span class="tag">всього</span>
+      <span class="now">9 €</span>
+      <span class="old">39 €</span>
+    </div>
+    <a href="#form" class="btn btn-lg">Отримати доступ</a>
+    <div class="bonus">
+      <div class="g">🎁</div>
+      <div><b>Бонус при оплаті сьогодні</b><span>Пам’ятка «Тарілка для другої фази» + чек-лист ранку</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. FOR WHO -->
+<section>
+  <div class="wrap">
+    <h2>Цей курс для тебе, якщо ти:</h2>
+    <div class="forwho-grid">
+      <div class="fw"><div class="d"></div><p>Відчуваєш тяжкість справа під ребрами і після жирного</p></div>
+      <div class="fw"><div class="d"></div><p>Прокидаєшся з набряклим обличчям і «туманом» у голові</p></div>
+      <div class="fw"><div class="d"></div><p>Втомлюєшся так, що сон уже не відновлює</p></div>
+      <div class="fw"><div class="d"></div><p>Помічаєш тьмяну шкіру, висипання, гіркоту в роті зранку</p></div>
+      <div class="fw"><div class="d"></div><p>Втомився(-лась) від «чисток» олією та лимоном, які нічого не дають</p></div>
+      <div class="fw"><div class="d"></div><p>Хочеш просту систему на кожен день, а не разовий подвиг</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. MID OFFER -->
+<section class="offer">
+  <div class="wrap">
+    <h3>7 уроків, які знімають перевантаження з печінки — м’яко і по суті</h3>
+    <p>Один урок — одна тема — одна дія на день. Доступ відкривається одразу після оплати.</p>
+    <div class="price">
+      <span class="tag">всього</span>
+      <span class="now">9 €</span>
+      <span class="old">39 €</span>
+    </div>
+    <a href="#form" class="btn">Забрати зі знижкою</a>
+  </div>
+</section>
+
+<!-- 4. AUTHOR -->
+<section class="author">
+  <div class="wrap">
+    <h2>Хто веде курс</h2>
+    <div class="author-grid">
+      <div class="author-photo">Фото автора<br>(заміни на своє)</div>
+      <div>
+        <p><strong>[Ім’я автора]</strong> — [коротко про себе: спеціалізація, скільки років у темі здоров’я та нутриціології].</p>
+        <p>Курс зібраний не на страху та езотериці, а на реальній біохімії печінки: три фази знешкодження, жовч, ритм дня і харчування. Нічого, чого не можна зробити вдома.</p>
+        <ul class="creds">
+          <li>[Освіта / сертифікація №1]</li>
+          <li>[Досвід / кількість учнів]</li>
+          <li>[Публікації / досягнення]</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PROGRAM -->
+<section>
+  <div class="wrap">
+    <h2>Програма: 7 уроків</h2>
+    <p style="margin-bottom:28px">Один урок — одна тема — одна дія. Натисни на урок, щоб розкрити.</p>
+    <div class="lessons">
+      <details class="lesson" open><summary><div class="ln">Урок<b>1</b></div><h3>Мовчазний завод. Правда про печінку</h3><div class="chev">+</div></summary><div class="body"><p>Печінка не подає сигнал болем і мовчки тягне навантаження до останнього. Розбираємо, чим вона насправді є, і одразу ламаємо головний обман теми — тазик із милом.</p><div class="act"><b>Дія:</b> пройти короткий тест на перевантаження і побачити своє навантаження. <b style="color:var(--gold)">Результат:</b> викинув міфи і страх чисток.</div></div></details>
+      <details class="lesson"><summary><div class="ln">Урок<b>2</b></div><h3>Хто вбиває твою печінку. Список підозрюваних</h3><div class="chev">+</div></summary><div class="body"><p>Печінка ламається не від віку, а від того, що ти в неї кладеш: алкоголь, цукор і фруктоза, смажене і трансжири, пізня важка вечеря, зайва вага, стрес і недосип. Чиста біохімія перевантаження.</p><div class="act"><b>Дія:</b> виписати свої три головні навантаження. <b style="color:var(--gold)">Результат:</b> знає, чим отруює печінку, і з чого починати.</div></div></details>
+      <details class="lesson"><summary><div class="ln">Урок<b>3</b></div><h3>Три фази. Як печінка чистить сама</h3><div class="chev">+</div></summary><div class="body"><p>Активація, знешкодження, виведення. Ключ до всього курсу: якщо розігнати першу фазу, а друга не встигає, уламки ріжуть твої клітини. Печінку не розганяють — її розвантажують.</p><div class="act"><b>Дія:</b> прибрати на час курсу один найважчий токсин. <b style="color:var(--gold)">Результат:</b> зрозумів механіку, прибрав один токсин.</div></div></details>
+      <details class="lesson"><summary><div class="ln">Урок<b>4</b></div><h3>Вода і жовч. Ранок вирішує</h3><div class="chev">+</div></summary><div class="body"><p>Жовч — робочий інструмент печінки, а не відхід. Ранок не про каву: склянка води після пробудження, потім м’який жовчогінний поштовх. Маленька доза, м’яко, без флашів і каменів у тазик.</p><div class="act"><b>Дія:</b> ранковий протокол три дні поспіль. <b style="color:var(--gold)">Результат:</b> жовч іде рівніше, ранкова тяжкість слабша.</div></div></details>
+      <details class="lesson"><summary><div class="ln">Урок<b>5</b></div><h3>Тарілка для другої фази</h3><div class="chev">+</div></summary><div class="body"><p>Другій фазі потрібен матеріал — і його ти кладеш у тарілку чи ні. Білок щодня, хрестоцвіті, цибуля і часник, зелень і гіркоти, яскраві овочі та ягоди. Без голоду і дієти на курці.</p><div class="act"><b>Дія:</b> зібрати одну тарілку за принципом і замінити один солодкий напій на воду. <b style="color:var(--gold)">Результат:</b> минає туман, слабшає тяга до солодкого.</div></div></details>
+      <details class="lesson"><summary><div class="ln">Урок<b>6</b></div><h3>Ритм. Вечеря, сон, рух</h3><div class="chev">+</div></summary><div class="body"><p>Можна ідеально харчуватися вдень і вбивати печінку вночі. Три важелі: рання легка вечеря, сон у першій половині ночі (вікно ремонту), щоденна ходьба. І вісь кишківник — печінка.</p><div class="act"><b>Дія:</b> вечеря на годину раніше і легша, відбій раніше, коротка прогулянка. <b style="color:var(--gold)">Результат:</b> сон глибший, обличчя чистіше, жир іде.</div></div></details>
+      <details class="lesson"><summary><div class="ln">Урок<b>7</b></div><h3>Повний ресет і закріплення</h3><div class="chev">+</div></summary><div class="body"><p>Кілька днів, коли ти тримаєш усі важелі разом, плюс м’які тілесні та дихальні практики. І обов’язково ясний вихід: залишаєш базу на кожен день. Новий ритм, а не разовий подвиг.</p><div class="act"><b>Дія:</b> провести ресет і виписати план життя після нього. <b style="color:var(--gold)">Результат:</b> зібрав систему на кожен день.</div></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 6. HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <h2>Як це працює</h2>
+    <div class="myth-box">
+      <h3>Чому тазик із зеленими кульками — обман</h3>
+      <p>Коли олія та кислий сік зустрічаються в кишківнику, вони згортаються в м’які мильні грудки — сапоніфікат, звичайне мило, яке ти сам і виробив. У лабораторії ці кульки розбирали: усередині ні холестерину, ні білірубіну. Жодних тисяч невидимих каменів у печінці не ховається. Тобі продають страх і тазик із милом.</p>
+    </div>
+    <p style="margin-bottom:22px">Печінка — хімічний завод, який знешкоджує отрути в три фази. Розганяти її соком і добавками безглуздо: її треба <span class="acc">розвантажити і дати матеріал</span> для другої і третьої фази.</p>
+    <div class="phases">
+      <div class="phase"><div class="ph-n">Фаза 1 · Активація</div><h4>Підготовка отрути</h4><p>Ферменти чіпляють до отрути кисень. На виході часто виходять уламки, тимчасово агресивніші за вихідну отруту, плюс вільні радикали.</p></div>
+      <div class="phase"><div class="ph-n">Фаза 2 · Знешкодження</div><h4>Захист</h4><p>До уламків пришиваються захисні молекули — і лише тепер вони безпечні. Потрібен матеріал: білок, сірка, антиоксиданти.</p></div>
+      <div class="phase"><div class="ph-n">Фаза 3 · Виведення</div><h4>Вихід</h4><p>Готовий безпечний продукт транспортні білки виносять у жовч і нирки — і назовні.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. EXAMPLE -->
+<section class="video">
+  <div class="wrap center">
+    <h2>Дивись приклад уроку</h2>
+    <p style="max-width:620px;margin:0 auto">Короткий фрагмент: як виглядає урок і ранковий протокол на практиці.</p>
+    <div class="frame"><div class="play">▶</div><small>Встав сюди відео (YouTube / Vimeo)</small></div>
+  </div>
+</section>
+
+<!-- 8. WHAT YOU GET -->
+<section>
+  <div class="wrap">
+    <h2>Що ти матимеш після курсу</h2>
+    <div class="res-grid">
+      <div class="res"><div class="ico">⚡</div><p><strong>Повернеться енергія і ясна голова</strong> — тіло перестане витрачати ресурс на розгрібання перевантаження.</p></div>
+      <div class="res"><div class="ico">💧</div><p><strong>Мине тяжкість і набряки</strong> — жовч іде рівніше, обличчя зранку чистіше.</p></div>
+      <div class="res"><div class="ico">🍽️</div><p><strong>Зрозумілий ритм харчування і дня</strong> — тарілка для другої фази, рання вечеря, сон, рух.</p></div>
+      <div class="res"><div class="ico">🛠️</div><p><strong>Інструмент на все життя</strong> — ти знаєш, як не доводити печінку до крику.</p></div>
+    </div>
+    <div class="honest"><p><strong>Чесно:</strong> без обіцянок «мінус п’ятнадцять кіло і мінус десять років з обличчя». Печінка мовчить до останнього — тепер ти знаєш, як знімати з неї перевантаження і тримати новий ритм.</p></div>
+  </div>
+</section>
+
+<!-- 9. REVIEWS -->
+<section class="author">
+  <div class="wrap">
+    <h2>Відгуки учасників</h2>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">★★★★★</div><p>«Після уроку про ранок прибрав каву натщесерце, почав зі склянки води. Через три дні ранкова тяжкість справа минула.»</p><div class="who">— заміни на свій скрін відгуку</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Думала, знову впарять чистку. А тут на пальцях пояснили три фази. Перестала боятися і просто розвантажила печінку.»</p><div class="who">— заміни на свій скрін відгуку</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>«Сім коротких уроків, кожен із конкретною дією. Туман у голові минув уже на другому тижні.»</p><div class="who">— заміни на свій скрін відгуку</div></div>
+    </div>
+    <p class="rev-note">Сюди вставляються реальні скріншоти відгуків із листувань і сторіс.</p>
+  </div>
+</section>
+
+<!-- 10. HOW TRAINING GOES -->
+<section>
+  <div class="wrap">
+    <h2>Як проходить навчання</h2>
+    <div class="how-grid">
+      <div class="how"><div class="h-n">01</div><div><h4>7 уроків, доступ одразу</h4><p>Отримуєш усі уроки після оплати і починаєш будь-коли.</p></div></div>
+      <div class="how"><div class="h-n">02</div><div><h4>Один урок — одна дія</h4><p>Короткі уроки, кожен із конкретним кроком на день.</p></div></div>
+      <div class="how"><div class="h-n">03</div><div><h4>Вдома, без залу і «заліза»</h4><p>Жодних тазиків і флашів. Вода, тарілка, ритм і м’які практики.</p></div></div>
+      <div class="how"><div class="h-n">04</div><div><h4>На будь-якому пристрої</h4><p>Телефон, планшет, ноутбук — дивись у зручному темпі.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. FINAL FORM + TIMER -->
+<section class="form-sec" id="form">
+  <div class="wrap">
+    <div class="form-box">
+      <h3 style="font-size:24px;margin-bottom:8px">Досить приймати мовчання печінки за здоров’я</h3>
+      <p style="margin-bottom:4px">Забери 7 уроків і почни знімати перевантаження вже сьогодні — без тазиків, флашів і голоду.</p>
+      <div class="timer" id="timer">
+        <div class="cell"><b id="hh">11</b><span>годин</span></div>
+        <div class="cell"><b id="mm">59</b><span>хвилин</span></div>
+        <div class="cell"><b id="ss">59</b><span>секунд</span></div>
+      </div>
+      <p style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px">До кінця акції</p>
+      <input type="text" placeholder="Ім’я">
+      <input type="tel" placeholder="Телефон або @telegram">
+      <div class="priceline"><b>9 €</b> &nbsp;замість&nbsp; <s>39 €</s></div>
+      <a href="#" class="btn btn-lg">Отримати доступ</a>
+      <p class="privacy">🔒 Усі дані конфіденційні і потрібні лише для зв’язку з менеджером. Гарантія повернення — 14 днів.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12. GUARANTEE -->
+<section class="guar">
+  <div class="wrap">
+    <h2>Гарантія</h2>
+    <div class="guar-box">
+      <div class="badge"><b>14</b><span>днів</span></div>
+      <div>
+        <h3 style="margin-bottom:10px">Ти нічим не ризикуєш</h3>
+        <p>Якщо протягом <strong>14 днів</strong> після покупки зрозумієш, що курс тобі не підходить — напиши, і ми повернемо гроші. Уроки короткі: першу дію можна зробити в день покупки.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. FAQ -->
+<section>
+  <div class="wrap">
+    <h2>Питання та відповіді</h2>
+    <div class="faq-item"><button class="faq-q">Це чергова чистка олією та лимоном? <span class="ic">+</span></button><div class="faq-a"><p>Ні. Курс якраз пояснює, чому «чистки» дають мильні грудки, а не камені. Ми не розганяємо печінку, а знімаємо з неї навантаження і даємо матеріал для другої і третьої фази.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Це лікування? Чи замінить лікаря? <span class="ic">+</span></button><div class="faq-a"><p>Ні. Це спосіб життя, який знімає навантаження і допомагає здоровій печінці працювати. При діагнозі, каменях, болях чи серйозному стані потрібен лікар і обстеження, а не курс.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Скільки часу займає урок? <span class="ic">+</span></button><div class="faq-a"><p>Уроки короткі — одна тема, одна дія. Самі дії вбудовані у звичайний день: ранкова вода, склад тарілки, рання вечеря, прогулянка.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Чи потрібно голодувати або сидіти на жорсткій дієті? <span class="ic">+</span></button><div class="faq-a"><p>Ні. Без голоду і дієти на курці до знемоги. Ми змінюємо склад тарілки і ритм дня, щоб годувати ремонт, а не поломку.</p></div></div>
+  </div>
+</section>
+
+<!-- 14. FINAL CTA -->
+<section class="offer">
+  <div class="wrap">
+    <h2>Отримай доступ до курсу зі знижкою 77%</h2>
+    <div class="price"><span class="now">9 €</span><span class="old">39 €</span></div>
+    <a href="#form" class="btn btn-lg">Отримати доступ</a>
+  </div>
+</section>
+
+<!-- 15. FOOTER -->
+<footer>
+  <div class="wrap center">
+    <p><strong>ПЕЧІНКА · міні-курс із 7 уроків</strong> — очищення печінки і тіла</p>
+    <p>Контакти: <a href="mailto:4661690@gmail.com">4661690@gmail.com</a></p>
+    <p><a href="/privacy">Політика конфіденційності</a> · <a href="/privacy">Публічна оферта</a></p>
+    <p class="disclaimer">ВАЖЛИВО: матеріали мають інформаційний та освітній характер і не є медичною послугою, діагностикою чи лікуванням. Ми не даємо гарантій конкретних результатів. За наявності захворювань, каменів у жовчному, болю чи інших серйозних станів зверніться до лікаря до початку будь-яких змін у харчуванні та способі життя. Реєструючись, ви погоджуєтеся, що несете відповідальність за свої рішення та дії.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){this.parentElement.classList.toggle('open');});});
+(function(){
+  var total=11*3600+59*60+59;
+  var hh=document.getElementById('hh'),mm=document.getElementById('mm'),ss=document.getElementById('ss');
+  function p(n){return n<10?'0'+n:n;}
+  setInterval(function(){if(total<=0){total=11*3600+59*60+59;}total--;
+    hh.textContent=p(Math.floor(total/3600));mm.textContent=p(Math.floor((total%3600)/60));ss.textContent=p(total%60);},1000);
+})();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
