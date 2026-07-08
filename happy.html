@@ -145,7 +145,7 @@
 
 <div class="topbar">
   Практики цигун и осознанности · <b>Влад Задирака</b>
-  <div class="start">Старт — <b>9 июля</b></div>
+  <div class="start">Старт — <b><span class="js-tomorrow"></span></b></div>
 </div>
 
 <header class="hero">
@@ -289,7 +289,7 @@
   <div class="fprice">всего €9 <s>вместо €29</s></div>
   <a href="#" class="btn">Хочу на курс →</a>
   <a href="#" class="btn">Хочу со скидкой</a>
-  <div class="micro" style="color:#2a1c10">Старт 9 июля · мест ограничено</div>
+  <div class="micro" style="color:#2a1c10">Старт <span class="js-tomorrow"></span> · мест ограничено</div>
 </div></section>
 
 <footer>
@@ -309,5 +309,11 @@
   setInterval(tick,1000);tick();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script>
+(function(){var d=new Date();d.setDate(d.getDate()+1);
+var m=["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"][d.getMonth()];
+var t=d.getDate()+" "+m;
+document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;});})();
+</script>
 </body>
 </html>
