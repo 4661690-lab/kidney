@@ -170,6 +170,10 @@
   .hero-bullets{list-style:none;display:inline-block;text-align:left;margin-top:16px;padding:0}
   .hero-bullets li{position:relative;padding-left:24px;font-size:14px;color:#e7e1d7;margin-bottom:8px;font-weight:600}
   .hero-bullets li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:900}
+
+  .modal-offer{border-left:3px solid var(--orange);padding:4px 0 4px 14px;margin-bottom:20px}
+  .modal-offer-title{font-size:17px;font-weight:800;color:var(--text);line-height:1.25}
+  .modal-offer-sub{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -361,12 +365,13 @@ document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;})
     <button class="modal-close" id="modal-close" aria-label="Закрыть">&times;</button>
     <div class="modal-body">
       <div id="lead-step">
+        <div class="modal-offer"><div class="modal-offer-title">Снова стать счастливой за 7 дней</div><div class="modal-offer-sub">Древние практики цигун — дыхание, движение, внимание.</div></div>
         <h3 class="modal-title">Заполни форму, чтобы записаться на курс <span class="accent">«Вкус жизни»</span></h3>
-        <p class="modal-note">Все данные конфиденциальны и нужны только для связи с куратором. Ты ничем не рискуешь: возврат средств в течение 14 дней с момента покупки, если курс тебе не подойдёт 💫</p>
+        <p class="modal-note">Гарантия возврата средств в течение 14 дней с момента покупки, если курс тебе не подойдёт 💫 Все данные конфиденциальны и нужны только для связи с куратором.</p>
         <div class="modal-price"><span class="now">&euro;9</span> <span class="old">&euro;29</span></div>
         <form id="lead-form" novalidate>
           <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
-          <label>Телефон*<input type="tel" name="phone" required placeholder="+380 __ ___ __ __"></label>
+          <label>Телефон*<input type="tel" name="phone" required placeholder="+ код страны и номер"></label>
           <button type="submit" class="btn">Хочу на курс &rarr;</button>
           <div class="modal-fine">Старт <span id="modal-start"></span> &middot; мест ограничено</div>
         </form>
