@@ -133,8 +133,11 @@
   footer .legal{margin-top:12px;font-size:11px;color:#555}
 
   .author-photo{width:100%;border-radius:16px;margin-bottom:16px;display:block}
-  .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .reviews-grid img{width:100%;border-radius:10px;display:block;border:1px solid var(--line)}
+  .reviews-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px}
+  .reviews-carousel img{height:360px;width:auto;flex:0 0 auto;border-radius:12px;scroll-snap-align:start;border:1px solid var(--line)}
+  .reviews-carousel::-webkit-scrollbar{height:6px}
+  .reviews-carousel::-webkit-scrollbar-thumb{background:#3a3a3a;border-radius:3px}
+  .swipe-hint{color:var(--muted);font-size:12px;text-align:center;margin-top:8px}
   .band{padding:0;margin:0}
   .band img{width:100%;display:block}
   .closing-photo{width:100%;border-radius:16px;margin-bottom:18px;display:block}
@@ -237,7 +240,7 @@
 
 <section class="reviews"><div class="wrap">
   <h2 class="sec">Отзывы участниц</h2>
-  <div class="reviews-grid">
+  <div class="reviews-carousel">
     <img src="/assets/rev1.jpg" alt="Отзыв участницы" loading="lazy">
     <img src="/assets/rev2.jpg" alt="Отзыв участницы" loading="lazy">
     <img src="/assets/rev3.jpg" alt="Отзыв участницы" loading="lazy">
@@ -248,6 +251,7 @@
     <img src="/assets/rev8.jpg" alt="Отзыв участницы" loading="lazy">
     <img src="/assets/rev9.jpg" alt="Отзыв участницы" loading="lazy">
   </div>
+  <div class="swipe-hint">смахни, чтобы листать →</div>
 </div></section>
 
 <section class="format"><div class="wrap">
