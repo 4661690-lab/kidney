@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ПЕЧЕНЬ. 7 уроков — мини-курс очищения печени и тела</title>
+<title>ПЕЧЕНЬ. 7 уроков — курс очищения печени и тела</title>
 <style>
 :root{
   --bg:#0d0e0c;--bg2:#15170f;--card:#1a1c13;--line:#2b2e20;
@@ -181,6 +181,25 @@ footer a{color:var(--muted)}
   .forwho-grid,.phases,.res-grid,.how-grid,.rev-grid,.author-grid{grid-template-columns:1fr}
   .guar-box{grid-template-columns:1fr;justify-items:center;text-align:center}
 }
+
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
+  .modal-overlay.open{display:flex}
+  .modal{background:var(--bg2);border:1px solid var(--line);border-radius:18px;max-width:420px;width:100%;max-height:92vh;overflow:auto;position:relative}
+  .modal-body{padding:30px 22px 26px}
+  .modal-close{position:absolute;top:8px;right:12px;background:none;border:none;color:var(--muted);font-size:30px;line-height:1;cursor:pointer;padding:6px}
+  .modal-title{font-size:20px;font-weight:800;margin-bottom:12px;line-height:1.25;text-transform:none;color:var(--txt)}
+  .modal-note{color:var(--muted);font-size:13px;margin-bottom:16px;line-height:1.5}
+  .modal-price{margin-bottom:18px}
+  .modal-price .now{font-size:30px;font-weight:900;color:var(--acc);margin-right:8px}
+  .modal-price .old{text-decoration:line-through;color:var(--muted);opacity:.75}
+  #lead-form label{display:block;font-size:13px;color:var(--muted);margin-bottom:14px}
+  #lead-form input{display:block;width:100%;margin-top:6px;padding:14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:16px;font-family:inherit}
+  #lead-form input:focus{outline:none;border-color:var(--acc)}
+  #lead-form .btn{margin-top:4px;width:100%}
+  .modal-fine{color:var(--muted);font-size:12px;text-align:center;margin-top:12px}
+  .modal-offer{border-left:3px solid var(--acc);padding:4px 0 4px 14px;margin-bottom:20px}
+  .modal-offer-title{font-size:17px;font-weight:800;color:var(--txt);line-height:1.25}
+  .modal-offer-sub{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -188,15 +207,15 @@ footer a{color:var(--muted)}
 <!-- 1. HERO -->
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Онлайн мини-курс · очищение печени и тела</span>
-    <div class="start">Старт — <b>сразу после оплаты</b></div>
+    <span class="eyebrow">Онлайн-курс · очищение печени и тела</span>
+    <div class="start">Старт — <b id="hero-start">9 июля</b></div>
     <p class="q">Тяжесть справа, отёки по утрам, туман в голове и усталость, которая не уходит после сна?</p>
     <h1>ПЕЧЕНЬ. <span>Разгрузи свой молчаливый завод</span></h1>
     <p class="lead">Семь коротких уроков, после которых ты понимаешь, как печень работает на самом деле, и каждый день делаешь то, что реально снимает с неё нагрузку. Без тазиков, флашей и голода — на проверенной механике.</p>
     <div class="price">
       <span class="tag">всего</span>
-      <span class="now">9 €</span>
-      <span class="old">39 €</span>
+      <span class="now">$8</span>
+      <span class="old">$39</span>
     </div>
     <a href="#form" class="btn btn-lg">Получить доступ</a>
     <div class="bonus">
@@ -228,8 +247,8 @@ footer a{color:var(--muted)}
     <p>Один урок — одна тема — одно действие на день. Доступ открывается сразу после оплаты.</p>
     <div class="price">
       <span class="tag">всего</span>
-      <span class="now">9 €</span>
-      <span class="old">39 €</span>
+      <span class="now">$8</span>
+      <span class="old">$39</span>
     </div>
     <a href="#form" class="btn">Забрать со скидкой</a>
   </div>
@@ -240,14 +259,14 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <h2>Кто ведёт курс</h2>
     <div class="author-grid">
-      <div class="author-photo">Фото автора<br>(замени на своё)</div>
+      <div class="author-photo" style="background:url('/assets/hero.jpg') center 22%/cover no-repeat;color:transparent"></div>
       <div>
-        <p><strong>[Имя автора]</strong> — [коротко о себе: специализация, сколько лет в теме здоровья и нутрициологии].</p>
-        <p>Курс собран не на страхе и эзотерике, а на реальной биохимии печени: три фазы обезвреживания, желчь, ритм дня и питание. Ничего, что нельзя сделать дома.</p>
+        <p><strong>Влад Задирака</strong> — автор курса, практик цигун и телесных оздоровительных практик. Веду мягко и по-человечески, без запугивания и «чудо-чисток».</p>
+        <p>Курс собран не на страхе и эзотерике, а на понятной работе с телом: как разгрузить печень через воду, желчь, тарелку и ритм дня. Всё, что можно делать дома, без оборудования.</p>
         <ul class="creds">
-          <li>[Образование / сертификация №1]</li>
-          <li>[Опыт / количество учеников]</li>
-          <li>[Публикации / достижения]</li>
+          <li>Практик цигун и восточных телесных практик</li>
+          <li>Веду онлайн-марафоны и практики оздоровления</li>
+          <li>Автор курса «Печень. 7 уроков»</li>
         </ul>
       </div>
     </div>
@@ -351,7 +370,7 @@ footer a{color:var(--muted)}
       <p style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px">До конца акции</p>
       <input type="text" placeholder="Имя">
       <input type="tel" placeholder="Телефон или @telegram">
-      <div class="priceline"><b>9 €</b> &nbsp;вместо&nbsp; <s>39 €</s></div>
+      <div class="priceline"><b>$8</b> &nbsp;вместо&nbsp; <s>$39</s></div>
       <a href="#" class="btn btn-lg">Получить доступ</a>
       <p class="privacy">🔒 Все данные конфиденциальны и нужны только для связи с менеджером. Гарантия возврата — 14 дней.</p>
     </div>
@@ -386,8 +405,8 @@ footer a{color:var(--muted)}
 <!-- 14. FINAL CTA -->
 <section class="offer">
   <div class="wrap">
-    <h2>Получи доступ к курсу со скидкой 77%</h2>
-    <div class="price"><span class="now">9 €</span><span class="old">39 €</span></div>
+    <h2>Получи доступ к курсу со скидкой 79%</h2>
+    <div class="price"><span class="now">$8</span><span class="old">$39</span></div>
     <a href="#form" class="btn btn-lg">Получить доступ</a>
   </div>
 </section>
@@ -395,7 +414,7 @@ footer a{color:var(--muted)}
 <!-- 15. FOOTER -->
 <footer>
   <div class="wrap center">
-    <p><strong>ПЕЧЕНЬ · мини-курс из 7 уроков</strong> — очищение печени и тела</p>
+    <p><strong>ПЕЧЕНЬ · курс из 7 уроков</strong> — очищение печени и тела</p>
     <p>Контакты: <a href="mailto:4661690@gmail.com">4661690@gmail.com</a></p>
     <p><a href="/privacy">Политика конфиденциальности</a> · <a href="/privacy">Публичная оферта</a></p>
     <p class="disclaimer">ВАЖНО: материалы носят информационный и образовательный характер и не являются медицинской услугой, диагностикой или лечением. Мы не даём гарантий конкретных результатов. При наличии заболеваний, камней в желчном, боли или иных серьёзных состояний обратитесь к врачу до начала любых изменений в питании и образе жизни. Регистрируясь, вы соглашаетесь, что несёте ответственность за свои решения и действия.</p>
@@ -413,5 +432,54 @@ document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('clic
 })();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+<div class="modal-overlay" id="lead-modal" aria-hidden="true">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Закрыть">&times;</button>
+    <div class="modal-body">
+      <div id="lead-step">
+        <div class="modal-offer"><div class="modal-offer-title">Разгрузи печень за 7 уроков</div><div class="modal-offer-sub">Вода, желчь, тарелка и ритм — мягко, без тазиков и голода.</div></div>
+        <h3 class="modal-title">Заполни форму, чтобы получить доступ к курсу <span class="acc">«Печень. 7 уроков»</span></h3>
+        <p class="modal-note">Гарантия возврата средств в течение 14 дней, если курс тебе не подойдёт. Все данные конфиденциальны и нужны только для связи с куратором.</p>
+        <div class="modal-price"><span class="now">$8</span> <span class="old">$39</span></div>
+        <form id="lead-form" novalidate>
+          <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
+          <label>Телефон*<input type="tel" name="phone" required placeholder="+ код страны и номер"></label>
+          <button type="submit" class="btn">Получить доступ &rarr;</button>
+          <div class="modal-fine">Старт <span id="modal-start"></span> · мест ограничено</div>
+        </form>
+      </div>
+      <div id="lead-thanks" style="display:none">
+        <h3 class="modal-title">Спасибо!</h3>
+        <p class="modal-note">Мы получили заявку и свяжемся с тобой, чтобы дать доступ к курсу.</p>
+        <button class="btn" id="thanks-close">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var modal=document.getElementById('lead-modal');
+  function openM(e){if(e)e.preventDefault();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  document.querySelectorAll('a.btn').forEach(function(b){b.addEventListener('click',openM);});
+  document.getElementById('modal-close').addEventListener('click',closeM);
+  document.getElementById('thanks-close').addEventListener('click',closeM);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+  var d=new Date();d.setDate(d.getDate()+1);
+  var mm=["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"][d.getMonth()];
+  var ds=d.getDate()+" "+mm;
+  var ms=document.getElementById('modal-start'); if(ms) ms.textContent=ds;
+  var hs=document.getElementById('hero-start'); if(hs) hs.textContent=ds;
+  var form=document.getElementById('lead-form');
+  form.addEventListener('submit',function(e){e.preventDefault();
+    var email=form.email.value.trim(),phone=form.phone.value.trim();
+    if(!email||email.indexOf("@")<1){form.email.focus();return;}
+    if(!phone){form.phone.focus();return;}
+    document.getElementById('lead-step').style.display='none';
+    document.getElementById('lead-thanks').style.display='block';
+  });
+})();
+</script>
 </body>
 </html>
