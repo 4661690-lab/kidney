@@ -142,8 +142,10 @@
   .band img{width:100%;display:block}
   .closing-photo{width:100%;border-radius:16px;margin-bottom:18px;display:block}
 
-  .proof-strip{display:flex;gap:6px;margin-top:16px}
-  .proof-strip img{flex:1 1 0;min-width:0;height:92px;object-fit:cover;border-radius:8px;display:block;border:1px solid var(--line)}
+  .proof-strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin-top:16px;padding-bottom:8px}
+  .proof-strip img{height:190px;width:auto;flex:0 0 auto;display:block;border-radius:10px;border:1px solid var(--line);scroll-snap-align:start}
+  .proof-strip::-webkit-scrollbar{height:6px}
+  .proof-strip::-webkit-scrollbar-thumb{background:#3a3a3a;border-radius:3px}
 </style>
 </head>
 <body>
@@ -205,10 +207,10 @@
   <div class="big">5000+</div>
   <p>студентов за 20 лет практик</p>
   <div class="proof-strip">
-    <img src="/assets/team1.jpg" alt="Практика в группе" loading="lazy">
-    <img src="/assets/team2.jpg" alt="" loading="lazy">
-    <img src="/assets/team3.jpg" alt="" loading="lazy">
-    <img src="/assets/team4.jpg" alt="" loading="lazy">
+    <img src="/assets/team1.jpg" alt="Практика в группе">
+    <img src="/assets/team2.jpg" alt="">
+    <img src="/assets/team3.jpg" alt="">
+    <img src="/assets/team4.jpg" alt="">
   </div>
 </div></section>
 
