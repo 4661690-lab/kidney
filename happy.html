@@ -138,6 +138,11 @@
   .band{padding:0;margin:0}
   .band img{width:100%;display:block}
   .closing-photo{width:100%;border-radius:16px;margin-bottom:18px;display:block}
+
+  .proof-collage{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+  .proof-collage img{width:100%;object-fit:cover;border-radius:10px;display:block;border:1px solid var(--line)}
+  .proof-collage img:first-child,.proof-collage img:last-child{grid-column:1 / -1;aspect-ratio:16/8}
+  .proof-collage img:not(:first-child):not(:last-child){aspect-ratio:1/1}
 </style>
 </head>
 <body>
@@ -198,7 +203,12 @@
 <section class="proof"><div class="wrap">
   <div class="big">5000+</div>
   <p>студентов за 20 лет практик</p>
-  <div class="ph">[ сюда — фото/скрины участниц или коллаж ]</div>
+  <div class="proof-collage">
+    <img src="/assets/team1.jpg" alt="Практика в группе" loading="lazy">
+    <img src="/assets/team2.jpg" alt="" loading="lazy">
+    <img src="/assets/team3.jpg" alt="" loading="lazy">
+    <img src="/assets/team4.jpg" alt="" loading="lazy">
+  </div>
 </div></section>
 
 <section class="author"><div class="wrap">
@@ -208,7 +218,7 @@
   <ul class="ticks">
     <li>Более 20 лет практики · 5000+ учеников</li>
     <li>Изучал китайскую медицину, тренировался в монастыре Шаолинь</li>
-    <li>[институт — уточни точное название]</li>
+    <li>Пекинский институт Кундавелл</li>
     <li>Авторская система: цигун, дыхательные техники, работа с телом и вниманием.</li>
   </ul>
 </div></section>
