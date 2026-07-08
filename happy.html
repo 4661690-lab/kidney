@@ -142,10 +142,8 @@
   .band img{width:100%;display:block}
   .closing-photo{width:100%;border-radius:16px;margin-bottom:18px;display:block}
 
-  .proof-collage{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
-  .proof-collage img{width:100%;object-fit:cover;border-radius:10px;display:block;border:1px solid var(--line)}
-  .proof-collage img:first-child,.proof-collage img:last-child{grid-column:1 / -1;aspect-ratio:16/8}
-  .proof-collage img:not(:first-child):not(:last-child){aspect-ratio:1/1}
+  .proof-strip{display:flex;gap:6px;margin-top:16px}
+  .proof-strip img{flex:1 1 0;min-width:0;height:92px;object-fit:cover;border-radius:8px;display:block;border:1px solid var(--line)}
 </style>
 </head>
 <body>
@@ -206,7 +204,7 @@
 <section class="proof"><div class="wrap">
   <div class="big">5000+</div>
   <p>студентов за 20 лет практик</p>
-  <div class="proof-collage">
+  <div class="proof-strip">
     <img src="/assets/team1.jpg" alt="Практика в группе" loading="lazy">
     <img src="/assets/team2.jpg" alt="" loading="lazy">
     <img src="/assets/team3.jpg" alt="" loading="lazy">
