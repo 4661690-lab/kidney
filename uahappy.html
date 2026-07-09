@@ -33,7 +33,7 @@
   /* HERO */
   .hero{position:relative;overflow:hidden;background:#0d0d0d;min-height:84vh;display:flex;flex-direction:column;justify-content:center;padding:38px 20px 44px;text-align:center}
   .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%;opacity:.5;z-index:0}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,13,.55),rgba(13,13,13,.2) 42%,rgba(13,13,13,.82));z-index:1}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,13,.45),rgba(13,13,13,.12) 42%,rgba(13,13,13,.72));z-index:1}
   .hero-in{position:relative;z-index:2}
   .hero .kicker{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
   .hero h1{font-size:24px;font-weight:900;text-transform:uppercase;color:var(--text);margin-bottom:10px;text-shadow:0 2px 20px rgba(0,0,0,.55)}
@@ -199,7 +199,7 @@
     <h1>Ззовні все добре, а всередині <span class="hl">порожньо</span> і <span class="hl">щастя</span> немає?</h1>
     <div class="sub">Радість інколи буває. А щастя — немає. Ось як знову стати щасливою за 7 днів.</div>
     <div class="hero-desc">Давні практики цигун — дихання, рух, увага. По 20 хвилин на день, м’яко і без драми.</div>
-    <div class="price"><span class="now">$8</span> <span class="old">$29</span></div>
+    <div class="price"><span class="now">390 грн</span> <span class="old">1190 грн</span></div>
     <a href="#order" class="btn">Хочу бути щасливою →</a>
     <ul class="hero-bullets">
       <li>Без пігулок і «просто мисли позитивно»</li>
@@ -369,7 +369,7 @@ var t=d.getDate()+" "+m;
 document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;});})();
 </script>
 <div class="float-bar" id="float-bar">
-  <a href="#" class="btn">Хочу бути щасливою · $8 →</a>
+  <a href="#" class="btn">Хочу бути щасливою · 390 грн →</a>
 </div>
 
 <div class="modal-overlay" id="lead-modal" aria-hidden="true">
@@ -380,7 +380,7 @@ document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;})
         <div class="modal-offer"><div class="modal-offer-title">Знову стати щасливою за 7 днів</div><div class="modal-offer-sub">Давні практики цигун — дихання, рух, увага.</div></div>
         <h3 class="modal-title">Заповни форму, щоб записатися на курс <span class="accent">«Смак життя»</span></h3>
         <p class="modal-note">Гарантія повернення коштів протягом 14 днів з моменту покупки, якщо курс тобі не підійде 💫 Усі дані конфіденційні й потрібні лише для звʼязку з куратором.</p>
-        <div class="modal-price"><span class="now">$8</span> <span class="old">$29</span></div>
+        <div class="modal-price"><span class="now">390 грн</span> <span class="old">1190 грн</span></div>
         <form id="lead-form" novalidate>
           <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
           <label>Телефон*<input type="tel" name="phone" required placeholder="+ код країни і номер"></label>
