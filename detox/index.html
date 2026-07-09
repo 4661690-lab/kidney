@@ -471,11 +471,17 @@ document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('clic
   var ds=d.getDate()+" "+mm;
   var ms=document.getElementById('modal-start'); if(ms) ms.textContent=ds;
   var hs=document.getElementById('hero-start'); if(hs) hs.textContent=ds;
+  var LEAD_ENDPOINT="https://docs.google.com/forms/d/e/1FAIpQLSdETtdDiqlIFyMzurMoDClhnuEjSSy8rW8IefR2Rj9KAG-p0A/formResponse";
   var form=document.getElementById('lead-form');
   form.addEventListener('submit',function(e){e.preventDefault();
     var email=form.email.value.trim(),phone=form.phone.value.trim();
     if(!email||email.indexOf("@")<1){form.email.focus();return;}
     if(!phone){form.phone.focus();return;}
+    var body=new URLSearchParams();
+    body.append("emailAddress",email);
+    body.append("entry.1507153564",phone);
+    body.append("entry.40509360","detox-RU");
+    try{fetch(LEAD_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body.toString()});}catch(err){}
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
   });
