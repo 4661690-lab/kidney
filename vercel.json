@@ -5,6 +5,8 @@
     { "src": "/happy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/happy.html" },
     { "src": "/uahappy", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/uahappy.html" },
     { "src": "/uahappy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/uahappy.html" },
+    { "src": "/terms", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/terms.html" },
+    { "src": "/terms", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/terms.html" },
     { "src": "/", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "/happy" } },
     { "src": "/", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "status": 308, "headers": { "Location": "/happy" } },
     { "src": "/(.*)", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/zadiraka/index.html" },
