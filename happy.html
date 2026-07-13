@@ -422,9 +422,10 @@ document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;})
         </form>
       </div>
       <div id="lead-thanks" style="display:none">
-        <h3 class="modal-title">Спасибо!</h3>
-        <p class="modal-note">Мы получили заявку и свяжемся с тобой в ближайшее время, чтобы дать доступ к курсу.</p>
-        <button class="btn" id="thanks-close">Закрыть</button>
+        <h3 class="modal-title">Секунду…</h3>
+        <p class="modal-note">Открываем страницу оплаты 💳 Если не открылась автоматически — нажми кнопку ниже.</p>
+        <a class="btn" data-pay href="https://app.zenedu.io/l/p/43WEtqtxVWJyFH5W">Перейти к оплате →</a>
+        <button class="btn" id="thanks-close" style="display:none">Закрыть</button>
       </div>
     </div>
   </div>
@@ -435,7 +436,7 @@ document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;})
   var modal=document.getElementById('lead-modal');
   function openM(e){if(e)e.preventDefault();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
   function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
-  document.querySelectorAll('a.btn').forEach(function(b){b.addEventListener('click',openM);});
+  document.querySelectorAll('a.btn:not([data-pay])').forEach(function(b){b.addEventListener('click',openM);});
   document.getElementById('modal-close').addEventListener('click',closeM);
   document.getElementById('thanks-close').addEventListener('click',closeM);
   modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
@@ -452,6 +453,7 @@ document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;})
     if(window.fbq)fbq('track','Lead');
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
+    setTimeout(function(){window.location.href='https://app.zenedu.io/l/p/43WEtqtxVWJyFH5W';},600);
   });
 })();
 </script>
