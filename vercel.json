@@ -15,6 +15,8 @@
     { "src": "/uasuccess", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/uasuccess.html" },
     { "src": "/uafail", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/uafail.html" },
     { "src": "/uafail", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/uafail.html" },
+    { "src": "/ua", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/uaindex.html" },
+    { "src": "/ua", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/uaindex.html" },
     { "src": "/", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/zadiraka/index.html" },
     { "src": "/", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/zadiraka/index.html" },
     { "src": "/(.*)", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/zadiraka/index.html" },
