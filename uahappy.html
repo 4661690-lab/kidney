@@ -450,7 +450,7 @@ document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;})
     e.preventDefault();
     var email=form.email.value.trim(), phone=form.phone.value.trim();
     if(!email||!phone||email.indexOf("@")<1){ if(!email||email.indexOf("@")<1){form.email.focus();} else {form.phone.focus();} return; }
-    try{var LU='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';var pd=new URLSearchParams({email:email,phone:phone,lang:'ua',page:location.pathname});if(navigator.sendBeacon){navigator.sendBeacon(LU,pd);}else{fetch(LU,{method:'POST',mode:'no-cors',body:pd});}}catch(_){}
+    try{var LU='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';var pd=new URLSearchParams({email:email,phone:phone,lang:'Українська (UA)',page:location.pathname});if(navigator.sendBeacon){navigator.sendBeacon(LU,pd);}else{fetch(LU,{method:'POST',mode:'no-cors',body:pd});}}catch(_){}
     if(window.fbq)fbq('track','Lead');
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
