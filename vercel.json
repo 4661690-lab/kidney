@@ -5,6 +5,8 @@
     { "src": "/happy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/happy.html" },
     { "src": "/uahappy", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/uahappy.html" },
     { "src": "/uahappy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/uahappy.html" },
+    { "src": "/terms-ru", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/terms-ru.html" },
+    { "src": "/terms-ru", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/terms-ru.html" },
     { "src": "/terms", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/terms.html" },
     { "src": "/terms", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/terms.html" },
     { "src": "/success", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/success.html" },
