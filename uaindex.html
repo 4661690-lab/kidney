@@ -9,20 +9,25 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
  background:radial-gradient(820px 520px at 50% 0%,rgba(224,184,122,.14),transparent 60%),#100e0b;
- color:#f2e8d9;font-family:'Inter',sans-serif;padding:32px 24px}
-.wrap{max-width:600px}
+ color:#f2e8d9;font-family:'Inter',sans-serif;padding:40px 24px}
+.wrap{max-width:600px;width:100%}
 .kicker{color:#e0b87a;font-size:12px;letter-spacing:.28em;text-transform:uppercase;margin-bottom:22px}
 h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(38px,8vw,72px);line-height:1.06}
 h1 em{font-style:italic;color:#e0b87a}
-p{color:#b6ab97;margin-top:20px;font-size:clamp(15px,2.4vw,18px);line-height:1.65;letter-spacing:.01em}
-.btns{margin-top:38px;display:flex;flex-direction:column;gap:14px;align-items:center}
-a.btn{display:inline-block;width:100%;max-width:360px;text-decoration:none;font-weight:600;
- padding:16px 26px;border-radius:14px;font-size:16px;transition:.2s}
+p.bio{color:#b6ab97;margin-top:20px;font-size:clamp(15px,2.4vw,18px);line-height:1.65}
+.btns{margin-top:36px;display:flex;flex-direction:column;gap:13px;align-items:center}
+a.btn{display:block;width:100%;max-width:380px;text-decoration:none;font-weight:600;padding:16px 26px;border-radius:14px;font-size:16px;transition:.2s}
 a.primary{background:#e0b87a;color:#171207}
 a.primary:hover{background:#eac88f}
 a.ghost{border:1px solid #33291a;color:#e0b87a}
 a.ghost:hover{border-color:#5a4a2e;background:rgba(224,184,122,.06)}
-.foot{margin-top:34px;color:#6f6656;font-size:13px;letter-spacing:.02em}
+.socials{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:center}
+.socials a{color:#b6ab97;text-decoration:none;font-size:14px;letter-spacing:.02em;transition:.2s}
+.socials a:hover{color:#e0b87a}
+.lang{margin-top:26px}
+.lang a{color:#8a8172;text-decoration:none;font-size:13px;border-bottom:1px solid #33291a}
+.lang a:hover{color:#e0b87a}
+.foot{margin-top:26px;color:#6f6656;font-size:13px;letter-spacing:.02em}
 </style><script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -34,12 +39,19 @@ a.ghost:hover{border-color:#5a4a2e;background:rgba(224,184,122,.06)}
 <body><div class="wrap">
 <div class="kicker">Влад Задірака</div>
 <h1>Вітаю <em>тебе</em></h1>
-<p>Мене звати Влад Задірака. Понад 20 років я практикую і викладаю цигун та усвідомленість, за цей час через мої програми пройшло понад 5000 людей. Тут зібрані мої курси та практики, які допомагають знову відчути смак життя і жити в радості.</p>
+<p class="bio">Мене звати Влад Задірака. Понад 20 років я практикую і викладаю цигун та усвідомленість, за цей час через мої програми пройшло понад 5000 людей. Тут зібрані мої курси та практики для тіла, енергії і радості.</p>
 <div class="btns">
 <a class="btn primary" href="/uahappy">Курс «Смак життя» &rarr;</a>
-<a class="btn ghost" href="https://telegram.me/zadirakacigun" target="_blank" rel="noopener">Telegram-канал</a>
-<a class="btn ghost" href="https://instagram.com/zadirakacigun" target="_blank" rel="noopener">Instagram</a>
+<a class="btn ghost" href="/detoxua">Курс «Детокс печінки і тіла» &rarr;</a>
 </div>
+<div class="socials">
+<a href="https://instagram.com/zadirakacigun" target="_blank" rel="noopener">Instagram</a>
+<a href="https://telegram.me/zadirakacigun" target="_blank" rel="noopener">Telegram</a>
+<a href="https://www.youtube.com/@vladzadiraka" target="_blank" rel="noopener">YouTube</a>
+<a href="https://www.tiktok.com/@zadirakacigun" target="_blank" rel="noopener">TikTok</a>
+<a href="https://www.facebook.com/p/Vlad-Zadiraka-100093623289495/" target="_blank" rel="noopener">Facebook</a>
+</div>
+<div class="lang"><a href="/">Русский &rarr;</a></div>
 <div class="foot">zadiraka.cc</div>
 </div><script defer src="/_vercel/insights/script.js"></script>
 </body></html>
