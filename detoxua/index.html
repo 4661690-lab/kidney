@@ -521,11 +521,10 @@ document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('clic
     var email=form.email.value.trim(),phone=form.phone.value.trim();
     if(!email||email.indexOf("@")<1){form.email.focus();return;}
     if(!phone){form.phone.focus();return;}
-    var body=new URLSearchParams();
-    body.append("emailAddress",email);
-    body.append("entry.1507153564",phone);
-    body.append("entry.40509360","detox-UA");
-    try{fetch(LEAD_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body.toString()});}catch(err){}
+    var LU='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
+    var pd=new URLSearchParams({email:email,phone:phone,lang:'Українська (UA)',page:location.pathname,source:'detox-UA',sheet:'Detox'});
+    try{if(navigator.sendBeacon){navigator.sendBeacon(LU,pd);}else{fetch(LU,{method:'POST',mode:'no-cors',body:pd});}}catch(err){}
+    if(window.fbq)fbq('track','Lead');
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
   });
