@@ -146,16 +146,16 @@ strong{color:var(--txt);font-weight:700}
 .rev p{font-size:15px;color:var(--txt)}
 .rev .who{margin-top:14px;font-size:13.5px;color:var(--muted)}
 .rev-note{font-size:13px;color:var(--muted);margin-top:18px;text-align:center;opacity:.7}
-.rev-carousel{position:relative}
-.rev-shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 14px;-webkit-overflow-scrolling:touch;align-items:flex-start}
-.rev-shots::-webkit-scrollbar{height:8px}
-.rev-shots::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
-.rev-shot{flex:0 0 300px;width:300px;scroll-snap-align:center}
-.rev-shot img{width:100%;height:auto;display:block;border-radius:var(--rad);border:1px solid var(--line)}
-.rev-nav{position:absolute;top:44%;transform:translateY(-50%);z-index:5;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:.92}
-.rev-nav:hover{background:var(--bg2)}
-.rev-nav.prev{left:-8px}
-.rev-nav.next{right:-8px}
+.rev-wrap{position:relative}
+.rev-strip{display:flex;gap:16px;overflow-x:auto;padding:8px 2px 18px;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.rev-strip::-webkit-scrollbar{height:8px}
+.rev-strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+.rev-strip img{height:clamp(430px,66vh,600px);width:auto;border-radius:var(--rad);border:1px solid var(--line);flex:0 0 auto;scroll-snap-align:start;box-shadow:0 14px 44px rgba(0,0,0,.4)}
+.rev-nav{position:absolute;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;background:var(--gold);color:#1a140a;border:none;display:flex;align-items:center;justify-content:center;font-size:30px;line-height:1;cursor:pointer;z-index:5;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:.2s}
+.rev-nav:hover{background:#e6c877;transform:translateY(-50%) scale(1.07)}
+.rev-nav.prev{left:-6px;padding-right:3px}
+.rev-nav.next{right:-6px;padding-left:3px}
+@media(max-width:600px){.rev-nav{width:44px;height:44px;font-size:25px}.rev-nav.prev{left:2px}.rev-nav.next{right:2px}}
 
 /* HOW */
 .how-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -206,8 +206,6 @@ footer a{color:var(--muted)}
 
 @media(max-width:860px){
   .forwho-grid,.phases,.res-grid,.how-grid,.rev-grid,.author-grid{grid-template-columns:1fr}
-  .rev-shot{flex-basis:78vw;width:78vw}
-  .rev-nav{display:none}
   .guar-box{grid-template-columns:1fr;justify-items:center;text-align:center}
 }
 
@@ -373,29 +371,29 @@ footer a{color:var(--muted)}
 <section class="author">
   <div class="wrap">
     <h2>Отзывы участников</h2>
-    <div class="rev-carousel">
-      <button class="rev-nav prev" aria-label="prev" type="button">‹</button>
-      <div class="rev-shots">
-      <a class="rev-shot" href="/assets/reviews/vidguk1.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk1.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk2.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk2.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk3.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk3.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk4.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk4.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk5.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk5.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk6.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk6.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk7.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk7.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk8.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk8.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk9.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk9.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk10.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk10.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk11.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk11.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk12.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk12.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk13.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk13.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk14.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk14.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk15.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk15.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk16.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk16.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk17.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk17.jpg" alt="Отзыв участника курса" loading="lazy"></a>
-      <a class="rev-shot" href="/assets/reviews/vidguk18.jpg" target="_blank" rel="noopener"><img src="/assets/reviews/vidguk18.jpg" alt="Отзыв участника курса" loading="lazy"></a>
+    <div class="rev-wrap">
+      <button class="rev-nav prev" aria-label="prev" type="button">&#8249;</button>
+      <div class="rev-strip">
+        <img src="/assets/reviews/vidguk1.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk2.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk3.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk4.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk5.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk6.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk7.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk8.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk9.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk10.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk11.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk12.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk13.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk14.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk15.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk16.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk17.jpg" alt="Отзыв участника курса" loading="lazy">
+        <img src="/assets/reviews/vidguk18.jpg" alt="Отзыв участника курса" loading="lazy">
       </div>
-      <button class="rev-nav next" aria-label="next" type="button">›</button>
+      <button class="rev-nav next" aria-label="next" type="button">&#8250;</button>
     </div>
   </div>
 </section>
@@ -543,12 +541,7 @@ document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('clic
 })();
 </script>
 <script>
-document.querySelectorAll('.rev-carousel').forEach(function(c){
-  var t=c.querySelector('.rev-shots');
-  var step=function(){return Math.max(260,t.clientWidth*0.8)};
-  c.querySelector('.rev-nav.prev').addEventListener('click',function(){t.scrollBy({left:-step(),behavior:'smooth'})});
-  c.querySelector('.rev-nav.next').addEventListener('click',function(){t.scrollBy({left:step(),behavior:'smooth'})});
-});
+document.querySelectorAll('.rev-wrap').forEach(function(w){var s=w.querySelector('.rev-strip');function step(){return Math.min(s.clientWidth*0.85,440);}var p=w.querySelector('.prev'),n=w.querySelector('.next');if(p)p.onclick=function(){s.scrollBy({left:-step(),behavior:'smooth'});};if(n)n.onclick=function(){s.scrollBy({left:step(),behavior:'smooth'});};});
 </script>
 </body>
 </html>
