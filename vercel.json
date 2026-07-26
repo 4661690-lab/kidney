@@ -1,6 +1,8 @@
 {
   "routes": [
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/smmhappy", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/smmhappy.html" },
+    { "src": "/smmhappy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/smmhappy.html" },
     { "src": "/happy", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/happy.html" },
     { "src": "/happy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/happy.html" },
     { "src": "/uahappy", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/uahappy.html" },
