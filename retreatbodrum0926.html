@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ретрит із Владом Задіракою · Бодрум · 23–27 вересня 2026</title>
+<meta name="description" content="5 днів перезавантаження на Егейському морі: дихальні практики, цигун, чайні церемонії, хамам і тиша. Susona Bodrum, Туреччина.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0d09;--bg2:#171207;--card:#1c1710;--line:#2e2718;--txt:#f2e8d9;--mut:#b6ab97;--mut2:#8a8172;--gold:#e0b87a;--gold2:#eac88f;--rad:18px;--maxw:980px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.15}
+section{padding:72px 0}
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;background:linear-gradient(180deg,rgba(15,13,9,.55),rgba(15,13,9,.78) 60%,var(--bg) 100%),url('/assets/vlad3.jpg') center 24%/cover no-repeat;border-bottom:1px solid var(--line)}
+.hero-in{padding:90px 0 70px;text-align:center;width:100%}
+.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:12.5px;color:var(--gold);margin-bottom:22px}
+.hero h1{font-size:clamp(40px,7vw,74px);margin-bottom:14px}
+.hero .place{font-size:clamp(19px,2.6vw,24px);color:var(--txt);font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:8px}
+.hero .dates{letter-spacing:.2em;text-transform:uppercase;font-size:14px;color:var(--gold2);margin-bottom:34px}
+.btn{display:inline-block;background:var(--gold);color:#171207;font-weight:600;font-size:15.5px;padding:16px 34px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.btn.ghost:hover{background:rgba(224,184,122,.08);transform:translateY(-1px)}
+.hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.lead{max-width:640px;margin:0 auto;color:var(--mut);font-size:17px}
+h2{font-size:clamp(30px,4.4vw,44px);text-align:center;margin-bottom:14px}
+.sub{color:var(--mut);text-align:center;max-width:620px;margin:0 auto 44px}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.ab{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:26px}
+.ab .ic{font-size:24px;margin-bottom:12px}
+.ab h4{font-family:'Inter',sans-serif;font-weight:600;font-size:16px;margin-bottom:6px}
+.ab p{font-size:14.5px;color:var(--mut)}
+.day{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);margin-bottom:18px;overflow:hidden}
+.day summary{list-style:none;cursor:pointer;padding:24px 28px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.day summary::-webkit-details-marker{display:none}
+.day .dn{color:var(--gold);font-size:13px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.day .dt{font-family:'Cormorant Garamond',serif;font-size:26px}
+.day .dd{color:var(--mut2);font-size:13.5px;margin-left:auto}
+.day .chev{color:var(--gold);font-size:20px;transition:.25s}
+.day[open] .chev{transform:rotate(45deg)}
+.day .body{padding:0 28px 10px;border-top:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid rgba(46,39,24,.6)}
+.ev:last-child{border-bottom:none}
+.ev .tm{color:var(--gold2);font-size:14px;white-space:nowrap}
+.ev h5{font-family:'Inter',sans-serif;font-weight:600;font-size:15.5px;margin-bottom:4px}
+.ev p{font-size:14px;color:var(--mut)}
+.ev .loc{color:var(--mut2);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+.author-sec{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.author-grid{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:center}
+.author-photo{width:100%;aspect-ratio:3/4;border-radius:var(--rad);background:url('/assets/author.jpg') center 30%/cover no-repeat;border:1px solid var(--line)}
+.author-txt h2{text-align:left}
+.author-txt p{color:var(--mut);margin-bottom:14px}
+.form-card{max-width:520px;margin:0 auto;background:var(--card);border:1px solid var(--gold);border-radius:var(--rad);padding:38px 34px;text-align:center}
+.form-card input{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:15px 18px;color:var(--txt);font-size:15px;margin-bottom:12px;font-family:'Inter',sans-serif}
+.form-card input:focus{outline:none;border-color:var(--gold)}
+.form-card .btn{width:100%;margin-top:6px}
+.note{font-size:12.5px;color:var(--mut2);margin-top:14px}
+.tg-line{text-align:center;margin-top:26px;color:var(--mut)}
+.tg-line a{color:var(--gold);text-decoration:none}
+footer{padding:44px 0 60px;text-align:center;color:var(--mut2);font-size:13.5px;border-top:1px solid var(--line)}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}.author-grid{grid-template-columns:1fr}.author-photo{max-width:320px;margin:0 auto}.ev{grid-template-columns:1fr;gap:4px}section{padding:54px 0}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="eyebrow">Ретрит із Владом Задіракою</div>
+    <h1>Пʼять днів тиші<br>на Егейському морі</h1>
+    <div class="place">Susona Bodrum · Бодрум, Туреччина</div>
+    <div class="dates">23 — 27 вересня 2026</div>
+    <p class="lead" style="margin-bottom:36px">Дихальні практики на світанку, цигун, чайні церемонії, хамам і вечері із заходом сонця. Маленька група, глибоке перезавантаження, жодного поспіху.</p>
+    <div class="cta">
+      <a href="#zayavka" class="btn">Залишити заявку</a>
+      <a href="https://telegram.me/zadirakacigun" target="_blank" rel="noopener" class="btn ghost">Написати в Telegram</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Що це за подорож</h2>
+    <p class="sub">Пʼять днів, які повертають тіло в ритм, а голову — в тишу. Кожен день має свою тему: прибуття, перезавантаження, ясність, звʼязок і післясяйво.</p>
+    <div class="about-grid">
+      <div class="ab"><div class="ic">🌅</div><h4>Практики на світанку</h4><p>Дихання і мʼякий рух на березі моря, поки сонце сходить над Егейським узбережжям.</p></div>
+      <div class="ab"><div class="ic">🍵</div><h4>Церемонії присутності</h4><p>Чайна церемонія на заході сонця, матча-ритуал, медитації та вечірні рефлексії під місяцем.</p></div>
+      <div class="ab"><div class="ic">♨️</div><h4>Тіло і відновлення</h4><p>Традиційний хамам у спа, цигун, вечері від шефа і повільне життя без розкладу «з дев'ятої до шостої».</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Програма</h2>
+    <p class="sub">Натисни на день, щоб розгорнути.</p>
+
+    <details class="day" open>
+      <summary><span class="dn">День 1 · Прибуття</span><span class="dt">Середа, 23 вересня</span><span class="dd">заїзд · чай · вечеря</span><span class="chev">+</span></summary>
+      <div class="body">
+        <div class="ev"><div><div class="tm">15:00</div><div class="loc">Susona</div></div><div><h5>Заселення та зустріч</h5><p>Тепла зустріч, час облаштуватися і перше знайомство з атмосферою Susona.</p></div></div>
+        <div class="ev"><div><div class="tm">17:30</div><div class="loc">Talay</div></div><div><h5>Чайна церемонія на заході сонця та медитація</h5><p>Церемонія, де кожен ковток повертає присутність, рівновагу і внутрішній спокій.</p></div></div>
+        <div class="ev"><div><div class="tm">19:30</div></div><div><h5>Легка вечеря</h5></div></div>
+        <div class="ev"><div><div class="tm">20:00–23:00</div><div class="loc">Ezi</div></div><div><h5>Вечеря в Ezi</h5><p>Гастрономічний вечір, що відкриває багату кулінарну спадщину Егейського узбережжя.</p></div></div>
+      </div>
+    </details>
+
+    <details class="day">
+      <summary><span class="dn">День 2 · Перезавантаження</span><span class="dt">Четвер, 24 вересня</span><span class="dd">дихання · море · DJ-сет</span><span class="chev">+</span></summary>
+      <div class="body">
+        <div class="ev"><div><div class="tm">08:00–08:45</div><div class="loc">Susona Beach</div></div><div><h5>Дихальна практика на світанку</h5><p>Сонце сходить над Егейським морем — повертаємось до себе через кероване дихання.</p></div></div>
+        <div class="ev"><div><div class="tm">07:00–11:00</div><div class="loc">Ezi</div></div><div><h5>Сніданок</h5><p>Неквапливий ранок зі свіжими сезонними продуктами і видом на море.</p></div></div>
+        <div class="ev"><div><div class="tm">13:00–17:00</div><div class="loc">Suyah</div></div><div><h5>Live DJ-сет біля басейну</h5><p>Відпочинок біля басейну, егейське сонце і легкий ритм острівного життя.</p></div></div>
+        <div class="ev"><div><div class="tm">20:00–22:00</div><div class="loc">Ezi</div></div><div><h5>Вечеря</h5></div></div>
+      </div>
+    </details>
+
+    <details class="day">
+      <summary><span class="dn">День 3 · Ясність</span><span class="dt">Пʼятниця, 25 вересня</span><span class="dd">хамам · цигун · захід сонця</span><span class="chev">+</span></summary>
+      <div class="body">
+        <div class="ev"><div><div class="tm">08:00–08:45</div><div class="loc">Susona Beach</div></div><div><h5>Дихальна практика на світанку</h5><p>Зустрічаємо день диханням біля моря: пробуджуємо тіло, заспокоюємо думки.</p></div></div>
+        <div class="ev"><div><div class="tm">07:00–11:00</div><div class="loc">Ezi</div></div><div><h5>Сніданок</h5></div></div>
+        <div class="ev"><div><div class="tm">13:00–15:00</div><div class="loc">Susona Spa</div></div><div><h5>Ритуал хамаму</h5><p>Традиційний хамам, що очищає, відновлює і глибоко розслабляє тіло та розум.</p></div></div>
+        <div class="ev"><div><div class="tm">18:30–19:15</div><div class="loc">Talay</div></div><div><h5>Цигун</h5><p>Мʼяка практика, що повертає баланс, енергію і внутрішню гармонію.</p></div></div>
+        <div class="ev"><div><div class="tm">20:00–22:00</div><div class="loc">OctoZen</div></div><div><h5>«Балкон любові» — вечеря на заході сонця</h5><p>Вечір, де вишукана кухня, авторські коктейлі та панорама Егейського моря зустрічаються в камерній атмосфері.</p></div></div>
+      </div>
+    </details>
+
+    <details class="day">
+      <summary><span class="dn">День 4 · Звʼязок</span><span class="dt">Субота, 26 вересня</span><span class="dd">хамам · матча · вечеря від шефа</span><span class="chev">+</span></summary>
+      <div class="body">
+        <div class="ev"><div><div class="tm">07:00–11:00</div><div class="loc">Ezi</div></div><div><h5>Сніданок</h5></div></div>
+        <div class="ev"><div><div class="tm">13:00–15:00</div><div class="loc">Susona Spa</div></div><div><h5>Ритуал хамаму</h5><p>Глибоке розслаблення, оновлення і справжнє відчуття добробуту.</p></div></div>
+        <div class="ev"><div><div class="tm">17:00–17:30</div><div class="loc">Talay</div></div><div><h5>Матча-церемонія</h5><p>Усвідомлений ритуал матчі — свято присутності, рівноваги і мистецтва повільного життя.</p></div></div>
+        <div class="ev"><div><div class="tm">19:30–21:00</div><div class="loc">Monteverdi</div></div><div><h5>Авторська вечеря від шефа</h5><p>Фірмове меню — вишукана кулінарна подорож сезонними смаками Егейського узбережжя.</p></div></div>
+        <div class="ev"><div><div class="tm">21:30</div><div class="loc">Susona Beach</div></div><div><h5>Рефлексія під місяцем</h5><p>Завершуємо день диханням, медитацією і тихою рефлексією біля моря під місячним світлом.</p></div></div>
+      </div>
+    </details>
+
+    <details class="day">
+      <summary><span class="dn">День 5 · Післясяйво</span><span class="dt">Неділя, 27 вересня</span><span class="dd">рух · подяка · виїзд</span><span class="chev">+</span></summary>
+      <div class="body">
+        <div class="ev"><div><div class="tm">08:30–09:15</div><div class="loc">Susona Beach</div></div><div><h5>Ранковий рух і дихання</h5><p>Мʼяко входимо в ранок: усвідомлений рух і дихання, що повертають енергію та ясність.</p></div></div>
+        <div class="ev"><div><div class="tm">07:00–11:00</div><div class="loc">Ezi</div></div><div><h5>Фірмовий сніданок</h5></div></div>
+        <div class="ev"><div><div class="tm">12:30–13:30</div></div><div><h5>Закриваюче коло</h5><p>Момент, щоб озирнутися, подякувати і відсвяткувати спільну подорож.</p></div></div>
+        <div class="ev"><div><div class="tm">14:00</div></div><div><h5>Виїзд</h5></div></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="author-sec">
+  <div class="wrap author-grid">
+    <div class="author-photo"></div>
+    <div class="author-txt">
+      <h2>Хто веде</h2>
+      <p><strong style="color:var(--txt)">Влад Задірака</strong> — практик цигун і тілесних оздоровчих практик. Веду мʼяко і по-людськи: дихання, рух, чай і тиша замість езотерики й пафосу.</p>
+      <p>Цей ретрит — не марафон практик, а простір, де тіло само згадує, як відпочивати. Маленька група, особиста увага кожному.</p>
+    </div>
+  </div>
+</section>
+
+<section id="zayavka">
+  <div class="wrap">
+    <h2>Забронювати місце</h2>
+    <p class="sub">Місць мало — група камерна. Залиш контакти, і я особисто звʼяжуся з тобою, розповім деталі та вартість.</p>
+    <div class="form-card">
+      <div id="lead-step">
+        <form id="lead-form" novalidate>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="tel" name="phone" placeholder="Телефон (з кодом країни)" required>
+          <button type="submit" class="btn">Надіслати заявку</button>
+        </form>
+        <p class="note">🔒 Дані конфіденційні та потрібні лише для звʼязку щодо ретриту.</p>
+      </div>
+      <div id="lead-thanks" style="display:none">
+        <h3 class="serif" style="font-size:30px;margin-bottom:10px">Дякую! 🤍</h3>
+        <p style="color:var(--mut)">Заявка отримана. Я звʼяжуся з тобою найближчим часом.</p>
+      </div>
+    </div>
+    <p class="tg-line">Швидше — напиши мені напряму: <a href="https://telegram.me/zadirakacigun" target="_blank" rel="noopener">@zadirakacigun</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Ретрит із Владом Задіракою · Susona Bodrum · 23–27 вересня 2026<br>Контакти: zadiraka.wellness@gmail.com</div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('lead-form'); if(!form)return;
+  form.addEventListener('submit',function(e){e.preventDefault();
+    var email=form.email.value.trim(),phone=form.phone.value.trim();
+    if(!email||email.indexOf("@")<1){form.email.focus();return;}
+    if(!phone){form.phone.focus();return;}
+    var LU='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
+    var pd=new URLSearchParams({email:email,phone:phone,lang:'Українська (UA)',page:location.pathname,source:'retreat-bodrum-0926',sheet:'Retreat'});
+    try{if(navigator.sendBeacon){navigator.sendBeacon(LU,pd);}else{fetch(LU,{method:'POST',mode:'no-cors',body:pd});}}catch(err){}
+    document.getElementById('lead-step').style.display='none';
+    document.getElementById('lead-thanks').style.display='block';
+  });
+})();
+</script>
+</body>
+</html>
