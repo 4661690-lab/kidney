@@ -487,9 +487,10 @@ document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('clic
         </form>
       </div>
       <div id="lead-thanks" style="display:none">
-        <h3 class="modal-title">Дякуємо!</h3>
-        <p class="modal-note">Ми отримали заявку і зв’яжемося з тобою, щоб дати доступ до курсу.</p>
-        <button class="btn" id="thanks-close">Закрити</button>
+        <h3 class="modal-title">Секунду…</h3>
+        <p class="modal-note">Відкриваємо сторінку оплати 💳 Якщо не відкрилась автоматично — натисни кнопку нижче.</p>
+        <a class="btn" data-pay href="https://secure.wayforpay.com/button/bfac215a05b30">Перейти до оплати →</a>
+        <button class="btn" id="thanks-close" style="display:none">Закрити</button>
       </div>
     </div>
   </div>
@@ -499,7 +500,7 @@ document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('clic
   var modal=document.getElementById('lead-modal');
   function openM(e){if(e)e.preventDefault();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
   function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
-  document.querySelectorAll('a.btn[href="#"]').forEach(function(b){b.addEventListener('click',openM);});
+  document.querySelectorAll('a.btn:not([data-pay])').forEach(function(b){b.addEventListener('click',openM);});
   document.getElementById('modal-close').addEventListener('click',closeM);
   document.getElementById('thanks-close').addEventListener('click',closeM);
   modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
@@ -521,6 +522,7 @@ document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('clic
     if(window.fbq)fbq('track','Lead');
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
+    setTimeout(function(){window.location.href='https://secure.wayforpay.com/button/bfac215a05b30';},600);
   });
 })();
 </script>
