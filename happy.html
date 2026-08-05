@@ -423,9 +423,12 @@ document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;})
         </form>
       </div>
       <div id="lead-thanks" style="display:none">
-        <h3 class="modal-title">Секунду…</h3>
-        <p class="modal-note">Открываем страницу оплаты 💳 Если не открылась автоматически — нажми кнопку ниже.</p>
-        <a class="btn" data-pay href="https://secure.wayforpay.com/button/bd6ae2763dd06">Перейти к оплате →</a>
+        <h3 class="modal-title">Остался один шаг 💫</h3>
+        <p class="modal-note">Выбери, какой картой будешь платить, и откроется страница оплаты. Карты СНГ, Казахстана и другие в первой кнопке.</p>
+        <a class="btn" data-pay="boosty" href="https://boosty.to/zadirakacigun/posts/a83d2094-2c03-4c52-9c31-7394787e3fc6">Оплатить картой СНГ →</a>
+        <div style="height:10px"></div>
+        <a class="btn" data-pay="wfp" href="https://secure.wayforpay.com/button/bd6ae2763dd06" style="background:#141414;color:var(--orange)">Оплатить европейской картой →</a>
+        <div class="modal-fine">Если оплата не проходит, напиши на zadiraka.wellness@gmail.com, поможем.</div>
         <button class="btn" id="thanks-close" style="display:none">Закрыть</button>
       </div>
     </div>
@@ -454,7 +457,6 @@ document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;})
     if(window.fbq)fbq('track','Lead');
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
-    setTimeout(function(){window.location.href='https://secure.wayforpay.com/button/bd6ae2763dd06';},600);
   });
 })();
 </script>
@@ -463,5 +465,8 @@ document.querySelectorAll(".js-tomorrow").forEach(function(e){e.textContent=t;})
 function upd(){if(window.scrollY>window.innerHeight*0.85){fb.classList.add('show');}else{fb.classList.remove('show');}}
 window.addEventListener('scroll',upd,{passive:true});upd();})();
 </script>
+<script>
+(function(){document.querySelectorAll('a[data-pay]').forEach(function(a){a.addEventListener('click',function(){var n=a.getAttribute('data-pay');try{if(window.clarity){clarity('event','pay_'+n);clarity('set','pay_click',n);}}catch(_){}try{if(window.fbq)fbq('track','InitiateCheckout');}catch(_){}},{passive:true});});})();
+</script>
 </body>
-</html>
+    </html>
