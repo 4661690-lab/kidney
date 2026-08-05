@@ -1,6 +1,10 @@
 {
   "routes": [
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/smmsuccess", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/smmsuccess.html" },
+    { "src": "/smmsuccess", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/smmsuccess.html" },
+    { "src": "/smmfail", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/smmfail.html" },
+    { "src": "/smmfail", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/smmfail.html" },
     { "src": "/smmhappy", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/smmhappy.html" },
     { "src": "/smmhappy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/smmhappy.html" },
     { "src": "/retreatbodrum0926", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/retreatbodrum0926.html" },
