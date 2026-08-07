@@ -73,11 +73,16 @@ h2{font-size:clamp(28px,4.2vw,40px);text-align:center;margin-bottom:14px}
 .float-bar .btn{margin:0;padding:14px 26px;font-size:15px}
 body.has-bar{padding-bottom:88px}
 @media(max-width:420px){.fb-price{font-size:17px}.float-bar .btn{padding:13px 18px;font-size:14px}}
-.rev-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:6px 0 16px;margin-top:26px}
-.rev-strip::-webkit-scrollbar{height:6px}
+.rev-wrap{position:relative}
+.rev-strip{display:flex;gap:16px;overflow-x:auto;padding:8px 2px 18px;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.rev-strip::-webkit-scrollbar{height:8px}
 .rev-strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
-.rev-strip img{flex:0 0 auto;height:clamp(300px,56vh,430px);width:auto;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start;display:block}
-.rev-hint{color:var(--mut2);font-size:13.5px;text-align:center}
+.rev-strip img{height:clamp(400px,62vh,560px);width:auto;border-radius:var(--rad);border:1px solid var(--line);flex:0 0 auto;scroll-snap-align:start;box-shadow:0 14px 44px rgba(0,0,0,.4)}
+.rev-nav{position:absolute;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;background:var(--gold);color:#14161a;border:none;display:flex;align-items:center;justify-content:center;font-size:30px;line-height:1;cursor:pointer;z-index:5;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:.2s}
+.rev-nav:hover{background:var(--gold2)}
+.rev-nav.prev{left:-6px;padding-right:3px}
+.rev-nav.next{right:-6px;padding-left:3px}
+@media(max-width:600px){.rev-nav{width:44px;height:44px;font-size:25px}.rev-nav.prev{left:2px}.rev-nav.next{right:2px}}
 .faq{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;background:var(--card);overflow:hidden}
 .faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;display:flex;justify-content:space-between;gap:14px}
 .faq summary::-webkit-details-marker{display:none}
@@ -184,27 +189,30 @@ footer{padding:40px 0 60px;text-align:center;color:var(--mut2);font-size:13.5px;
   <div class="wrap">
     <h2>Что пишут после практик</h2>
     <p class="sub">Курс новый, но практики, из которых он собран, я веду годами. Это отзывы с моих эфиров, медитаций и программ.</p>
-    <div class="rev-strip">
-      <img src="/assets/reviews/vidguk1.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk2.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk3.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk4.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk5.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk6.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk7.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk8.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk9.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk10.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk11.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk12.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk13.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk14.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk15.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk16.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk17.jpg" alt="Отзыв участника практик" loading="lazy">
-      <img src="/assets/reviews/vidguk18.jpg" alt="Отзыв участника практик" loading="lazy">
+    <div class="rev-wrap">
+      <button class="rev-nav prev" aria-label="Назад" type="button">&#8249;</button>
+      <div class="rev-strip">
+        <img src="/assets/reviews/vidguk1.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk2.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk3.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk4.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk5.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk6.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk7.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk8.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk9.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk10.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk11.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk12.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk13.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk14.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk15.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk16.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk17.jpg" alt="Отзыв участника практик" loading="lazy">
+        <img src="/assets/reviews/vidguk18.jpg" alt="Отзыв участника практик" loading="lazy">
+      </div>
+      <button class="rev-nav next" aria-label="Вперёд" type="button">&#8250;</button>
     </div>
-    <div class="rev-hint">Листай вбок</div>
   </div>
 </section>
 
@@ -295,6 +303,9 @@ footer{padding:40px 0 60px;text-align:center;color:var(--mut2);font-size:13.5px;
     document.getElementById('lead-thanks').style.display='block';
   });
 })();
+</script>
+<script>
+document.querySelectorAll('.rev-wrap').forEach(function(w){var s=w.querySelector('.rev-strip');function step(){return Math.min(s.clientWidth*0.85,440);}var p=w.querySelector('.prev'),n=w.querySelector('.next');if(p)p.onclick=function(){s.scrollBy({left:-step(),behavior:'smooth'});};if(n)n.onclick=function(){s.scrollBy({left:step(),behavior:'smooth'});};});
 </script>
 </body>
 </html>
