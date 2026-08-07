@@ -420,7 +420,7 @@ document.querySelectorAll('.rev-wrap').forEach(function(w){var s=w.querySelector
   upd();
 })();
 // PAY_URL: подставить ссылку оплаты WayForPay
-var PAY_URL="";
+var PAY_URL="https://secure.wayforpay.com/button/bed0fffb20ae2";
 document.querySelectorAll('a[data-pay]').forEach(function(a){
   if(PAY_URL){a.setAttribute('href',PAY_URL);}
   else{a.addEventListener('click',function(e){e.preventDefault();alert('Ссылка на оплату будет добавлена');});}
