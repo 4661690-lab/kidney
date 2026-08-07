@@ -41,6 +41,8 @@
     { "src": "/(.*)", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/zadiraka/index.html" },
     { "handle": "filesystem" },
     { "src": "/privacy", "dest": "/privacy.html" },
+    { "src": "/detoxuasuccess", "dest": "/detoxuasuccess.html" },
+    { "src": "/detoxuafail", "dest": "/detoxuafail.html" },
     { "src": "/rukidney", "dest": "/rukidney.html" },
     { "src": "/ua", "dest": "/uaindex.html" }
   ]
