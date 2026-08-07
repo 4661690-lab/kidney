@@ -44,8 +44,10 @@ strong{color:var(--txt);font-weight:600}
 .btn-note{text-align:center;color:var(--mut2);font-size:13.5px;margin-top:12px}
 
 /* 1. HERO */
-.hero{min-height:100svh;display:flex;align-items:center;padding:40px 0;border-bottom:1px solid var(--line);
- background:radial-gradient(900px 500px at 50% 0%,rgba(217,201,163,.07),transparent 62%)}
+.hero{min-height:100svh;display:flex;align-items:center;padding:40px 0;border-bottom:1px solid var(--line);position:relative;
+ background:linear-gradient(180deg,rgba(12,13,15,.86),rgba(12,13,15,.9) 55%,var(--bg) 100%),url('/assets/hero.jpg') center 22%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 50% 0%,rgba(217,201,163,.08),transparent 62%);pointer-events:none}
+.hero-in{position:relative;z-index:2}
 .hero-in{width:100%;text-align:center}
 .pre{color:var(--mut2);font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:26px}
 h1{font-size:clamp(52px,15vw,104px);font-weight:800;letter-spacing:.02em;line-height:.98;margin-bottom:22px}
@@ -126,6 +128,10 @@ body{padding-bottom:0}
 body.has-bar{padding-bottom:92px}
 
 /* 8b. REVIEWS */
+.photo-band{height:clamp(240px,42vh,420px);background-size:cover;background-position:center 28%;background-repeat:no-repeat;position:relative;border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
+.photo-band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,13,15,.55),rgba(12,13,15,.25) 45%,rgba(12,13,15,.85))}
+.photo-band .cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;z-index:2;color:var(--txt);font-size:16.5px;font-weight:500;padding:0 24px;text-shadow:0 2px 14px rgba(0,0,0,.8)}
+.inline-photo{width:100%;border-radius:12px;border:1px solid var(--line);display:block;margin-top:24px}
 .rev-wrap{position:relative}
 .rev-strip{display:flex;gap:16px;overflow-x:auto;padding:8px 2px 18px;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
 .rev-strip::-webkit-scrollbar{height:8px}
@@ -233,6 +239,10 @@ footer{padding:36px 0 54px;text-align:center;color:var(--mut2);font-size:13.5px}
   </div>
 </section>
 
+<div class="photo-band" style="background-image:url('/assets/author.jpg')">
+  <div class="cap">Ничего сложного. Только то, что тело умеет само</div>
+</div>
+
 <!-- 5. ЗАМЕР -->
 <section class="measure-sec">
   <div class="wrap">
@@ -282,6 +292,10 @@ footer{padding:36px 0 54px;text-align:center;color:var(--mut2);font-size:13.5px}
     <div style="margin-top:34px"><a href="#" class="btn" data-pay>НАЧАТЬ ДЫШАТЬ</a></div>
   </div>
 </section>
+
+<div class="photo-band" style="background-image:url('/assets/vlad3.jpg');background-position:center 40%">
+  <div class="cap">Десять минут в день. Дома, в кровати или на берегу</div>
+</div>
 
 <!-- 7. ЧТО ВХОДИТ -->
 <section>
@@ -363,6 +377,7 @@ footer{padding:36px 0 54px;text-align:center;color:var(--mut2);font-size:13.5px}
 <!-- 10. ГАРАНТИЯ -->
 <section>
   <div class="wrap">
+    <img class="inline-photo" src="/assets/vlad2.jpg" alt="Практика" loading="lazy" style="margin-bottom:26px;margin-top:0">
     <div class="guar">
       <h2>Весь риск на мне</h2>
       <p>Если в течение 7 дней поймёшь, что не твоё, напиши одно слово: <span class="word">возврат</span></p>
