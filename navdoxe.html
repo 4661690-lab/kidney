@@ -115,6 +115,16 @@ h1{font-size:clamp(52px,15vw,104px);font-weight:800;letter-spacing:.02em;line-he
 .author{display:grid;gap:24px;margin-top:24px}
 .aphoto{width:100%;max-width:300px;margin:0 auto;aspect-ratio:3/4;border-radius:var(--rad);background:url('/assets/author.jpg') center 30%/cover no-repeat;border:1px solid var(--line)}
 
+/* STICKY CTA */
+.float-bar{position:fixed;left:0;right:0;bottom:0;z-index:900;
+ background:rgba(12,13,15,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+ border-top:1px solid var(--line);padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+ transform:translateY(130%);transition:transform .32s ease;box-shadow:0 -10px 30px rgba(0,0,0,.45)}
+.float-bar.show{transform:translateY(0)}
+.float-bar .btn{margin:0 auto;padding:16px 22px;font-size:15px;max-width:460px}
+body{padding-bottom:0}
+body.has-bar{padding-bottom:92px}
+
 /* 8b. REVIEWS */
 .rev-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 0 16px;margin-top:22px}
 .rev-strip::-webkit-scrollbar{height:6px}
@@ -381,9 +391,27 @@ footer{padding:36px 0 54px;text-align:center;color:var(--mut2);font-size:13.5px}
   <div class="wrap">«На вдохе» — онлайн-курс дыхания · Влад Задирака<br>zadiraka.wellness@gmail.com</div>
 </footer>
 
+<div class="float-bar" id="float-bar">
+  <a href="#" class="btn" data-pay>НАЧАТЬ ДЫШАТЬ ЗА 9 $</a>
+</div>
+
 <script>
 // PAY_URL: подставить ссылку оплаты WayForPay
 var PAY_URL="";
+(function(){
+  var fb=document.getElementById('float-bar');
+  if(!fb)return;
+  document.body.classList.add('has-bar');
+  function upd(){
+    var past=window.scrollY>window.innerHeight*0.75;
+    var doc=document.documentElement;
+    var atEnd=(window.innerHeight+window.scrollY)>=(doc.scrollHeight-260);
+    if(past&&!atEnd){fb.classList.add('show');}else{fb.classList.remove('show');}
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
+})();
 document.querySelectorAll('a[data-pay]').forEach(function(a){
   if(PAY_URL){a.setAttribute('href',PAY_URL);}
   else{a.addEventListener('click',function(e){e.preventDefault();alert('Ссылка на оплату будет добавлена');});}
