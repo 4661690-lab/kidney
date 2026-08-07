@@ -115,6 +115,13 @@ h1{font-size:clamp(52px,15vw,104px);font-weight:800;letter-spacing:.02em;line-he
 .author{display:grid;gap:24px;margin-top:24px}
 .aphoto{width:100%;max-width:300px;margin:0 auto;aspect-ratio:3/4;border-radius:var(--rad);background:url('/assets/author.jpg') center 30%/cover no-repeat;border:1px solid var(--line)}
 
+/* 8b. REVIEWS */
+.rev-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 0 16px;margin-top:22px}
+.rev-strip::-webkit-scrollbar{height:6px}
+.rev-strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:100px}
+.rev-strip img{flex:0 0 auto;height:clamp(300px,58vh,440px);width:auto;border-radius:12px;border:1px solid var(--line);scroll-snap-align:start;display:block}
+.rev-hint{color:var(--mut2);font-size:13.5px;text-align:center}
+
 /* 10. GUARANTEE */
 .guar{background:var(--card);border:1px solid var(--acc);border-radius:var(--rad);padding:30px 24px}
 .guar h2{margin-bottom:16px}
@@ -297,7 +304,34 @@ footer{padding:36px 0 54px;text-align:center;color:var(--mut2);font-size:13.5px}
   </div>
 </section>
 
-<!-- МЕСТО ПОД ОТЗЫВЫ (появится после первых покупателей) -->
+<!-- 8b. ОТЗЫВЫ -->
+<section>
+  <div class="wrap">
+    <h2>Что пишут после практик</h2>
+    <p>Курс новый, но практики, из которых он собран, я веду годами. Это отзывы людей с моих эфиров, медитаций и программ.</p>
+    <div class="rev-strip">
+      <img src="/assets/reviews/vidguk1.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk2.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk3.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk4.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk5.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk6.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk7.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk8.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk9.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk10.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk11.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk12.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk13.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk14.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk15.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk16.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk17.jpg" alt="Отзыв участника практик" loading="lazy">
+      <img src="/assets/reviews/vidguk18.jpg" alt="Отзыв участника практик" loading="lazy">
+    </div>
+    <div class="rev-hint">Листай вбок</div>
+  </div>
+</section>
 
 <!-- 9. КОМУ НЕЛЬЗЯ -->
 <section>
