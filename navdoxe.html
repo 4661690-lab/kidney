@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>«На вдохе». Курс дыхания на 7 дней. 10 минут в день.</title>
+<meta name="description" content="Онлайн-курс дыхания: засыпать без телефона, просыпаться без кофе, гасить тревогу за 90 секунд. Замер результата до и после. 9 $.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2095117397778923');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2095117397778923&ev=PageView&noscript=1"/></noscript>
+<meta name="facebook-domain-verification" content="vuqd973kg2tldn7yuxbosbri90qfg7" />
+<style>
+:root{
+  --bg:#0c0d0f;--bg2:#121417;--card:#16191d;--line:#242830;
+  --txt:#eceef1;--mut:#9aa2ad;--mut2:#6f7681;
+  --acc:#d9c9a3;--acc2:#e9dcbd;--ok:#8fb996;
+  --rad:14px;--maxw:760px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(25px,5.4vw,34px);font-weight:700;line-height:1.2;margin-bottom:20px;letter-spacing:-.01em}
+p{margin-bottom:16px;color:var(--mut)}
+p.lead{color:var(--txt)}
+strong{color:var(--txt);font-weight:600}
+.btn{display:block;width:100%;max-width:420px;margin:0 auto;background:var(--acc);color:#14161a;font-weight:700;font-size:16px;letter-spacing:.06em;text-align:center;padding:19px 26px;border-radius:100px;text-decoration:none;transition:.2s;border:none;cursor:pointer}
+.btn:hover{background:var(--acc2)}
+.btn-note{text-align:center;color:var(--mut2);font-size:13.5px;margin-top:12px}
+
+/* 1. HERO */
+.hero{min-height:100svh;display:flex;align-items:center;padding:40px 0;border-bottom:1px solid var(--line);
+ background:radial-gradient(900px 500px at 50% 0%,rgba(217,201,163,.07),transparent 62%)}
+.hero-in{width:100%;text-align:center}
+.pre{color:var(--mut2);font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:26px}
+h1{font-size:clamp(52px,15vw,104px);font-weight:800;letter-spacing:.02em;line-height:.98;margin-bottom:22px}
+.hero .sub{color:var(--mut);font-size:16.5px;max-width:520px;margin:0 auto 18px}
+.hero .measure{color:var(--txt);font-size:16px;max-width:480px;margin:0 auto 26px}
+.price{font-size:38px;font-weight:800;color:var(--acc);line-height:1.1;margin-bottom:4px}
+.price-note{color:var(--mut);font-size:15px;margin-bottom:4px}
+.price-sub{color:var(--mut2);font-size:14px;margin-bottom:26px}
+
+/* 2. PAIN */
+.sym{display:grid;gap:10px;margin-top:26px}
+.sym label{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:15px 17px;cursor:pointer;transition:.15s;font-size:15.8px;color:var(--txt)}
+.sym label:hover{border-color:#39404b}
+.sym input{display:none}
+.box{flex:0 0 21px;height:21px;border:1.5px solid #3a4149;border-radius:6px;margin-top:1px;position:relative;transition:.15s}
+.sym input:checked + .box{background:var(--acc);border-color:var(--acc)}
+.sym input:checked + .box::after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;border:solid #14161a;border-width:0 2.2px 2.2px 0;transform:rotate(45deg)}
+.after-sym{margin-top:22px;color:var(--txt)}
+
+/* 3. ACCENT */
+.accent-line{font-size:clamp(26px,6vw,40px);font-weight:800;line-height:1.15;color:var(--acc);margin-bottom:24px;letter-spacing:-.01em}
+
+/* 4. CARDS */
+.cards{display:grid;gap:14px;margin-top:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:24px}
+.card .n{color:var(--acc);font-size:13px;font-weight:700;letter-spacing:.12em;margin-bottom:10px}
+.card h3{font-size:19px;font-weight:600;margin-bottom:10px}
+.card p{margin-bottom:0;font-size:15.5px}
+
+/* 5. MEASURE */
+.measure-sec{background:var(--bg2)}
+.mlist{counter-reset:m;display:grid;gap:14px;margin:24px 0 28px}
+.mlist li{list-style:none;counter-increment:m;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:var(--rad);padding:18px 20px}
+.mlist li::before{content:counter(m);color:var(--acc);font-weight:700;font-size:13px;display:block;margin-bottom:6px}
+.mlist b{display:block;font-size:17px;margin-bottom:4px;color:var(--txt)}
+.mlist span{color:var(--mut);font-size:15.5px}
+.diary{background:var(--card);border:1px dashed #3a4149;border-radius:var(--rad);padding:24px;margin-top:26px}
+.diary .dh{color:var(--mut2);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;text-align:center}
+.diary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dcol{border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--bg)}
+.dcol .dt{font-weight:700;margin-bottom:14px;font-size:15px}
+.dcol .row{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--mut);padding:9px 0;border-bottom:1px dashed var(--line)}
+.dcol .row:last-child{border-bottom:none}
+.dcol .row i{font-style:normal;color:#4b525c;letter-spacing:.1em}
+
+/* 6. PROGRAM */
+.days{display:grid;gap:12px;margin-top:24px}
+.dayrow{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px 22px}
+.dayrow .dnum{color:var(--acc);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.dayrow h3{font-size:18.5px;font-weight:600;margin-bottom:8px}
+.dayrow p{margin-bottom:0;font-size:15.5px}
+
+/* 7. VALUE */
+.vs{margin-top:24px;border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
+.vs .vrow{display:flex;justify-content:space-between;gap:18px;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--card);font-size:15.5px;align-items:flex-start}
+.vs .vrow:last-child{border-bottom:none}
+.vs .vrow span:first-child{color:var(--txt)}
+.vs .vprice{color:var(--mut);white-space:nowrap;font-variant-numeric:tabular-nums}
+.total{margin-top:22px;text-align:center;background:var(--card);border:1px solid var(--acc);border-radius:var(--rad);padding:26px 20px}
+.total .tv{color:var(--mut);font-size:16px;margin-bottom:6px}
+.total .tv b{color:var(--txt);font-size:22px}
+.total .tp{font-size:16px;color:var(--mut)}
+.total .tp b{color:var(--acc);font-size:40px;font-weight:800;display:block;margin-top:4px}
+.forever{text-align:center;color:var(--mut2);font-size:14.5px;margin-top:18px}
+
+/* 8. AUTHOR */
+.author{display:grid;gap:24px;margin-top:24px}
+.aphoto{width:100%;max-width:300px;margin:0 auto;aspect-ratio:3/4;border-radius:var(--rad);background:url('/assets/author.jpg') center 30%/cover no-repeat;border:1px solid var(--line)}
+
+/* 10. GUARANTEE */
+.guar{background:var(--card);border:1px solid var(--acc);border-radius:var(--rad);padding:30px 24px}
+.guar h2{margin-bottom:16px}
+.word{display:inline-block;background:var(--acc);color:#14161a;font-weight:800;padding:3px 14px;border-radius:8px;font-size:20px;letter-spacing:.02em}
+
+/* 11. FAQ */
+.faq{border:1px solid var(--line);border-radius:var(--rad);margin-bottom:10px;background:var(--card);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:19px 22px;font-weight:600;font-size:16.5px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq .pl{color:var(--acc);font-size:22px;line-height:1;transition:.2s;flex-shrink:0}
+.faq[open] .pl{transform:rotate(45deg)}
+.faq .a{padding:0 22px 20px;color:var(--mut);font-size:15.8px}
+.final{text-align:center;padding-top:56px}
+.final h1{font-size:clamp(44px,13vw,86px);margin-bottom:20px}
+.final .fl{color:var(--mut);font-size:16.5px;margin-bottom:8px}
+.final .fp{font-size:34px;font-weight:800;color:var(--acc);margin:14px 0 28px}
+footer{padding:36px 0 54px;text-align:center;color:var(--mut2);font-size:13.5px}
+@media(min-width:720px){
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .sym{grid-template-columns:1fr 1fr}
+  .author{grid-template-columns:280px 1fr;align-items:center}
+  .aphoto{margin:0}
+  section{padding:76px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. ПЕРВЫЙ ЭКРАН -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="pre">7 дней. Опыт не нужен. Можно лёжа.</div>
+    <h1>НА ВДОХЕ</h1>
+    <p class="sub">Онлайн-курс дыхания: 10 минут в день, по физиологии, без эзотерики. Научишься засыпать без телефона, просыпаться без кофе и гасить тревогу за 90 секунд.</p>
+    <p class="measure">В первый день ты замеришь три цифры. В седьмой замеришь снова. Разницу увидишь сам.</p>
+    <div class="price">9 $</div>
+    <div class="price-note">и всё, никаких доплат внутри</div>
+    <div class="price-sub">Возврат в течение 7 дней без вопросов.</div>
+    <a href="#" class="btn" data-pay>НАЧАТЬ ДЫШАТЬ</a>
+  </div>
+</section>
+
+<!-- 2. БОЛЬ -->
+<section>
+  <div class="wrap">
+    <h2>Ты спишь восемь часов и встаёшь разбитым</h2>
+    <p>Днём туман в голове. После обеда тебя выключает. К вечеру раздражение на людей, которых любишь. Ночью ты листаешь телефон до часу, потому что «хоть немного времени для себя», а утром всё по кругу.</p>
+    <p class="lead">Ты уже сдал анализы. Там всё в норме.</p>
+    <p>Проблема не в анализах. Твоя нервная система годами живёт в режиме выживания, и тело честно это показывает. А главный рычаг этого режима работает у тебя 20 тысяч раз в сутки: дыхание. Быстрое, верхом груди, ртом. Тело читает такое дыхание как сигнал опасности и держит тебя в тонусе, который ты называешь «я просто устал».</p>
+    <p class="lead" style="margin-top:28px;margin-bottom:0"><strong>Узнай себя:</strong></p>
+    <div class="sym">
+      <label><input type="checkbox"><span class="box"></span><span>Просыпаешься уставшим, сколько бы ни спал</span></label>
+      <label><input type="checkbox"><span class="box"></span><span>Просыпаешься в три ночи и лежишь</span></label>
+      <label><input type="checkbox"><span class="box"></span><span>Туман в голове до первого кофе и после третьего</span></label>
+      <label><input type="checkbox"><span class="box"></span><span>Тяжесть и отёки, хотя «ничего такого не ел»</span></label>
+      <label><input type="checkbox"><span class="box"></span><span>Взвинченность на ровном месте, челюсть сжата, плечи у ушей</span></label>
+      <label><input type="checkbox"><span class="box"></span><span>Начинал медитировать и бросал на четвёртый день</span></label>
+    </div>
+    <p class="after-sym">Если отметил хотя бы два пункта, читай дальше. Это про тебя.</p>
+  </div>
+</section>
+
+<!-- 3. ПРОТИВ ЧЕГО ЭТОТ КУРС -->
+<section>
+  <div class="wrap">
+    <div class="accent-line">Это не медитация.<br>Это механика</div>
+    <p>Тебе говорили «просто помедитируй». Ты пробовал. Сидел в тишине, мысли орали, ты злился на себя и бросал. Это не твоя слабость: у новичков тихая медитация часто усиливает тревогу вместо того, чтобы снимать её.</p>
+    <p>Дыхание работает иначе. Ему не нужна твоя вера, настрой и «пустая голова». Выдох длиннее вдоха замедляет пульс механически, через блуждающий нерв. Это физиология, она срабатывает даже у скептиков. Особенно у скептиков.</p>
+    <p style="margin-bottom:0">И тебе говорили «выпей кофе». Кофе не даёт энергию, он блокирует сигнал усталости и берёт в долг. Через семь дней ты узнаешь, откуда энергия берётся на самом деле.</p>
+  </div>
+</section>
+
+<!-- 4. МЕХАНИЗМ -->
+<section>
+  <div class="wrap">
+    <h2>Почему это работает</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="n">1</div>
+        <h3>Выдох это тумблер</h3>
+        <p>На вдохе пульс ускоряется, на выдохе замедляется. Это вшито в тебя с рождения. Делая выдох длиннее вдоха, ты вручную переключаешь нервную систему в режим торможения. Не уговорами. Механически.</p>
+      </div>
+      <div class="card">
+        <div class="n">2</div>
+        <h3>Диафрагма это насос</h3>
+        <p>У тебя внутри мышца размером с тарелку, которая должна двигаться 20 тысяч раз в день и прокачивать всё, что под ней: печень, кишечник, венозный отток. У большинства она почти не работает. Тяжесть и застой это не «возраст», это выключенный насос.</p>
+      </div>
+      <div class="card">
+        <div class="n">3</div>
+        <h3>Дыхание единственный ручной доступ</h3>
+        <p>Сердцем, давлением и гормонами напрямую управлять нельзя. Дыханием можно. Это единственная функция нервной системы с ручным управлением, и оно бесплатное. Курс учит этим управлением пользоваться.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ЗАМЕР -->
+<section class="measure-sec">
+  <div class="wrap">
+    <h2>Не поверишь мне. Поверишь своим цифрам</h2>
+    <p>Курсы обещают «гармонию» и «ресурс». Проверить нельзя, поэтому веришь на слово.</p>
+    <p class="lead">Здесь по-другому. В первый день ты замеришь три показателя:</p>
+    <ol class="mlist">
+      <li><b>Контрольная пауза.</b><span>Сколько секунд ты спокойно живёшь без вдоха. Меньше 10 плохо, 20 норма, 40 отлично.</span></li>
+      <li><b>Частота дыхания в минуту.</b><span>Норма 10-14. У загнанного человека 16-20.</span></li>
+      <li><b>Куда идёт вдох.</b><span>Грудь или живот. Рука покажет.</span></li>
+    </ol>
+    <p style="margin-bottom:0">В седьмой день замеришь снова и положишь цифры рядом. У большинства контрольная пауза за неделю растёт на 20-40 процентов. Это не магия и не самовнушение. Это отклик тела на то, что им наконец занялись.</p>
+    <div class="diary">
+      <div class="dh">Дневник семи дней</div>
+      <div class="diary-grid">
+        <div class="dcol">
+          <div class="dt">День 1</div>
+          <div class="row"><span>Контрольная пауза</span><i>___ сек</i></div>
+          <div class="row"><span>Частота дыхания</span><i>___ /мин</i></div>
+          <div class="row"><span>Куда идёт вдох</span><i>_____</i></div>
+        </div>
+        <div class="dcol">
+          <div class="dt">День 7</div>
+          <div class="row"><span>Контрольная пауза</span><i>___ сек</i></div>
+          <div class="row"><span>Частота дыхания</span><i>___ /мин</i></div>
+          <div class="row"><span>Куда идёт вдох</span><i>_____</i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ПРОГРАММА -->
+<section>
+  <div class="wrap">
+    <h2>Семь дней, один урок в день, 10 минут</h2>
+    <p>Каждый урок: короткий разбор без воды, аудио-практика голосом, отметка в дневнике. Всё.</p>
+    <div class="days">
+      <div class="dayrow"><div class="dnum">День 1</div><h3>Как ты дышишь на самом деле</h3><p>Замер трёх цифр и первая практика выравнивания. Узнаешь, что тело делало все эти годы без тебя.</p></div>
+      <div class="dayrow"><div class="dnum">День 2</div><h3>Выдох сильнее вдоха</h3><p>Техника, которая снимает возбуждение за 60-90 секунд. Первый результат почувствуешь прямо во время урока.</p></div>
+      <div class="dayrow"><div class="dnum">День 3</div><h3>Диафрагма</h3><p>Включаем насос, который у тебя выключен. Мост к тяжести, застою и «телу как чужому».</p></div>
+      <div class="dayrow"><div class="dnum">День 4</div><h3>Вечер решает ночь</h3><p>Протокол засыпания: дыхание 4-7-8 лёжа в кровати вместо телефона. С этой ночи начинается другой сон.</p></div>
+      <div class="dayrow"><div class="dnum">День 5</div><h3>Утро без кофе</h3><p>Активирующее дыхание и свет. Узнаешь, что умеешь не только гасить себя, но и разгонять.</p></div>
+      <div class="dayrow"><div class="dnum">День 6</div><h3>Три минуты, когда накрыло</h3><p>Протокол для очереди, ссоры и звонка, от которого холодеет живот. С открытыми глазами, посреди людей, никто не заметит.</p></div>
+      <div class="dayrow"><div class="dnum">День 7</div><h3>Твой протокол и вторая цифра</h3><p>Повторный замер, сборка личной схемы: утро, вечер, аварийная кнопка. Дальше это работает без меня.</p></div>
+    </div>
+    <div style="margin-top:34px"><a href="#" class="btn" data-pay>НАЧАТЬ ДЫШАТЬ</a></div>
+  </div>
+</section>
+
+<!-- 7. ЧТО ВХОДИТ -->
+<section>
+  <div class="wrap">
+    <h2>Что ты получаешь за 9 долларов</h2>
+    <div class="vs">
+      <div class="vrow"><span>7 уроков по 10-12 минут, по одному в день</span><span class="vprice">30 $</span></div>
+      <div class="vrow"><span>7 аудио-практик голосом, остаются навсегда</span><span class="vprice">40 $</span></div>
+      <div class="vrow"><span>Карта дыхания: все протоколы на одной странице, распечатать и повесить</span><span class="vprice">15 $</span></div>
+      <div class="vrow"><span>Дневник семи дней с полями замера</span><span class="vprice">10 $</span></div>
+      <div class="vrow"><span>Экстренный набор: 3 аудио по 3 минуты (паника, бессонница в 3 ночи, злость)</span><span class="vprice">20 $</span></div>
+      <div class="vrow"><span>Общий чат курса: отметки, вопросы, такие же живые люди рядом</span><span class="vprice">15 $</span></div>
+      <div class="vrow"><span>Живой разбор вопросов: раз в месяц отвечаю голосом на всё, что накопилось в чате</span><span class="vprice">25 $</span></div>
+    </div>
+    <div class="total">
+      <div class="tv">Ценность: <b>155 $</b></div>
+      <div class="tp">Ты платишь:<b>9 $</b></div>
+    </div>
+    <div class="forever">Доступ к урокам и аудио не сгорает. Купил один раз, пользуешься всегда.</div>
+  </div>
+</section>
+
+<!-- 8. КТО ВЕДЁТ -->
+<section>
+  <div class="wrap">
+    <h2>Почему я</h2>
+    <div class="author">
+      <div class="aphoto"></div>
+      <div>
+        <p>Меня зовут Влад Задирака. Я 20 лет в практике: медитация, дыхание, работа с телом. Учился там, где это умеют делать веками: Шаолинь, традиционная китайская медицина, практики в Перу. А потом годы переводил всё это с языка монастырей на язык человека, у которого работа, дети и семь минут перед сном.</p>
+        <p>Последние четыре года я каждый день разбираю состояния людей, у которых «анализы в норме, а сил нет»: усталость, туман, тяжесть, срывы на близких. И вижу одно и то же: телу не нужны подвиги. Ему нужен ритм и правильный выдох.</p>
+        <p style="margin-bottom:0">В этот курс я собрал не всё, что знаю. Я собрал только то, что работает за семь дней и остаётся с тобой навсегда. Я не обещаю просветления. Я обещаю, что через неделю у тебя будут две цифры, которые не обманывают, и работающий протокол на каждый день.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- МЕСТО ПОД ОТЗЫВЫ (появится после первых покупателей) -->
+
+<!-- 9. КОМУ НЕЛЬЗЯ -->
+<section>
+  <div class="wrap">
+    <h2>Честно про противопоказания</h2>
+    <p>Техники с задержкой дыхания не подходят при беременности, эпилепсии, неконтролируемом высоком давлении и серьёзных болезнях сердца. Для этих случаев в курсе даны варианты без задержек, но при любых сомнениях сначала поговори со своим врачом.</p>
+    <p style="margin-bottom:0">Курс не лечит болезни и не заменяет врача. Он учит управлять состоянием: сном, энергией, реакцией на стресс.</p>
+  </div>
+</section>
+
+<!-- 10. ГАРАНТИЯ -->
+<section>
+  <div class="wrap">
+    <div class="guar">
+      <h2>Весь риск на мне</h2>
+      <p>Если в течение 7 дней поймёшь, что не твоё, напиши одно слово: <span class="word">возврат</span></p>
+      <p>Верну деньги без вопросов, без анкет и без «а что именно не понравилось». Аудио, которые успел скачать, останутся у тебя.</p>
+      <p style="margin-bottom:0">Ты рискуешь девятью долларами и неделей по десять минут. Против шанса впервые за годы высыпаться.</p>
+    </div>
+    <div style="margin-top:30px"><a href="#" class="btn" data-pay>НАЧАТЬ ДЫШАТЬ</a></div>
+  </div>
+</section>
+
+<!-- 11. ВОПРОСЫ -->
+<section style="border-bottom:none">
+  <div class="wrap">
+    <h2>Вопросы</h2>
+    <details class="faq"><summary>У меня нет времени<span class="pl">+</span></summary><div class="a">10 минут в день. Из них семь ты лежишь. Практика четвёртого дня делается в кровати вместо телефона, она экономит тебе время, а не тратит.</div></details>
+    <details class="faq"><summary>Я пробовал дыхательные практики, не сработало<span class="pl">+</span></summary><div class="a">Ты пробовал технику из рилса один раз. Здесь система: последовательность из семи шагов, замер и ритм. Работает не техника, работает порядок.</div></details>
+    <details class="faq"><summary>Я бросаю всё на третий день<span class="pl">+</span></summary><div class="a">Поэтому уроки открываются по одному в день, в чате отмечаются такие же живые люди, а в первый день ты фиксируешь цифру, которую захочешь перепроверить. Курс построен так, чтобы дойти было легче, чем бросить.</div></details>
+    <details class="faq"><summary>Это эзотерика?<span class="pl">+</span></summary><div class="a">Нет. Блуждающий нерв, CO2, диафрагма. Ни одной чакры за все семь дней.</div></details>
+    <details class="faq"><summary>Когда я могу начать?<span class="pl">+</span></summary><div class="a">Сразу после оплаты. Первый урок и дневник приходят в первую минуту, дальше по уроку в день.</div></details>
+    <details class="faq"><summary>Что после седьмого дня?<span class="pl">+</span></summary><div class="a">У тебя останется личный протокол, все аудио навсегда и общий чат курса. Дальше практика живёт без меня.</div></details>
+
+    <div class="final">
+      <h1>НА ВДОХЕ</h1>
+      <div class="fl">7 дней. 10 минут в день.</div>
+      <div class="fl">Две цифры, которые не обманывают.</div>
+      <div class="fp">9 $</div>
+      <a href="#" class="btn" data-pay>НАЧАТЬ ДЫШАТЬ ЗА 9 $</a>
+      <div class="btn-note">Возврат в течение 7 дней без вопросов</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">«На вдохе» — онлайн-курс дыхания · Влад Задирака<br>zadiraka.wellness@gmail.com</div>
+</footer>
+
+<script>
+// PAY_URL: подставить ссылку оплаты WayForPay
+var PAY_URL="";
+document.querySelectorAll('a[data-pay]').forEach(function(a){
+  if(PAY_URL){a.setAttribute('href',PAY_URL);}
+  else{a.addEventListener('click',function(e){e.preventDefault();alert('Ссылка на оплату будет добавлена');});}
+});
+</script>
+</body>
+</html>
