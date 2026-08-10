@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Awaken at Susona · Ретрит с Владом Задиракой · Бодрум, 23–27 сентября 2026</title>
+<title>Awaken at Susona · Ретрит с Владом Задиракой · Бодрум, сентябрь и октябрь 2026</title>
 <meta name="description" content="Пятидневный ретрит в Susona Bodrum: дыхательные практики, цигун, хаммам, чайные церемонии и медитации на берегу Эгейского моря.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +52,13 @@ h2{font-size:clamp(28px,4.6vw,40px);text-align:center;margin-bottom:14px}
 .sticky-cta .s1{background:var(--gold);color:#171207}
 .sticky-cta .s2{border:1px solid var(--gold);color:var(--gold)}
 body.has-sticky{padding-bottom:88px}
+.dates-grid{display:grid;gap:14px;max-width:640px;margin:26px auto 0}
+.dc{background:var(--card);border:1px solid var(--gold);border-radius:var(--rad);padding:24px;text-align:center}
+.dc .dv{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold);line-height:1.1}
+.dc .dnn{font-size:13.5px;color:var(--mut2);margin-top:7px}
+@media(min-width:620px){.dates-grid{grid-template-columns:1fr 1fr}}
+select.retreat-sel{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--txt);font-size:15.5px;margin-bottom:11px;font-family:'Inter',sans-serif;appearance:none}
+select.retreat-sel:focus{outline:none;border-color:var(--gold)}
 .poster{width:100%;display:block;border-radius:14px;border:1px solid var(--line);margin:0 auto 22px;max-width:520px}
 .poster-main{width:100%;display:block;border-radius:var(--rad);border:1px solid var(--line);max-width:560px;margin:34px auto 0;box-shadow:0 18px 50px rgba(0,0,0,.45)}
 .day .poster{margin-top:16px}
@@ -98,7 +105,7 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
     <h1>Awaken<br>at Susona</h1>
     <div class="subt">Пять дней перезагрузки, ясности и связи с собой</div>
     <div class="place">Susona Bodrum · Турция</div>
-    <div class="dates">23 — 27 сентября 2026 · 5 дней, 4 ночи</div>
+    <div class="dates">23–27 сентября · 7–11 октября 2026 · 5 дней, 4 ночи</div>
     <p class="lead">Дыхание на рассвете, цигун, хаммам, чайные церемонии и медитации под луной. Маленькая группа, глубокая перезагрузка, никакой спешки.</p>
     <div class="cta-row">
       <a href="#form" class="btn">Оставить заявку</a>
@@ -122,15 +129,27 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
 
 <section style="padding-top:0">
   <div class="wrap">
+    <h2>Две даты на выбор</h2>
+    <p class="sub" style="margin-bottom:0">Программа обоих заездов одинаковая. Выбирай, что удобнее по датам.</p>
+    <div class="dates-grid">
+      <div class="dc"><div class="dv">23 — 27 сентября</div><div class="dnn">2026 · 5 дней, 4 ночи</div></div>
+      <div class="dc"><div class="dv">7 — 11 октября</div><div class="dnn">2026 · 5 дней, 4 ночи</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section style="padding-top:0">
+  <div class="wrap">
     <h2>Программа</h2>
-    <p class="sub">Нажми на день, чтобы раскрыть.</p>
-      <details class="day" open><summary><span class="dn">День 1 · Прибытие</span><span class="dd">Среда, 23 сентября</span><span class="chev">+</span></summary><div class="body">
+    <p class="sub">Программа одинакова для обоих заездов.</p>
+      <details class="day" open><summary><span class="dn">День 1 · Прибытие</span><span class="dd">День 1 · Среда</span><span class="chev">+</span></summary><div class="body">
         <img class="poster" src="/assets/retreat/day1.jpg" alt="Программа дня" loading="lazy">
         <div class="ev"><div><div class="tm">15:00</div></div><div><h5>Заселение и встреча</h5><p>Тёплая встреча, время обустроиться и первое знакомство с атмосферой Susona.</p></div></div>
         <div class="ev"><div><div class="tm">17:30–18:30</div><div class="loc">Talay</div></div><div><h5>Чайная церемония на закате и медитация</h5><p>Церемония, где каждый глоток возвращает присутствие, равновесие и внутренний покой.</p></div></div>
         <div class="ev"><div><div class="tm">18:30–20:00</div></div><div><h5>Свободное время</h5></div></div>
       </div></details>
-      <details class="day" open><summary><span class="dn">День 2 · Перезагрузка</span><span class="dd">Четверг, 24 сентября</span><span class="chev">+</span></summary><div class="body">
+      <details class="day" open><summary><span class="dn">День 2 · Перезагрузка</span><span class="dd">День 2 · Четверг</span><span class="chev">+</span></summary><div class="body">
         <img class="poster" src="/assets/retreat/day2.jpg" alt="Программа дня" loading="lazy">
         <div class="ev"><div><div class="tm">08:30–09:00</div><div class="loc">Susona Beach</div></div><div><h5>Дыхательная практика и цигун на рассвете</h5><p>Солнце поднимается над морем — возвращаемся к себе через дыхание и мягкое движение.</p></div></div>
         <div class="ev"><div><div class="tm">09:00–11:00</div><div class="loc">Ezi</div></div><div><h5>Завтрак</h5></div></div>
@@ -138,7 +157,7 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
         <div class="ev"><div><div class="tm">14:00–17:00</div><div class="loc">Suyah</div></div><div><h5>Live DJ-сет</h5><p>Отдых у бассейна, эгейское солнце и лёгкий ритм островной жизни.</p></div></div>
         <div class="ev"><div><div class="tm">17:00–17:45</div><div class="loc">Suyah Jetty</div></div><div><h5>Медитация на закате</h5></div></div>
       </div></details>
-      <details class="day" open><summary><span class="dn">День 3 · Ясность</span><span class="dd">Пятница, 25 сентября</span><span class="chev">+</span></summary><div class="body">
+      <details class="day" open><summary><span class="dn">День 3 · Ясность</span><span class="dd">День 3 · Пятница</span><span class="chev">+</span></summary><div class="body">
         <img class="poster" src="/assets/retreat/day3.jpg" alt="Программа дня" loading="lazy">
         <div class="ev"><div><div class="tm">08:30–08:45</div><div class="loc">Susona Beach</div></div><div><h5>Дыхательная практика на рассвете</h5><p>Встречаем день дыханием у моря: пробуждаем тело, успокаиваем мысли.</p></div></div>
         <div class="ev"><div><div class="tm">09:00–11:00</div><div class="loc">Ezi</div></div><div><h5>Завтрак</h5></div></div>
@@ -146,7 +165,7 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
         <div class="ev"><div><div class="tm">18:30–19:15</div><div class="loc">Talay</div></div><div><h5>Цигун</h5><p>Мягкая практика, возвращающая баланс, энергию и внутреннюю гармонию.</p></div></div>
         <div class="ev"><div><div class="tm">20:00–22:00</div><div class="loc">Octozen</div></div><div><h5>«Балкон любви» — ужин</h5><p>Вечер, где изысканная кухня, авторские коктейли и панорама моря встречаются в камерной атмосфере.</p></div></div>
       </div></details>
-      <details class="day" open><summary><span class="dn">День 4 · Связь</span><span class="dd">Суббота, 26 сентября</span><span class="chev">+</span></summary><div class="body">
+      <details class="day" open><summary><span class="dn">День 4 · Связь</span><span class="dd">День 4 · Суббота</span><span class="chev">+</span></summary><div class="body">
         <img class="poster" src="/assets/retreat/day4.jpg" alt="Программа дня" loading="lazy">
         <div class="ev"><div><div class="tm">08:00–08:45</div><div class="loc">Susona Beach</div></div><div><h5>Утренний цигун и дыхание</h5></div></div>
         <div class="ev"><div><div class="tm">08:45–09:30</div></div><div><h5>Прогулка на природе</h5></div></div>
@@ -155,7 +174,7 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
         <div class="ev"><div><div class="tm">18:00–18:30</div><div class="loc">Talay</div></div><div><h5>Матча-церемония</h5><p>Осознанный ритуал матчи — праздник присутствия и искусства медленной жизни.</p></div></div>
         <div class="ev"><div><div class="tm">21:30–23:30</div><div class="loc">Susona Beach</div></div><div><h5>Рефлексия под луной</h5><p>Завершаем день дыханием, медитацией и тихой рефлексией у моря.</p></div></div>
       </div></details>
-      <details class="day" open><summary><span class="dn">День 5 · Послесвечение</span><span class="dd">Воскресенье, 27 сентября</span><span class="chev">+</span></summary><div class="body">
+      <details class="day" open><summary><span class="dn">День 5 · Послесвечение</span><span class="dd">День 5 · Воскресенье</span><span class="chev">+</span></summary><div class="body">
         <img class="poster" src="/assets/retreat/day5.jpg" alt="Программа дня" loading="lazy">
         <div class="ev"><div><div class="tm">08:30–09:15</div><div class="loc">Susona Beach</div></div><div><h5>Утренняя мобильность и дыхание</h5><p>Мягко входим в утро: осознанное движение и дыхание возвращают энергию и ясность.</p></div></div>
         <div class="ev"><div><div class="tm">09:15–11:00</div><div class="loc">Ezi</div></div><div><h5>Фирменный завтрак</h5></div></div>
@@ -208,6 +227,12 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
     <div class="form-card">
       <div id="lead-step">
         <form id="lead-form" novalidate>
+          <select class="retreat-sel" name="dates" required>
+            <option value="">Какой заезд</option>
+            <option>23–27 сентября</option>
+            <option>7–11 октября</option>
+            <option>Пока не решил (обсудим)</option>
+          </select>
           <input type="text" name="first" placeholder="Имя" required>
           <input type="text" name="last" placeholder="Фамилия" required>
           <input type="text" name="tg" placeholder="Telegram (@ник)" required>
@@ -247,7 +272,7 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
 </div>
 
 <footer>
-  <div class="wrap">Awaken at Susona · Susona Bodrum · 23–27.09.2026<br>zadiraka.wellness@gmail.com</div>
+  <div class="wrap">Awaken at Susona · Susona Bodrum · 23–27.09 и 7–11.10.2026<br>zadiraka.wellness@gmail.com</div>
 </footer>
 
 <script>
@@ -260,7 +285,8 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
     if(!tg){form.tg.focus();return;}
     if(!email||email.indexOf("@")<1){form.email.focus();return;}
     var LU='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
-    var pd=new URLSearchParams({name:first+' '+last,email:email,phone:tg,lang:'Русский (RU)',page:location.pathname,source:'retreat-susona-0926',sheet:'Retreat'});
+    var dates=form.dates.value||'—';
+    var pd=new URLSearchParams({name:first+' '+last+' | '+dates,email:email,phone:tg,lang:'Русский (RU)',page:location.pathname,source:'retreat-susona-0926',sheet:'Retreat'});
     try{if(navigator.sendBeacon){navigator.sendBeacon(LU,pd);}else{fetch(LU,{method:'POST',mode:'no-cors',body:pd});}}catch(err){}
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
