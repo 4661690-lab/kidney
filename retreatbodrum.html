@@ -43,6 +43,13 @@ h2{font-size:clamp(28px,4.6vw,40px);text-align:center;margin-bottom:14px}
 .gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:var(--gold);color:#171207;border:none;display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;z-index:5;box-shadow:0 8px 22px rgba(0,0,0,.45)}
 .gal-nav.prev{left:-6px}.gal-nav.next{right:-6px}
 @media(max-width:600px){.gal-nav{width:42px;height:42px;font-size:24px}.gal-nav.prev{left:2px}.gal-nav.next{right:2px}}
+.price-grid{display:grid;gap:14px;max-width:640px;margin:26px auto 0}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:26px 24px;text-align:center}
+.pc.acc{border-color:var(--gold)}
+.pc .pt{font-size:15.5px;color:var(--mut);margin-bottom:8px}
+.pc .pv{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold);line-height:1}
+.pc .pn{font-size:13px;color:var(--mut2);margin-top:8px}
+@media(min-width:620px){.price-grid{grid-template-columns:1fr 1fr}}
 .poster{width:100%;display:block;border-radius:14px;border:1px solid var(--line);margin:0 auto 22px;max-width:520px}
 .poster-main{width:100%;display:block;border-radius:var(--rad);border:1px solid var(--line);max-width:560px;margin:34px auto 0;box-shadow:0 18px 50px rgba(0,0,0,.45)}
 .day .poster{margin-top:16px}
@@ -186,10 +193,21 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
   </div>
 </section>
 
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Стоимость</h2>
+    <p class="sub" style="margin-bottom:0">Bed &amp; Breakfast — проживание в Susona Bodrum и завтраки.</p>
+    <div class="price-grid">
+      <div class="pc"><div class="pt">Одноместное размещение</div><div class="pv">535 €</div><div class="pn">включая НДС</div></div>
+      <div class="pc acc"><div class="pt">Двухместное размещение</div><div class="pv">565 €</div><div class="pn">включая НДС</div></div>
+    </div>
+  </div>
+</section>
+
 <section id="form">
   <div class="wrap">
     <h2>Забронировать место</h2>
-    <p class="sub">Мест мало — группа камерная. Оставь контакты, я лично свяжусь с тобой, расскажу детали и стоимость.</p>
+    <p class="sub">Мест мало — группа камерная. Оставь контакты, я лично свяжусь с тобой и помогу с бронированием.</p>
     <div class="form-card">
       <div id="lead-step">
         <form id="lead-form" novalidate>
