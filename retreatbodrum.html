@@ -17,14 +17,14 @@ body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;font-s
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.14}
 section{padding:64px 0}
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;background:linear-gradient(180deg,rgba(15,13,9,.55),rgba(15,13,9,.78) 58%,var(--bg) 100%),url('/assets/vlad3.jpg') center 32%/cover no-repeat;border-bottom:1px solid var(--line)}
-.hero-in{padding:80px 0 60px;text-align:center;width:100%}
+.hero{position:relative;min-height:auto;display:flex;align-items:center;background:linear-gradient(180deg,rgba(15,13,9,.55),rgba(15,13,9,.78) 58%,var(--bg) 100%),url('/assets/vlad3.jpg') center 32%/cover no-repeat;border-bottom:1px solid var(--line)}
+.hero-in{padding:52px 0 30px;text-align:center;width:100%}
 .eyebrow{letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:var(--gold);margin-bottom:18px}
-.hero h1{font-size:clamp(46px,11vw,86px);margin-bottom:14px;line-height:1.02}
+.hero h1{font-size:clamp(40px,9.5vw,78px);margin-bottom:12px;line-height:1.02}
 .hero .subt{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,3.4vw,26px);margin-bottom:14px}
 .place{color:var(--txt);font-size:15.5px;margin-bottom:4px}
-.dates{letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--gold2);margin-bottom:26px}
-.lead{max-width:600px;margin:0 auto 32px;color:var(--mut);font-size:16.5px}
+.dates{letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--gold2);margin-bottom:20px}
+.lead{max-width:600px;margin:0 auto 24px;color:var(--mut);font-size:16.5px}
 .btn{display:inline-block;background:var(--gold);color:#171207;font-weight:600;font-size:15.5px;padding:16px 32px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:.2s}
 .btn:hover{background:var(--gold2)}
 .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
@@ -45,6 +45,15 @@ h2{font-size:clamp(28px,4.6vw,40px);text-align:center;margin-bottom:14px}
 .sus-grid{display:grid;gap:12px;margin-top:26px}
 .sus-grid img{width:100%;height:100%;object-fit:cover;border-radius:14px;border:1px solid var(--line);display:block;aspect-ratio:4/5}
 @media(min-width:620px){.sus-grid{grid-template-columns:1fr 1fr}.sus-grid img:first-child{grid-column:1 / -1;aspect-ratio:16/9}}
+.scroll-hint{margin-top:22px;color:var(--mut2);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scroll-hint span.arr{display:block;width:18px;height:18px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.75}50%{transform:rotate(45deg) translate(3px,3px);opacity:1}}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:900;background:rgba(23,18,7,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:flex;gap:9px;justify-content:center;transform:translateY(130%);transition:transform .3s ease;box-shadow:0 -8px 26px rgba(0,0,0,.5)}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta a{flex:1 1 0;max-width:230px;text-align:center;padding:14px 12px;border-radius:100px;text-decoration:none;font-weight:600;font-size:14.5px}
+.sticky-cta .s1{background:var(--gold);color:#171207}
+.sticky-cta .s2{border:1px solid var(--gold);color:var(--gold)}
+body.has-sticky{padding-bottom:88px}
 .poster{width:100%;display:block;border-radius:14px;border:1px solid var(--line);margin:0 auto 22px;max-width:520px}
 .poster-main{width:100%;display:block;border-radius:var(--rad);border:1px solid var(--line);max-width:560px;margin:34px auto 0;box-shadow:0 18px 50px rgba(0,0,0,.45)}
 .day .poster{margin-top:16px}
@@ -97,6 +106,7 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
       <a href="#form" class="btn">Оставить заявку</a>
       <a href="https://t.me/zadirakacigun" target="_blank" rel="noopener" class="btn ghost">Написать в Telegram</a>
     </div>
+    <div class="scroll-hint">программа ниже<span class="arr"></span></div>
   </div>
 </section>
 
@@ -234,6 +244,11 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
   </div>
 </section>
 
+<div class="sticky-cta" id="sticky-cta">
+  <a class="s1" href="#form">Оставить заявку</a>
+  <a class="s2" href="https://t.me/zadirakacigun" target="_blank" rel="noopener">Написать в Telegram</a>
+</div>
+
 <footer>
   <div class="wrap">Awaken at Susona · Susona Bodrum · 23–27.09.2026<br>zadiraka.wellness@gmail.com</div>
 </footer>
@@ -255,6 +270,14 @@ footer{padding:38px 0 56px;text-align:center;color:var(--mut2);font-size:13.5px;
     setTimeout(function(){window.open('https://t.me/zadirakacigun','_blank');},700);
   });
 })();
+</script>
+<script>
+(function(){var b=document.getElementById('sticky-cta');if(!b)return;document.body.classList.add('has-sticky');
+var form=document.getElementById('form');
+function upd(){var past=window.scrollY>window.innerHeight*0.5;var atForm=false;
+ if(form){var r=form.getBoundingClientRect();atForm=r.top<window.innerHeight*0.9;}
+ if(past&&!atForm){b.classList.add('show');}else{b.classList.remove('show');}}
+window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd,{passive:true});upd();})();
 </script>
 </body>
 </html>
