@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWAKENING by Susona · One guest a day · Bodrum</title>
+<meta name="description" content="At 9:15 each morning, the spa belongs to a single guest. Breath, sauna, fresh ice, and fifteen minutes of guided meditation. Bodrum.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f2; --ink:#1f2328; --body:#2c3138; --soft:#5a5648;
+  --muted:#7d7466; --accent:#3a5a6b; --rule:#d8d0c4; --panel:#f2ece2;
+  --maxw:640px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--body);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3,.serif{font-family:'EB Garamond',Georgia,serif;font-weight:400;color:var(--ink);line-height:1.22}
+.over{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+section{padding:52px 0}
+.rule{height:1px;background:var(--rule);border:none;margin:0}
+em{font-style:italic}
+strong{font-weight:500;color:var(--ink)}
+
+/* HERO */
+.hero{position:relative;min-height:88svh;display:flex;flex-direction:column;justify-content:flex-end;
+ background:linear-gradient(180deg,rgba(31,35,40,.28),rgba(31,35,40,.52) 62%,rgba(31,35,40,.72)),
+ linear-gradient(150deg,#8fa6b3,#5b7583 45%,#37505d);padding:0 0 34px}
+.hero .ph-note{position:absolute;top:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,.5);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase}
+.hero .wrap{color:#fff}
+.hero .over{color:rgba(255,255,255,.72);margin-bottom:20px}
+.logo{font-family:'EB Garamond',serif;font-size:clamp(40px,11vw,64px);letter-spacing:.14em;color:#fff;line-height:1}
+.logo-sub{font-family:'EB Garamond',serif;font-style:italic;font-size:17px;color:rgba(255,255,255,.8);margin-top:4px;margin-bottom:26px}
+.hero h1{color:#fff;font-size:clamp(25px,6.2vw,34px);margin-bottom:18px;max-width:15em}
+.hero .line{color:rgba(255,255,255,.86);font-size:15.5px;letter-spacing:.04em;margin-bottom:24px}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-size:15px;font-weight:500;letter-spacing:.02em;padding:16px 30px;border-radius:3px;text-decoration:none;border:none;cursor:pointer;transition:opacity .2s}
+.btn:hover{opacity:.9}
+.btn.line{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff}
+
+/* TEXT BLOCKS */
+.lede p{margin-bottom:18px;font-size:17px;color:var(--body)}
+.lede p:last-child{margin-bottom:0}
+.center{text-align:center}
+h2{font-size:clamp(25px,5.6vw,32px);margin-bottom:22px}
+.kicker{margin-bottom:12px}
+
+/* TIMELINE */
+.tl{margin-top:6px}
+.tl-item{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--rule)}
+.tl-item:first-child{border-top:none}
+.tl-time{font-family:'EB Garamond',serif;font-size:19px;color:var(--accent);letter-spacing:.02em}
+.tl h3{font-size:19px;margin-bottom:7px}
+.tl p{font-size:15.5px;color:var(--soft)}
+.tl-item.peak{background:var(--panel);margin:0 -20px;padding:24px 20px;border-top:1px solid var(--rule)}
+.tl-item.peak h3{color:var(--accent)}
+
+/* PANEL */
+.panel{background:var(--panel);padding:46px 0}
+.panel h2{margin-bottom:20px}
+.panel p{margin-bottom:16px;color:var(--body)}
+.panel p:last-child{margin-bottom:0}
+
+/* PHOTO SLOTS */
+.ph{background:linear-gradient(160deg,#e7e0d4,#dfd7c9);border:1px solid var(--rule);border-radius:3px;
+ aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;margin:26px 0}
+.ph span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.ph.wide{aspect-ratio:16/10}
+
+/* LED BY */
+.ledby{display:grid;gap:22px}
+.ledby .ph{margin:0;aspect-ratio:3/4}
+.ledby h3{font-size:22px;margin-bottom:8px}
+.ledby p{color:var(--soft);font-size:16px}
+
+/* FAQ */
+.faq{border-top:1px solid var(--rule)}
+.faq:last-of-type{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;padding:19px 0;display:flex;justify-content:space-between;gap:18px;align-items:baseline;font-family:'EB Garamond',serif;font-size:19px;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq .pl{color:var(--accent);font-size:16px;font-family:'Inter',sans-serif;flex-shrink:0;transition:transform .2s}
+.faq[open] .pl{transform:rotate(45deg)}
+.faq .a{padding:0 0 20px;color:var(--soft);font-size:15.8px;max-width:34em}
+
+/* BOOKING */
+.book{background:var(--panel);padding:52px 0}
+.price{font-family:'EB Garamond',serif;font-size:44px;color:var(--ink);line-height:1}
+.price-note{color:var(--muted);font-size:14px;margin-top:6px}
+.price-reg{color:var(--soft);font-style:italic;font-size:14.5px;margin-top:2px}
+.reserve{margin:26px 0 8px;font-size:16.5px;color:var(--body)}
+.reserve strong{display:block;font-size:18px;margin-bottom:4px}
+.book .btn{display:block;text-align:center;margin-top:22px}
+.book .alt{display:block;text-align:center;margin-top:14px;color:var(--accent);font-size:14.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;width:fit-content;margin-left:auto;margin-right:auto}
+.fine{margin-top:26px;font-size:13px;color:var(--muted);line-height:1.6}
+
+/* STICKY */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:900;background:rgba(250,247,242,.97);border-top:1px solid var(--rule);
+ padding:11px 20px calc(11px + env(safe-area-inset-bottom));transform:translateY(130%);transition:transform .3s ease;
+ display:flex;align-items:center;gap:14px;justify-content:center}
+.sticky.show{transform:translateY(0)}
+.sticky .p{font-family:'EB Garamond',serif;font-size:19px;color:var(--ink);white-space:nowrap}
+.sticky .btn{padding:13px 22px;font-size:14.5px}
+body.has-sticky{padding-bottom:82px}
+footer{padding:34px 0 46px;text-align:center;color:var(--muted);font-size:12.5px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(min-width:700px){section{padding:70px 0}.ledby{grid-template-columns:240px 1fr;align-items:center}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="ph-note">Photo slot · ice falling into water</div>
+  <div class="wrap">
+    <div class="over">Bodrum · One guest a day</div>
+    <div class="logo">AWAKENING</div>
+    <div class="logo-sub">by Susona</div>
+    <h1>There is one hour in this hotel that nobody else will have.</h1>
+    <div class="line">9:15 AM · daily · $99</div>
+    <a href="#book" class="btn">Reserve tomorrow morning</a>
+  </div>
+</section>
+
+<!-- WHAT IT IS -->
+<section>
+  <div class="wrap lede">
+    <p>At <strong>9:15 each morning</strong>, the spa belongs to a single guest.</p>
+    <p>The sauna is hot. The bath is filled with fresh water and packed with ice — poured that morning, for one person only. <em>No one has been in that water before you.</em></p>
+    <p>Before the cold, you are taught how to breathe. During it, you are not alone — you are counted through, second by second. And after it comes the part almost nobody expects: fifteen minutes of guided meditation, in the clearest state your mind will reach all year.</p>
+    <p>You will be finished before ten. The rest of the day will not feel like a holiday day — it will feel sharper than that.</p>
+    <p><strong>No experience needed. No fitness needed. One minute of courage, once.</strong></p>
+    <div class="ph wide"><span>Photo slot · the bath, filled with ice, morning light</span></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- THE HOUR -->
+<section>
+  <div class="wrap">
+    <div class="over kicker">The hour</div>
+    <h2>What happens, minute by minute</h2>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-time">9:15</div><div><h3>Tea, and a short conversation</h3><p>We sit down. A few questions about your health, your sleep, and what your body needs this morning. Nothing about the next hour will be a surprise to you.</p></div></div>
+      <div class="tl-item"><div class="tl-time">9:20</div><div><h3>Breath</h3><p>Ten minutes, seated. Not a warm-up — this is the tool you will use in the water, and the reason the cold becomes something you can steer rather than something that happens to you.</p></div></div>
+      <div class="tl-item"><div class="tl-time">9:30</div><div><h3>Sauna</h3><p>Twelve minutes of dry heat. Your body opens, softens, and stops holding whatever it arrived holding.</p></div></div>
+      <div class="tl-item peak"><div class="tl-time">9:42</div><div><h3>The Ice</h3><p>Sixty to ninety seconds. Fresh water, fresh ice, prepared that morning for you alone. You are not left to manage it — the seconds are counted out loud, and you decide when it ends.</p></div></div>
+      <div class="tl-item"><div class="tl-time">9:45</div><div><h3>Stillness — guided meditation</h3><p>Fifteen minutes. The part guests remember.</p></div></div>
+      <div class="tl-item"><div class="tl-time">10:00</div><div><h3>Tea, and one practice to take home</h3><p>A single thing to keep doing after you leave — thirty seconds a day, and it is yours for good.</p></div></div>
+    </div>
+    <div class="ph"><span>Photo slot · sauna interior, empty</span></div>
+  </div>
+</section>
+
+<!-- WHY MEDITATION -->
+<section class="panel">
+  <div class="wrap">
+    <h2>Why the meditation is the point</h2>
+    <p>Cold water lifts noradrenaline several times over and holds it there for an hour or more. What that produces is a rare thing: complete calm and complete alertness at the same time. Most people never reach it on purpose, and almost nobody knows what to do with it when they do.</p>
+    <p>You are not left alone with it. This part is led — drawn from qigong and meditation practice, shaped around what your body just did. The ice is the doorway. <strong>This is the room.</strong></p>
+    <div class="ph wide" style="margin-bottom:0"><span>Photo slot · meditation room</span></div>
+  </div>
+</section>
+
+<!-- LED BY -->
+<section>
+  <div class="wrap">
+    <div class="over kicker">Led by</div>
+    <div class="ledby">
+      <div class="ph"><span>Photo slot · portrait</span></div>
+      <div>
+        <h3>Vlad Zadiraka</h3>
+        <p>Teacher of qigong, breathwork and meditation. Every session is one to one — from the first cup of tea to the last minute of stillness, there is no one else in the room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details class="faq"><summary>Is it safe?<span class="pl">+</span></summary><div class="a">Cold water immersion is safe for healthy adults, and you will be supervised the entire time — never left alone at any point. Tell us beforehand about heart conditions, high blood pressure, epilepsy or pregnancy, and we will adapt or advise against it honestly. Sessions are not available after alcohol.</div></details>
+    <details class="faq"><summary>Does it hurt?<span class="pl">+</span></summary><div class="a">No. For the first ten to fifteen seconds your body will want to gasp — that happens to everyone, and it passes. The rest is intense but calm. You are taught exactly how to breathe through it before you get in, and the seconds are counted out loud so you never have to wonder how long is left.</div></details>
+    <details class="faq"><summary>What if I can't stay in for a minute?<span class="pl">+</span></summary><div class="a">Then you get out. Thirty seconds is a complete session. Nothing about this is a test, and there is no one to prove anything to.</div></details>
+    <details class="faq"><summary>Do I need to be fit?<span class="pl">+</span></summary><div class="a">No. This has nothing to do with fitness. Guests in their sixties do this. It asks for one minute of willingness, not conditioning.</div></details>
+    <details class="faq"><summary>Can two of us come together?<span class="pl">+</span></summary><div class="a">The bath takes one person, so the ritual is designed for one. Two guests can book two consecutive mornings, or ask about a private session for a couple.</div></details>
+    <details class="faq"><summary>How cold is the water?<span class="pl">+</span></summary><div class="a">Between 8 and 12°C — measured, not guessed, and adjusted to you. Cold enough to work. Not so cold that you lose control of your breathing.</div></details>
+    <details class="faq"><summary>What should I bring?<span class="pl">+</span></summary><div class="a">Nothing. Robe, towels, slippers and water are provided. Swimwear is worn in the sauna and the bath.</div></details>
+    <details class="faq"><summary>Is there anything longer?<span class="pl">+</span></summary><div class="a">Yes — a ninety-minute session with three descents, each colder than the last. Ask about it on the morning.</div></details>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="price">$99</div>
+    <div class="price-note">August opening rate</div>
+    <div class="price-reg">Regular rate from September — $199</div>
+    <div class="reserve">
+      <strong>Reserve before 6:00 pm</strong>
+      for the following morning. One session per day. When it is taken, it is taken.
+    </div>
+    <a class="btn" data-wa href="#">Book on WhatsApp</a>
+    <a class="alt" href="tel:+900000000000">Or call reception</a>
+    <div class="fine">Come light — coffee is fine, a full breakfast is not. Please tell us in advance about heart conditions, high blood pressure, epilepsy or pregnancy. Not available after alcohol.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">AWAKENING by Susona · Bodrum</div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <span class="p">9:15 · $99</span>
+  <a class="btn" data-wa href="#">Book on WhatsApp</a>
+</div>
+
+<script>
+// ——— set these two values ———
+var WA_NUMBER = "";                      // e.g. "905XXXXXXXXX" (digits only, no +)
+var WA_TEXT   = "Hi — I'd like to book Awakening for tomorrow at 9:15. My room number is ";
+(function(){
+  var href = WA_NUMBER
+    ? "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(WA_TEXT)
+    : null;
+  document.querySelectorAll('a[data-wa]').forEach(function(a){
+    if(href){ a.setAttribute('href', href); a.setAttribute('target','_blank'); a.setAttribute('rel','noopener'); }
+    else { a.addEventListener('click', function(e){ e.preventDefault(); alert('WhatsApp number not set yet'); }); }
+  });
+  var s=document.getElementById('sticky'); if(!s) return;
+  document.body.classList.add('has-sticky');
+  var book=document.getElementById('book');
+  function upd(){
+    var past = window.scrollY > window.innerHeight*0.6;
+    var atBook = false;
+    if(book){ var r=book.getBoundingClientRect(); atBook = r.top < window.innerHeight*0.9; }
+    if(past && !atBook){ s.classList.add('show'); } else { s.classList.remove('show'); }
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
+})();
+</script>
+</body>
+</html>
