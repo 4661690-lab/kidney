@@ -56,6 +56,9 @@ strong{color:var(--txt);font-weight:700}
 .hero h1 span{color:var(--acc)}
 .hero .lead{font-size:clamp(16px,2.2vw,20px);margin:22px auto 4px;color:var(--txt);max-width:720px}
 .q{font-size:clamp(17px,2.4vw,22px);color:var(--txt);max-width:720px;margin:0 auto 8px;font-weight:600}
+.hero .q-brand{font-size:clamp(14px,1.9vw,19px);font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 auto 10px}
+.hero .q-brand span{color:var(--acc)}
+.hero h1.h1-pain{text-transform:none;letter-spacing:-.01em;font-size:clamp(28px,5vw,46px);line-height:1.18;max-width:860px;margin:0 auto}
 .price{display:flex;align-items:baseline;gap:14px;margin:30px 0 24px;flex-wrap:wrap;justify-content:center}
 .price .now{font-size:52px;font-weight:800;color:var(--acc)}
 .price .old{font-size:24px;color:var(--muted);text-decoration:line-through}
@@ -214,6 +217,8 @@ footer a{color:var(--muted)}
     .hero .price{margin:16px 0}
     .hero .bonus{margin-top:16px}
     .hero h1{font-size:clamp(28px,8.5vw,42px)}
+    .hero h1.h1-pain{font-size:clamp(24px,6.6vw,34px);line-height:1.22}
+    .hero .q-brand{font-size:14px;margin:0 auto 8px}
   }
 </style>
 <script type="text/javascript">
@@ -231,8 +236,8 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <span class="eyebrow">Онлайн-курс · очищення печінки і тіла</span>
     <div class="start">Старт <b id="hero-start">9 липня</b></div>
-    <p class="q">Тяжкість справа, набряки зранку, туман у голові та втома, яка не минає після сну?</p>
-    <h1>ПЕЧІНКА. <span>Розвантаж свій мовчазний завод</span></h1>
+    <p class="q q-brand">ПЕЧІНКА. <span>Розвантаж свій мовчазний завод</span></p>
+    <h1 class="h1-pain">Тяжкість справа, набряки зранку, туман у голові та втома, яка не минає після сну?</h1>
     <p class="lead">Сім днів, щодня теорія плюс практика: розумієш, як печінка працює насправді, і робиш те, що реально знімає з неї навантаження. Без тазиків, флашів і голоду, на перевіреній механіці.</p>
     <div class="price">
       <span class="tag">всього</span>
