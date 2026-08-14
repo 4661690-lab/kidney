@@ -165,6 +165,31 @@ footer{background:var(--ink);color:#7d766e;padding:24px 0 40px;font-size:12.5px;
   .btn{display:inline-block;width:auto;min-width:360px}
   .ab .sq{width:88px;height:88px;font-size:36px}
 }
+
+/* ==== sticky pay bar ==== */
+.float-bar{position:fixed;left:0;right:0;bottom:0;z-index:900;background:var(--ink);
+  border-top:3px solid var(--acc);padding:12px 0 calc(12px + env(safe-area-inset-bottom));
+  transform:translateY(110%);transition:transform .22s ease}
+.float-bar.show{transform:translateY(0)}
+.float-bar .fb{display:flex;align-items:center;gap:14px;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.float-bar .fprice{background:var(--acc);color:#fff;font-weight:900;font-size:17px;padding:11px 13px;line-height:1;white-space:nowrap}
+.float-bar .btn{margin:0;flex:1 1 auto;min-width:0;padding:15px 14px;font-size:clamp(13px,3.4vw,16px);max-width:none}
+
+/* ==== lead modal ==== */
+.modal-overlay{position:fixed;inset:0;background:rgba(17,17,17,.86);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--cream);max-width:440px;width:100%;max-height:92vh;overflow:auto;position:relative;border:4px solid var(--ink)}
+.modal-body{padding:28px 22px 24px}
+.modal-close{position:absolute;top:4px;right:10px;background:none;border:none;color:var(--ink);font-size:34px;line-height:1;cursor:pointer;padding:6px;font-family:inherit}
+.modal-title{text-transform:uppercase;font-weight:900;font-size:clamp(20px,5.4vw,26px);line-height:1;letter-spacing:-.015em;margin-bottom:12px}
+.modal-note{font-size:14px;line-height:1.5;color:var(--mut);font-weight:600;margin-bottom:18px}
+.modal-price{display:inline-block;background:var(--acc);color:#fff;font-weight:900;font-size:26px;line-height:1;padding:11px 14px;margin-bottom:18px}
+#lead-form label{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);margin-bottom:14px}
+#lead-form input{display:block;width:100%;margin-top:7px;padding:14px;border:2px solid var(--ink);background:#fff;color:var(--ink);
+  font-size:16px;font-family:inherit;font-weight:600;border-radius:0}
+#lead-form input:focus{outline:none;border-color:var(--acc)}
+#lead-form .btn{margin-top:6px;width:100%;max-width:none}
+.modal-fine{font-size:12px;color:var(--mut);text-align:center;margin-top:12px;font-weight:600}
 </style>
 </head>
 <body>
@@ -187,7 +212,7 @@ footer{background:var(--ink);color:#7d766e;padding:24px 0 40px;font-size:12.5px;
     <div class="wrap">
       <div class="ab"><span class="sq a">А</span><span class="dash"></span><span class="sq b">Б</span></div>
       <p class="sub">Мінікурс за <span class="acc">390 грн</span>: як влаштований бізнес на фестивалях і покроковий план твоєї першої події. Від організатора, який провів більше <span class="acc" data-fests>40</span> фестивалів.</p>
-      <a class="btn" data-pay href="/festpay">Отримати курс за 390 грн</a>
+      <a class="btn" data-pay href="#">Отримати курс за 390 грн</a>
     </div>
   </div>
 </header>
@@ -350,7 +375,7 @@ footer{background:var(--ink);color:#7d766e;padding:24px 0 40px;font-size:12.5px;
       <span class="pricelead">Вісім днів, [10] робочих інструментів і план першої події на руках.</span>
     </div>
     <p class="offerline">Мінікурс за 390 грн: як влаштований бізнес на фестивалях і покроковий план твоєї першої події. Від організатора, який провів більше <span class="acc" data-fests>40</span> фестивалів.</p>
-    <a class="btn" data-pay href="/festpay">Отримати курс за 390 грн</a>
+    <a class="btn" data-pay href="#">Отримати курс за 390 грн</a>
   </div>
 </section>
 
@@ -377,7 +402,7 @@ footer{background:var(--ink);color:#7d766e;padding:24px 0 40px;font-size:12.5px;
     <h2>Мінікурс за <span class="acc">390 грн</span></h2>
     <p style="font-size:clamp(15px,3.4vw,18px);font-weight:600;color:#d5cec4">Як влаштований бізнес на фестивалях і покроковий план твоєї першої події.</p>
     <p class="promise">Через тиждень у тебе або план першої події на руках, або 390 гривень назад.</p>
-    <a class="btn" data-pay href="/festpay">Отримати курс за 390 грн</a>
+    <a class="btn" data-pay href="#">Отримати курс за 390 грн</a>
   </div>
 </section>
 
@@ -387,9 +412,40 @@ footer{background:var(--ink);color:#7d766e;padding:24px 0 40px;font-size:12.5px;
   </div>
 </footer>
 
+
+<div class="float-bar" id="float-bar">
+  <div class="fb">
+    <span class="fprice">390 грн</span>
+    <a class="btn" data-pay href="#">Отримати курс</a>
+  </div>
+</div>
+
+<div class="modal-overlay" id="lead-modal" aria-hidden="true">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Закрити">&times;</button>
+    <div class="modal-body">
+      <h3 class="modal-title">Заповни форму, щоб отримати курс</h3>
+      <p class="modal-note">Дані потрібні тільки для доступу до курсу і звʼязку з нами.</p>
+      <div class="modal-price">390 грн</div>
+      <div id="lead-step">
+        <form id="lead-form" novalidate>
+          <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
+          <label>Телефон*<input type="tel" name="phone" required placeholder="+ код країни і номер"></label>
+          <button type="submit" class="btn">Перейти до оплати</button>
+          <div class="modal-fine">Доступ приходить у Telegram одразу після оплати</div>
+        </form>
+      </div>
+      <div id="lead-thanks" style="display:none">
+        <p class="modal-note">Відкриваємо сторінку оплати. Якщо не відкрилась автоматично, натисни кнопку нижче.</p>
+        <a class="btn" id="thanks-pay" data-direct href="#">Перейти до оплати</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ============ КОНСТАНТИ. Міняти тільки тут ============ */
-var PAY_PAGE   = "/festpay";   /* сторінка оплати */
+var PAY_URL    = "";           /* WayForPay: посилання на кнопку оплати 390 грн */
 var PIXEL_ID   = "";           /* Meta Pixel рекламного кабінету */
 var EXPERT     = "Роман Тугашев";
 var EXPERT_GEN = "Романа Тугашева";
@@ -402,10 +458,56 @@ document.querySelectorAll('[data-expert]').forEach(function(e){
   if(g && EXPERT_GEN){ e.textContent = EXPERT_GEN; } else if(EXPERT){ e.textContent = EXPERT; }
 });
 document.querySelectorAll('[data-fests]').forEach(function(e){ if(FESTS) e.textContent = FESTS; });
-document.querySelectorAll('a[data-pay]').forEach(function(a){
-  a.setAttribute('href', PAY_PAGE);
-  a.addEventListener('click', function(){ if(window.fbq) fbq('track','InitiateCheckout'); });
-});
+
+/* ==== воронка: кнопка -> форма -> лід -> оплата ==== */
+(function(){
+  var LEAD_URL='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
+  var SHEET='fest', SOURCE='fest';
+  var modal=document.getElementById('lead-modal');
+  var direct=document.getElementById('thanks-pay');
+  if(PAY_URL) direct.setAttribute('href', PAY_URL);
+
+  function openM(e){if(e)e.preventDefault();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    if(window.fbq) fbq('track','InitiateCheckout');}
+  function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+
+  document.querySelectorAll('a[data-pay]:not([data-direct])').forEach(function(a){
+    if(PAY_URL) a.setAttribute('href', PAY_URL);
+    a.addEventListener('click', openM);
+  });
+  document.getElementById('modal-close').addEventListener('click', closeM);
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeM(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeM(); });
+
+  var form=document.getElementById('lead-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email=form.email.value.trim(), phone=form.phone.value.trim();
+    if(!email||email.indexOf('@')<1){form.email.focus();return;}
+    if(!phone){form.phone.focus();return;}
+    var pd=new URLSearchParams({email:email,phone:phone,lang:'Українська (UA)',page:location.pathname,source:SOURCE,sheet:SHEET});
+    try{if(navigator.sendBeacon){navigator.sendBeacon(LEAD_URL,pd);}else{fetch(LEAD_URL,{method:'POST',mode:'no-cors',body:pd});}}catch(err){}
+    if(window.fbq) fbq('track','Lead');
+    document.getElementById('lead-step').style.display='none';
+    document.getElementById('lead-thanks').style.display='block';
+    if(PAY_URL){ setTimeout(function(){ window.location.href=PAY_URL; }, 600); }
+  });
+})();
+
+/* ==== липка кнопка ==== */
+(function(){
+  var fb=document.getElementById('float-bar'); if(!fb) return;
+  function upd(){
+    var doc=document.documentElement;
+    var past=window.scrollY>window.innerHeight*0.85;
+    var atEnd=(window.innerHeight+window.scrollY)>=(doc.scrollHeight-200);
+    var open=document.getElementById('lead-modal').classList.contains('open');
+    if(past&&!atEnd&&!open){fb.classList.add('show');}else{fb.classList.remove('show');}
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
+})();
 
 if(PIXEL_ID){
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
