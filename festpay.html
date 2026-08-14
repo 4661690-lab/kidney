@@ -31,7 +31,7 @@ h1{text-transform:uppercase;font-weight:900;font-size:clamp(28px,8vw,46px);line-
 .note{margin-top:26px;font-size:14px;line-height:1.6;color:var(--mut);font-weight:600;border-left:5px solid var(--acc);padding-left:14px}
 .back{display:inline-block;margin-top:24px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mutd);text-decoration:none}
 .back:hover{color:var(--acc)}
-@media(min-width:700px){.pays{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body>
@@ -42,12 +42,8 @@ h1{text-transform:uppercase;font-weight:900;font-size:clamp(28px,8vw,46px);line-
 
   <div class="pays">
     <a class="pay" id="pay-cis" href="#">
-      <span class="t">Карти країн СНД і Казахстану</span>
-      <span class="d">Оплата в один крок, картою будь-якого банку регіону</span>
-    </a>
-    <a class="pay" id="pay-world" href="#">
-      <span class="t">Карти інших країн</span>
-      <span class="d">Visa, Mastercard, випущені поза регіоном СНД</span>
+      <span class="t">Оплатити картою</span>
+      <span class="d">Visa, Mastercard, Apple Pay, Google Pay</span>
     </a>
   </div>
 
@@ -58,8 +54,7 @@ h1{text-transform:uppercase;font-weight:900;font-size:clamp(28px,8vw,46px);line-
 
 <script>
 /* ============ КОНСТАНТИ. Міняти тільки тут ============ */
-var PAY_CIS   = "";   /* WayForPay: карти СНД і Казахстану */
-var PAY_WORLD = "";   /* друга платіжна система: карти решти світу */
+var PAY_URL   = "";   /* WayForPay: посилання на кнопку оплати */
 var CONTACT   = "";   /* контакт підтримки, напр. https://t.me/... */
 var PIXEL_ID  = "";   /* Meta Pixel */
 /* ====================================================== */
@@ -69,8 +64,7 @@ function setPay(id, url){
   if(url){ a.setAttribute('href', url); a.addEventListener('click', function(){ if(window.fbq) fbq('track','AddPaymentInfo'); }); }
   else { a.classList.add('off'); a.addEventListener('click', function(e){ e.preventDefault(); }); }
 }
-setPay('pay-cis', PAY_CIS);
-setPay('pay-world', PAY_WORLD);
+setPay('pay-cis', PAY_URL);
 
 if(CONTACT){
   var c = document.getElementById('contact');
