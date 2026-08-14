@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Оплата не пройшла. Фестиваль як бізнес</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--acc:#E8622A;--cream:#F2EDE4;--white:#fff;--mut:#6b6560}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:'Montserrat',-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+ font-size:16px;line-height:1.55;font-weight:500;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;align-items:center}
+.wrap{max-width:640px;margin:0 auto;padding:46px 22px;width:100%}
+.kicker{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--acc);margin-bottom:14px}
+h1{text-transform:uppercase;font-weight:900;font-size:clamp(28px,8.2vw,48px);line-height:.98;letter-spacing:-.015em}
+.acc{color:var(--acc)}
+.box{background:var(--ink);color:var(--cream);padding:22px 20px;margin-top:24px;font-size:clamp(15px,3.4vw,17px);line-height:1.5;font-weight:600}
+.steps{margin-top:22px;list-style:none}
+.steps li{position:relative;padding-left:26px;margin-bottom:12px;font-size:15px;line-height:1.45;font-weight:600}
+.steps li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;background:var(--acc)}
+.btn{display:block;width:100%;max-width:460px;text-align:center;text-decoration:none;background:var(--acc);color:#fff;
+ font-family:inherit;font-weight:900;font-size:clamp(15px,3.6vw,18px);text-transform:uppercase;padding:20px 22px;
+ border:none;border-radius:0;margin-top:26px;cursor:pointer}
+.btn:hover{background:#d1541f}
+.btn.off{opacity:.45;cursor:default}
+.back{display:inline-block;margin-top:22px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);text-decoration:none}
+.back:hover{color:var(--acc)}
+@media(min-width:700px){.btn{display:inline-block;width:auto;min-width:360px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="kicker">Фестиваль як бізнес</p>
+  <h1>Оплата <span class="acc">не пройшла</span></h1>
+  <div class="box">Гроші не списані. Найчастіше причина проста: банк заблокував платіж або на картці немає потрібної суми.</div>
+  <ul class="steps">
+    <li>Спробуй ще раз, кнопка нижче</li>
+    <li>Або оплати іншою карткою</li>
+    <li>Якщо не виходить, напиши нам, і ми допоможемо</li>
+  </ul>
+  <a class="btn" id="retry" href="#">Спробувати ще раз</a>
+  <a class="back" href="/fest">&larr; Повернутись на сторінку курсу</a>
+</main>
+<script>
+/* ============ КОНСТАНТИ ============ */
+var PAY_URL  = "";   /* WayForPay: посилання на кнопку оплати 390 грн */
+var PIXEL_ID = "";   /* Meta Pixel */
+/* =================================== */
+var r=document.getElementById('retry');
+if(PAY_URL){ r.href=PAY_URL; } else { r.classList.add('off'); r.addEventListener('click',function(e){e.preventDefault();}); }
+if(PIXEL_ID){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID); fbq('track','PageView');
+}
+</script>
+</body>
+</html>
