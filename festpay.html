@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Оплата курсу. Фестиваль як бізнес</title>
+<meta name="description" content="Оплата мінікурсу «Фестиваль як бізнес», 9 доларів.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--acc:#E8622A;--cream:#F2EDE4;--white:#fff;--mut:#6b6560;--mutd:#9c948a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:'Montserrat',-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+ font-size:16px;line-height:1.55;font-weight:500;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;align-items:center}
+.wrap{max-width:640px;margin:0 auto;padding:46px 22px;width:100%}
+h1{text-transform:uppercase;font-weight:900;font-size:clamp(28px,8vw,46px);line-height:.98;letter-spacing:-.015em}
+.acc{color:var(--acc)}
+.sub{margin-top:14px;font-weight:700;font-size:clamp(15px,3.6vw,19px)}
+.price{display:inline-block;background:var(--acc);color:#fff;font-weight:900;font-size:34px;line-height:1;padding:12px 18px;margin-top:18px;letter-spacing:-.02em}
+.pays{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px}
+.pay{display:block;text-decoration:none;border:3px solid var(--ink);background:var(--white);color:var(--ink);padding:22px 20px;transition:.15s}
+.pay:hover{background:var(--ink);color:var(--white)}
+.pay .t{font-weight:900;text-transform:uppercase;font-size:clamp(14px,3.4vw,17px);line-height:1.2;letter-spacing:.01em}
+.pay .d{font-size:13px;color:var(--mut);margin-top:8px;font-weight:600}
+.pay:hover .d{color:#c9c2b8}
+.pay.off{opacity:.45;cursor:default}
+.pay.off:hover{background:var(--white);color:var(--ink)}
+.pay.off:hover .d{color:var(--mut)}
+.note{margin-top:26px;font-size:14px;line-height:1.6;color:var(--mut);font-weight:600;border-left:5px solid var(--acc);padding-left:14px}
+.back{display:inline-block;margin-top:24px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mutd);text-decoration:none}
+.back:hover{color:var(--acc)}
+@media(min-width:700px){.pays{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Оплата <span class="acc">курсу</span></h1>
+  <p class="sub">Мінікурс «Фестиваль як бізнес»</p>
+  <div class="price">9 $</div>
+
+  <div class="pays">
+    <a class="pay" id="pay-cis" href="#">
+      <span class="t">Карти країн СНД і Казахстану</span>
+      <span class="d">Оплата в один крок, картою будь-якого банку регіону</span>
+    </a>
+    <a class="pay" id="pay-world" href="#">
+      <span class="t">Карти інших країн</span>
+      <span class="d">Visa, Mastercard, випущені поза регіоном СНД</span>
+    </a>
+  </div>
+
+  <p class="note">Після оплати прийде посилання на Telegram бот з курсом. Якщо щось пішло не так, напиши нам: <span id="contact">[контакт]</span></p>
+
+  <a class="back" href="/fest">&larr; Повернутись на сторінку курсу</a>
+</main>
+
+<script>
+/* ============ КОНСТАНТИ. Міняти тільки тут ============ */
+var PAY_CIS   = "";   /* WayForPay: карти СНД і Казахстану */
+var PAY_WORLD = "";   /* друга платіжна система: карти решти світу */
+var CONTACT   = "";   /* контакт підтримки, напр. https://t.me/... */
+var PIXEL_ID  = "";   /* Meta Pixel */
+/* ====================================================== */
+
+function setPay(id, url){
+  var a = document.getElementById(id);
+  if(url){ a.setAttribute('href', url); a.addEventListener('click', function(){ if(window.fbq) fbq('track','AddPaymentInfo'); }); }
+  else { a.classList.add('off'); a.addEventListener('click', function(e){ e.preventDefault(); }); }
+}
+setPay('pay-cis', PAY_CIS);
+setPay('pay-world', PAY_WORLD);
+
+if(CONTACT){
+  var c = document.getElementById('contact');
+  c.innerHTML = '<a href="'+CONTACT+'" style="color:#E8622A">'+CONTACT.replace(/^https?:\/\//,'')+'</a>';
+}
+
+if(PIXEL_ID){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID); fbq('track','PageView'); fbq('track','InitiateCheckout');
+}
+</script>
+</body>
+</html>
