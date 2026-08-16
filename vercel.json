@@ -1,5 +1,9 @@
 {
   "routes": [
+    { "src": "/", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/tugashev.html" },
+    { "src": "/", "has": [{ "type": "host", "value": "www.tugashev.cc" }], "dest": "/tugashev.html" },
+    { "src": "/(.*)", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/tugashev.html" },
+    { "src": "/(.*)", "has": [{ "type": "host", "value": "www.tugashev.cc" }], "dest": "/tugashev.html" },
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
     { "src": "/smmsuccess", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/smmsuccess.html" },
     { "src": "/smmsuccess", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/smmsuccess.html" },
