@@ -459,9 +459,12 @@ footer{padding:36px 0 54px;text-align:center;color:var(--mut2);font-size:13.5px}
         </form>
       </div>
       <div id="lead-thanks" style="display:none">
-        <h3 class="modal-title">Секунду…</h3>
-        <p class="modal-note">Открываем страницу оплаты. Если не открылась автоматически, нажми кнопку ниже.</p>
-        <a class="btn" id="thanks-pay" data-direct href="#">Перейти к оплате &rarr;</a>
+        <h3 class="modal-title">Остался один шаг</h3>
+        <p class="modal-note">Выбери, какой картой будешь платить, и откроется страница оплаты.</p>
+        <a class="btn" id="pay-cis" data-direct href="#">Оплатить картой СНГ &rarr;</a>
+        <div style="height:10px"></div>
+        <a class="btn" id="pay-world" data-direct href="#" style="background:transparent;color:var(--gold,var(--acc));border:2px solid var(--gold,var(--acc))">Оплатить европейской картой &rarr;</a>
+        <div class="modal-fine">Если оплата не проходит, напиши на zadiraka.wellness@gmail.com, поможем.</div>
       </div>
     </div>
   </div>
@@ -469,7 +472,9 @@ footer{padding:36px 0 54px;text-align:center;color:var(--mut2);font-size:13.5px}
 
 <script>
 // PAY_URL: подставить ссылку оплаты WayForPay
-var PAY_URL="https://secure.wayforpay.com/button/bed0fffb20ae2";
+var PAY_CIS   = "";                                                   /* оплата картами СНГ, ссылка Boosty */
+var PAY_WORLD = "https://secure.wayforpay.com/button/bed0fffb20ae2";  /* европейские карты, WayForPay */
+var PAY_URL   = PAY_WORLD;
 (function(){
   var fb=document.getElementById('float-bar');
   if(!fb)return;
@@ -496,8 +501,13 @@ document.querySelectorAll('a[data-pay]').forEach(function(a){
   var SOURCE='navdoxe';
   var modal=document.getElementById('lead-modal');
   if(!modal) return;
-  var direct=document.getElementById('thanks-pay');
-  if(PAY_URL) direct.setAttribute('href',PAY_URL);
+  function wire(id,url){
+    var a=document.getElementById(id); if(!a) return;
+    if(url){ a.setAttribute('href',url); a.addEventListener('click',function(){ if(window.fbq) fbq('track','InitiateCheckout'); }); }
+    else { a.style.opacity='.45'; a.addEventListener('click',function(e){ e.preventDefault(); }); }
+  }
+  wire('pay-cis', PAY_CIS);
+  wire('pay-world', PAY_WORLD);
 
   function openM(e){if(e)e.preventDefault();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
   function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
@@ -520,7 +530,6 @@ document.querySelectorAll('a[data-pay]').forEach(function(a){
     if(window.fbq)fbq('track','Lead');
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
-    if(PAY_URL){setTimeout(function(){window.location.href=PAY_URL;},600);}
   });
 })();
 
