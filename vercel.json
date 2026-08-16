@@ -1,5 +1,9 @@
 {
   "routes": [
+    { "src": "/festterms", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/festterms.html" },
+    { "src": "/festterms", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/festterms.html" },
+    { "src": "/festprivacy", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/festprivacy.html" },
+    { "src": "/festprivacy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/festprivacy.html" },
     { "src": "/festv3", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/tugashev.html" },
     { "src": "/festv3", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/tugashev.html" },
     { "src": "/terms", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/festterms.html" },
