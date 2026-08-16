@@ -69,7 +69,7 @@
       position:relative;min-height:680px;
       background:
         linear-gradient(to top,rgba(24,42,51,.35),rgba(24,42,51,.02)),
-        url("https://images.unsplash.com/photo-1739080578253-0651a6c613a8?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000")
+        url("https://images.unsplash.com/photo-1739080578253-0651a6c613a8?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=55&w=1400")
         center/cover no-repeat;
     }
     .hero-stats{
@@ -193,17 +193,43 @@
       .top{padding:12px 0}
       .brand{font-size:12px}
       .price-pill{font-size:11px}
-      .hero-copy{padding:40px 22px}
-      .hero h1{font-size:40px;line-height:1;letter-spacing:-.035em}
-      .lead{font-size:18px}
+      .hero-copy{padding:32px 20px}
+      .hero h1{font-size:34px;line-height:1.02;letter-spacing:-.03em}
+      .lead{font-size:17px}
       .hero-meta{grid-template-columns:1fr}
-      .hero-visual{min-height:460px}
-      .hero-stats{grid-template-columns:1fr;left:14px;right:14px;bottom:14px}
-      section{padding:64px 0}
-      .section-title{font-size:41px}
-      .money{grid-template-columns:1fr}
+
+      /* фото компактнее, статистика уходит из-под абсолюта и ложится под фото */
+      .hero-visual{min-height:230px}
+      .hero-stats{
+        position:static;left:auto;right:auto;bottom:auto;
+        grid-template-columns:1fr;gap:0;padding:0;
+        border-top:1px solid var(--line)
+      }
+      .hero-stat{
+        background:var(--paper);backdrop-filter:none;border:0;border-bottom:1px solid var(--line);
+        border-radius:0;padding:13px 20px;display:flex;align-items:baseline;gap:10px
+      }
+      .hero-stat b{font-size:17px;margin:0;flex:0 0 auto}
+      .hero-stat span{font-size:13px}
+
+      section{padding:44px 0}
+      .section-title{font-size:31px;line-height:1.04;letter-spacing:-.03em;margin:8px 0 18px}
+      .bigcopy{font-size:21px;line-height:1.14}
+      .note{font-size:15px}
+
+      /* карточки дохода: номер слева, название рядом, без пустоты */
+      .money{grid-template-columns:1fr;gap:0;margin-top:20px;border-top:1px solid var(--line)}
+      .money-card{
+        min-height:0;flex-direction:row;align-items:center;justify-content:flex-start;
+        gap:14px;padding:15px 4px;border:0;border-bottom:1px solid var(--line);background:transparent
+      }
+      .money-card .n{font-size:12px;flex:0 0 auto;min-width:22px}
+      .money-card h3{font-size:18px;margin:0;line-height:1.25}
+
       .proof-points{grid-template-columns:1fr}
-      .price-big{font-size:112px}
+      .proof-img{min-height:240px}
+      .price-big{font-size:78px}
+      .grid2{gap:24px}
     }
   </style>
 </head>
