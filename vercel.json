@@ -2,6 +2,10 @@
   "routes": [
     { "src": "/festv3", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/tugashev.html" },
     { "src": "/festv3", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/tugashev.html" },
+    { "src": "/success", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/festsuccess.html" },
+    { "src": "/success", "has": [{ "type": "host", "value": "www.tugashev.cc" }], "dest": "/festsuccess.html" },
+    { "src": "/fail", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/festfail.html" },
+    { "src": "/fail", "has": [{ "type": "host", "value": "www.tugashev.cc" }], "dest": "/festfail.html" },
     { "src": "/", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/tugashev.html" },
     { "src": "/", "has": [{ "type": "host", "value": "www.tugashev.cc" }], "dest": "/tugashev.html" },
     { "src": "/(.*)", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/tugashev.html" },
