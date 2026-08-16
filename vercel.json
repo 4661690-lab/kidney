@@ -1,5 +1,7 @@
 {
   "routes": [
+    { "src": "/festv3", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/tugashev.html" },
+    { "src": "/festv3", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/tugashev.html" },
     { "src": "/", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/tugashev.html" },
     { "src": "/", "has": [{ "type": "host", "value": "www.tugashev.cc" }], "dest": "/tugashev.html" },
     { "src": "/(.*)", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/tugashev.html" },
@@ -70,6 +72,7 @@
     { "src": "/(.*)", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/zadiraka/index.html" },
     { "src": "/(.*)", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/zadiraka/index.html" },
     { "handle": "filesystem" },
+    { "src": "/festv3", "dest": "/tugashev.html" },
     { "src": "/vdohboosty", "dest": "/vdohboosty.html" },
     { "src": "/festsuccess", "dest": "/festsuccess.html" },
     { "src": "/festfail", "dest": "/festfail.html" },

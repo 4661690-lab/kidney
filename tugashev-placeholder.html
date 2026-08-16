@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Фестиваль як бізнес</title>
+<style>
+  :root{
+    --black:#111111;
+    --accent:#E8622A;
+    --cream:#F2EDE4;
+    --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--cream);
+    color:var(--black);
+    font-family:'Montserrat','Inter',system-ui,-apple-system,sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .wrap{max-width:680px;width:100%}
+  .tag{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--white);
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:8px 14px;
+    margin-bottom:28px;
+  }
+  h1{
+    font-weight:900;
+    font-size:clamp(34px,6vw,56px);
+    line-height:1.02;
+    text-transform:uppercase;
+    margin-bottom:20px;
+  }
+  h1 span{color:var(--accent)}
+  p.sub{
+    font-size:clamp(16px,2.4vw,20px);
+    line-height:1.45;
+    max-width:520px;
+    margin-bottom:36px;
+  }
+  .soon{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:800;
+    font-size:15px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  .dot{
+    width:10px;height:10px;
+    background:var(--accent);
+    border-radius:50%;
+    animation:pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{transform:scale(1);opacity:1}
+    50%{transform:scale(1.6);opacity:.45}
+  }
+  footer{
+    margin-top:64px;
+    font-size:13px;
+    opacity:.55;
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="tag">Мінікурс за 9 $</div>
+    <h1>Фестиваль<br>як <span>бізнес</span></h1>
+    <p class="sub">Бізнес, у якому гроші приходять раніше витрат. Покроковий план першої події від організатора, за плечима якого десятки фестивалів.</p>
+    <div class="soon"><span class="dot"></span>Сторінка скоро відкриється</div>
+    <footer>tugashev.cc</footer>
+  </main>
+</body>
+</html>
