@@ -3,120 +3,366 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Книга «200 дел, чтобы вернуть вкус жизни» · Влад Задирака</title>
-<meta name="description" content="Книга о том, как перестать жить на автомате. 200 конкретных дел. 9 долларов, доступ сразу после оплаты.">
+<title>200 дел, чтобы вернуть вкус жизни</title>
+<meta name="description" content="Книга на 230 страниц: двести конкретных дел и место, чтобы записать, что с тобой при этом произошло. 9 долларов, мгновенная ссылка на скачивание.">
 <link rel="canonical" href="https://zadiraka.cc/book">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zadiraka.cc/book">
-<meta property="og:title" content="Книга «200 дел, чтобы вернуть вкус жизни»">
-<meta property="og:description" content="Как перестать жить на автомате. 200 конкретных дел.">
+<meta property="og:title" content="200 дел, чтобы вернуть вкус жизни">
+<meta property="og:description" content="Одно дело за раз, чтобы снова почувствовать себя живым.">
+<meta property="og:locale" content="ru_RU">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#100e0b;--bg2:#171207;--card:#1c1710;--line:#2e2718;--txt:#f2e8d9;--mut:#b6ab97;--mut2:#8a8172;--gold:#e0b87a;--gold2:#eac88f}
+:root{
+  --bg:#FAF6EC; --ink:#22261F; --acc:#E8590C; --mut:#A79D8B; --line:#C9BFAB;
+  --paper:#fffdf7;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:radial-gradient(820px 520px at 50% 0%,rgba(224,184,122,.14),transparent 60%),var(--bg);
-  color:var(--txt);font-family:'Inter',sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.wrap{max-width:720px;margin:0 auto;padding:0 22px}
-section{padding:46px 0;border-bottom:1px solid var(--line)}
-.kicker{color:var(--gold);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:16px}
-h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,8vw,60px);line-height:1.05}
-h1 em{font-style:italic;color:var(--gold)}
-h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,5.6vw,38px);line-height:1.12;margin-bottom:18px}
-p{color:var(--mut);margin-bottom:15px}
+body{background:var(--bg);color:var(--ink);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+h1,h2,h3,.kicker,.btn{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(31px,8.2vw,54px);line-height:1.02;letter-spacing:-.005em}
+h2{font-size:clamp(24px,6vw,38px);line-height:1.05;margin-bottom:20px}
+h3{font-size:17px;line-height:1.2;margin-bottom:8px}
+.kicker{font-size:12px;letter-spacing:.18em;color:var(--acc);margin-bottom:14px}
+p{margin-bottom:15px}
 p:last-child{margin-bottom:0}
-p.lead{color:var(--txt);font-size:clamp(16px,2.6vw,19px);margin-top:18px}
-.hero{padding:40px 0 44px}
-.price{display:flex;align-items:baseline;gap:12px;margin-top:24px}
-.price .now{font-size:38px;font-weight:700;color:var(--gold);line-height:1}
-.price .lab{color:var(--mut2);font-size:14px}
-.btn{display:block;width:100%;max-width:420px;text-align:center;text-decoration:none;background:var(--gold);color:#171207;
-  font-family:inherit;font-weight:700;font-size:16px;letter-spacing:.03em;padding:17px 26px;border-radius:100px;border:none;cursor:pointer;
-  margin-top:22px;transition:.2s}
-.btn:hover{background:var(--gold2)}
-.btn.ghost{background:transparent;color:var(--gold);border:2px solid var(--gold)}
+.big{font-size:clamp(18px,4.4vw,22px);line-height:1.35;font-weight:600;border-left:4px solid var(--acc);padding-left:16px;margin-top:22px}
+.mut{color:var(--mut);font-size:14px;line-height:1.5}
+
+/* hero */
+.hero{padding:34px 0 40px;border-bottom:1px solid var(--line)}
+.hero .sub{font-size:clamp(17px,4.2vw,21px);line-height:1.32;margin-top:14px;font-weight:500}
+.hero .lead{margin-top:18px}
+.cover{margin-top:26px;background:var(--paper);border:1px solid var(--line);aspect-ratio:4/3;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:var(--mut);font-size:13px;padding:20px}
+
+/* buttons */
+.btn{display:block;width:100%;max-width:440px;text-align:center;text-decoration:none;background:var(--acc);color:#fff;
+  font-size:16px;letter-spacing:.04em;padding:18px 22px;border:none;border-radius:3px;cursor:pointer;margin-top:24px}
+.btn:hover{background:#d24f0a}
+.btn.ghost{background:transparent;color:var(--acc);border:2px solid var(--acc)}
 .btn.off{opacity:.45;cursor:default}
-.note{color:var(--mut2);font-size:13px;margin-top:12px}
-ul.sq{list-style:none;margin-top:6px}
-ul.sq li{position:relative;padding-left:24px;margin-bottom:12px;color:var(--mut);line-height:1.55}
-ul.sq li:last-child{margin-bottom:0}
-ul.sq li::before{content:"";position:absolute;left:0;top:10px;width:9px;height:9px;background:var(--gold);border-radius:2px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-footer{padding:26px 0 40px;color:var(--mut2);font-size:13px}
-footer a{color:var(--mut2)}
+.under{margin-top:11px;color:var(--mut);font-size:13.5px;line-height:1.5}
+
+/* cards */
+.cards{display:grid;grid-template-columns:1fr;gap:0;margin-top:10px;border-top:1px solid var(--line)}
+.card{border-bottom:1px solid var(--line);padding:18px 0}
+.card p{margin:0;font-size:16px;line-height:1.55}
+.card b{font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:15px;letter-spacing:.02em;display:block;margin-bottom:6px}
+
+/* plain list */
+ul.plain{list-style:none}
+ul.plain li{position:relative;padding-left:22px;margin-bottom:12px;line-height:1.5}
+ul.plain li:last-child{margin-bottom:0}
+ul.plain li::before{content:"";position:absolute;left:0;top:11px;width:10px;height:2px;background:var(--acc)}
+
+/* deeds */
+.deed{border-bottom:1px solid var(--line);padding:15px 0}
+.deed:first-child{border-top:1px solid var(--line)}
+.deed p{margin:0;line-height:1.5}
+.deed .meta{font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:12px;letter-spacing:.1em;color:var(--mut);margin-top:6px}
+
+/* numbered */
+.steps{counter-reset:s;list-style:none;margin-top:6px}
+.steps li{counter-increment:s;position:relative;padding-left:38px;margin-bottom:14px;line-height:1.5}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;font-family:'Roboto Condensed',Arial,sans-serif;
+  font-weight:700;color:var(--acc);font-size:19px;line-height:1.3}
+.shot{margin-top:22px;background:var(--paper);border:1px solid var(--line);aspect-ratio:3/4;max-width:340px;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:var(--mut);font-size:13px;padding:20px}
+
+/* two columns */
+.cols{display:grid;grid-template-columns:1fr;gap:0}
+.col{padding:20px 0;border-top:1px solid var(--line)}
+.col:last-child{border-bottom:1px solid var(--line)}
+.col h3{color:var(--acc);margin-bottom:12px;font-size:18px}
+.col.no h3{color:var(--mut)}
+.col.no ul.plain li::before{background:var(--line)}
+
+/* author */
+.author{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+.author-photo{background:var(--paper);border:1px solid var(--line);aspect-ratio:4/5;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:var(--mut);font-size:13px;padding:20px}
+.socials{margin-top:16px;font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:13px;letter-spacing:.08em}
+.socials a{color:var(--acc);text-decoration:none;margin-right:16px}
+
+/* price */
+.pricebig{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:clamp(46px,13vw,86px);line-height:1;color:var(--acc)}
+
+/* faq */
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:16px 30px 16px 0;position:relative;font-weight:600;line-height:1.4;font-size:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:2px;top:14px;color:var(--acc);font-size:22px;
+  font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700}
+details[open] summary::after{content:"\2212"}
+details .ans{padding:0 0 18px;font-size:16px;line-height:1.6}
+
+footer{padding:26px 0 96px;color:var(--mut);font-size:14px;line-height:1.8}
+footer a{color:var(--mut)}
+footer .l{font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:12.5px;letter-spacing:.08em}
+footer .l a{color:var(--acc);text-decoration:none;margin-right:14px}
+
+/* floating */
+.float{position:fixed;left:0;right:0;bottom:0;z-index:900;background:var(--bg);border-top:2px solid var(--acc);
+  padding:10px 0 calc(10px + env(safe-area-inset-bottom));transform:translateY(120%);transition:transform .2s ease}
+.float.show{transform:translateY(0)}
+.float .in{display:flex;align-items:center;gap:12px;max-width:760px;margin:0 auto;padding:0 20px}
+.float .p{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:19px;color:var(--acc);white-space:nowrap}
+.float .btn{margin:0;flex:1 1 auto;max-width:none;padding:14px 14px;font-size:14px}
 
 /* modal */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.modal-overlay{position:fixed;inset:0;background:rgba(34,38,31,.82);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
 .modal-overlay.open{display:flex}
-.modal{background:var(--bg2);border:1px solid var(--line);border-radius:18px;max-width:420px;width:100%;max-height:92vh;overflow:auto;position:relative}
-.modal-body{padding:28px 22px 24px}
-.modal-close{position:absolute;top:6px;right:12px;background:none;border:none;color:var(--mut2);font-size:30px;line-height:1;cursor:pointer;padding:6px;font-family:inherit}
-.modal-title{font-size:20px;font-weight:700;margin-bottom:10px;line-height:1.3;color:var(--txt)}
-.modal-note{color:var(--mut);font-size:13.5px;margin-bottom:16px;line-height:1.5}
-.modal-price{font-size:26px;font-weight:700;color:var(--gold);margin-bottom:18px}
-#lead-form label{display:block;font-size:12px;color:var(--mut2);margin-bottom:14px;letter-spacing:.02em}
-#lead-form input{display:block;width:100%;margin-top:6px;padding:14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:16px;font-family:inherit}
-#lead-form input:focus{outline:none;border-color:var(--gold)}
-#lead-form .btn{margin-top:6px;width:100%;max-width:none}
-.modal-fine{color:var(--mut2);font-size:12px;text-align:center;margin-top:12px}
+.modal{background:var(--bg);border:2px solid var(--ink);max-width:430px;width:100%;max-height:92vh;overflow:auto;position:relative;border-radius:3px}
+.modal-body{padding:26px 20px 22px}
+.modal-close{position:absolute;top:4px;right:10px;background:none;border:none;color:var(--ink);font-size:32px;line-height:1;cursor:pointer;padding:6px;font-family:'Lora',serif}
+.modal-title{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase;font-size:21px;line-height:1.1;margin-bottom:12px}
+.modal-note{color:var(--mut);font-size:14px;line-height:1.5;margin-bottom:16px}
+.modal-price{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:30px;color:var(--acc);margin-bottom:16px}
+#lead-form label{display:block;font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:12px;
+  letter-spacing:.1em;color:var(--mut);margin-bottom:14px}
+#lead-form input{display:block;width:100%;margin-top:6px;padding:14px;border:1px solid var(--line);background:var(--paper);
+  color:var(--ink);font-size:16px;font-family:'Lora',serif;border-radius:2px}
+#lead-form input:focus{outline:none;border-color:var(--acc)}
+#lead-form .btn{margin-top:4px;width:100%;max-width:none}
+.modal-fine{color:var(--mut);font-size:12.5px;text-align:center;margin-top:12px}
 
-/* sticky */
-.float-bar{position:fixed;left:0;right:0;bottom:0;z-index:900;background:var(--bg2);border-top:1px solid var(--line);
-  padding:11px 0 calc(11px + env(safe-area-inset-bottom));transform:translateY(115%);transition:transform .22s ease}
-.float-bar.show{transform:translateY(0)}
-.float-bar .fb{display:flex;align-items:center;gap:12px;max-width:720px;margin:0 auto;padding:0 22px}
-.float-bar .fp{color:var(--gold);font-weight:700;font-size:17px;white-space:nowrap}
-.float-bar .btn{margin:0;flex:1 1 auto;padding:14px 16px;font-size:14.5px;max-width:none}
-
-@media(min-width:700px){
-  section{padding:62px 0}
+@media(min-width:760px){
+  section{padding:64px 0}
   .hero{padding:56px 0 60px}
-  .btn{display:inline-block;width:auto;min-width:320px}
+  .cards{grid-template-columns:1fr 1fr;gap:0 28px}
+  .cols{grid-template-columns:1fr 1fr;gap:0 28px}
+  .cols .col:first-child{border-bottom:1px solid var(--line)}
+  .author{grid-template-columns:280px 1fr;gap:30px}
+  .btn{display:inline-block;width:auto;min-width:340px}
 }
 </style>
 </head>
 <body>
 
+<!-- 1 -->
 <header class="hero">
   <div class="wrap">
-    <p class="kicker">Книга · PDF</p>
-    <h1>200 дел, чтобы вернуть <em>вкус жизни</em></h1>
-    <p class="lead">Если коротко, я тут про одну вещь: как перестать жить на автомате.</p>
-    <div class="price"><span class="now">9 $</span><span class="lab">доступ сразу после оплаты</span></div>
-    <a class="btn" data-buy href="#">Купить книгу</a>
-    <p class="note">Оплата картой. Файл приходит сразу после оплаты.</p>
+    <p class="kicker">Книга · PDF · 230 страниц</p>
+    <h1>200 дел, чтобы вернуть вкус жизни</h1>
+    <p class="sub">Одно дело за раз, чтобы снова почувствовать себя живым.</p>
+    <p class="lead">Не курс. Не трекер привычек. Книга на 230 страниц, где двести конкретных дел и место, чтобы записать, что с тобой при этом произошло.</p>
+    <a class="btn" data-buy href="#">Забрать книгу за 9 $</a>
+    <p class="under">Мгновенная ссылка на скачивание. PDF, читается с телефона и печатается дома.</p>
+    <div class="cover">Обложка книги<br>(добавить макет)</div>
   </div>
 </header>
 
+<!-- 2 -->
 <section>
   <div class="wrap">
-    <h2>Что внутри</h2>
-    <div class="card">
-      <p>Описание книги добавим сюда, как только Влад пришлёт текст: о чём она, сколько страниц, для кого.</p>
+    <h2>Ничего не случилось. И в этом всё дело</h2>
+    <p>Ты делаешь всё, что должен. Работа идёт, дом стоит, планы выполняются.</p>
+    <p>А вечером ты не можешь вспомнить, чем этот день отличался от вчерашнего.</p>
+    <p>Люди рядом стали чуть дальше. Не потому, что вы поссорились, а потому, что тебя не очень-то было рядом.</p>
+    <p>Год пролетел за месяц. Пять лет слились в один. Ты ловишь себя на том, что живёшь на автомате, и не понимаешь, в какой момент это началось.</p>
+    <p class="big">Это не выгорание и не депрессия. Это привычка не замечать.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section>
+  <div class="wrap">
+    <h2>Мозг экономит, а платишь ты</h2>
+    <p>Всё, что повторяется без изменений, мозг перестаёт обрабатывать: дорога на работу, вкус утреннего кофе, лицо близкого человека. Это защита от перегрузки, а не поломка.</p>
+    <p>Но за неё есть цена. Чем больше в жизни повторов, тем короче кажется прожитое время. Именно поэтому детство помнится подробно, а последние пять лет сливаются. Дело не в возрасте, а в количестве нового.</p>
+    <p>Внимание возвращается через действие. Не через размышление о действии, не через книги про осознанность и не через решение взять себя в руки.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section>
+  <div class="wrap">
+    <h2>Двести поводов вернуться в свою жизнь</h2>
+    <div class="cards">
+      <div class="card"><p><b>Каждое дело конкретное</b>Не «будь внимательнее», а «выпей кофе, не делая при этом больше ничего». Прочитал и пошёл делать.</p></div>
+      <div class="card"><p><b>Каждое дело занимает время</b>От пятнадцати минут до целого дня. Двухминутных упражнений тут нет, после каждого дела остаётся что записать.</p></div>
+      <div class="card"><p><b>Каждое дело объяснено</b>Не мотивация, а механизм: что именно происходит с вниманием, телом и привычкой, когда ты это делаешь.</p></div>
+      <div class="card"><p><b>Порядок необязателен</b>Можно идти подряд, можно открывать под настроение. Пропущенная неделя ничего не портит, серия не сгорает, потому что её нет.</p></div>
     </div>
   </div>
 </section>
 
+<!-- 5 -->
 <section>
   <div class="wrap">
-    <h2>Сколько стоит</h2>
-    <div class="price"><span class="now">9 $</span><span class="lab">единоразово, доступ навсегда</span></div>
-    <a class="btn" data-buy href="#">Купить книгу</a>
+    <h2>Чего в этой книге нет</h2>
+    <ul class="plain">
+      <li>Нет обещания новой жизни через двести дней</li>
+      <li>Нет ежедневных заданий, которые нельзя пропускать</li>
+      <li>Нет трекера привычек и серий, которые страшно потерять</li>
+      <li>Нет правильного выполнения и неправильного</li>
+      <li>Нет мотивации, вдохновляющих цитат и советов взять себя в руки</li>
+    </ul>
+    <p class="big">В конце ты не станешь лучшей версией себя. Ты вернёшься к тому, который никуда не девался.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section>
+  <div class="wrap">
+    <h2>Вот как выглядят дела</h2>
+    <div class="deed"><p>Сфотографируй двадцать скучных вещей, пока они не начнут казаться важными.</p><p class="meta">30 минут · где угодно</p></div>
+    <div class="deed"><p>Завари чайник и пей его крошечными чашками, пока не кончится вкус.</p><p class="meta">40 минут · дома</p></div>
+    <div class="deed"><p>Скажи вслух то, от чего уходишь уже месяц. Стенам, не человеку.</p><p class="meta">15 минут · дома</p></div>
+    <div class="deed"><p>Постой босиком на земле, пока не перестанешь чувствовать себя глупо.</p><p class="meta">15 минут · на улице</p></div>
+    <div class="deed"><p>Позвони тому, с кем не говорил больше года, и не объясняй, почему звонишь.</p><p class="meta">30 минут · где угодно</p></div>
+    <div class="deed"><p>Слепи из глины чашку и потом пей из неё каждое утро.</p><p class="meta">3 часа · на улице</p></div>
+    <div class="deed"><p>Проживи день, ни разу не объясняя и не оправдываясь.</p><p class="meta">весь день · с людьми</p></div>
+    <div class="deed"><p>Сходи на занятие, где ты будешь худшим в комнате.</p><p class="meta">2 часа · на улице</p></div>
+    <div class="deed"><p>Подари цветы незнакомому человеку и уйди.</p><p class="meta">30 минут · на улице</p></div>
+    <div class="deed"><p>Напиши три страницы А4 сразу после пробуждения, не останавливаясь и не перечитывая.</p><p class="meta">40 минут · дома</p></div>
+    <a class="btn" data-buy href="#">Забрать книгу за 9 $</a>
+  </div>
+</section>
+
+<!-- 7 -->
+<section>
+  <div class="wrap">
+    <h2>Одна страница на одно дело</h2>
+    <div class="shot">Разворот книги<br>(добавить скриншот)</div>
+    <ol class="steps">
+      <li>Номер и само дело</li>
+      <li>Как сделать: конкретные шаги, без философии</li>
+      <li>Почему это работает: механизм, а не мораль</li>
+      <li>Один вопрос после выполнения</li>
+      <li>Линейки, чтобы записать, что получилось</li>
+      <li>В подвале: сколько займёт и где делать</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 8 -->
+<section>
+  <div class="wrap">
+    <h2>Не только дела</h2>
+    <div class="cards">
+      <div class="card"><p><b>Трекер на двести квадратов</b>Зачёркиваешь номер сделанного. Порядок неважен, пропуски неважны.</p></div>
+      <div class="card"><p><b>Девять страниц возврата</b>Каждые двадцать сделанных дел ты останавливаешься и отвечаешь на три вопроса. Там записи складываются в наблюдение.</p></div>
+      <div class="card"><p><b>Указатель по времени</b>Есть пятнадцать минут, есть час, есть целый вечер. Смотришь и выбираешь.</p></div>
+      <div class="card"><p><b>Указатель по месту</b>Дома, на улице, с людьми.</p></div>
+      <div class="card"><p><b>Указатель по состоянию</b>Когда тревожно, когда пусто, когда злишься, когда нет сил, когда одиноко. Открываешь свою строку и берёшь любой номер.</p></div>
+      <div class="card"><p><b>Указатель по семи центрам</b>Для тех, кому близка система чакр: карта, какое дело к какому центру относится.</p></div>
+      <div class="card"><p><b>Страницы для заметок</b>В конце книги.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section>
+  <div class="wrap">
+    <h2>Кому подойдёт и кому нет</h2>
+    <div class="cols">
+      <div class="col">
+        <h3>Скорее твоё, если</h3>
+        <ul class="plain">
+          <li>Ты чувствуешь, что живёшь на автомате, и хочешь это изменить действиями, а не размышлениями</li>
+          <li>Ты уже пробовал очевидное и оно не сработало</li>
+          <li>Тебе нужно что-то спокойное, а не очередной режим, который надо выдерживать</li>
+          <li>Ты хочешь делать, а не читать о том, как надо делать</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3>Скорее не твоё, если</h3>
+        <ul class="plain">
+          <li>Ты ищешь систему продуктивности или трекер привычек</li>
+          <li>Тебе нужен результат за неделю</li>
+          <li>Тебя раздражает всё, что просит замедлиться</li>
+          <li>Ты хочешь, чтобы кто-то сделал за тебя</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="wrap">
+    <h2>Об авторе</h2>
+    <div class="author">
+      <div class="author-photo">Фото автора<br>(добавить)</div>
+      <div>
+        <p>Меня зовут Влад Задирака. Я не психолог и не учитель жизни.</p>
+        <p>В какой-то момент я обнаружил, что живу на автомате. Дела делались, дни проходили, а внутри было ровно ничего. Выбираться пришлось не через книги и не через размышления, а через тело: цигун, дыхание, движение и очень простые действия, которые возвращают внимание в текущий день.</p>
+        <p>Оказалось, что это работает надёжнее любых разговоров о мотивации. Потом я начал собирать это в программы, и через них прошли тысячи человек.</p>
+        <p>Эта книга их продолжение. Двести дел, которые я либо делал сам, либо видел, как они меняют людей.</p>
+        <p class="socials">
+          <a href="https://t.me/zadirakaqi" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://instagram.com/zadirakacigun" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://youtube.com/@vladzadiraka" target="_blank" rel="noopener">YouTube</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="price">
+  <div class="wrap">
+    <p class="kicker">Цена</p>
+    <div class="pricebig">9 долларов</div>
+    <p style="margin-top:16px">Столько стоит один кофе с десертом. Разница в том, что кофе кончится через двадцать минут, а книга останется на двести дел вперёд.</p>
+    <ul class="plain" style="margin-top:18px">
+      <li>230 страниц PDF</li>
+      <li>200 дел с объяснением, зачем каждое</li>
+      <li>Трекер, четыре указателя и страницы для заметок</li>
+      <li>Мгновенная ссылка после оплаты</li>
+      <li>Читается с телефона, печатается дома</li>
+    </ul>
+    <a class="btn" data-buy href="#">Забрать книгу за 9 $</a>
+    <p class="under">Оплата картой. Файл придёт сразу после оплаты. Это цифровой товар, возврат после получения файла не предусмотрен.</p>
+  </div>
+</section>
+
+<!-- 12 -->
+<section>
+  <div class="wrap">
+    <h2>Вопросы</h2>
+    <details><summary>Почему просто книга, а не курс?</summary><div class="ans">Потому что курс надо проходить, а книгу можно открыть на любой странице через полгода. Тут нечего не успеть и нечего пропустить.</div></details>
+    <details><summary>Эти дела выглядят слишком простыми. В них точно есть смысл?</summary><div class="ans">Простое действие и лёгкое действие это разное. Попробуй двадцать минут пить чай, ничего при этом не делая, и ты поймёшь разницу. Смысл каждого дела разобран на его же странице.</div></details>
+    <details><summary>Обязательно делать по одному в день?</summary><div class="ans">Нет. Можно делать три за выходные и ни одного за месяц. Книга не считает.</div></details>
+    <details><summary>Я уже пробовал похожее и бросил. Чем это отличается?</summary><div class="ans">Тем, что тут нечего бросать. Нет серии, которая сгорит, и нет расписания, из которого можно выпасть. И тем, что дела выбираются под состояние, а не диктуются календарём.</div></details>
+    <details><summary>Мне негде это делать, у меня нет времени.</summary><div class="ans">В книге есть указатель по времени и по месту. Дел на пятнадцать минут дома там несколько десятков.</div></details>
+    <details><summary>Это религия или эзотерика?</summary><div class="ans">Нет. Есть указатель по семи центрам для тех, кому такой язык близок, но в самих делах ничего подобного нет.</div></details>
+    <details><summary>Что именно я получу после оплаты?</summary><div class="ans">Ссылку на скачивание PDF. Файл открывается на телефоне, планшете и компьютере, страницы можно печатать по одной.</div></details>
+    <details><summary>Можно вернуть деньги?</summary><div class="ans">Это цифровой товар, после получения файла возврат не предусмотрен. Поэтому на странице показаны реальные развороты и примеры дел, чтобы ты решал не вслепую.</div></details>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Влад Задирака · <span id="yr">2026</span> · <a href="/">на главную</a></p>
+    <p class="l">
+      <a href="https://t.me/zadirakaqi" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://instagram.com/zadirakacigun" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@vladzadiraka" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://zadiraka.cc">zadiraka.cc</a>
+    </p>
+    <p>zadiraka.wellness@gmail.com</p>
+    <p class="l" style="margin-top:8px">
+      <a href="/bookterms">Публичная оферта</a>
+      <a href="/bookprivacy">Политика конфиденциальности</a>
+    </p>
+    <p>Влад Задирака · <span id="yr">2026</span></p>
   </div>
 </footer>
 
-<div class="float-bar" id="float-bar">
-  <div class="fb">
-    <span class="fp">9 $</span>
-    <a class="btn" data-buy href="#">Купить книгу</a>
+<div class="float" id="float">
+  <div class="in">
+    <span class="p">9 $</span>
+    <a class="btn" data-buy href="#">Забрать книгу</a>
   </div>
 </div>
 
@@ -132,15 +378,15 @@ footer a{color:var(--mut2)}
           <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
           <label>Телефон*<input type="tel" name="phone" required placeholder="+ код страны и номер"></label>
           <button type="submit" class="btn">Перейти к оплате</button>
-          <div class="modal-fine">Книга приходит сразу после оплаты</div>
+          <div class="modal-fine">Ссылка на скачивание приходит сразу после оплаты</div>
         </form>
       </div>
       <div id="lead-thanks" style="display:none">
         <h3 class="modal-title">Остался один шаг</h3>
         <p class="modal-note">Выбери, какой картой будешь платить, и откроется страница оплаты.</p>
-        <a class="btn" id="pay-cis" href="#">Оплатить картой СНГ &rarr;</a>
+        <a class="btn" id="pay-cis" href="#">Оплатить картой СНГ</a>
         <div style="height:10px"></div>
-        <a class="btn ghost" id="pay-world" href="#">Оплатить европейской картой &rarr;</a>
+        <a class="btn ghost" id="pay-world" href="#">Оплатить европейской картой</a>
         <div class="modal-fine">Если оплата не проходит, напиши на zadiraka.wellness@gmail.com</div>
       </div>
     </div>
@@ -149,10 +395,10 @@ footer a{color:var(--mut2)}
 
 <script>
 /* ============ КОНСТАНТЫ. Менять только здесь ============ */
-var PAY_CIS   = "https://boosty.to/zadirakacigun/posts/d7d501a9-207f-4f86-93b4-1e0e5fd0b470?share=post_link";  /* Boosty, карты СНГ */
-var PAY_WORLD = "https://secure.wayforpay.com/button/bd452d4039d2a";        /* WayForPay, европейские карты */
-var PIXEL_ID  = "2095117397778923";   /* пиксель счастье RU */
-var SHEET     = "book";    /* вкладка в таблице лидов */
+var PAY_CIS   = "https://boosty.to/zadirakacigun/posts/d7d501a9-207f-4f86-93b4-1e0e5fd0b470?share=post_link";
+var PAY_WORLD = "https://secure.wayforpay.com/button/bd452d4039d2a";
+var PIXEL_ID  = "2095117397778923";
+var SHEET     = "book";
 /* ======================================================== */
 
 document.getElementById('yr').textContent = new Date().getFullYear();
@@ -160,8 +406,8 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 (function(){
   var LEAD_URL='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
   var modal=document.getElementById('lead-modal');
-  function openM(e){if(e)e.preventDefault();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
-    if(window.fbq)fbq('track','InitiateCheckout');}
+  function openM(e){if(e)e.preventDefault();modal.classList.add('open');modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden'; if(window.fbq)fbq('track','InitiateCheckout');}
   function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
   document.querySelectorAll('a[data-buy]').forEach(function(a){a.addEventListener('click',openM);});
   document.getElementById('modal-close').addEventListener('click',closeM);
@@ -185,12 +431,13 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     document.getElementById('lead-thanks').style.display='block';
   });
 
-  var fb=document.getElementById('float-bar');
-  function upd(){var d=document.documentElement;
-    var past=window.scrollY>window.innerHeight*0.7;
-    var atEnd=(window.innerHeight+window.scrollY)>=(d.scrollHeight-160);
+  var fl=document.getElementById('float');
+  function upd(){
+    var past=window.scrollY>window.innerHeight*0.9;
+    var atEnd=(window.innerHeight+window.scrollY)>=(document.documentElement.scrollHeight-150);
     var open=modal.classList.contains('open');
-    if(past&&!atEnd&&!open){fb.classList.add('show');}else{fb.classList.remove('show');}}
+    if(past&&!atEnd&&!open){fl.classList.add('show');}else{fl.classList.remove('show');}
+  }
   window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd,{passive:true});upd();
 })();
 
