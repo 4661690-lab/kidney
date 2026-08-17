@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>201 справа, щоб повернути смак життя</title>
+<meta name="description" content="Книжка на 232 сторінки: 201 конкретна справа і місце, щоб записати, що з тобою при цьому сталося. 9 доларів, миттєве посилання на завантаження.">
+<link rel="canonical" href="https://zadiraka.cc/uabook">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zadiraka.cc/uabook">
+<meta property="og:title" content="201 справа, щоб повернути смак життя">
+<meta property="og:description" content="Одна справа за раз, щоб знову відчути себе живим.">
+<meta property="og:locale" content="uk_UA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF6EC; --ink:#22261F; --acc:#E8590C; --mut:#A79D8B; --line:#C9BFAB;
+  --paper:#fffdf7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+h1,h2,h3,.kicker,.btn{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(31px,8.2vw,54px);line-height:1.02;letter-spacing:-.005em}
+h2{font-size:clamp(24px,6vw,38px);line-height:1.05;margin-bottom:20px}
+h3{font-size:17px;line-height:1.2;margin-bottom:8px}
+.kicker{font-size:12px;letter-spacing:.18em;color:var(--acc);margin-bottom:14px}
+p{margin-bottom:15px}
+p:last-child{margin-bottom:0}
+.big{font-size:clamp(18px,4.4vw,22px);line-height:1.35;font-weight:600;border-left:4px solid var(--acc);padding-left:16px;margin-top:22px}
+.mut{color:var(--mut);font-size:14px;line-height:1.5}
+
+/* hero */
+.hero{padding:34px 0 40px;border-bottom:1px solid var(--line)}
+.hero .sub{font-size:clamp(17px,4.2vw,21px);line-height:1.32;margin-top:14px;font-weight:500}
+.hero .lead{margin-top:18px}
+.cover{margin-top:26px;width:100%;height:auto;border:1px solid var(--line)}
+
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.gal img{width:100%;height:auto;border:1px solid var(--line)}
+.flip{width:100%;max-width:340px;margin-top:20px;border:1px solid var(--line);background:#000;display:block}
+
+/* buttons */
+.btn{display:block;width:100%;max-width:440px;text-align:center;text-decoration:none;background:var(--acc);color:#fff;
+  font-size:16px;letter-spacing:.04em;padding:18px 22px;border:none;border-radius:3px;cursor:pointer;margin-top:24px}
+.btn:hover{background:#d24f0a}
+.btn.ghost{background:transparent;color:var(--acc);border:2px solid var(--acc)}
+.btn.off{opacity:.45;cursor:default}
+.under{margin-top:11px;color:var(--mut);font-size:13.5px;line-height:1.5}
+
+/* cards */
+.cards{display:grid;grid-template-columns:1fr;gap:0;margin-top:10px;border-top:1px solid var(--line)}
+.card{border-bottom:1px solid var(--line);padding:18px 0}
+.card p{margin:0;font-size:16px;line-height:1.55}
+.card b{font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:15px;letter-spacing:.02em;display:block;margin-bottom:6px}
+
+/* plain list */
+ul.plain{list-style:none}
+ul.plain li{position:relative;padding-left:22px;margin-bottom:12px;line-height:1.5}
+ul.plain li:last-child{margin-bottom:0}
+ul.plain li::before{content:"";position:absolute;left:0;top:11px;width:10px;height:2px;background:var(--acc)}
+
+/* deeds */
+.deed{border-bottom:1px solid var(--line);padding:15px 0}
+.deed:first-child{border-top:1px solid var(--line)}
+.deed p{margin:0;line-height:1.5}
+.deed .meta{font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:12px;letter-spacing:.1em;color:var(--mut);margin-top:6px}
+
+/* numbered */
+.steps{counter-reset:s;list-style:none;margin-top:6px}
+.steps li{counter-increment:s;position:relative;padding-left:38px;margin-bottom:14px;line-height:1.5}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;font-family:'Roboto Condensed',Arial,sans-serif;
+  font-weight:700;color:var(--acc);font-size:19px;line-height:1.3}
+.shot{margin-top:22px;width:100%;max-width:400px;height:auto;border:1px solid var(--line)}
+
+/* two columns */
+.cols{display:grid;grid-template-columns:1fr;gap:0}
+.col{padding:20px 0;border-top:1px solid var(--line)}
+.col:last-child{border-bottom:1px solid var(--line)}
+.col h3{color:var(--acc);margin-bottom:12px;font-size:18px}
+.col.no h3{color:var(--mut)}
+.col.no ul.plain li::before{background:var(--line)}
+
+/* author */
+.author{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+.author-photo{width:100%;height:auto;border:1px solid var(--line)}
+.socials{margin-top:16px;font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:13px;letter-spacing:.08em}
+.socials a{color:var(--acc);text-decoration:none;margin-right:16px}
+
+/* price */
+.pricebig{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:clamp(46px,13vw,86px);line-height:1;color:var(--acc)}
+
+/* faq */
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:16px 30px 16px 0;position:relative;font-weight:600;line-height:1.4;font-size:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:2px;top:14px;color:var(--acc);font-size:22px;
+  font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700}
+details[open] summary::after{content:"\2212"}
+details .ans{padding:0 0 18px;font-size:16px;line-height:1.6}
+
+footer{padding:26px 0 96px;color:var(--mut);font-size:14px;line-height:1.8}
+footer a{color:var(--mut)}
+footer .l{font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:12.5px;letter-spacing:.08em}
+footer .l a{color:var(--acc);text-decoration:none;margin-right:14px}
+
+/* floating */
+.float{position:fixed;left:0;right:0;bottom:0;z-index:900;background:var(--bg);border-top:2px solid var(--acc);
+  padding:10px 0 calc(10px + env(safe-area-inset-bottom));transform:translateY(120%);transition:transform .2s ease}
+.float.show{transform:translateY(0)}
+.float .in{display:flex;align-items:center;gap:12px;max-width:760px;margin:0 auto;padding:0 20px}
+.float .p{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:19px;color:var(--acc);white-space:nowrap}
+.float .btn{margin:0;flex:1 1 auto;max-width:none;padding:14px 14px;font-size:14px}
+
+/* modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(34,38,31,.82);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg);border:2px solid var(--ink);max-width:430px;width:100%;max-height:92vh;overflow:auto;position:relative;border-radius:3px}
+.modal-body{padding:26px 20px 22px}
+.modal-close{position:absolute;top:4px;right:10px;background:none;border:none;color:var(--ink);font-size:32px;line-height:1;cursor:pointer;padding:6px;font-family:'Lora',serif}
+.modal-title{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;text-transform:uppercase;font-size:21px;line-height:1.1;margin-bottom:12px}
+.modal-note{color:var(--mut);font-size:14px;line-height:1.5;margin-bottom:16px}
+.modal-price{font-family:'Roboto Condensed',Arial,sans-serif;font-weight:700;font-size:30px;color:var(--acc);margin-bottom:16px}
+#lead-form label{display:block;font-family:'Roboto Condensed',Arial,sans-serif;text-transform:uppercase;font-size:12px;
+  letter-spacing:.1em;color:var(--mut);margin-bottom:14px}
+#lead-form input{display:block;width:100%;margin-top:6px;padding:14px;border:1px solid var(--line);background:var(--paper);
+  color:var(--ink);font-size:16px;font-family:'Lora',serif;border-radius:2px}
+#lead-form input:focus{outline:none;border-color:var(--acc)}
+#lead-form .btn{margin-top:4px;width:100%;max-width:none}
+.modal-fine{color:var(--mut);font-size:12.5px;text-align:center;margin-top:12px}
+
+@media(min-width:760px){
+  section{padding:64px 0}
+  .hero{padding:56px 0 60px}
+  .cards{grid-template-columns:1fr 1fr;gap:0 28px}
+  .cols{grid-template-columns:1fr 1fr;gap:0 28px}
+  .cols .col:first-child{border-bottom:1px solid var(--line)}
+  .author{grid-template-columns:280px 1fr;gap:30px}
+  .btn{display:inline-block;width:auto;min-width:340px}
+}
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Книжка · PDF · 232 сторінки</p>
+    <h1>201 справа, щоб повернути смак життя</h1>
+    <p class="sub">Одна справа за раз, щоб знову відчути себе живим.</p>
+    <p class="lead">Не курс. Не трекер звичок. Книжка на 232 сторінки, де 201 конкретна справа і місце, щоб записати, що з тобою при цьому сталося.</p>
+    <a class="btn" data-buy href="#">Забрати книжку за 9 $</a>
+    <p class="under">Миттєве посилання на завантаження. PDF, читається з телефона і друкується вдома.</p>
+    <img class="cover" src="/assets/uabook/cover.jpg" width="1000" height="755" alt="Макет книжки 201 справа, щоб повернути смак життя" fetchpriority="high" decoding="async">
+    <video class="flip" src="/assets/uabook/flip.mp4" poster="/assets/uabook/video-poster.jpg"
+      muted playsinline loop controls preload="none"></video>
+    <p class="under">Так книжка виглядає всередині.</p>
+
+  </div>
+</header>
+
+<!-- 2 -->
+<section>
+  <div class="wrap">
+    <h2>Нічого не сталося. І в цьому вся річ</h2>
+    <p>Ти робиш усе, що маєш. Робота йде, дім стоїть, плани виконуються.</p>
+    <p>А ввечері ти не можеш пригадати, чим цей день відрізнявся від учорашнього.</p>
+    <p>Люди поруч стали трохи далі. Не тому, що ви посварилися, а тому, що тебе не дуже й було поруч.</p>
+    <p>Рік пролетів за місяць. Пʼять років злилися в один. Ти ловиш себе на тому, що живеш на автоматі, і не розумієш, у який момент це почалося.</p>
+    <p class="big">Це не вигоряння і не депресія. Це звичка не помічати.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section>
+  <div class="wrap">
+    <h2>Мозок економить, а платиш ти</h2>
+    <p>Усе, що повторюється без змін, мозок перестає обробляти: дорога на роботу, смак ранкової кави, обличчя близької людини. Це захист від перевантаження, а не поломка.</p>
+    <p>Але за неї є ціна. Що більше в житті повторів, то коротшим здається прожитий час. Саме тому дитинство памʼятається докладно, а останні пʼять років зливаються. Річ не у віці, а в кількості нового.</p>
+    <p>Увага повертається через дію. Не через роздуми про дію, не через книжки про усвідомленість і не через рішення взяти себе в руки.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section>
+  <div class="wrap">
+    <h2>201 привід повернутися у своє життя</h2>
+    <div class="cards">
+      <div class="card"><p><b>Кожна справа конкретна</b>Не «будь уважнішим», а «випий каву, не роблячи при цьому більше нічого». Прочитав і пішов робити.</p></div>
+      <div class="card"><p><b>Кожна справа займає час</b>Від пʼятнадцяти хвилин до цілого дня. Двохвилинних вправ тут немає, після кожної справи лишається що записати.</p></div>
+      <div class="card"><p><b>Кожна справа пояснена</b>Не мотивація, а механізм: що саме відбувається з увагою, тілом і звичкою, коли ти це робиш.</p></div>
+      <div class="card"><p><b>Порядок необовʼязковий</b>Можна йти поспіль, можна відкривати під настрій. Пропущений тиждень нічого не псує, серія не згорає, бо її немає.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section>
+  <div class="wrap">
+    <h2>Чого в цій книжці немає</h2>
+    <ul class="plain">
+      <li>Немає обіцянки нового життя через 201 день</li>
+      <li>Немає щоденних завдань, які не можна пропускати</li>
+      <li>Немає трекера звичок і серій, які страшно втратити</li>
+      <li>Немає правильного виконання і неправильного</li>
+      <li>Немає мотивації, надихальних цитат і порад взяти себе в руки</li>
+    </ul>
+    <p class="big">У кінці ти не станеш кращою версією себе. Ти повернешся до того, який нікуди не дівався.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section>
+  <div class="wrap">
+    <h2>Ось як виглядають справи</h2>
+    <div class="deed"><p>Сфотографуй двадцять нудних речей, поки вони не почнуть здаватися важливими.</p><p class="meta">30 хв · будь-де</p></div>
+    <div class="deed"><p>Завари чайник і пий його крихітними чашками, поки не скінчиться смак.</p><p class="meta">40 хв · вдома</p></div>
+    <div class="deed"><p>Скажи вголос те, від чого тікаєш уже місяць. Стінам, не людині.</p><p class="meta">15 хв · вдома</p></div>
+    <div class="deed"><p>Постій босоніж на землі, поки не перестанеш почуватися по-дурному.</p><p class="meta">15 хв · надворі</p></div>
+    <div class="deed"><p>Зателефонуй тому, з ким не говорив понад рік, і не пояснюй, чому телефонуєш.</p><p class="meta">30 хв · будь-де</p></div>
+    <div class="deed"><p>Зліпи з глини чашку і потім пий із неї щоранку.</p><p class="meta">3 години · надворі</p></div>
+    <div class="deed"><p>Проживи день, жодного разу не пояснюючи і не виправдовуючись.</p><p class="meta">весь день · з людьми</p></div>
+    <div class="deed"><p>Сходи на заняття, де ти будеш найгіршим у кімнаті.</p><p class="meta">2 години · надворі</p></div>
+    <div class="deed"><p>Подаруй квіти незнайомій людині і піди.</p><p class="meta">30 хв · надворі</p></div>
+    <div class="deed"><p>Напиши три сторінки А4 одразу після пробудження, не зупиняючись і не перечитуючи.</p><p class="meta">40 хв · вдома</p></div>
+    <div class="gal" style="margin-top:22px">
+      <img src="/assets/uabook/spread-deed1.jpg" width="700" height="990" alt="Сторінка з першою справою" loading="lazy" decoding="async">
+      <img src="/assets/uabook/spread-deed2.jpg" width="700" height="990" alt="Сторінка зі справою про чай" loading="lazy" decoding="async">
+    </div>
+    <a class="btn" data-buy href="#">Забрати книжку за 9 $</a>
+  </div>
+</section>
+
+<!-- 7 -->
+<section>
+  <div class="wrap">
+    <h2>Одна сторінка на одну справу</h2>
+    <img class="shot" src="/assets/uabook/spread-howto.jpg" width="760" height="1075" alt="Сторінка як користуватися книжкою" loading="lazy" decoding="async">
+    <ol class="steps">
+      <li>Номер і сама справа</li>
+      <li>Як зробити: конкретні кроки, без філософії</li>
+      <li>Чому це працює: механізм, а не мораль</li>
+      <li>Одне запитання після виконання</li>
+      <li>Лінійки, щоб записати, що вийшло</li>
+      <li>У підвалі: скільки займе і де робити</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 8 -->
+<section>
+  <div class="wrap">
+    <h2>Не тільки справи</h2>
+    <div class="cards">
+      <div class="card"><p><b>Трекер на 201 квадрат</b>Закреслюєш номер зробленого. Порядок неважливий, пропуски неважливі.</p></div>
+      <div class="card"><p><b>Десять сторінок повернення</b>Кожні двадцять зроблених справ ти зупиняєшся і відповідаєш на три запитання. Там записи складаються в спостереження.</p></div>
+      <div class="card"><p><b>Покажчик за часом</b>Є пʼятнадцять хвилин, є година, є цілий вечір. Дивишся і вибираєш.</p></div>
+      <div class="card"><p><b>Покажчик за місцем</b>Вдома, надворі, з людьми.</p></div>
+      <div class="card"><p><b>Покажчик за станом</b>Коли тривожно, коли порожньо, коли злишся, коли немає сил, коли самотньо. Відкриваєш свій рядок і береш будь-який номер.</p></div>
+      <div class="card"><p><b>Покажчик за сімома центрами</b>Для тих, кому близька система чакр: карта, яка справа до якого центру належить.</p></div>
+      <div class="card"><p><b>Сторінки для нотаток</b>У кінці книжки.</p></div>
+    </div>
+    <div class="gal">
+      <img src="/assets/uabook/spread-tracker.jpg" width="700" height="990" alt="Трекер на 201 квадрат" loading="lazy" decoding="async">
+      <img src="/assets/uabook/spread-index.jpg" width="700" height="990" alt="Покажчик за часом, місцем і станом" loading="lazy" decoding="async">
+      <img src="/assets/uabook/spread-return.jpg" width="700" height="991" alt="Сторінка повернення з трьома запитаннями" loading="lazy" decoding="async">
+      <img src="/assets/uabook/spread-howto.jpg" width="700" height="990" alt="Як користуватися книжкою" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section>
+  <div class="wrap">
+    <h2>Кому підійде і кому ні</h2>
+    <div class="cols">
+      <div class="col">
+        <h3>Скоріше твоє, якщо</h3>
+        <ul class="plain">
+          <li>Ти відчуваєш, що живеш на автоматі, і хочеш це змінити діями, а не роздумами</li>
+          <li>Ти вже пробував очевидне і воно не спрацювало</li>
+          <li>Тобі потрібно щось спокійне, а не черговий режим, який треба витримувати</li>
+          <li>Ти хочеш робити, а не читати про те, як треба робити</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3>Скоріше не твоє, якщо</h3>
+        <ul class="plain">
+          <li>Ти шукаєш систему продуктивності або трекер звичок</li>
+          <li>Тобі потрібен результат за тиждень</li>
+          <li>Тебе дратує все, що просить сповільнитися</li>
+          <li>Ти хочеш, щоб хтось зробив за тебе</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="wrap">
+    <h2>Про автора</h2>
+    <div class="author">
+      <img class="author-photo" src="/assets/uabook/author.jpg" width="760" height="949" alt="Влад Задирака" loading="lazy" decoding="async">
+      <div>
+        <p>Мене звати Влад Задирака. Я не психолог і не вчитель життя.</p>
+        <p>У якийсь момент я виявив, що живу на автоматі. Справи робилися, дні минали, а всередині було рівно нічого. Вибиратися довелося не через книжки і не через роздуми, а через тіло: цигун, дихання, рух і дуже прості дії, які повертають увагу в поточний день.</p>
+        <p>Виявилося, що це працює надійніше за будь-які розмови про мотивацію. Потім я почав збирати це в програми, і через них пройшли тисячі людей.</p>
+        <p>Ця книжка їхнє продовження. 201 справа, які я або робив сам, або бачив, як вони змінюють людей.</p>
+        <p class="socials">
+          <a href="https://t.me/zadirakaqi" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://instagram.com/zadirakacigun" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://youtube.com/@vladzadiraka" target="_blank" rel="noopener">YouTube</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="price">
+  <div class="wrap">
+    <p class="kicker">Ціна</p>
+    <div class="pricebig">9 доларів</div>
+    <p style="margin-top:16px">Стільки коштує одна кава з десертом. Різниця в тому, що кава скінчиться через двадцять хвилин, а книжка залишиться на 201 справу вперед.</p>
+    <ul class="plain" style="margin-top:18px">
+      <li>232 сторінки PDF</li>
+      <li>201 справа з поясненням, навіщо кожна</li>
+      <li>Трекер, чотири покажчики і сторінки для нотаток</li>
+      <li>Миттєве посилання після оплати</li>
+      <li>Читається з телефона, друкується вдома</li>
+    </ul>
+    <a class="btn" data-buy href="#">Забрати книжку за 9 $</a>
+    <p class="under">Оплата карткою. Файл прийде одразу після оплати. Це цифровий товар, повернення після отримання файлу не передбачене.</p>
+  </div>
+</section>
+
+<!-- 12 -->
+<section>
+  <div class="wrap">
+    <h2>Часті запитання</h2>
+    <details><summary>Чому просто книжка, а не курс?</summary><div class="ans">Тому що курс треба проходити, а книжку можна відкрити на будь-якій сторінці через пів року. Тут нема чого не встигнути і нема чого пропустити.</div></details>
+    <details><summary>Ці справи виглядають надто простими. У них точно є сенс?</summary><div class="ans">Проста дія і легка дія це різне. Спробуй двадцять хвилин пити чай, нічого при цьому не роблячи, і ти зрозумієш різницю. Сенс кожної справи розібраний на її ж сторінці.</div></details>
+    <details><summary>Обовʼязково робити по одній на день?</summary><div class="ans">Ні. Можна робити три за вихідні і жодної за місяць. Книжка не рахує.</div></details>
+    <details><summary>Я вже пробував схоже і кинув. Чим це відрізняється?</summary><div class="ans">Тим, що тут нема чого кидати. Немає серії, яка згорить, і немає розкладу, з якого можна випасти. І тим, що справи вибираються під стан, а не диктуються календарем.</div></details>
+    <details><summary>Мені ніде це робити, у мене немає часу.</summary><div class="ans">У книжці є покажчик за часом і за місцем. Справ на пʼятнадцять хвилин вдома там кілька десятків.</div></details>
+    <details><summary>Це релігія чи езотерика?</summary><div class="ans">Ні. Є покажчик за сімома центрами для тих, кому така мова близька, але в самих справах нічого подібного немає.</div></details>
+    <details><summary>Що саме я отримаю після оплати?</summary><div class="ans">Посилання на завантаження PDF. Файл відкривається на телефоні, планшеті і компʼютері, сторінки можна друкувати по одній.</div></details>
+    <details><summary>Чи можна повернути гроші?</summary><div class="ans">Це цифровий товар, після отримання файлу повернення не передбачене. Тому на сторінці показані реальні сторінки книжки і приклади справ, щоб ти вирішував не наосліп.</div></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="l">
+      <a href="https://t.me/zadirakaqi" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://instagram.com/zadirakacigun" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@vladzadiraka" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://zadiraka.cc">zadiraka.cc</a>
+    </p>
+    <p>zadiraka.wellness@gmail.com</p>
+    <p class="l" style="margin-top:8px">
+      <a href="/uabookterms">Публічна оферта</a>
+      <a href="/uabookprivacy">Політика конфіденційності</a>
+    </p>
+    <p>Влад Задирака · <span id="yr">2026</span></p>
+  </div>
+</footer>
+
+<div class="float" id="float">
+  <div class="in">
+    <span class="p">9 $</span>
+    <a class="btn" data-buy href="#">Забрать книгу</a>
+  </div>
+</div>
+
+<div class="modal-overlay" id="lead-modal" aria-hidden="true">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Закрити">&times;</button>
+    <div class="modal-body">
+      <div id="lead-step">
+        <h3 class="modal-title">Заповни форму, щоб отримати книжку</h3>
+        <p class="modal-note">Дані потрібні, щоб надіслати файл і допомогти, якщо щось не відкриється.</p>
+        <div class="modal-price">9 $</div>
+        <form id="lead-form" novalidate>
+          <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
+          <label>Телефон*<input type="tel" name="phone" required placeholder="+ код страны и номер"></label>
+          <button type="submit" class="btn">Перейти до оплати</button>
+          <div class="modal-fine">Посилання на завантаження приходить одразу після оплати</div>
+        </form>
+      </div>
+      <div id="lead-thanks" style="display:none">
+        <h3 class="modal-title">Залишився один крок</h3>
+        <p class="modal-note">Обери, якою карткою будеш платити, і відкриється сторінка оплати.</p>
+        <a class="btn" id="pay-cis" href="#">Оплатити карткою СНД</a>
+        <div style="height:10px"></div>
+        <a class="btn ghost" id="pay-world" href="#">Оплатити європейською карткою</a>
+        <div class="modal-fine">Якщо оплата не проходить, напиши на zadiraka.wellness@gmail.com</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ КОНСТАНТЫ. Менять только здесь ============ */
+var PAY_CIS   = "";   /* Boosty, картки СНД, UA версія */
+var PAY_WORLD = "";   /* WayForPay, UA версія */
+var PIXEL_ID  = "";   /* Meta Pixel для UA книжки */
+var SHEET     = "Leads";   /* общий лист лидов */
+/* ======================================================== */
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+(function(){
+  var LEAD_URL='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
+  var modal=document.getElementById('lead-modal');
+  function openM(e){if(e)e.preventDefault();modal.classList.add('open');modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden'; if(window.fbq)fbq('track','InitiateCheckout');}
+  function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  document.querySelectorAll('a[data-buy]').forEach(function(a){a.addEventListener('click',openM);});
+  document.getElementById('modal-close').addEventListener('click',closeM);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+
+  function wire(id,url){var a=document.getElementById(id);
+    if(url){a.setAttribute('href',url);}else{a.classList.add('off');a.addEventListener('click',function(e){e.preventDefault();});}}
+  wire('pay-cis',PAY_CIS); wire('pay-world',PAY_WORLD);
+
+  var form=document.getElementById('lead-form');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=form.email.value.trim(),phone=form.phone.value.trim();
+    if(!email||email.indexOf('@')<1){form.email.focus();return;}
+    if(!phone){form.phone.focus();return;}
+    var pd=new URLSearchParams({email:email,phone:phone,lang:'Українська (UA)',page:location.pathname,source:'Книжка 201 справа (UA)',sheet:SHEET});
+    try{if(navigator.sendBeacon){navigator.sendBeacon(LEAD_URL,pd);}else{fetch(LEAD_URL,{method:'POST',mode:'no-cors',body:pd});}}catch(err){}
+    if(window.fbq)fbq('track','Lead');
+    document.getElementById('lead-step').style.display='none';
+    document.getElementById('lead-thanks').style.display='block';
+  });
+
+  var fl=document.getElementById('float');
+  function upd(){
+    var past=window.scrollY>window.innerHeight*0.9;
+    var atEnd=(window.innerHeight+window.scrollY)>=(document.documentElement.scrollHeight-150);
+    var open=modal.classList.contains('open');
+    if(past&&!atEnd&&!open){fl.classList.add('show');}else{fl.classList.remove('show');}
+  }
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd,{passive:true});upd();
+})();
+
+if(PIXEL_ID){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init',PIXEL_ID); fbq('track','PageView');
+}
+</script>
+</body>
+</html>
