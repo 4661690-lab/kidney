@@ -43,7 +43,7 @@ a.mail{color:var(--gold)}
   <p class="note">Если не выходит, напиши на <a class="mail" href="mailto:zadiraka.wellness@gmail.com">zadiraka.wellness@gmail.com</a>, пришлю вручную.</p>
 </main>
 <script>
-var BOOK_URL = "";   /* WayForPay: ссылка на кнопку оплаты книги */
+var BOOK_URL = "https://secure.wayforpay.com/button/bd452d4039d2a";   /* WayForPay: ссылка на кнопку оплаты книги */
 var go=document.getElementById('go');
 if(BOOK_URL){go.href=BOOK_URL;}else{go.classList.add('off');go.addEventListener('click',function(e){e.preventDefault();});}
 </script>
