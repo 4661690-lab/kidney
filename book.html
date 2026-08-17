@@ -435,7 +435,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     var email=form.email.value.trim(),phone=form.phone.value.trim();
     if(!email||email.indexOf('@')<1){form.email.focus();return;}
     if(!phone){form.phone.focus();return;}
-    var pd=new URLSearchParams({email:email,phone:phone,lang:'Русский (RU)',page:location.pathname,source:'book',sheet:SHEET});
+    var pd=new URLSearchParams({email:email,phone:phone,lang:'Русский (RU)',page:location.pathname,source:'Книга 200 дел (RU)',sheet:SHEET});
     try{if(navigator.sendBeacon){navigator.sendBeacon(LEAD_URL,pd);}else{fetch(LEAD_URL,{method:'POST',mode:'no-cors',body:pd});}}catch(err){}
     if(window.fbq)fbq('track','Lead');
     document.getElementById('lead-step').style.display='none';
