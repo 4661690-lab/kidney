@@ -3,233 +3,266 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Фестиваль як бізнес — міні-курс Романа Тугашева</title>
-  <meta name="description" content="5 джерел доходу, реальна економіка фестивалю та покроковий вхід у подієвий бізнес через першу невелику подію."/>
+  <title>Івент як бізнес — міні-курс Романа Тугашева</title>
+  <meta name="description" content="Міні-курс про те, як заробляють на івентах і як порахувати свою ідею події: доходи, витрати, ризики, партнери та точка беззбитковості."/>
   <style>
     :root{
-      --bg:#f3f6f8;
-      --paper:#f9fbfc;
-      --paper2:#eaf0f3;
-      --ink:#1d2b33;
-      --muted:#667882;
-      --accent:#78909c;
-      --accent-dark:#5f7885;
-      --line:#d5e0e6;
-      --dark:#253842;
+      --bg:#f4f7f6;
+      --paper:#fbfcfb;
+      --paper2:#eef3f1;
+      --ink:#17252b;
+      --muted:#64757b;
+      --accent:#667f78;
+      --accent-dark:#3d5d57;
+      --warm:#c89b57;
+      --coral:#c96556;
+      --line:#d8e2df;
+      --dark:#1f3434;
       --white:#fff;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.35}
+    body{
+      margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);
+      font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.38
+    }
     a{color:inherit}
     .wrap{width:min(1180px,calc(100% - 32px));margin:auto}
     .top{
       display:flex;align-items:center;justify-content:space-between;gap:20px;
-      padding:18px 0;font-weight:800;letter-spacing:.02em
+      padding:18px 0;font-weight:850;letter-spacing:0
     }
     .brand{font-size:14px;text-transform:uppercase}
     .nav{display:flex;gap:22px;font-size:13px;color:var(--muted)}
     .nav a{text-decoration:none}
+    .nav a:hover{color:var(--ink)}
     .price-pill{
-      background:var(--accent);color:white;padding:10px 14px;border-radius:999px;
+      background:var(--dark);color:white;padding:10px 14px;border-radius:999px;
       font-size:13px;white-space:nowrap
     }
 
     .hero{
-      display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+      display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
       border:1px solid var(--line);background:var(--paper);min-height:680px
     }
     .hero-copy{
-      min-width:0;padding:62px 46px 62px 42px;display:flex;flex-direction:column;justify-content:center;overflow:hidden
+      min-width:0;padding:62px 48px 62px 42px;display:flex;
+      flex-direction:column;justify-content:center;overflow:hidden
     }
     .eyebrow,.section-kicker{
-      color:var(--accent-dark);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em
+      color:var(--accent-dark);font-size:13px;font-weight:900;
+      text-transform:uppercase;letter-spacing:.06em
     }
     .hero h1{
       font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(46px,4.7vw,68px);line-height:.98;letter-spacing:-.042em;
-      margin:18px 0 24px;font-weight:500;max-width:680px;text-wrap:balance;
-      overflow-wrap:normal;word-break:normal
+      font-size:clamp(43px,4.45vw,64px);line-height:1;letter-spacing:0;
+      margin:18px 0 24px;font-weight:500;max-width:700px;text-wrap:balance
     }
-    .lead{font-size:20px;max-width:620px;margin:0 0 26px;color:#31444e}
-.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 30px}
-    .meta{
-      border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted)
-    }
+    .lead{font-size:20px;max-width:640px;margin:0 0 26px;color:#31464a}
+    .hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 30px}
+    .meta{border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted)}
     .meta b{display:block;color:var(--ink);font-size:16px;margin-bottom:3px}
-    .cta{
-      display:inline-flex;align-items:center;justify-content:center;
-      background:var(--accent);color:white;text-decoration:none;
-      padding:17px 23px;border-radius:5px;font-weight:900;text-transform:uppercase;
-      letter-spacing:.02em;transition:.15s
+    .cta-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .cta,.ghost{
+      display:inline-flex;align-items:center;justify-content:center;min-height:52px;
+      padding:16px 22px;border-radius:6px;font-weight:900;text-transform:uppercase;
+      letter-spacing:0;text-decoration:none;transition:.15s
     }
+    .cta{background:var(--accent);color:white}
     .cta:hover{background:var(--accent-dark);transform:translateY(-1px)}
-    .micro{font-size:12px;color:var(--muted);margin-top:12px}
+    .ghost{border:1px solid var(--line);color:var(--ink);background:transparent}
+    .ghost:hover{border-color:var(--accent);color:var(--accent-dark)}
+    .micro{font-size:12px;color:var(--muted);margin-top:12px;max-width:460px}
     .hero-visual{
-      position:relative;min-height:680px;
+      position:relative;min-height:680px;overflow:hidden;
       background:
-        linear-gradient(to top,rgba(24,42,51,.35),rgba(24,42,51,.02)),
-        url("https://images.unsplash.com/photo-1739080578253-0651a6c613a8?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=55&w=1400")
+        linear-gradient(to bottom,rgba(23,37,43,.48),rgba(23,37,43,.03) 42%),
+        linear-gradient(to top,rgba(23,37,43,.54),rgba(23,37,43,.03) 58%),
+        url("/assets/fest/hero-dj-crowd.jpg")
         center/cover no-repeat;
     }
-    .hero-stats{
-      position:absolute;left:28px;right:28px;bottom:28px;
-      display:grid;grid-template-columns:repeat(3,1fr);gap:10px
+    .hero-visual:before{
+      content:"";position:absolute;inset:24px;border:1px solid rgba(255,255,255,.45);
+      pointer-events:none
     }
-    .hero-stat{
-      background:rgba(249,251,252,.94);backdrop-filter:blur(8px);
-      border:1px solid rgba(255,255,255,.7);padding:16px;border-radius:5px
+    .hero-label{
+      position:absolute;top:32px;left:32px;right:32px;color:white;
+      font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,3.6vw,54px);
+      line-height:1.02;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.22)
     }
-    .hero-stat b{display:block;font-size:20px;color:var(--accent-dark);margin-bottom:4px}
-    .hero-stat span{font-size:12px;color:#394d57}
-
     section{padding:88px 0;border-bottom:1px solid var(--line)}
     .grid2{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
     .section-title{
       font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(40px,5vw,66px);line-height:.98;letter-spacing:-.045em;
-      margin:12px 0 28px;font-weight:500
+      font-size:clamp(38px,4.9vw,64px);line-height:1;letter-spacing:0;
+      margin:12px 0 28px;font-weight:500;text-wrap:balance
     }
-    .bigcopy{font-size:clamp(23px,2.5vw,34px);line-height:1.08;margin-top:0}
+    .bigcopy{font-size:clamp(23px,2.35vw,32px);line-height:1.12;margin-top:0}
     .note{font-size:16px;color:var(--muted);max-width:760px}
 
     .money{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:30px}
     .money-card{
-      min-height:170px;background:var(--paper);border:1px solid var(--line);
+      min-height:174px;background:var(--paper);border:1px solid var(--line);
       padding:22px;display:flex;flex-direction:column;justify-content:space-between
     }
-    .money-card .n{font-weight:900;color:var(--accent-dark);font-size:13px}
-    .money-card h3{font-size:21px;margin:28px 0 0}
+    .money-card .n{font-weight:900;color:var(--warm);font-size:13px}
+    .money-card h3{font-size:20px;margin:28px 0 0}
 
-    .proof{background:var(--dark);color:#f4f8fa}
-    .proof .section-kicker{color:#aebfc8}
+    .proof{background:var(--dark);color:#f6faf8}
+    .proof .section-kicker{color:#bdd0ca}
     .proof-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:stretch}
     .proof-img{
-      min-height:600px;
+      min-height:600px;position:relative;overflow:hidden;
       background:
-        linear-gradient(to top,rgba(22,38,46,.30),rgba(22,38,46,.02)),
-        url("https://res.cloudinary.com/jerrick/image/upload/v1732685457/6746ae9093c91b001de56253.jpg")
+        linear-gradient(to top,rgba(31,52,52,.42),rgba(31,52,52,.04)),
+        url("/assets/fest/food-hall.jpg")
         center/cover no-repeat;
     }
     .quote{
       font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(29px,3.3vw,46px);line-height:1.03;margin:16px 0 34px
+      font-size:clamp(28px,3.1vw,44px);line-height:1.05;margin:16px 0 34px
     }
     .proof-points{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .proof-point{border-top:1px solid #526b77;padding-top:15px}
-    .proof-point b{font-size:30px;display:block}
-    .proof-point span{font-size:13px;color:#c2d0d6}
-    .proof .note{color:#b9c7ce;margin-top:22px}
+    .proof-point{border-top:1px solid #526d68;padding-top:15px}
+    .proof-point b{font-size:28px;display:block}
+    .proof-point span{font-size:13px;color:#c8d8d3}
+    .proof .note{color:#c4d2ce;margin-top:22px}
 
     .lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
     .lesson{background:var(--paper);border:1px solid var(--line);padding:24px}
+    .lesson.bonus{background:var(--paper2);border-color:var(--warm)}
     .lesson-top{display:flex;justify-content:space-between;gap:16px;font-weight:900;text-transform:uppercase}
-    .lesson-num{color:var(--accent-dark)}
+    .lesson-num{color:var(--warm)}
     .lesson p{color:var(--muted);margin:12px 0 0}
 
-    .who{display:grid;grid-template-columns:.72fr 1.28fr;gap:54px;align-items:stretch}
+    .who{display:grid;grid-template-columns:.86fr 1.14fr;gap:54px;align-items:start}
     .who-visual{
-      min-height:580px;background:linear-gradient(145deg,#dde7ec,#b9cad3);
-      display:flex;align-items:flex-end;padding:28px;position:relative;overflow:hidden
+      min-height:360px;position:relative;overflow:hidden;background:var(--paper2);
+      border:1px solid var(--line)
     }
     .who-visual:before{
-      content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.65)
+      content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.65);z-index:2
     }
-    .who-visual strong{
-      position:relative;font-family:Georgia,"Times New Roman",serif;font-size:74px;line-height:.85;
-      letter-spacing:-.07em;color:#5f7885;font-weight:500
+    .who-visual img{
+      width:100%;height:100%;min-height:360px;display:block;object-fit:cover;
+      object-position:center;filter:saturate(.98) contrast(1.03)
     }
     .who h3{
-      font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,5vw,72px);
-      line-height:.95;margin:10px 0 22px;font-weight:500
+      font-family:Georgia,"Times New Roman",serif;font-size:clamp(43px,4.9vw,70px);
+      line-height:1;margin:10px 0 22px;font-weight:500
     }
     .story{font-size:21px;max-width:790px}
     .projects{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
     .project{border:1px solid var(--ink);padding:10px 12px;font-size:12px;font-weight:900;text-transform:uppercase}
     .intl{
-      margin-top:28px;padding:18px 20px;border-left:4px solid var(--accent);
+      margin-top:28px;padding:18px 20px;border-left:4px solid var(--warm);
       background:var(--paper2);font-size:16px
     }
 
+    .photo-band{padding-top:0}
+    .photo-grid{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch
+    }
+    .photo-main,.photo-stack figure,.photo-wide{
+      margin:0;position:relative;overflow:hidden;border:1px solid var(--line);
+      background:var(--paper)
+    }
+    .photo-main{min-height:560px}
+    .photo-stack{display:grid;grid-template-rows:1fr 1fr;gap:14px}
+    .photo-stack figure{min-height:273px}
+    .photo-wide{min-height:360px;margin-top:14px}
+    .photo-grid img,.photo-wide img{
+      width:100%;height:100%;display:block;object-fit:cover
+    }
+    .photo-main img{object-position:center}
+    .photo-stack figure:first-child img{object-position:center 54%}
+    .photo-stack figure:last-child img{object-position:center}
+    .photo-wide img{object-position:center 45%}
+
     .fit{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+    .fit-intro{
+      max-width:860px;margin:0 0 28px;font-size:clamp(21px,2.2vw,30px);
+      line-height:1.18;color:#31464a
+    }
+    .fit-intro b{font-family:Georgia,"Times New Roman",serif;font-weight:500;color:var(--ink)}
     .fit-card{background:var(--paper);border:1px solid var(--line);padding:24px}
     .fit-card b{font-size:18px}
     .fit-card p{color:var(--muted);margin-bottom:0}
 
     .buy{background:var(--accent);color:white}
-    .buy .section-kicker{color:#e7eff3}
-    .buy-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:end}
+    .buy .section-kicker{color:#e8f0ed}
+    .buy-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:end}
     .buy .section-title{max-width:760px}
-    .price-big{
-      font-size:clamp(105px,15vw,180px);line-height:.75;font-weight:900;letter-spacing:-.08em
-    }
-    .currency{font-size:28px;font-weight:900;margin-left:8px}
+    .price-line{display:flex;align-items:flex-end;gap:8px;margin-bottom:18px}
+    .price-big{font-size:clamp(94px,13vw,164px);line-height:.78;font-weight:900;letter-spacing:0}
+    .currency{font-size:28px;font-weight:900;margin-bottom:8px}
     .buy .cta{background:white;color:var(--ink)}
+    .buy .cta:hover{background:#edf4f1;color:var(--ink)}
     .buy-list{font-size:18px;line-height:1.65;padding-left:22px}
-    .buy p{max-width:520px}
+    .buy p{max-width:560px}
+    .buy-note{font-size:13px;color:#e4efeb;margin-top:12px}
+
+    .contact{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start
+    }
+    .contact-card{
+      background:var(--paper);border:1px solid var(--line);padding:28px;border-radius:6px
+    }
+    .contact-card h3{font-size:24px;margin:0 0 12px}
+    .contact-card p{color:var(--muted);margin:0 0 18px}
+    .contact-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .contact-actions .ghost{border-color:var(--accent);color:var(--accent-dark)}
 
     .faq details{border-top:1px solid var(--line);padding:20px 0}
     .faq summary{font-size:20px;font-weight:900;cursor:pointer}
     .faq p{color:var(--muted);max-width:800px}
 
-    footer{padding:28px 0 100px;color:var(--muted);font-size:12px}
-    .sticky{display:none}
+    footer{padding:28px 0 110px;color:var(--muted);font-size:12px}
+    .sticky{
+      display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;
+      opacity:0;transform:translateY(16px);pointer-events:none;transition:.2s
+    }
+    .sticky.is-visible{opacity:1;transform:translateY(0);pointer-events:auto}
 
     @media(max-width:950px){
       .nav{display:none}
-      .hero,.grid2,.proof-grid,.who,.buy-grid{grid-template-columns:1fr}
+      .hero,.grid2,.proof-grid,.who,.buy-grid,.contact{grid-template-columns:1fr}
       .hero-copy{padding:48px 34px}
       .hero-visual{min-height:520px}
       .hero-meta{grid-template-columns:1fr 1fr 1fr}
       .money{grid-template-columns:1fr 1fr}
       .proof-img{min-height:420px}
       .lessons,.fit{grid-template-columns:1fr}
-      .who-visual{min-height:360px}
-      .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:30}
+      .who-visual{min-height:320px}
+      .who-visual img{min-height:320px}
+      .photo-grid{grid-template-columns:1fr}
+      .photo-main{min-height:460px}
+      .photo-stack figure{min-height:300px}
+      .sticky{display:block}
       .sticky .cta{width:100%;box-shadow:0 6px 24px rgba(24,42,51,.18)}
     }
     @media(max-width:580px){
       .wrap{width:min(100% - 22px,1180px)}
-      .top{padding:12px 0}
+      .top{padding:12px 0;gap:12px}
       .brand{font-size:12px}
-      .price-pill{font-size:11px}
-      .hero-copy{padding:32px 20px}
-      .hero h1{font-size:34px;line-height:1.02;letter-spacing:-.03em}
-      .lead{font-size:17px}
-      .hero-meta{grid-template-columns:1fr}
-
-      /* фото компактнее, статистика уходит из-под абсолюта и ложится под фото */
-      .hero-visual{min-height:0;padding-top:300px;background-position:center 62%}
-      .hero-stats{
-        position:static;left:auto;right:auto;bottom:auto;
-        grid-template-columns:1fr;gap:0;padding:0;
-        border-top:1px solid var(--line)
-      }
-      .hero-stat{
-        background:var(--paper);backdrop-filter:none;border:0;border-bottom:1px solid var(--line);
-        border-radius:0;padding:13px 20px;display:flex;align-items:baseline;gap:10px
-      }
-      .hero-stat b{font-size:17px;margin:0;flex:0 0 auto}
-      .hero-stat span{font-size:13px}
-
-      section{padding:44px 0}
-      .section-title{font-size:31px;line-height:1.04;letter-spacing:-.03em;margin:8px 0 18px}
-      .bigcopy{font-size:21px;line-height:1.14}
-      .note{font-size:15px}
-
-      /* карточки дохода: номер слева, название рядом, без пустоты */
-      .money{grid-template-columns:1fr;gap:0;margin-top:20px;border-top:1px solid var(--line)}
-      .money-card{
-        min-height:0;flex-direction:row;align-items:center;justify-content:flex-start;
-        gap:14px;padding:15px 4px;border:0;border-bottom:1px solid var(--line);background:transparent
-      }
-      .money-card .n{font-size:12px;flex:0 0 auto;min-width:22px}
-      .money-card h3{font-size:18px;margin:0;line-height:1.25}
-
+      .price-pill{font-size:11px;padding:9px 11px}
+      .hero-copy{padding:40px 22px 34px}
+      .hero h1{font-size:38px;line-height:1.02}
+      .lead{font-size:18px}
+      .hero-meta{grid-template-columns:1fr;margin-bottom:24px}
+      .cta,.ghost{width:100%;padding:15px 16px;text-align:center}
+      .hero-visual{min-height:460px}
+      .hero-label{font-size:34px;left:22px;right:22px;top:24px}
+      section{padding:64px 0}
+      .section-title{font-size:39px}
+      .money{grid-template-columns:1fr}
       .proof-points{grid-template-columns:1fr}
-      .proof-img{min-height:300px;background-position:center 55%}
-      .price-big{font-size:78px}
-      .grid2{gap:24px}
+      .who-visual{min-height:230px}
+      .who-visual img{min-height:230px}
+      .photo-main{min-height:420px}
+      .photo-stack figure,.photo-wide{min-height:260px}
+      .price-big{font-size:104px}
+      .contact-card{padding:22px}
     }
   </style>
 </head>
@@ -238,150 +271,55 @@
   <div class="wrap top">
     <div class="brand">Роман Тугашев · міні-курс</div>
     <nav class="nav">
+      <a href="#about">Про експерта</a>
       <a href="#money">Гроші</a>
       <a href="#program">Програма</a>
-      <a href="#about">Про Романа</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <div class="price-pill">7 днів · 390 грн</div>
+    <div class="price-pill">за один вечір · 390 грн</div>
   </div>
 
   <main>
     <div class="wrap hero">
       <div class="hero-copy">
-        <div class="eyebrow">Фестиваль як бізнес</div>
-        <h1 class="hero-title">Як люди заробляють на фестивалях — і як зайти з однієї невеликої події</h1>
+        <div class="eyebrow">Івент як бізнес</div>
+        <h1>Як зробити свою першу подію — і заробити на ній</h1>
         <p class="lead">
-          5 джерел доходу, економіка на реальних цифрах і покроковий вхід у подієвий бізнес через першу невелику подію.
+          Вечірка, маркет, pop-up, wellness day, гастро-подія, концерт чи невеликий фестиваль. За один вечір покажу, як перетворити ідею на бізнес-модель: звідки беруться гроші, скільки коштує запуск і коли подія виходить у плюс.
         </p>
         <div class="hero-meta">
-          <div class="meta"><b>7 днів</b>короткої концентрованої практики</div>
-          <div class="meta"><b>Реальні кейси</b>успіхи, провали та цифри</div>
-          <div class="meta"><b>Для новачків</b>навіть без досвіду в івентах</div>
+          <div class="meta"><b>1 вечір</b>щоб зрозуміти логіку івент-бізнесу</div>
+          <div class="meta"><b>Живий досвід</b>цифри, помилки та рішення організатора</div>
+          <div class="meta"><b>Своя ідея</b>чернетка моделі до старту витрат</div>
         </div>
-        <div><a class="cta" href="#buy">Отримати курс за 390 грн →</a></div>
-        <div class="micro">Пробна версія лендингу. Оплата ще не підключена.</div>
+        <div class="cta-row">
+          <a class="cta hero-cta" href="#buy">Розібратися за 390 грн →</a>
+          <a class="ghost" href="#program">Подивитись програму</a>
+        </div>
+        <div class="micro">Навіть якщо ти ніколи не організовував подій.</div>
       </div>
 
-      <div class="hero-visual">
-        <div class="hero-stats">
-          <div class="hero-stat"><b>2013</b><span>перший фестиваль · бюджет $4 000</span></div>
-          <div class="hero-stat"><b>15–20 тис.</b><span>гостей за вікенд у 2015 році</span></div>
-          <div class="hero-stat"><b>34 тис.</b><span>гостей у 2017 році</span></div>
-        </div>
+      <div class="hero-visual" aria-label="Фестивальна атмосфера">
+        <div class="hero-label">Колись ти приходив на подію, тепер ти можеш створити свою.</div>
       </div>
     </div>
 
-    <section>
-      <div class="wrap grid2">
-        <div>
-          <div class="section-kicker">Головна ідея</div>
-          <h2 class="section-title">Фестиваль — це не тільки сцена, музика і натовп</h2>
-        </div>
-        <div>
-          <p class="bigcopy">
-            Це бізнес-модель, у якій гроші приходять із кількох джерел одночасно. І починати не обов’язково з події на 20 000 людей.
-          </p>
-          <p class="note">
-            Курс покаже, як спочатку порахувати подію, зрозуміти точку беззбитковості і тільки після цього вирішувати, чи варто вкладати гроші.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="money">
-      <div class="wrap">
-        <div class="section-kicker">5 джерел доходу</div>
-        <h2 class="section-title">Звідки на фестивалі беруться гроші?</h2>
-        <div class="money">
-          <div class="money-card"><div class="n">01</div><h3>Квитки</h3></div>
-          <div class="money-card"><div class="n">02</div><h3>Партнери та спонсори</h3></div>
-          <div class="money-card"><div class="n">03</div><h3>Оренда торгових місць</h3></div>
-          <div class="money-card"><div class="n">04</div><h3>Бари та F&amp;B</h3></div>
-          <div class="money-card"><div class="n">05</div><h3>Додаткові продажі</h3></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="proof">
-      <div class="wrap proof-grid">
-        <div class="proof-img"></div>
-        <div>
-          <div class="section-kicker">Не теорія з книжки</div>
-          <div class="quote">
-            «Перший фестиваль ми робили вдвох. Бюджет — близько $4 000. Далі події виросли до десятків тисяч гостей і багатомільйонних оборотів».
-          </div>
-
-          <div class="proof-points">
-            <div class="proof-point"><b>$4 000</b><span>бюджет першого фестивалю у 2013 році</span></div>
-            <div class="proof-point"><b>15–20 тис.</b><span>гостей за вікенд на фестивалі «Вулична їжа» у 2015 році</span></div>
-            <div class="proof-point"><b>34 тис.</b><span>гостей на фестивалі у 2017 році</span></div>
-            <div class="proof-point"><b>10+ млн грн</b><span>оборот одного фестивалю «Вулична їжа» у 2018 році</span></div>
-          </div>
-
-          <p class="note">
-            Це історичні цифри конкретних подій, а не обіцянка доходу. У курсі розбирається саме логіка: як рахувати модель, ризики та точку беззбитковості до запуску.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="program">
-      <div class="wrap">
-        <div class="section-kicker">7 днів</div>
-        <h2 class="section-title">Що ти розбереш по кроках</h2>
-
-        <div class="lessons">
-          <div class="lesson">
-            <div class="lesson-top"><span><span class="lesson-num">01.</span> Де гроші</span><span>День 1</span></div>
-            <p>Хто платить організатору, як працюють різні джерела доходу і чому одних квитків часто недостатньо.</p>
-          </div>
-          <div class="lesson">
-            <div class="lesson-top"><span><span class="lesson-num">02.</span> Економіка</span><span>День 2</span></div>
-            <p>Витрати, доходи, сценарії відвідуваності та точка беззбитковості до старту.</p>
-          </div>
-          <div class="lesson">
-            <div class="lesson-top"><span><span class="lesson-num">03.</span> Локація</span><span>День 3</span></div>
-            <p>Як оцінювати майданчик: потік людей, інфраструктура, електрика, вода, логістика та основні ризики.</p>
-          </div>
-          <div class="lesson">
-            <div class="lesson-top"><span><span class="lesson-num">04.</span> Документи</span><span>День 4</span></div>
-            <p>Що потрібно передбачити в погодженнях, договорах, роботі з підрядниками та відповідальності організатора.</p>
-          </div>
-          <div class="lesson">
-            <div class="lesson-top"><span><span class="lesson-num">05.</span> Спонсори</span><span>День 5</span></div>
-            <p>Що насправді купує бренд, як сформувати пропозицію, оцінити інтеграцію та вийти на потрібну людину.</p>
-          </div>
-          <div class="lesson">
-            <div class="lesson-top"><span><span class="lesson-num">06.</span> Продаж квитків</span><span>День 6</span></div>
-            <p>Як планувати хвилі продажів, ціноутворення, комунікацію та контролювати динаміку до дня події.</p>
-          </div>
-          <div class="lesson">
-            <div class="lesson-top"><span><span class="lesson-num">07.</span> Команда і запуск</span><span>День 7</span></div>
-            <p>Хто справді потрібен у команді, кого можна залучати під проєкт і як організувати першу невелику подію без великого постійного штату.</p>
-          </div>
-          <div class="lesson">
-            <div class="lesson-top"><span><span class="lesson-num">+</span> Провали</span><span>Бонус</span></div>
-            <p>Рішення, які здавалися правильними, але коштували грошей. Що пішло не так і як це можна було побачити раніше.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="about">
       <div class="wrap who">
-        <div class="who-visual"><strong>ROMAN<br/>TUGASHEV</strong></div>
+        <div class="who-visual">
+          <img src="/assets/fest/roman-mic.jpg" alt="Роман Тугашев з мікрофоном на події"/>
+        </div>
 
         <div>
           <div class="section-kicker">Хто веде</div>
           <h3>Роман Тугашев</h3>
 
           <p class="story">
-            Підприємець і організатор великих міських подій, один із творців фестивальної культури сучасної України.
+            Один із творців сучасної івент-індустрії України. 15 років досвіду: від перших стріт-фуд фестивалів у Києві до великих міських форматів, концертів, pop-up проєктів і запусків за кордоном.
           </p>
 
           <p class="note">
-            Запустив один із перших масштабних стріт-фуд фестивалів у Києві та створював подієві формати різного масштабу — від гастрономічних і музичних фестивалів до клубних pop-up форматів, концертів і великих міських локацій.
+            Роман пройшов шлях не тільки через створення найуспішніших та впізнаваних фестивалів, партнерства і велику кількість гостей, а й через помилки, фінансові втрати та дорогі рішення, яких можна було уникнути, маючи досвід. У цьому міні-курсі він показує не красиву картинку івентів, а те, як організатор дивиться на гроші, ризики і першу модель події.
           </p>
 
           <div class="projects">
@@ -399,7 +337,122 @@
           </div>
 
           <div class="intl">
-            Має досвід створення та реалізації подієвих проєктів не лише в Україні, а й за кордоном — у Грузії, на Кіпрі, Балі та в інших країнах Європи.
+            100+ фестивалів і подій різних форматів за 15 років: Україна, Сакартвело, Балі, Кіпр, Іспанія та інші країни Європи.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid2">
+        <div>
+          <div class="section-kicker">Головна ідея</div>
+          <h2 class="section-title">Івент — це не тільки сцена, музика і гості</h2>
+        </div>
+        <div>
+          <p class="bigcopy">
+            Це бізнес-модель, у якій гроші можуть приходити з кількох джерел одночасно. І щоб зрозуміти, як вона працює, не треба одразу планувати фестиваль на 20 000 людей.
+          </p>
+          <p class="note">
+            За один вечір ти розбереш економіку своєї ідеї: звідки можуть прийти гроші, які будуть основні витрати, де точка беззбитковості та які ризики варто перевірити до запуску.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="money">
+      <div class="wrap">
+        <div class="section-kicker">5 джерел доходу</div>
+        <h2 class="section-title">Звідки в івенті беруться гроші?</h2>
+        <div class="money">
+          <div class="money-card"><div class="n">01</div><h3>Квитки</h3></div>
+          <div class="money-card"><div class="n">02</div><h3>Партнери та спонсори</h3></div>
+          <div class="money-card"><div class="n">03</div><h3>Оренда торгових місць</h3></div>
+          <div class="money-card"><div class="n">04</div><h3>Бари та їжа</h3></div>
+          <div class="money-card"><div class="n">05</div><h3>Додаткові продажі</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-band">
+      <div class="wrap">
+        <div class="section-kicker">Архів подій</div>
+        <h2 class="section-title">Масштаб, атмосфера і операційна реальність</h2>
+        <div class="photo-grid">
+          <figure class="photo-main">
+            <img src="/assets/fest/stadium-crowd.jpg" alt="Велика аудиторія на фестивалі перед сценою"/>
+          </figure>
+          <div class="photo-stack">
+            <figure>
+              <img src="/assets/fest/food-market.jpg" alt="Гастрономічна зона фестивалю з гостями"/>
+            </figure>
+            <figure>
+              <img src="/assets/fest/red-stage.jpg" alt="Концертна сцена з червоним світлом і публікою"/>
+            </figure>
+          </div>
+        </div>
+        <figure class="photo-wide">
+          <img src="/assets/fest/stadium-stage.jpg" alt="Велика сцена та натовп на стадіоні"/>
+        </figure>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="wrap proof-grid">
+        <div class="proof-img"></div>
+        <div>
+          <div class="section-kicker">Не теорія з книжки</div>
+          <div class="quote">
+            «Перший фестиваль здається святом для гостей. Для організатора це бюджет, локація, потік людей, підрядники, партнери і рішення, які треба приймати до того, як почались витрати».
+          </div>
+
+          <div class="proof-points">
+            <div class="proof-point"><b>2013</b><span>перші фестивалі «Вулична їжа» у Києві</span></div>
+            <div class="proof-point"><b>15–20 тис.</b><span>гостей за вікенд у 2015 році</span></div>
+            <div class="proof-point"><b>34 тис.</b><span>гостей за вікенд у 2017 році</span></div>
+            <div class="proof-point"><b>5 млн+ грн</b><span>оборот одного фестивалю «Вулична їжа» з 2018 року</span></div>
+          </div>
+
+          <p class="note">
+            За цими цифрами — 15 років реального досвіду: десятки форматів, сотні рішень, помилки, провали та проєкти, які виростали від першої ідеї до десятків тисяч гостей.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="program">
+      <div class="wrap">
+        <div class="section-kicker">За один вечір</div>
+        <h2 class="section-title">Від ідеї — до першої економіки своєї події</h2>
+
+        <div class="lessons">
+          <div class="lesson">
+            <div class="lesson-top"><span><span class="lesson-num">01.</span> Звідки беруться гроші</span><span>Крок 1</span></div>
+            <p>5 основних джерел доходу івенту: хто платить організатору і чому квитки — лише одне з них.</p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-top"><span><span class="lesson-num">02.</span> Скільки це коштує</span><span>Крок 2</span></div>
+            <p>Основні витрати події: на що йдуть гроші та що потрібно врахувати ще до запуску.</p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-top"><span><span class="lesson-num">03.</span> Де точка беззбитковості</span><span>Крок 3</span></div>
+            <p>Скільки гостей, квитків та інших доходів потрібно, щоб подія вийшла в нуль — і почала заробляти.</p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-top"><span><span class="lesson-num">04.</span> З якого формату почати</span><span>Крок 4</span></div>
+            <p>Вечірка на 100 людей, маркет, pop-up, концерт чи невеликий фестиваль — як вибрати масштаб для першого запуску.</p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-top"><span><span class="lesson-num">05.</span> Що може піти не так</span><span>Крок 5</span></div>
+            <p>Основні ризики та витрати, які часто не бачать до старту, але які можуть зламати всю економіку.</p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-top"><span><span class="lesson-num">06.</span> Порахуй свою ідею</span><span>Крок 6</span></div>
+            <p>Склади чернетку економіки власної події та зрозумій, які цифри й припущення потрібно перевірити першими.</p>
+          </div>
+          <div class="lesson bonus">
+            <div class="lesson-top"><span><span class="lesson-num">+</span> Мої дорогі помилки</span><span>Бонус</span></div>
+            <p>Рішення, які здавалися правильними, але коштували грошей. Що пішло не так і що я сьогодні зробив би інакше.</p>
           </div>
         </div>
       </div>
@@ -408,24 +461,27 @@
     <section>
       <div class="wrap">
         <div class="section-kicker">Для кого</div>
-        <h2 class="section-title">Для тих, хто хоче створити власний івент</h2>
+        <h2 class="section-title">Для тих, хто хоче зробити свою подію — або тільки думає про це</h2>
+        <p class="fit-intro">
+          Неважливо, що саме: вечірка на 100 людей, маркет, wellness day, гастро-подія, концерт, pop-up чи перший фестиваль. Курс допоможе зрозуміти, як на таких подіях заробляють і з чого почати рахувати власну ідею.
+        </p>
 
         <div class="fit">
           <div class="fit-card">
-            <b>Якщо давно хочеться зробити щось своє</b>
-            <p>І ти дивишся на фестивалі не тільки як гість, а й думаєш: «А як це взагалі працює як бізнес?»</p>
+            <b>Якщо давно хочеться зробити свою подію</b>
+            <p>Є думка про вечірку, маркет, фестиваль чи інший формат, але незрозуміло, з чого почати і чи може це заробляти.</p>
           </div>
           <div class="fit-card">
-            <b>Якщо немає досвіду в подіях</b>
-            <p>Курс починається не зі складного продакшену, а з базової бізнес-моделі та реальної економіки.</p>
+            <b>Якщо у тебе вже є своя аудиторія або простір</b>
+            <p>Кав’ярня, бар, ресторан, студія, клуб, ком’юніті чи локація — і ти хочеш зрозуміти, як створити навколо цього окрему подію та новий продукт.</p>
           </div>
           <div class="fit-card">
-            <b>Якщо є ідея, але незрозуміло, чи вона окупиться</b>
-            <p>Ти побачиш, які цифри треба порахувати до того, як брати на себе великі витрати.</p>
+            <b>Якщо є конкретна ідея, але немає економіки</b>
+            <p>Допоможе зрозуміти основні витрати, джерела доходу, точку беззбитковості та перевірити ідею до великих вкладень.</p>
           </div>
           <div class="fit-card">
-            <b>Якщо хочеться зайти з невеликого масштабу</b>
-            <p>Не обов’язково починати з десятків тисяч гостей. Спочатку можна перевірити модель на невеликій події.</p>
+            <b>Якщо ти ніколи не працював в івентах</b>
+            <p>Досвід не потрібен. Почнемо не зі сцени, світла та складного продакшену, а з найголовнішого — як працює бізнес-модель події.</p>
           </div>
         </div>
       </div>
@@ -435,20 +491,42 @@
       <div class="wrap buy-grid">
         <div>
           <div class="section-kicker">Міні-курс</div>
-          <h2 class="section-title">Подивись на фестиваль очима організатора</h2>
+          <h2 class="section-title">Подивись на івент очима організатора</h2>
           <ul class="buy-list">
-            <li>7 коротких модулів</li>
-            <li>5 джерел доходу</li>
-            <li>реальна економіка та точка беззбитковості</li>
-            <li>кейси успішних рішень і провалів</li>
-            <li>перший маршрут входу в індустрію</li>
+            <li>міні-курс, який можна пройти за один вечір</li>
+            <li>5 основних джерел доходу</li>
+            <li>витрати та точка беззбитковості</li>
+            <li>як вибрати формат і масштаб першої події</li>
+            <li>основні ризики до старту</li>
+            <li>реальні кейси та мої дорогі помилки</li>
+            <li>перший розрахунок економіки своєї ідеї</li>
           </ul>
         </div>
 
         <div>
-          <div><span class="price-big">390</span><span class="currency">грн</span></div>
-          <p>Невеликий вхід, щоб зрозуміти всю логіку фестивального бізнесу зсередини — і вирішити, чи хочеш ти йти далі.</p>
-          <a class="cta" href="#">Купити міні-курс →</a>
+          <div class="price-line"><span class="price-big">390</span><span class="currency">грн</span></div>
+          <p>За один вечір ти зрозумієш, як працює економіка подій, зробиш перший розрахунок своєї ідеї та побачиш, чи варто рухатися далі.</p>
+          <a class="cta" href="#contact">Отримати міні-курс за 390 грн →</a>
+          <div class="buy-note">Для тих, хто хоче спочатку порахувати — і тільки потім вкладати гроші.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact">
+        <div>
+          <div class="section-kicker">Перший крок</div>
+          <h2 class="section-title">Почни рахувати свою ідею івенту вже зараз</h2>
+        </div>
+        <div class="contact-card">
+          <h3>У курсі ти зробиш перший розрахунок своєї ідеї</h3>
+          <p>
+            Ідея, формат, витрати, джерела доходу і точка беззбитковості. За один вечір ти побачиш економіку майбутньої події і зрозумієш, чи варто рухатися далі.
+          </p>
+          <div class="contact-actions">
+            <a class="cta" href="#buy">Повернутися до пропозиції</a>
+            <a class="ghost" href="#faq">Питання перед покупкою</a>
+          </div>
         </div>
       </div>
     </section>
@@ -460,7 +538,7 @@
 
         <details>
           <summary>Я ніколи не організовував події. Мені підійде?</summary>
-          <p>Так. Курс побудований саме як вхід у тему для людини без досвіду в івентах.</p>
+          <p>Так. Курс побудований для людини без досвіду, яка хоче зрозуміти, як влаштовані гроші в івентах і як порахувати свою ідею.</p>
         </details>
 
         <details>
@@ -475,23 +553,32 @@
 
         <details>
           <summary>Скільки часу займає курс?</summary>
-          <p>Програма розрахована на 7 днів у комфортному темпі. За бажання її можна пройти швидше.</p>
+          <p>Програму можна пройти за один вечір. За бажання можна повертатися до уроків і перераховувати свою ідею кілька разів.</p>
         </details>
       </div>
     </section>
   </main>
 
-  <div class="sticky"><a class="cta" href="#buy">Курс за 390 грн →</a></div>
+  <div class="sticky"><a class="cta" href="#buy">Курс за 390 грн</a></div>
 
   <footer>
     <div class="wrap">
-      <p style="margin-bottom:10px">
-        <a href="/terms" style="color:var(--accent);text-decoration:none">Публічна оферта</a>
-        &nbsp;·&nbsp;
-        <a href="/privacy" style="color:var(--accent);text-decoration:none">Політика конфіденційності</a>
-      </p>
-      <p>Мінікурс «Фестиваль як бізнес» · Роман Тугашев · 2026</p>
+      2026 · Міні-курс Романа Тугашева.
     </div>
   </footer>
+
+  <script>
+    const sticky = document.querySelector('.sticky');
+    const heroCta = document.querySelector('.hero-cta');
+
+    if (sticky && heroCta && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(([entry]) => {
+        sticky.classList.toggle('is-visible', !entry.isIntersecting);
+      }, { threshold: 0 });
+      observer.observe(heroCta);
+    } else if (sticky) {
+      sticky.classList.add('is-visible');
+    }
+  </script>
 </body>
 </html>
