@@ -398,10 +398,8 @@ footer .l a{color:var(--acc);text-decoration:none;margin-right:14px}
       </div>
       <div id="lead-thanks" style="display:none">
         <h3 class="modal-title">Залишився один крок</h3>
-        <p class="modal-note">Обери, якою карткою будеш платити, і відкриється сторінка оплати.</p>
-        <a class="btn" id="pay-cis" href="#">Оплатити карткою СНД</a>
-        <div style="height:10px"></div>
-        <a class="btn ghost" id="pay-world" href="#">Оплатити європейською карткою</a>
+        <p class="modal-note">Зараз відкриється захищена сторінка оплати карткою.</p>
+        <a class="btn" id="pay-world" href="#">Перейти до оплати</a>
         <div class="modal-fine">Якщо оплата не проходить, напиши на zadiraka.wellness@gmail.com</div>
       </div>
     </div>
@@ -410,7 +408,6 @@ footer .l a{color:var(--acc);text-decoration:none;margin-right:14px}
 
 <script>
 /* ============ КОНСТАНТЫ. Менять только здесь ============ */
-var PAY_CIS   = "";   /* Boosty, картки СНД, UA версія */
 var PAY_WORLD = "https://secure.wayforpay.com/button/b7bf4cc552d4f";   /* WayForPay, UA версія */
 var PIXEL_ID  = "1866982934278729";   /* Meta Pixel */
 var SHEET     = "Leads";   /* общий лист лидов */
@@ -431,7 +428,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
   function wire(id,url){var a=document.getElementById(id);
     if(url){a.setAttribute('href',url);}else{a.classList.add('off');a.addEventListener('click',function(e){e.preventDefault();});}}
-  wire('pay-cis',PAY_CIS); wire('pay-world',PAY_WORLD);
+  wire('pay-world',PAY_WORLD);
 
   var form=document.getElementById('lead-form');
   form.addEventListener('submit',function(e){
