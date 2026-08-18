@@ -290,10 +290,10 @@
         <div class="hero-meta">
           <div class="meta"><b>1 вечір</b>щоб зрозуміти логіку івент-бізнесу</div>
           <div class="meta"><b>Живий досвід</b>цифри, помилки та рішення організатора</div>
-          <div class="meta"><b>Своя ідея</b>чернетка моделі до старту витрат</div>
+          <div class="meta"><b>Своя ідея</b>перший розрахунок економіки до старту витрат</div>
         </div>
         <div class="cta-row">
-          <a class="cta hero-cta" href="#buy">Розібратися за 390 грн →</a>
+          <a class="cta hero-cta" href="https://secure.wayforpay.com/button/b129744491e39" data-checkout="390">Отримати міні-курс за 390 грн →</a>
           <a class="ghost" href="#program">Подивитись програму</a>
         </div>
         <div class="micro">Навіть якщо ти ніколи не організовував подій.</div>
@@ -319,7 +319,7 @@
           </p>
 
           <p class="note">
-            Роман пройшов шлях не тільки через створення найуспішніших та впізнаваних фестивалів, партнерства і велику кількість гостей, а й через помилки, фінансові втрати та дорогі рішення, яких можна було уникнути, маючи досвід. У цьому міні-курсі він показує не красиву картинку івентів, а те, як організатор дивиться на гроші, ризики і першу модель події.
+            Роман пройшов шлях не тільки через створення найуспішніших та впізнаваних фестивалів, партнерства і велику кількість гостей, а й через помилки, фінансові втрати та дорогі рішення, яких можна було уникнути, маючи досвід. У цьому міні-курсі він показує не красиву картинку івентів, а те, як організатор дивиться на гроші, ризики і перший розрахунок економіки події.
           </p>
 
           <div class="projects">
@@ -448,7 +448,7 @@
           </div>
           <div class="lesson">
             <div class="lesson-top"><span><span class="lesson-num">06.</span> Порахуй свою ідею</span><span>Крок 6</span></div>
-            <p>Склади чернетку економіки власної події та зрозумій, які цифри й припущення потрібно перевірити першими.</p>
+            <p>Зроби перший розрахунок економіки власної події та зрозумій, які цифри й припущення потрібно перевірити першими.</p>
           </div>
           <div class="lesson bonus">
             <div class="lesson-top"><span><span class="lesson-num">+</span> Мої дорогі помилки</span><span>Бонус</span></div>
@@ -506,7 +506,7 @@
         <div>
           <div class="price-line"><span class="price-big">390</span><span class="currency">грн</span></div>
           <p>За один вечір ти зрозумієш, як працює економіка подій, зробиш перший розрахунок своєї ідеї та побачиш, чи варто рухатися далі.</p>
-          <a class="cta" href="#contact">Отримати міні-курс за 390 грн →</a>
+          <a class="cta" href="https://secure.wayforpay.com/button/b129744491e39" data-checkout="390">Отримати міні-курс за 390 грн →</a>
           <div class="buy-note">Для тих, хто хоче спочатку порахувати — і тільки потім вкладати гроші.</div>
         </div>
       </div>
@@ -524,7 +524,7 @@
             Ідея, формат, витрати, джерела доходу і точка беззбитковості. За один вечір ти побачиш економіку майбутньої події і зрозумієш, чи варто рухатися далі.
           </p>
           <div class="contact-actions">
-            <a class="cta" href="#buy">Повернутися до пропозиції</a>
+            <a class="cta" href="https://secure.wayforpay.com/button/b129744491e39" data-checkout="390">Отримати міні-курс за 390 грн →</a>
             <a class="ghost" href="#faq">Питання перед покупкою</a>
           </div>
         </div>
@@ -543,12 +543,12 @@
 
         <details>
           <summary>Після курсу я гарантовано зароблю на фестивалі?</summary>
-          <p>Ні. Організація подій — ризиковий бізнес. Завдання курсу — показати, як рахувати модель, бачити ризики та приймати рішення до запуску.</p>
+          <p>Ні. Організація подій — ризиковий бізнес. Завдання курсу — показати, як рахувати економіку, бачити ризики та приймати рішення до запуску.</p>
         </details>
 
         <details>
           <summary>Потрібно одразу вкладати великі гроші?</summary>
-          <p>Ні. Один із ключових принципів — спочатку порахувати модель і перевірити її на контрольованому масштабі.</p>
+          <p>Ні. Один із ключових принципів — спочатку порахувати економіку і перевірити її на контрольованому масштабі.</p>
         </details>
 
         <details>
@@ -559,7 +559,7 @@
     </section>
   </main>
 
-  <div class="sticky"><a class="cta" href="#buy">Курс за 390 грн</a></div>
+  <div class="sticky"><a class="cta" href="https://secure.wayforpay.com/button/b129744491e39" data-checkout="390">Отримати міні-курс за 390 грн →</a></div>
 
   <footer>
     <div class="wrap">
@@ -568,6 +568,52 @@
   </footer>
 
   <script>
+    (function(){
+      const trackingKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','source','medium','campaign','gclid','fbclid'];
+      const params = new URLSearchParams(window.location.search);
+      const stored = JSON.parse(localStorage.getItem('festv3_utm') || '{}');
+      let changed = false;
+
+      trackingKeys.forEach((key) => {
+        const value = params.get(key);
+        if (value) {
+          stored[key] = value;
+          changed = true;
+        }
+      });
+
+      if (changed) localStorage.setItem('festv3_utm', JSON.stringify(stored));
+
+      window.festTrack = function(eventName, data = {}) {
+        const payload = { ...stored, ...data };
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: eventName, ...payload });
+        if (typeof window.gtag === 'function') window.gtag('event', eventName, payload);
+        if (typeof window.fbq === 'function') window.fbq('trackCustom', eventName, payload);
+      };
+
+      window.festTrack('ViewContent', { product: 'mini_course_390' });
+
+      function withTracking(url) {
+        if (!url || url.startsWith('#') || url.startsWith('mailto:') || url.startsWith('tel:')) return url;
+        const [base, hash = ''] = url.split('#');
+        const separator = base.includes('?') ? '&' : '?';
+        const query = new URLSearchParams(stored).toString();
+        return query ? `${base}${separator}${query}${hash ? `#${hash}` : ''}` : url;
+      }
+
+      document.querySelectorAll('a[href]').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#')) link.setAttribute('href', withTracking(href));
+      });
+
+      document.querySelectorAll('[data-checkout="390"]').forEach((link) => {
+        link.addEventListener('click', () => {
+          window.festTrack('InitiateCheckout', { product: 'mini_course_390', value: 390, currency: 'UAH' });
+        });
+      });
+    })();
+
     const sticky = document.querySelector('.sticky');
     const heroCta = document.querySelector('.hero-cta');
 

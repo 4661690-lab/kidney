@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Event Calculator Pack — Івент як бізнес</title>
+  <meta name="description" content="Додай Event Calculator Pack до міні-курсу Івент як бізнес."/>
+  <style>
+    :root{
+      --bg:#f4f7f6;
+      --paper:#fbfcfb;
+      --paper2:#eef3f1;
+      --ink:#17252b;
+      --muted:#64757b;
+      --accent:#667f78;
+      --accent-dark:#3d5d57;
+      --warm:#c89b57;
+      --line:#d8e2df;
+      --dark:#1f3434;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.38}
+    .wrap{width:min(1080px,calc(100% - 32px));margin:auto}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;font-weight:850}
+    .brand{font-size:14px;text-transform:uppercase}
+    .pill{background:var(--dark);color:white;padding:10px 14px;border-radius:999px;font-size:13px}
+    main{padding:54px 0 90px}
+    .panel{display:grid;grid-template-columns:1.06fr .94fr;background:var(--paper);border:1px solid var(--line);min-height:660px}
+    .copy{padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+    .kicker{color:var(--accent-dark);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,5.6vw,76px);line-height:1;margin:18px 0 22px;font-weight:500;text-wrap:balance}
+    .lead{font-size:21px;color:#31464a;max-width:650px;margin:0 0 28px}
+    .price{font-size:clamp(72px,10vw,128px);font-weight:900;line-height:.85;margin:8px 0 22px}
+    .price span{font-size:28px}
+    ul{font-size:18px;line-height:1.65;padding-left:22px;margin:0 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .cta,.ghost{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:16px 22px;border-radius:6px;font-weight:900;text-transform:uppercase;text-decoration:none}
+    .cta{background:var(--accent);color:white}
+    .cta:hover{background:var(--accent-dark)}
+    .ghost{border:1px solid var(--line);color:var(--ink)}
+    .visual{min-height:660px;position:relative;background:linear-gradient(to top,rgba(23,37,43,.62),rgba(23,37,43,.08)),url("../../assets/food-market.jpg") center/cover no-repeat}
+    .visual:before{content:"";position:absolute;inset:24px;border:1px solid rgba(255,255,255,.45)}
+    .visual-text{position:absolute;left:34px;right:34px;bottom:34px;color:white;font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,3.4vw,52px);line-height:1.04;text-shadow:0 2px 18px rgba(0,0,0,.24)}
+    .note{font-size:13px;color:var(--muted);margin-top:12px}
+    footer{padding:28px 0;color:var(--muted);font-size:12px}
+    @media(max-width:850px){
+      .panel{grid-template-columns:1fr}
+      .copy{padding:42px 24px}
+      .visual{min-height:420px}
+      .cta,.ghost{width:100%;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap top">
+    <div class="brand">Роман Тугашев · Event Calculator Pack</div>
+    <div class="pill">апсейл · 1 490 грн</div>
+  </div>
+
+  <main>
+    <div class="wrap panel">
+      <div class="copy">
+        <div class="kicker">Наступний крок</div>
+        <h1>Додай Event Calculator Pack</h1>
+        <p class="lead">
+          Міні-курс покаже логіку. Calculator Pack допоможе швидше порахувати свою ідею у готових шаблонах.
+        </p>
+        <div class="price">1 490 <span>грн</span></div>
+        <ul>
+          <li>таблиця для першого розрахунку доходів і витрат</li>
+          <li>break-even calculator для різних сценаріїв гостей</li>
+          <li>шаблон бюджету події</li>
+          <li>чек-лист витрат, які легко забути до старту</li>
+          <li>структура першої команди і таймлайн підготовки</li>
+        </ul>
+        <div class="actions">
+          <a class="cta" href="CALCULATOR_PAYMENT_LINK_HERE" data-calculator-buy="true">Додати Event Calculator Pack — 1 490 грн</a>
+          <a class="ghost" href="/start" data-calculator-decline="true">Ні, дякую. Перейти далі</a>
+        </div>
+        <div class="note">Після вибору ти перейдеш до короткої анкети про свою ідею.</div>
+      </div>
+      <div class="visual">
+        <div class="visual-text">Спочатку порахувати. Потім вкладати гроші.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">2026 · Міні-курс Романа Тугашева.</div>
+  </footer>
+
+  <script>
+    (function(){
+      const keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','source','medium','campaign','gclid','fbclid'];
+      const params = new URLSearchParams(window.location.search);
+      const stored = JSON.parse(localStorage.getItem('festv3_utm') || '{}');
+      let changed = false;
+      keys.forEach((key) => {
+        const value = params.get(key);
+        if (value) { stored[key] = value; changed = true; }
+      });
+      if (changed) localStorage.setItem('festv3_utm', JSON.stringify(stored));
+
+      window.festTrack = function(eventName, data = {}) {
+        const payload = { ...stored, ...data };
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: eventName, ...payload });
+        if (typeof window.gtag === 'function') window.gtag('event', eventName, payload);
+        if (typeof window.fbq === 'function') window.fbq('trackCustom', eventName, payload);
+      };
+
+      window.festTrack('Purchase390', { product: 'mini_course_390', value: 390, currency: 'UAH' });
+      window.festTrack('ViewUpsell', { product: 'event_calculator_pack', value: 1490, currency: 'UAH' });
+
+      function withTracking(url) {
+        if (!url || url.startsWith('#')) return url;
+        const query = new URLSearchParams(stored).toString();
+        if (!query) return url;
+        const [base, hash = ''] = url.split('#');
+        return `${base}${base.includes('?') ? '&' : '?'}${query}${hash ? `#${hash}` : ''}`;
+      }
+
+      document.querySelectorAll('a[href]').forEach((link) => {
+        link.setAttribute('href', withTracking(link.getAttribute('href')));
+      });
+
+      document.querySelector('[data-calculator-decline="true"]')?.addEventListener('click', () => {
+        window.festTrack('DeclineCalculator', { product: 'event_calculator_pack' });
+      });
+    })();
+  </script>
+</body>
+</html>

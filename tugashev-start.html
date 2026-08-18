@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Анкета ідеї — Івент як бізнес</title>
+  <meta name="description" content="Коротка анкета про ідею події після міні-курсу Івент як бізнес."/>
+  <style>
+    :root{
+      --bg:#f4f7f6;
+      --paper:#fbfcfb;
+      --paper2:#eef3f1;
+      --ink:#17252b;
+      --muted:#64757b;
+      --accent:#667f78;
+      --accent-dark:#3d5d57;
+      --warm:#c89b57;
+      --line:#d8e2df;
+      --dark:#1f3434;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.38}
+    .wrap{width:min(980px,calc(100% - 32px));margin:auto}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;font-weight:850}
+    .brand{font-size:14px;text-transform:uppercase}
+    .pill{background:var(--dark);color:white;padding:10px 14px;border-radius:999px;font-size:13px}
+    main{padding:54px 0 90px}
+    .panel{background:var(--paper);border:1px solid var(--line);padding:44px}
+    .kicker{color:var(--accent-dark);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,5vw,70px);line-height:1;margin:18px 0 18px;font-weight:500;text-wrap:balance}
+    .lead{font-size:20px;color:#31464a;max-width:760px;margin:0 0 32px}
+    form{display:grid;gap:18px}
+    label{display:grid;gap:8px;font-weight:850}
+    input,textarea,select{
+      width:100%;border:1px solid var(--line);border-radius:6px;background:white;
+      padding:14px 15px;font:inherit;color:var(--ink)
+    }
+    textarea{min-height:110px;resize:vertical}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    button,.ghost{
+      min-height:54px;padding:16px 22px;border-radius:6px;font-weight:900;
+      text-transform:uppercase;text-decoration:none;cursor:pointer
+    }
+    button{border:0;background:var(--accent);color:white}
+    button:hover{background:var(--accent-dark)}
+    .ghost{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--ink)}
+    .note{font-size:13px;color:var(--muted);margin-top:12px}
+    footer{padding:28px 0;color:var(--muted);font-size:12px}
+    @media(max-width:760px){
+      .panel{padding:28px 20px}
+      .grid2{grid-template-columns:1fr}
+      button,.ghost{width:100%;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap top">
+    <div class="brand">Роман Тугашев · наступний крок</div>
+    <div class="pill">анкета</div>
+  </div>
+
+  <main>
+    <div class="wrap panel">
+      <div class="kicker">Після міні-курсу</div>
+      <h1>Розкажи кілька слів про свою ідею</h1>
+      <p class="lead">
+        Це допоможе зрозуміти, на якому ти етапі і який наступний крок може бути корисним: самостійний запуск або персональна робота над ідеєю.
+      </p>
+
+      <form action="#" id="qform" method="post" data-qualification-form>
+        <label>
+          Яку подію ти хочеш зробити?
+          <textarea name="event_idea" required placeholder="Наприклад: маркет у кав’ярні, wellness day, вечірка, гастро-подія, концерт..."></textarea>
+        </label>
+
+        <div class="grid2">
+          <label>
+            У якому місті / країні?
+            <input name="location" required placeholder="Місто, країна"/>
+          </label>
+          <label>
+            Коли приблизно хочеш провести?
+            <input name="timing" placeholder="Наприклад: через 2 місяці, восени, поки не знаю"/>
+          </label>
+        </div>
+
+        <label>
+          Чи є вже свій бізнес, локація, аудиторія або ком’юніті?
+          <textarea name="existing_asset" placeholder="Кав’ярня, бар, студія, клуб, ком’юніті, Instagram-аудиторія, база гостей..."></textarea>
+        </label>
+
+        <div class="grid2">
+          <label>
+            Який приблизний бюджет події?
+            <input name="budget" placeholder="Наприклад: 30 000 грн, 100 000 грн, поки не знаю"/>
+          </label>
+          <label>
+            На якому етапі ти зараз?
+            <select name="stage" required>
+              <option value="">Обери варіант</option>
+              <option>Є тільки ідея</option>
+              <option>Є формат, але немає розрахунку</option>
+              <option>Є локація або партнери</option>
+              <option>Вже готую запуск</option>
+              <option>Вже робив події раніше</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Чи хочеш, щоб Роман особисто розібрав твою ідею?
+          <select name="personal_review_interest" required>
+            <option value="">Обери варіант</option>
+            <option>Так, цікаво</option>
+            <option>Можливо пізніше</option>
+            <option>Поки ні</option>
+          </select>
+        </label>
+
+        <input type="hidden" name="utm_source"/>
+        <input type="hidden" name="utm_medium"/>
+        <input type="hidden" name="utm_campaign"/>
+        <input type="hidden" name="utm_content"/>
+        <input type="hidden" name="utm_term"/>
+        <input type="hidden" name="source"/>
+        <input type="hidden" name="medium"/>
+        <input type="hidden" name="campaign"/>
+        <input type="hidden" name="gclid"/>
+        <input type="hidden" name="fbclid"/>
+        <input type="hidden" name="calculator_status"/>
+
+        <div class="actions">
+          <button type="submit">Відправити анкету →</button>
+          <a class="ghost" href="/">Повернутися на сайт</a>
+        </div>
+        <div class="note">Після підключення форми відповіді будуть зберігатися у твоїй CRM, таблиці або сервісі заявок.</div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">2026 · Міні-курс Романа Тугашева.</div>
+  </footer>
+
+  <script>
+    (function(){
+      const keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','source','medium','campaign','gclid','fbclid'];
+      const params = new URLSearchParams(window.location.search);
+      const stored = JSON.parse(localStorage.getItem('festv3_utm') || '{}');
+      let changed = false;
+      keys.forEach((key) => {
+        const value = params.get(key);
+        if (value) { stored[key] = value; changed = true; }
+      });
+      if (changed) localStorage.setItem('festv3_utm', JSON.stringify(stored));
+
+      window.festTrack = function(eventName, data = {}) {
+        const payload = { ...stored, ...data };
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: eventName, ...payload });
+        if (typeof window.gtag === 'function') window.gtag('event', eventName, payload);
+        if (typeof window.fbq === 'function') window.fbq('trackCustom', eventName, payload);
+      };
+
+      const calculatorStatus = params.get('calculator') || 'not_selected';
+      if (calculatorStatus === 'purchased') {
+        window.festTrack('PurchaseCalculator', { product: 'event_calculator_pack', value: 1490, currency: 'UAH' });
+      }
+
+      const form = document.querySelector('[data-qualification-form]');
+      keys.forEach((key) => {
+        const input = form.querySelector(`[name="${key}"]`);
+        if (input) input.value = stored[key] || '';
+      });
+      form.querySelector('[name="calculator_status"]').value = calculatorStatus;
+
+      form.addEventListener('submit', () => {
+        const review = form.querySelector('[name="personal_review_interest"]').value;
+        window.festTrack('QualificationSubmitted', {
+          calculator_status: calculatorStatus,
+          personal_review_interest: review
+        });
+        if (review === 'Так, цікаво') {
+          window.festTrack('PersonalReviewInterested', { calculator_status: calculatorStatus });
+        }
+      });
+    })();
+  </script>
+
+<script>
+/* відправка анкети в таблицю лідів */
+(function(){
+  var LEAD_URL='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
+  var f=document.getElementById('qform'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(f), parts=[];
+    var labels={event_idea:'Ідея',location:'Місто',timing:'Коли',existing_asset:'Що вже є',budget:'Бюджет',stage:'Етап',personal_review_interest:'Розбір'};
+    for(var k in labels){ var v=(d.get(k)||'').toString().trim(); if(v) parts.push(labels[k]+': '+v); }
+    var utm=[]; ['utm_source','utm_medium','utm_campaign','fbclid','calculator_status'].forEach(function(k){
+      var v=(d.get(k)||'').toString().trim(); if(v) utm.push(k+'='+v);
+    });
+    var pd=new URLSearchParams({
+      name: parts.join(' | '),
+      email: (d.get('email')||'').toString().trim(),
+      phone: (d.get('contact')||'').toString().trim(),
+      lang:'Українська (UA)', page:location.pathname,
+      source:'Івент анкета (UA)' + (utm.length? ' | '+utm.join(' '):''),
+      sheet:'Leads'
+    });
+    try{ if(navigator.sendBeacon){navigator.sendBeacon(LEAD_URL,pd);} else {fetch(LEAD_URL,{method:'POST',mode:'no-cors',body:pd});} }catch(err){}
+    var btn=f.querySelector('button[type=submit]');
+    if(btn){ btn.textContent='Анкету надіслано'; btn.disabled=true; }
+  });
+})();
+</script>
+</body>
+</html>
