@@ -409,6 +409,7 @@ footer .l a{color:var(--acc);text-decoration:none;margin-right:14px}
 var PAY_CIS   = "https://boosty.to/zadirakacigun/posts/d7d501a9-207f-4f86-93b4-1e0e5fd0b470?share=post_link";
 var PAY_WORLD = "https://secure.wayforpay.com/button/bd452d4039d2a";
 var PIXEL_ID  = "2095117397778923";
+var PIXEL_ID2 = "1866982934278729";
 var SHEET     = "Leads";   /* общий лист лидов */
 /* ======================================================== */
 
@@ -458,7 +459,7 @@ if(PIXEL_ID){
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init',PIXEL_ID); fbq('track','PageView');
+  fbq('init',PIXEL_ID); if(typeof PIXEL_ID2!=='undefined'&&PIXEL_ID2)fbq('init',PIXEL_ID2); fbq('track','PageView');
 }
 </script>
 </body>
