@@ -54,7 +54,10 @@ p:last-child{margin-bottom:0}
 .hero{padding:38px 0 40px;border-bottom:1px solid var(--line)}
 .hero .sub{margin-top:10px;font-size:18px}
 .hero p.lead{margin:22px 0 0;font-size:17px;line-height:1.62}
-.hero-img{margin:26px 0 0;width:100%;height:auto;border-radius:2px;border:1px solid var(--line)}
+.hero-body{margin-top:20px}
+.hero-body::after{content:"";display:block;clear:both}
+.hero-img{float:left;width:132px;height:auto;margin:4px 16px 10px 0;border-radius:2px;border:1px solid var(--line)}
+.hero-body .lead{margin:0;font-size:16px;line-height:1.6}
 .sec-img{margin:24px 0 0;width:100%;height:auto;border-radius:2px;border:1px solid var(--line)}
 
 .btn{display:block;width:100%;text-align:center;text-decoration:none;
@@ -131,6 +134,8 @@ footer .fname{color:var(--ink);font-size:15px;margin:0 0 6px}
   .btn{width:auto;display:inline-block;min-width:320px}
   .author-grid{display:grid;grid-template-columns:230px 1fr;gap:26px;align-items:start}
   .author-photo{margin:0}
+  .hero-img{width:190px;margin:6px 22px 12px 0}
+  .hero-body .lead{font-size:17px;line-height:1.62}
   .ncard .num{font-size:36px;min-width:52px}
 }
 </style>
@@ -141,14 +146,16 @@ footer .fname{color:var(--ink);font-size:15px;margin:0 0 6px}
   <div class="wrap">
     <h1>Нирки. Легкість тіла</h1>
     <p class="sub">Сім днів, після яких тіло перестає тримати зайве</p>
-    <p class="lead">Набряки вранці. Тяжкість у попереку. Тиск, який стрибає до вечора. Втома після восьми годин сну. Ти списував це на вік. Це не вік.</p>
+    <div class="hero-body">
+      <picture>
+        <source srcset="/assets/uakidney/hero.webp" type="image/webp">
+        <img class="hero-img" src="/assets/uakidney/hero.jpg" width="1000" height="750"
+             alt="Влад Задирака під час ранкової практики" fetchpriority="high" decoding="async">
+      </picture>
+      <p class="lead">Набряки вранці. Тяжкість у попереку. Тиск, який стрибає до вечора. Втома після восьми годин сну. Ти списував це на вік. Це не вік.</p>
+    </div>
     <a class="btn" data-pay href="#">Пройти курс за 390 грн</a>
     <p class="undr">Доступ одразу після оплати. Сім уроків. Три аудіо. Сім PDF.</p>
-    <picture>
-      <source srcset="/assets/uakidney/hero.webp" type="image/webp">
-      <img class="hero-img" src="/assets/uakidney/hero.jpg" width="1000" height="750"
-           alt="Влад Задирака під час ранкової практики" fetchpriority="high" decoding="async">
-    </picture>
   </div>
 </header>
 
