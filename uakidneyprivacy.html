@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Оплата пройшла. Нирки. Легкість тіла</title>
+<title>Політика конфіденційності. Нирки. Легкість тіла</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/uakidney/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/ptserif-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -122,46 +122,39 @@ footer .fname{color:var(--ink);font-size:15px;margin:0 0 6px}
   .ncard .num{font-size:36px;min-width:52px}
 }
 </style>
-<style>body{min-height:100vh;display:flex;align-items:center} .wrap{padding:44px 20px}</style>
+<style>body{min-height:100vh} .wrap{padding:44px 20px}</style>
 </head>
 <body>
 <main class="wrap">
   <p class="kicker">Нирки. Легкість тіла</p>
-  <h1>Оплата пройшла</h1>
-  <p class="sub">Сім днів, після яких тіло перестає тримати зайве</p>
+  <h1>Політика конфіденційності</h1>
   <hr class="rule">
-  <div class="col" style="border-left:3px solid var(--accline)">
-    <p>Доступ до курсу відкрито. Заходь на платформу, там перший урок і всі матеріали. Перший день займе двадцять хвилин, килимок не потрібен, вистачить ліжка.</p>
-  </div>
-  <a class="btn" id="go" href="#">Перейти до курсу</a>
-  <p class="undr">Якщо кнопка не спрацювала, напиши на <a href="mailto:4661690@gmail.com">4661690@gmail.com</a>, і я відкрию доступ вручну.</p>
-</main>
-<script>
-/* ============ КОНСТАНТИ ============ */
-var COURSE_URL = "";                  /* ZenEdu: посилання на курс */
-var PIXEL_ID   = "1866982934278729";  /* Meta Pixel */
-var GA4_ID     = "";                  /* GA4 */
-var PRICE_UAH  = 390;
-/* =================================== */
-var go=document.getElementById('go');
-if(COURSE_URL){ go.href=COURSE_URL; } else { go.style.opacity='.45'; go.addEventListener('click',function(e){e.preventDefault();}); }
+  <h3 style="margin:22px 0 8px">1. Хто збирає дані</h3>
+  <p>Влад Задирака. Контакт для звернень: <a href="mailto:4661690@gmail.com">4661690@gmail.com</a>.</p>
 
-if(PIXEL_ID){
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', PIXEL_ID); fbq('track','PageView');
-  fbq('track','Purchase',{value:PRICE_UAH,currency:'UAH'});
-}
-if(GA4_ID){
-  var g=document.createElement('script');g.async=true;
-  g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(g);
-  window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};
-  gtag('js',new Date()); gtag('config',GA4_ID);
-  gtag('event','purchase',{value:PRICE_UAH,currency:'UAH'});
-}
-</script>
+  <h3 style="margin:22px 0 8px">2. Які дані збираються</h3>
+  <p>Email і телефон, які ти залишаєш у формі перед оплатою. Дані аналітики через Meta Pixel і Google Analytics 4: факт перегляду сторінки, кліки по кнопках, знеособлені технічні дані браузера.</p>
+
+  <h3 style="margin:22px 0 8px">3. Навіщо</h3>
+  <p>Щоб надати доступ до курсу, звʼязатися у разі проблем з оплатою, оцінити ефективність реклами і покращити сайт.</p>
+
+  <h3 style="margin:22px 0 8px">4. Кому передаються</h3>
+  <p>Meta Platforms і Google як постачальники аналітики. Платіжному сервісу, щоб провести оплату. Платформі курсу, щоб видати доступ. Третім особам для їхніх власних цілей дані не передаються.</p>
+
+  <h3 style="margin:22px 0 8px">5. Оплата</h3>
+  <p>Платіжні дані обробляються платіжним сервісом. Сайт не зберігає і не має доступу до реквізитів карток.</p>
+
+  <h3 style="margin:22px 0 8px">6. Cookies</h3>
+  <p>Сайт використовує cookies для роботи аналітики і рекламного пікселя. Від них можна відмовитись у налаштуваннях браузера, сайт продовжить працювати.</p>
+
+  <h3 style="margin:22px 0 8px">7. Права користувача</h3>
+  <p>Ти можеш попросити видалити свої дані. Напиши на <a href="mailto:4661690@gmail.com">4661690@gmail.com</a>, і я це зроблю.</p>
+
+  <h3 style="margin:22px 0 8px">8. Дата останнього оновлення</h3>
+  <p>Серпень 2026 року.</p>
+
+  <p style="margin-top:26px"><a href="/uakidney">&larr; Повернутися на сторінку курсу</a></p>
+</main>
+
 </body>
 </html>
