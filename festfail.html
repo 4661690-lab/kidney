@@ -47,7 +47,8 @@ h1{text-transform:uppercase;font-weight:900;font-size:clamp(28px,8.2vw,48px);lin
 <script>
 /* ============ КОНСТАНТИ ============ */
 var PAY_URL  = "https://secure.wayforpay.com/button/b129744491e39";   /* WayForPay: посилання на кнопку оплати 390 грн */
-var PIXEL_ID = "1866982934278729";   /* Meta Pixel */
+var PIXEL_ID = "1866982934278729";
+var PIXEL_ID_B = "1126932555241769";   /* Meta Pixel */
 /* =================================== */
 var r=document.getElementById('retry');
 if(PAY_URL){ r.href=PAY_URL; } else { r.classList.add('off'); r.addEventListener('click',function(e){e.preventDefault();}); }
@@ -57,7 +58,7 @@ if(PIXEL_ID){
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', PIXEL_ID); fbq('track','PageView');
+  fbq('init', PIXEL_ID); if(typeof PIXEL_ID_B!=='undefined'&&PIXEL_ID_B)fbq('init',PIXEL_ID_B); fbq('track','PageView');
 }
 </script>
 </body>

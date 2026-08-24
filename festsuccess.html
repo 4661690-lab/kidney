@@ -48,7 +48,8 @@ h1{text-transform:uppercase;font-weight:900;font-size:clamp(30px,8.6vw,50px);lin
 <script>
 /* ============ КОНСТАНТИ ============ */
 var COURSE_URL = "https://t.me/festbus_bot?start=ok41TBD7A9UnoFHs";   /* посилання на Telegram бот з курсом */
-var PIXEL_ID   = "1866982934278729";   /* Meta Pixel */
+var PIXEL_ID   = "1866982934278729";
+var PIXEL_ID_B = "1126932555241769";   /* Meta Pixel */
 /* =================================== */
 var go=document.getElementById('go');
 if(COURSE_URL){ go.href=COURSE_URL; } else { go.classList.add('off'); go.addEventListener('click',function(e){e.preventDefault();}); }
@@ -58,7 +59,7 @@ if(PIXEL_ID){
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', PIXEL_ID); fbq('track','PageView');
+  fbq('init', PIXEL_ID); if(typeof PIXEL_ID_B!=='undefined'&&PIXEL_ID_B)fbq('init',PIXEL_ID_B); fbq('track','PageView');
   fbq('track','Purchase',{value:390.00,currency:'UAH'});
 }
 </script>

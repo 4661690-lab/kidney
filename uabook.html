@@ -409,7 +409,8 @@ footer .l a{color:var(--acc);text-decoration:none;margin-right:14px}
 <script>
 /* ============ КОНСТАНТЫ. Менять только здесь ============ */
 var PAY_WORLD = "https://secure.wayforpay.com/button/b7bf4cc552d4f";   /* WayForPay, UA версія */
-var PIXEL_ID  = "1866982934278729";   /* Meta Pixel */
+var PIXEL_ID  = "1866982934278729";
+var PIXEL_ID_B = "1126932555241769";   /* Meta Pixel */
 var SHEET     = "Leads";   /* общий лист лидов */
 /* ======================================================== */
 
@@ -459,7 +460,7 @@ if(PIXEL_ID){
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init',PIXEL_ID); fbq('track','PageView');
+  fbq('init',PIXEL_ID); if(typeof PIXEL_ID_B!=='undefined'&&PIXEL_ID_B)fbq('init',PIXEL_ID_B); fbq('track','PageView');
 }
 </script>
 </body>
