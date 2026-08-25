@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Цигун Ходьба, щоденна практика для тіла і спокою</title>
+<meta name="description" content="Цигун Ходьба — м'яка щоденна практика 10 хвилин на день: більше енергії, менше напруження, легкість у тілі."> <!-- 🔧 META PIXEL: вставити базовий код пікселя з реальним ID перед запуском -->
+<script>
+!function(f,b,e,v,n,t,s){...}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1126932555241769');
+fbq('track', 'PageView');
+</script> <style>
+  :root{
+    --bg:#fbfaf7;
+    --card:#ffffff;
+    --card-alt:#f4f7f3;
+    --text:#262421;
+    --muted:#8a8578;
+    --accent:#5c8a6e;
+    --accent-dark:#43704f;
+    --accent-soft:#e4ede2;
+    --border:#e2ded4;
+    --warn-bg:#fbf1ec;
+    --warn:#b8735a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family: Georgia, "PT Serif", "Times New Roman", serif;
+    font-weight:700;
+    margin:0;
+    line-height:1.25;
+  }
+  a{color:var(--muted);}
+  .app{max-width:640px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);}
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 24px 8px;
+  }
+  .logo{
+    font-family:Georgia,"PT Serif",serif;
+    font-weight:700;font-size:20px;letter-spacing:.02em;color:var(--accent-dark);
+    display:flex;align-items:center;gap:8px;
+  }
+  .logo .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .step-pill{
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+    border:1px solid var(--border);border-radius:999px;padding:5px 14px;
+  }
+  .progress-wrap{padding:0 24px 18px;display:flex;align-items:center;gap:10px;}
+  .progress-back{
+    width:28px;height:28px;border-radius:50%;background:var(--card-alt);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;
+    color:var(--muted);font-size:16px;user-select:none;
+  }
+  .progress-track{flex:1;display:flex;gap:6px;}
+  .progress-seg{flex:1;height:5px;border-radius:3px;background:var(--border);overflow:hidden;}
+  .progress-seg i{display:block;height:100%;width:0%;background:var(--accent);transition:width .4s ease;}
+  .stage{
+    flex:1;display:flex;flex-direction:column;padding:8px 24px 32px;
+  }
+  .step{display:none;flex-direction:column;flex:1;animation:fadeIn .35s ease;}
+  .step.active{display:flex;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .q-title{font-size:25px;text-align:center;margin:6px 0 6px;}
+  .q-sub{text-align:center;color:var(--muted);font-size:14.5px;margin-bottom:20px;}
+  .hero-photo{
+    height:170px;border-radius:20px;margin:6px 0 20px;
+    background:linear-gradient(135deg,var(--accent-soft),#dce8db);
+    display:flex;align-items:center;justify-content:center;color:var(--accent-dark);
+    font-size:13px;letter-spacing:.04em;text-align:center;padding:0 20px;
+  }
+  .options{display:flex;flex-direction:column;gap:12px;margin-top:4px;}
+  .opt{
+    border:1.5px solid var(--border);border-radius:16px;background:var(--card);
+    padding:16px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;
+    transition:border-color .15s ease, background .15s ease, transform .1s ease;
+  }
+  .opt:hover{border-color:#c9d9c9;}
+  .opt.selected{border-color:var(--accent);background:var(--accent-soft);}
+  .opt .icon{font-size:20px;flex:none;width:26px;text-align:center;}
+  .opt .label-wrap{flex:1;}
+  .opt .label{font-weight:600;font-size:15.5px;}
+  .opt .desc{font-size:13px;color:var(--muted);margin-top:2px;}
+  .opt .check{
+    width:22px;height:22px;border-radius:6px;border:1.5px solid var(--border);flex:none;
+    display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;
+  }
+  .opt.selected .check{background:var(--accent);border-color:var(--accent);}
+  .opt.round .check{border-radius:50%;}
+
+  .chipgrid{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
+  .chip{
+    border:1.5px solid var(--border);border-radius:999px;padding:11px 16px;text-align:center;
+    font-weight:600;font-size:14px;cursor:pointer;background:var(--card);
+  }
+  .chip.selected{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-dark);}
+
+  .num-field{
+    display:flex;align-items:baseline;justify-content:center;gap:8px;
+    border-bottom:1.5px solid var(--border);padding:16px 4px;margin:24px 0 16px;
+  }
+  .num-field input{
+    border:none;outline:none;background:transparent;font-size:34px;font-weight:700;
+    width:100%;text-align:center;color:var(--text);font-family:inherit;
+  }
+  .num-field .unit{font-size:22px;font-weight:700;color:var(--text);}
+  .num-field input::-webkit-outer-spin-button,
+  .num-field input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+  .num-field input[type=number]{-moz-appearance:textfield;}
+
+  .text-field{margin-bottom:16px;}
+  .text-field label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:6px;font-weight:600;}
+  .text-field input{
+    width:100%;border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;
+    font-size:15.5px;font-family:inherit;color:var(--text);outline:none;background:var(--card);
+  }
+  .text-field input:focus{border-color:var(--accent);}
+
+  .info-card{
+    border:1px solid var(--border);border-radius:16px;padding:16px 18px;background:var(--card-alt);
+    display:flex;gap:12px;margin-bottom:18px;
+  }
+  .info-card .ic{font-size:20px;flex:none;}
+  .info-card .body b{display:block;margin-bottom:2px;font-size:14.5px;}
+  .info-card .body span{font-size:13.5px;color:var(--muted);}
+  .info-card.warn{background:var(--warn-bg);border-color:#eeded5;}
+  .info-card.warn b{color:var(--warn);}
+
+  .spacer{flex:1;}
+  .cta{
+    background:var(--accent);color:#fff;border:none;border-radius:999px;
+    padding:17px 20px;font-size:16px;font-weight:700;cursor:pointer;width:100%;
+    box-shadow:0 8px 20px -8px rgba(92,138,110,.6);
+    transition:transform .1s ease, background .15s ease;
+  }
+  .cta:hover{background:var(--accent-dark);}
+  .cta:active{transform:scale(.98);}
+  .cta:disabled{background:#cfd6cf;box-shadow:none;cursor:default;}
+
+  /* Summary */
+  .bmi-gauge{border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:16px;}
+  .bmi-gauge .row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:10px;}
+  .bmi-bar{height:10px;border-radius:6px;background:linear-gradient(90deg,#7fb7e8,#8fd19e,#f0d27a,#e08a6a);position:relative;}
+  .bmi-bar .marker{
+    position:absolute;top:-6px;width:22px;height:22px;border-radius:50%;background:#fff;
+    border:3px solid var(--text);transform:translateX(-50%);
+  }
+  .bmi-labels{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:6px;}
+  .recap{border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:16px;}
+  .recap-row{display:flex;justify-content:space-between;align-items:center;padding:13px 18px;border-bottom:1px solid var(--border);}
+  .recap-row:last-child{border-bottom:none;}
+  .recap-row .k{font-size:12.5px;color:var(--muted);}
+  .recap-row .v{font-weight:700;font-size:14.5px;text-align:right;max-width:60%;}
+
+  /* Loading */
+  .loader-wrap{display:flex;flex-direction:column;align-items:center;padding-top:20px;}
+  .ring{
+    width:170px;height:170px;border-radius:50%;
+    background:conic-gradient(var(--accent) var(--deg,0deg), var(--accent-soft) 0deg);
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+    transition:background .3s linear;
+  }
+  .ring-inner{
+    width:130px;height:130px;border-radius:50%;background:var(--bg);
+    display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;color:var(--accent-dark);
+  }
+  .loader-title{font-size:18px;font-weight:700;text-align:center;margin-bottom:22px;}
+  .review{border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px;background:var(--card);}
+  .review .stars{color:#e0a83a;font-size:13px;margin:4px 0 6px;}
+  .review .name{font-weight:700;font-size:13.5px;}
+  .review p{font-size:13px;margin:0;color:#4a463f;line-height:1.4;}
+
+  /* Paywall */
+  .compare{display:flex;gap:12px;margin-bottom:16px;}
+  .compare .col{flex:1;border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;background:var(--card);}
+  .compare .col .tag{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;}
+  .compare .col .big{font-size:17px;font-weight:700;}
+  .plans{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;margin-top:6px;}
+  .plan{
+    border:1.5px solid var(--border);border-radius:14px;padding:14px 16px;
+    display:flex;justify-content:space-between;align-items:center;position:relative;cursor:pointer;background:var(--card);
+  }
+  .plan.selected{border-color:var(--accent);background:var(--accent-soft);}
+  .plan .tag-pop{
+    position:absolute;top:-10px;right:16px;background:#e9a23b;color:#fff;font-size:10.5px;
+    padding:3px 10px;border-radius:999px;font-weight:700;letter-spacing:.03em;
+  }
+  .plan .name{font-weight:700;font-size:15px;}
+  .plan .old{font-size:12px;color:var(--muted);text-decoration:line-through;}
+  .plan .price{font-weight:700;font-size:17px;text-align:right;}
+  .plan .price small{font-weight:500;font-size:12px;color:var(--muted);}
+  .fine{font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:2px;margin-bottom:18px;}
+  .fine a{color:var(--muted);}
+
+  .final-badge{
+    text-align:center;border:1px dashed var(--accent);border-radius:14px;padding:14px;
+    background:var(--accent-soft);color:var(--accent-dark);font-size:13.5px;font-weight:600;margin-bottom:16px;
+  }
+  .consent{display:flex;gap:10px;align-items:flex-start;margin:2px 0 18px;font-size:12.5px;color:var(--muted);line-height:1.5;}
+  .consent input{margin-top:3px;flex:none;}
+
+  .error-msg{color:var(--warn);font-size:12.5px;margin-top:-8px;margin-bottom:14px;display:none;}
+</style>
+</head>
+<body>
+<div class="app"> <div class="topbar"> <div class="logo"><span class="dot"></span>Цигун Ходьба</div> <div class="step-pill" id="stagePill">Початок</div> </div> <div class="progress-wrap" id="progressWrap" style="display:none;"> <div class="progress-back" id="backBtn">‹</div> <div class="progress-track"> <div class="progress-seg"><i id="seg1"></i></div> <div class="progress-seg"><i id="seg2"></i></div> <div class="progress-seg"><i id="seg3"></i></div> <div class="progress-seg"><i id="seg4"></i></div> </div> </div> <div class="stage"> <!-- 0: INTRO --> <div class="step active" data-step="0"> <div style="flex:1;display:flex;flex-direction:column;justify-content:center;"> <h1 class="q-title" style="font-size:30px;">Цигун Ходьба<br><span style="color:var(--accent-dark);">для тіла і спокою розуму</span></h1> <p class="q-sub" style="margin-top:10px;">Оберіть свій вік, щоб почати</p> <div class="options" style="margin-top:22px;"> <div class="opt round" data-group="age" data-value="35-44"><div class="label-wrap"><div class="label">35 до 44</div></div><div class="check"></div></div> <div class="opt round" data-group="age" data-value="45-54"><div class="label-wrap"><div class="label">45 до 54</div></div><div class="check"></div></div> <div class="opt round" data-group="age" data-value="55-64"><div class="label-wrap"><div class="label">55 до 64</div></div><div class="check"></div></div> <div class="opt round" data-group="age" data-value="65+"><div class="label-wrap"><div class="label">65+</div></div><div class="check"></div></div> </div> </div> <p class="fine" style="text-align:center;margin-top:18px;">Обираючи вік і продовжуючи, ви погоджуєтесь з <a href="cigunhodbaterms.html">умовами</a> та <a href="cigunhodbaprivacy.html">політикою конфіденційності</a></p> </div> <!-- 1: GOAL --> <div class="step" data-step="1"> <h2 class="q-title">Яка ваша <span style="color:var(--accent-dark);">головна ціль</span>?</h2> <div class="options"> <div class="opt" data-group="goal" data-value="energy"><div class="icon">🌿</div><div class="label-wrap"><div class="label">Більше енергії щодня</div></div><div class="check"></div></div> <div class="opt" data-group="goal" data-value="calm"><div class="icon">🧘</div><div class="label-wrap"><div class="label">Спокій і менше стресу</div></div><div class="check"></div></div> <div class="opt" data-group="goal" data-value="body"><div class="icon">🌸</div><div class="label-wrap"><div class="label">Легкість у тілі, форма</div></div><div class="check"></div></div> <div class="opt" data-group="goal" data-value="mobility"><div class="icon">🦋</div><div class="label-wrap"><div class="label">Рухливість і гнучкість</div></div><div class="check"></div></div> </div> <div class="spacer"></div> <button class="cta" data-next disabled>Далі</button> </div> <!-- 2: ADDITIONAL GOAL (chips, multi) --> <div class="step" data-step="2"> <h2 class="q-title">Що ще хотілося б покращити?</h2> <p class="q-sub">Можна обрати декілька варіантів</p> <div class="chipgrid"> <div class="chip" data-group="addgoal" data-multi data-value="sleep">Сон</div> <div class="chip" data-group="addgoal" data-multi data-value="posture">Постава</div> <div class="chip" data-group="addgoal" data-multi data-value="immunity">Імунітет</div> <div class="chip" data-group="addgoal" data-multi data-value="focus">Концентрація</div> <div class="chip" data-group="addgoal" data-multi data-value="mood">Настрій</div> <div class="chip" data-group="addgoal" data-multi data-value="breath">Дихання</div> </div> <div class="spacer"></div> <button class="cta" data-next disabled>Далі</button> </div> <!-- 3: INFO — 10 minutes --> <div class="step" data-step="3"> <div class="hero-photo">[ фото практики Цигун Ходьби ]</div> <h2 class="q-title">Лише 10 хвилин на день</h2> <p class="q-sub" style="margin-top:10px;line-height:1.5;">Плавні рухи цигун поєднані зі звичайною ходьбою, м'яке навантаження, яке підходить у будь-якому віці і не вимагає спортивної підготовки.</p> <div class="spacer"></div> <button class="cta" data-next>Далі</button> </div> <!-- 4: ACTIVITY LEVEL --> <div class="step" data-step="4"> <h2 class="q-title">Який ваш рівень активності зараз?</h2> <div class="options"> <div class="opt" data-group="activity" data-value="low"><div class="label-wrap"><div class="label">Малорухливий спосіб життя</div><div class="desc">Переважно вдома, мало руху за день</div></div><div class="check"></div></div> <div class="opt" data-group="activity" data-value="mid"><div class="label-wrap"><div class="label">Помірна активність</div><div class="desc">Іноді гуляю або роблю зарядку</div></div><div class="check"></div></div> <div class="opt" data-group="activity" data-value="high"><div class="label-wrap"><div class="label">Регулярно рухаюсь</div><div class="desc">Є звичка до занять або прогулянок</div></div><div class="check"></div></div> </div> <div class="spacer"></div> <button class="cta" data-next disabled>Далі</button> </div> <!-- 5: DAILY WALK --> <div class="step" data-step="5"> <h2 class="q-title">Скільки зазвичай ходите пішки на день?</h2> <div class="options"> <div class="opt" data-group="walk" data-value="lt20"><div class="label-wrap"><div class="label">Менше 20 хвилин</div></div><div class="check"></div></div> <div class="opt" data-group="walk" data-value="20-60"><div class="label-wrap"><div class="label">20 до 60 хвилин</div></div><div class="check"></div></div> <div class="opt" data-group="walk" data-value="1-2h"><div class="label-wrap"><div class="label">1 до 2 години</div></div><div class="check"></div></div> <div class="opt" data-group="walk" data-value="2h+"><div class="label-wrap"><div class="label">Більше 2 годин</div></div><div class="check"></div></div> </div> <div class="spacer"></div> <button class="cta" data-next disabled>Далі</button> </div> <!-- 6: BODY CONCERNS (multi) --> <div class="step" data-step="6"> <h2 class="q-title">Що турбує найбільше?</h2> <p class="q-sub">Можна обрати декілька варіантів</p> <div class="options"> <div class="opt" data-group="concerns" data-multi data-value="tired"><div class="icon">😮‍💨</div><div class="label-wrap"><div class="label">Постійна втома</div></div><div class="check"></div></div> <div class="opt" data-group="concerns" data-multi data-value="sleep"><div class="icon">🌙</div><div class="label-wrap"><div class="label">Поганий сон</div></div><div class="check"></div></div> <div class="opt" data-group="concerns" data-multi data-value="back"><div class="icon">🪷</div><div class="label-wrap"><div class="label">Затиснута спина і плечі</div></div><div class="check"></div></div> <div class="opt" data-group="concerns" data-multi data-value="weight"><div class="icon">⚖️</div><div class="label-wrap"><div class="label">Зайва вага</div></div><div class="check"></div></div> <div class="opt" data-group="concerns" data-multi data-value="none"><div class="label-wrap"><div class="label">Нічого з переліченого</div></div><div class="check"></div></div> </div> <div class="spacer"></div> <button class="cta" data-next disabled>Далі</button> </div> <!-- 7: INFO — why qigong walking --> <div class="step" data-step="7"> <div class="hero-photo">[ фото, плавний рух ]</div> <h2 class="q-title">Чому саме Цигун Ходьба</h2> <p class="q-sub" style="margin-top:10px;line-height:1.5;">Поєднання дихання, плавних рухів рук і звичайної ходьби дбайливо навантажує тіло без ударів по суглобах, підходить навіть тим, хто раніше не займався спортом.</p> <div class="spacer"></div> <button class="cta" data-next>Далі</button> </div> <!-- 8: SLEEP (multi) --> <div class="step" data-step="8"> <h2 class="q-title">Як ви зазвичай спите?</h2> <p class="q-sub">Можна обрати декілька варіантів</p> <div class="options"> <div class="opt" data-group="sleep" data-multi data-value="fallasleep"><div class="label-wrap"><div class="label">Важко заснути</div></div><div class="check"></div></div> <div class="opt" data-group="sleep" data-multi data-value="tiredwake"><div class="label-wrap"><div class="label">Прокидаюсь втомленою</div></div><div class="check"></div></div> <div class="opt" data-group="sleep" data-multi data-value="nightwake"><div class="label-wrap"><div class="label">Прокидаюсь серед ночі</div></div><div class="check"></div></div> <div class="opt" data-group="sleep" data-multi data-value="good"><div class="label-wrap"><div class="label">Сплю добре</div></div><div class="check"></div></div> </div> <div class="spacer"></div> <button class="cta" data-next disabled>Далі</button> </div> <!-- 9: STRESS --> <div class="step" data-step="9"> <h2 class="q-title">Як часто відчуваєте напруження чи стрес?</h2> <div class="options"> <div class="opt" data-group="stress" data-value="often"><div class="label-wrap"><div class="label">Майже щодня</div></div><div class="check"></div></div> <div class="opt" data-group="stress" data-value="sometimes"><div class="label-wrap"><div class="label">Час від часу</div></div><div class="check"></div></div> <div class="opt" data-group="stress" data-value="rarely"><div class="label-wrap"><div class="label">Рідко</div></div><div class="check"></div></div> </div> <div class="spacer"></div> <button class="cta" data-next disabled>Далі</button> </div> <!-- 10: HABITS (chips multi) --> <div class="step" data-step="10"> <h2 class="q-title">Що з цього про вас?</h2> <p class="q-sub">Можна обрати декілька варіантів</p> <div class="chipgrid"> <div class="chip" data-group="habits" data-multi data-value="sitting">Багато сиджу</div> <div class="chip" data-group="habits" data-multi data-value="screen">Довго за екраном</div> <div class="chip" data-group="habits" data-multi data-value="norest">Забуваю відпочивати</div> <div class="chip" data-group="habits" data-multi data-value="water">Мало п'ю води</div> <div class="chip" data-group="habits" data-multi data-value="sleep">Нерегулярний сон</div> <div class="chip" data-group="habits" data-multi data-value="none">Нічого з цього</div> </div> <div class="spacer"></div> <button class="cta" data-next disabled>Далі</button> </div> <!-- 11: INFO — regularity --> <div class="step" data-step="11"> <div class="hero-photo">[ фото, щоденна практика ]</div> <h2 class="q-title">Регулярність важливіша за інтенсивність</h2> <p class="q-sub" style="margin-top:10px;line-height:1.5;">10 спокійних хвилин щодня дають більше, ніж рідкісні виснажливі тренування. Тіло любить послідовність.</p> <div class="spacer"></div> <button class="cta" data-next>Далі</button> </div> <!-- 12: HEIGHT/WEIGHT --> <div class="step" data-step="12"> <h2 class="q-title">Зріст і вага</h2> <p class="q-sub">Щоб персоналізувати навантаження</p> <div class="num-field"><input type="number" id="heightInput" placeholder="Зріст" inputmode="numeric"><span class="unit">см</span></div> <div class="num-field"><input type="number" id="weightInput" placeholder="Вага" inputmode="numeric"><span class="unit">кг</span></div> <div class="info-card" id="bmiHint" style="display:none;"> <div class="ic">🌱</div> <div class="body"><b id="bmiValue"></b><span>Ми врахуємо це, підбираючи темп і тривалість вправ.</span></div> </div> <div class="spacer"></div> <button class="cta" id="hwNext" data-next disabled>Далі</button> </div> <!-- 13: PHYSICAL LIMITATIONS --> <div class="step" data-step="13"> <h2 class="q-title">Чи є щось із цього?</h2> <p class="q-sub">Можна обрати декілька варіантів</p> <div class="options"> <div class="opt" data-group="limits" data-multi data-value="knees"><div class="label-wrap"><div class="label">Чутливі коліна</div></div><div class="check"></div></div> <div class="opt" data-group="limits" data-multi data-value="back"><div class="label-wrap"><div class="label">Чутлива спина</div></div><div class="check"></div></div> <div class="opt" data-group="limits" data-multi data-value="balance"><div class="label-wrap"><div class="label">Проблеми з рівновагою</div></div><div class="check"></div></div> <div class="opt" data-group="limits" data-multi data-value="none"><div class="label-wrap"><div class="label">Нічого з переліченого</div></div><div class="check"></div></div> </div> <div class="spacer"></div> <button class="cta" data-next disabled>Далі</button> </div> <!-- 14: SUMMARY --> <div class="step" data-step="14"> <h2 class="q-title" style="text-align:left;">Ваш профіль готовий</h2> <div class="bmi-gauge" style="margin-top:16px;"> <div class="row"><span>Індекс маси тіла (ІМТ)</span><span id="summaryBmiLabel"></span></div> <div class="bmi-bar"><div class="marker" id="bmiMarker" style="left:50%;"></div></div> <div class="bmi-labels"><span>Недостатня</span><span>Норма</span><span>Надлишкова</span></div> </div> <div class="recap"> <div class="recap-row"><span class="k">Головна ціль</span><span class="v" id="recapGoal"></span></div> <div class="recap-row"><span class="k">Що турбує</span><span class="v" id="recapConcerns"></span></div> <div class="recap-row"><span class="k">Рівень активності</span><span class="v" id="recapActivity"></span></div> <div class="recap-row"><span class="k">Вік</span><span class="v" id="recapAge"></span></div> </div> <div class="spacer"></div> <button class="cta" data-next>Продовжити</button> </div> <!-- 15: LOADING --> <div class="step" data-step="15"> <div class="loader-wrap"> <div class="ring" id="ring"><div class="ring-inner"><span id="ringPct">0%</span></div></div> <div class="loader-title">Складаємо вашу програму Цигун Ходьби</div> </div> <div class="review"> <div class="name">Олена К.</div> <div class="stars">★★★★★</div> <p>Почала з 10 хвилин вранці, за місяць помітила, що менше болить спина і зʼявилась енергія.</p> </div> <div class="review"> <div class="name">Марина В.</div> <div class="stars">★★★★★</div> <p>Дуже м'яко, підходить навіть коли немає настрою на «справжній» спорт.</p> </div> </div> <!-- 16: CONTACTS (lead capture) --> <div class="step" data-step="16"> <h2 class="q-title">Майже готово</h2> <p class="q-sub">Залиште контакти, щоб отримати програму</p> <div class="text-field"> <label for="nameInput">Ім'я</label> <input type="text" id="nameInput" placeholder="Ваше ім'я" autocomplete="name"> </div> <div class="text-field"> <label for="emailInput">E-mail</label> <input type="email" id="emailInput" placeholder="you@example.com" autocomplete="email"> </div> <div class="text-field"> <label for="phoneInput">Телефон</label> <input type="tel" id="phoneInput" placeholder="+380" autocomplete="tel"> </div> <div class="error-msg" id="contactsError">Перевірте, будь ласка, e-mail і телефон</div> <div class="consent"> <input type="checkbox" id="consentCheck" checked> <label for="consentCheck">Погоджуюсь з <a href="cigunhodbaterms.html" target="_blank">умовами</a> та <a href="cigunhodbaprivacy.html" target="_blank">політикою конфіденційності</a> і на отримання листів з програмою</label> </div> <div class="spacer"></div> <button class="cta" id="contactsNext">Отримати програму</button> </div> <!-- 17: PAYWALL --> <div class="step" data-step="17"> <div class="final-badge">🎉 Ваша програма готова, <span id="planReadyName">Тест</span></div> <div class="compare"> <div class="col"><div class="tag">Зараз</div><div class="big">Мало енергії</div></div> <div class="col"><div class="tag">Ціль</div><div class="big" style="color:var(--accent-dark);">Легкість і сила</div></div> </div> <div class="plans">
+        <div class="plan selected" data-plan="7d"><div><div class="name">7 днів практики</div><div class="old">790 грн</div></div><div class="price">390 грн</div></div>
+      </div>
+</div> <script>
+(function(){
+  // 🔧 НАЛАШТУВАННЯ — замінити перед запуском ------------------------------
+  const LEADS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
+  const LEADS_SHEET = 'CigunHodba'; // ⚠️ ЦЮ ВКЛАДКУ ТРЕБА СТВОРИТИ В ТАБЛИЦІ ЗАЗДАЛЕГІДЬ — інакше ліди губляться мовчки
+  const LEADS_SOURCE = 'cigunhodba-UA';
+  const PAY_URL = ''; // 🔧 WayForPay: кнопка на 390 грн
+  const PLAN_LINKS = { '7d': PAY_URL };
+  // ---------------------------------------------------------------------
+
+  const state = { age:null, goal:null, addgoal:[], activity:null, walk:null, concerns:[],
+    sleep:[], stress:null, habits:[], height:null, weight:null, limits:[],
+    name:'', email:'', phone:'' };
+
+  const stepEls = Array.from(document.querySelectorAll('.step'));
+  const progressWrap = document.getElementById('progressWrap');
+  const stagePill = document.getElementById('stagePill');
+  const segs = [document.getElementById('seg1'),document.getElementById('seg2'),document.getElementById('seg3'),document.getElementById('seg4')];
+
+  const stageNames = {
+    0:'Початок',
+    1:'Цілі',2:'Цілі',3:'Цілі',
+    4:'Активність',5:'Активність',6:'Активність',7:'Активність',
+    8:'Спосіб життя',9:'Спосіб життя',10:'Спосіб життя',11:'Спосіб життя',
+    12:'Профіль',13:'Профіль',14:'Профіль',
+    15:'Ваш план',16:'Контакти',17:'Ваш план'
+  };
+  const stageFill = {
+    1:[1,0,0,0],2:[1,0,0,0],3:[1,0,0,0],
+    4:[2,0,0,0],5:[2,0,0,0],6:[2,0,0,0],7:[2,0,0,0],
+    8:[3,0,0,0],9:[3,0,0,0],10:[3,0,0,0],11:[3,0,0,0],
+    12:[4,0,0,0],13:[4,0,0,0],14:[4,0,0,0]
+  };
+  const noBarSteps = new Set([0,15,16,17]);
+
+  let current = 0;
+  const history = [0];
+
+  function showStep(i){
+    stepEls.forEach(el=>el.classList.remove('active'));
+    stepEls[i].classList.add('active');
+    stagePill.textContent = stageNames[i] || '';
+    progressWrap.style.display = noBarSteps.has(i) ? 'none' : 'flex';
+    if(stageFill[i]){
+      const fill = stageFill[i];
+      segs.forEach((seg,idx)=>{ seg.style.width = (fill[idx]?100:0) + '%'; });
+    }
+    if(i===14) populateSummary();
+    if(i===17) document.getElementById('planReadyName').textContent = state.name || '';
+    current = i;
+  }
+
+  document.getElementById('backBtn').addEventListener('click', ()=>{
+    if(history.length>1){ history.pop(); showStep(history[history.length-1]); }
+  });
+
+  function goNext(){
+    const next = current+1;
+    if(next < stepEls.length){
+      history.push(next); showStep(next);
+      if(next===15){ runLoader(); }
+    }
+  }
+
+  document.querySelectorAll('[data-next]').forEach(btn=>{
+    btn.addEventListener('click', goNext);
+  });
+
+  // single/multi select options + chips
+  document.querySelectorAll('.opt[data-group], .chip[data-group]').forEach(opt=>{
+    opt.addEventListener('click', ()=>{
+      const group = opt.dataset.group;
+      const multi = opt.hasAttribute('data-multi');
+      const groupEls = document.querySelectorAll('[data-group="'+group+'"]');
+      if(multi){
+        opt.classList.toggle('selected');
+        state[group] = Array.from(groupEls).filter(e=>e.classList.contains('selected')).map(e=>e.dataset.value);
+        const step = opt.closest('.step');
+        const btn = step.querySelector('[data-next]');
+        if(btn) btn.disabled = state[group].length===0;
+      } else {
+        groupEls.forEach(e=>e.classList.remove('selected'));
+        opt.classList.add('selected');
+        state[group] = opt.dataset.value;
+        const step = opt.closest('.step');
+        const btn = step.querySelector('[data-next]');
+        if(btn){ btn.disabled = false; }
+        if(group==='age'){ setTimeout(goNext, 250); }
+      }
+    });
+  });
+
+  // height/weight -> BMI
+  const heightInput = document.getElementById('heightInput');
+  const weightInput = document.getElementById('weightInput');
+  const bmiHint = document.getElementById('bmiHint');
+  const bmiValue = document.getElementById('bmiValue');
+  const hwNext = document.getElementById('hwNext');
+
+  function computeBmi(){
+    const h = parseFloat(heightInput.value);
+    const w = parseFloat(weightInput.value);
+    if(h>0 && w>0){
+      const bmi = w/((h/100)*(h/100));
+      state.height=h; state.weight=w; state.bmi=bmi;
+      let label='у межах норми';
+      if(bmi<18.5) label='нижче норми';
+      else if(bmi>=25 && bmi<30) label='трохи вище норми';
+      else if(bmi>=30) label='вище норми';
+      bmiValue.textContent = 'Ваш ІМТ ' + bmi.toFixed(1) + ' — ' + label;
+      bmiHint.style.display='flex';
+      hwNext.disabled=false;
+    } else {
+      bmiHint.style.display='none';
+      hwNext.disabled=true;
+    }
+  }
+  heightInput.addEventListener('input', computeBmi);
+  weightInput.addEventListener('input', computeBmi);
+
+  function populateSummary(){
+    const goalLabels = {energy:'Більше енергії',calm:'Спокій і менше стресу',body:'Легкість у тілі',mobility:'Рухливість і гнучкість'};
+    document.getElementById('recapGoal').textContent = goalLabels[state.goal] || '—';
+    const concernLabels = {tired:'Втома',sleep:'Сон',back:'Спина і плечі',weight:'Вага',none:'Немає'};
+    document.getElementById('recapConcerns').textContent = state.concerns.length ? state.concerns.map(c=>concernLabels[c]||c).join(', ') : '—';
+    const activityLabels = {low:'Малорухливий',mid:'Помірна активність',high:'Регулярно рухається'};
+    document.getElementById('recapActivity').textContent = activityLabels[state.activity] || '—';
+    document.getElementById('recapAge').textContent = state.age || '—';
+    if(state.bmi){
+      document.getElementById('summaryBmiLabel').textContent = 'Ви — ' + state.bmi.toFixed(1);
+      let pct = Math.min(100, Math.max(0, (state.bmi-15)/(35-15)*100));
+      document.getElementById('bmiMarker').style.left = pct + '%';
+    }
+  }
+
+  function runLoader(){
+    const ring = document.getElementById('ring');
+    const pctEl = document.getElementById('ringPct');
+    let pct = 0;
+    const id = setInterval(()=>{
+      pct += Math.random()*6+2;
+      if(pct>=100){ pct=100; clearInterval(id); setTimeout(()=>{ history.push(16); showStep(16); }, 500); }
+      ring.style.setProperty('--deg', (pct*3.6)+'deg');
+      pctEl.textContent = Math.floor(pct)+'%';
+    }, 220);
+  }
+
+  // --- contacts / lead submit -------------------------------------------
+  function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function isValidPhone(v){ return v.replace(/\D/g,'').length >= 9; }
+
+  document.getElementById('contactsNext').addEventListener('click', ()=>{
+    const name = document.getElementById('nameInput').value.trim();
+    const email = document.getElementById('emailInput').value.trim();
+    const phone = document.getElementById('phoneInput').value.trim();
+    const consent = document.getElementById('consentCheck').checked;
+    const errEl = document.getElementById('contactsError');
+
+    if(!isValidEmail(email) || !isValidPhone(phone) || !consent){
+      errEl.style.display = 'block';
+      return;
+    }
+    errEl.style.display = 'none';
+    state.name = name; state.email = email; state.phone = phone;
+
+    sendLead({ name, email, phone });
+
+    if (typeof fbq === 'function') { fbq('track','Lead'); }
+
+    history.push(17); showStep(17);
+  });
+
+  function sendLead(data){
+    try{
+      const body = new URLSearchParams({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        lang: 'ua',
+        page: 'cigunhodba',
+        source: LEADS_SOURCE,
+        sheet: LEADS_SHEET
+      });
+      fetch(LEADS_ENDPOINT, { method:'POST', mode:'no-cors', body });
+    }catch(e){ /* мовчазний фейл мережі не повинен ламати проходження воронки */ }
+  }
+
+  // paywall plan selection
+  let selectedPlan = '7d';
+  document.querySelectorAll('.plan').forEach(p=>{
+    p.addEventListener('click', ()=>{
+      document.querySelectorAll('.plan').forEach(x=>x.classList.remove('selected'));
+      p.classList.add('selected');
+      selectedPlan = p.dataset.plan;
+    });
+  });
+  document.getElementById('payBtn').addEventListener('click', ()=>{
+    if (typeof fbq === 'function') { fbq('track','InitiateCheckout'); }
+    const url = PLAN_LINKS[selectedPlan];
+    if(url){ window.location.href = url; }
+    else { alert('Кнопку оплати для цього тарифу ще треба додати (WayForPay button ID).'); }
+  });
+
+})();
+</script>
+</body>
+</html>
