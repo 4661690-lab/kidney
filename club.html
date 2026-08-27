@@ -44,15 +44,17 @@ p:last-child{margin-bottom:0}
 
 .hero-row{margin-top:12px}
 .hero-row::after{content:"";display:block;clear:both}
-.hero-row h1{font-size:26px;line-height:1.16;margin:0}
+.hero-row h1{font-size:24px;line-height:1.2;margin:0}
 .hero-row .lead{margin:12px 0 0;font-size:15.5px;line-height:1.55}
-.hero-pic{float:right;width:140px;margin:4px 0 10px 16px}
+.hero-pic{float:right;width:132px;margin:4px 0 10px 14px}
 .hero-pic img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
 @media(min-width:720px){
   .hero-pic{width:240px;margin:6px 0 14px 28px}
   .hero-row h1{font-size:44px}
   .hero-row .lead{font-size:17px}
 }
+.hero-bul{margin-top:14px}
+.hero-bul li{font-size:14.5px;margin-bottom:8px;color:var(--mut)}
 .price-line{margin-top:16px;font-size:16px;font-weight:600;color:var(--green)}
 .price-line b{color:var(--terra);font-size:20px}
 .btn{display:block;width:100%;max-width:420px;text-align:center;text-decoration:none;background:var(--terra);color:#fff;
@@ -141,9 +143,14 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
       <source srcset="/assets/club/hero.webp" type="image/webp">
       <img src="/assets/club/hero.jpg" width="600" height="900" alt="Влад Задирака ведёт практику" fetchpriority="high" decoding="async">
     </picture>
-    <h1>Час в неделю, который возвращает вкус жизни</h1>
-    <p class="lead">Каждую среду встречаемся вживую: медитация на желания, раскрытие сердца, цигун, дыхание. Плюс практика недели в записи и мои голосовые между встречами.</p>
+    <h1>Просыпаешься разбитым, днём срываешься на ровном месте, вечером ничего не радует?</h1>
+    <p class="lead">Это клуб еженедельных живых практик для нервной системы: дыхание, цигун, медитации. Час в неделю, который не даёт усталости копиться.</p>
   </div>
+  <ul class="plain hero-bul">
+    <li>Без ежедневных обязательств, одна живая встреча в неделю плюс практика в записи</li>
+    <li>Даже если пропустил неделю, возвращаешься в любой момент, ничего не сгорает</li>
+    <li>Первые сдвиги по сну и раздражительности обычно за одну до двух недель</li>
+  </ul>
   <p class="price-line"><b>1 € первый месяц</b>, дальше 5 € в месяц. Отменить можно в любой момент.</p>
   <a class="btn" data-pay href="#">Попробовать месяц за 1 €</a>
   <p class="under">Отмена в один клик, после неё следующего списания не будет.</p>
