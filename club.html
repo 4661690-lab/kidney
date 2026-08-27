@@ -27,25 +27,24 @@ body{background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
-section{padding:46px 0}
+section{padding:38px 0}
 section.alt{background:var(--alt)}
 section.dark{background:var(--dark);color:#efe9dc}
 h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.12;color:var(--green)}
 .dark h2,.dark h3{color:#f3ede1}
-h1{font-size:clamp(30px,7.4vw,46px)}
+h1{font-size:clamp(27px,6.8vw,46px);line-height:1.14}
 h2{font-size:clamp(25px,5.6vw,36px);margin-bottom:18px}
 h3{font-size:19px;margin-bottom:6px}
 p{margin-bottom:14px}
 p:last-child{margin-bottom:0}
 .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:14px}
-.lead{font-size:clamp(16px,2.6vw,18px);line-height:1.6}
+.lead{font-size:clamp(15.5px,2.6vw,18px);line-height:1.55}
 .mut{color:var(--mut);font-size:14.5px;line-height:1.55}
 .dark .mut{color:#b6b1a2}
 
-.hero-pic{display:block;margin:20px 0 0}
-.hero-pic img{width:100%;border-radius:16px;border:1px solid var(--line)}
+.hero-pic{display:block;margin:16px 0 0}
+.hero-pic img{width:100%;height:210px;object-fit:cover;object-position:center 22%;border-radius:14px;border:1px solid var(--line)}
 @media(min-width:720px){
-  .hero{display:block}
   .hero-text{display:grid;grid-template-columns:1fr 300px;grid-template-areas:"k p" "h p" "l p" "pr p" "b p" "u p" "bd p";gap:0 30px;align-items:start}
   .hero-text .kicker{grid-area:k}
   .hero-text h1{grid-area:h}
@@ -54,20 +53,21 @@ p:last-child{margin-bottom:0}
   .hero-text .btn{grid-area:b}
   .hero-text .under{grid-area:u}
   .hero-text .badges{grid-area:bd}
-  .hero-pic{grid-area:p;margin:0;align-self:start;position:sticky;top:20px}
+  .hero-pic{grid-area:p;margin:0}
+  .hero-pic img{height:auto;object-fit:fill}
 }
-.price-line{margin-top:20px;font-size:17px;font-weight:600;color:var(--green)}
+.price-line{margin-top:16px;font-size:16px;font-weight:600;color:var(--green)}
 .price-line b{color:var(--terra);font-size:20px}
 .btn{display:block;width:100%;max-width:420px;text-align:center;text-decoration:none;background:var(--terra);color:#fff;
-  font-family:inherit;font-weight:700;font-size:17px;padding:17px 22px;border-radius:999px;border:none;cursor:pointer;margin-top:20px;
+  font-family:inherit;font-weight:700;font-size:16.5px;padding:16px 20px;border-radius:999px;border:none;cursor:pointer;margin-top:16px;
   transition:background .15s ease}
 .btn:hover{background:var(--terra2)}
 .btn.off{opacity:.5;cursor:default}
 .under{margin-top:10px;color:var(--mut);font-size:13px;line-height:1.5}
 .dark .under{color:#b6b1a2}
 
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.badge{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;color:var(--green);font-weight:600}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.badge{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:12.5px;color:var(--green);font-weight:600}
 
 ul.plain{list-style:none}
 ul.plain li{position:relative;padding-left:22px;margin-bottom:11px;line-height:1.55}
@@ -136,7 +136,7 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
 <body>
 
 <!-- 1. ПЕРВЫЙ ЭКРАН -->
-<header class="wrap hero" style="padding-top:34px;padding-bottom:34px">
+<header class="wrap hero" style="padding-top:26px;padding-bottom:30px">
   <div class="hero-text">
   <p class="kicker">Вкус жизни. Клуб</p>
   <h1>Час в неделю, который возвращает вкус жизни</h1>
