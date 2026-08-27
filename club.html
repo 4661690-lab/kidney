@@ -42,6 +42,20 @@ p:last-child{margin-bottom:0}
 .mut{color:var(--mut);font-size:14.5px;line-height:1.55}
 .dark .mut{color:#b6b1a2}
 
+.hero-pic{display:block;margin:20px 0 0}
+.hero-pic img{width:100%;border-radius:16px;border:1px solid var(--line)}
+@media(min-width:720px){
+  .hero{display:block}
+  .hero-text{display:grid;grid-template-columns:1fr 300px;grid-template-areas:"k p" "h p" "l p" "pr p" "b p" "u p" "bd p";gap:0 30px;align-items:start}
+  .hero-text .kicker{grid-area:k}
+  .hero-text h1{grid-area:h}
+  .hero-text .lead{grid-area:l}
+  .hero-text .price-line{grid-area:pr}
+  .hero-text .btn{grid-area:b}
+  .hero-text .under{grid-area:u}
+  .hero-text .badges{grid-area:bd}
+  .hero-pic{grid-area:p;margin:0;align-self:start;position:sticky;top:20px}
+}
 .price-line{margin-top:20px;font-size:17px;font-weight:600;color:var(--green)}
 .price-line b{color:var(--terra);font-size:20px}
 .btn{display:block;width:100%;max-width:420px;text-align:center;text-decoration:none;background:var(--terra);color:#fff;
@@ -122,9 +136,14 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
 <body>
 
 <!-- 1. ПЕРВЫЙ ЭКРАН -->
-<header class="wrap" style="padding-top:38px;padding-bottom:34px">
+<header class="wrap hero" style="padding-top:34px;padding-bottom:34px">
+  <div class="hero-text">
   <p class="kicker">Вкус жизни. Клуб</p>
   <h1>Час в неделю, который возвращает вкус жизни</h1>
+  <picture class="hero-pic">
+    <source srcset="/assets/club/hero.webp" type="image/webp">
+    <img src="/assets/club/hero.jpg" width="800" height="1000" alt="Влад Задирака ведёт практику" fetchpriority="high" decoding="async">
+  </picture>
   <p class="lead" style="margin-top:16px">Каждую среду мы встречаемся вживую, и каждый раз новая практика: медитация на желания, раскрытие сердца, цигун, дыхание. Плюс практика недели в записи и мои голосовые между встречами.</p>
   <p class="price-line"><b>1 € первый месяц</b>, дальше 5 € в месяц. Отменить можно в любой момент.</p>
   <a class="btn" data-pay href="#">Попробовать месяц за 1 €</a>
@@ -134,6 +153,7 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
     <span class="badge">Практика недели в записи</span>
     <span class="badge">Голосовые от автора</span>
     <span class="badge">Чат поддержки</span>
+  </div>
   </div>
 </header>
 
