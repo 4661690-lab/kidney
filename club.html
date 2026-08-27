@@ -65,6 +65,22 @@ p:last-child{margin-bottom:0}
 .under{margin-top:10px;color:var(--mut);font-size:13px;line-height:1.5}
 .dark .under{color:#b6b1a2}
 
+/* ==== lead modal ==== */
+.modal-overlay{position:fixed;inset:0;background:rgba(30,42,32,.82);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--card);max-width:420px;width:100%;max-height:92vh;overflow:auto;position:relative;border:1px solid var(--line);border-radius:16px}
+.modal-body{padding:26px 20px 22px}
+.modal-close{position:absolute;top:6px;right:12px;background:none;border:none;color:var(--mut);font-size:30px;line-height:1;cursor:pointer;padding:6px;font-family:inherit}
+.modal-title{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:25px;line-height:1.15;color:var(--green);margin-bottom:8px}
+.modal-note{font-size:14px;line-height:1.5;color:var(--mut);margin-bottom:16px}
+.modal-price{display:inline-block;background:var(--terra);color:#fff;font-weight:700;font-size:17px;line-height:1;padding:9px 13px;border-radius:999px;margin-bottom:16px}
+.modal label{display:block;font-size:13px;font-weight:600;color:var(--green);margin-bottom:12px}
+.modal input{display:block;width:100%;margin-top:6px;padding:13px 14px;border:1px solid var(--line);border-radius:10px;
+  font-family:inherit;font-size:16px;color:var(--ink);background:#fff}
+.modal input:focus{outline:none;border-color:var(--terra)}
+.modal .btn{margin-top:6px;max-width:none}
+.modal-fine{font-size:12px;color:var(--mut);text-align:center;margin-top:11px;line-height:1.5}
+
 .badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
 .badge{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:12.5px;color:var(--green);font-weight:600}
 
@@ -353,6 +369,29 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
   </div>
 </section>
 
+<div class="modal-overlay" id="lead-modal" aria-hidden="true">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Закрыть">&times;</button>
+    <div class="modal-body">
+      <h3 class="modal-title">Оставьте контакты, чтобы войти в клуб</h3>
+      <p class="modal-note">Данные нужны только для доступа в клуб и связи с вами.</p>
+      <div class="modal-price">Первый месяц 1 €</div>
+      <div id="lead-step">
+        <form id="lead-form" novalidate>
+          <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
+          <label>Телефон*<input type="tel" name="phone" required placeholder="+ код страны и номер"></label>
+          <button type="submit" class="btn">Перейти к оплате</button>
+          <div class="modal-fine">Доступ приходит в Telegram сразу после оплаты</div>
+        </form>
+      </div>
+      <div id="lead-thanks" style="display:none">
+        <p class="modal-note">Открываем страницу оплаты. Если она не открылась сама, нажмите кнопку ниже.</p>
+        <a class="btn" id="thanks-pay" data-direct href="#">Перейти к оплате</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
     <p>Влад Задирака · <a href="https://zadiraka.cc">zadiraka.cc</a> · <span id="yr">2026</span></p>
@@ -370,11 +409,41 @@ var AIRTIME   = "8:00 утра";  /* время эфира, суббота */
 document.getElementById('yr').textContent = new Date().getFullYear();
 if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
 
-document.querySelectorAll('a[data-pay]').forEach(function(a){
-  if(PAY_URL){ a.setAttribute('href', PAY_URL); }
-  else { a.classList.add('off'); a.addEventListener('click', function(e){ e.preventDefault(); }); }
-  a.addEventListener('click', function(){ if(window.fbq) fbq('track','InitiateCheckout'); });
-});
+/* ==== сбор лидов и попап ==== */
+(function(){
+  var LEAD_URL='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
+  var SHEET='Leads', SOURCE='Клуб Вкус жизни (1 евро)';
+  var modal=document.getElementById('lead-modal');
+  var direct=document.getElementById('thanks-pay');
+  if(PAY_URL) direct.setAttribute('href', PAY_URL);
+
+  function openM(e){ if(e) e.preventDefault();
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+    if(window.fbq) fbq('track','InitiateCheckout'); }
+  function closeM(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+
+  document.querySelectorAll('a[data-pay]:not([data-direct])').forEach(function(a){
+    if(PAY_URL){ a.setAttribute('href', PAY_URL); } else { a.classList.add('off'); }
+    a.addEventListener('click', openM);
+  });
+  document.getElementById('modal-close').addEventListener('click', closeM);
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeM(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeM(); });
+
+  var form=document.getElementById('lead-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email=form.email.value.trim(), phone=form.phone.value.trim();
+    if(!email||email.indexOf('@')<1){ form.email.focus(); return; }
+    if(!phone){ form.phone.focus(); return; }
+    var pd=new URLSearchParams({email:email,phone:phone,lang:'Русский (RU)',page:location.pathname,source:SOURCE,sheet:SHEET});
+    try{ if(navigator.sendBeacon){ navigator.sendBeacon(LEAD_URL,pd); } else { fetch(LEAD_URL,{method:'POST',mode:'no-cors',body:pd}); } }catch(err){}
+    if(window.fbq) fbq('track','Lead');
+    document.getElementById('lead-step').style.display='none';
+    document.getElementById('lead-thanks').style.display='block';
+    if(PAY_URL){ setTimeout(function(){ window.location.href=PAY_URL; }, 600); }
+  });
+})();
 
 if(PIXEL_ID){
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
