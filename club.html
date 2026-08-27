@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Вкус жизни. Клуб. Час в неделю, который возвращает вкус жизни</title>
+<meta name="description" content="Клуб еженедельных живых практик для нервной системы: дыхание, цигун, медитации. Первый месяц 1 евро, дальше 5 евро в месяц, отмена в один клик.">
+<link rel="canonical" href="https://zadiraka.cc/club">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zadiraka.cc/club">
+<meta property="og:title" content="Вкус жизни. Клуб">
+<meta property="og:description" content="Час в неделю, который возвращает вкус жизни. Первый месяц 1 евро.">
+<meta property="og:locale" content="ru_RU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6ee; --card:#fffdf8; --alt:#f3ede1;
+  --ink:#23291f; --green:#2f4632; --terra:#c2653a; --terra2:#a9542e;
+  --mut:#7d7666; --line:#e4dccb; --dark:#1e2a20;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+section{padding:46px 0}
+section.alt{background:var(--alt)}
+section.dark{background:var(--dark);color:#efe9dc}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.12;color:var(--green)}
+.dark h2,.dark h3{color:#f3ede1}
+h1{font-size:clamp(30px,7.4vw,46px)}
+h2{font-size:clamp(25px,5.6vw,36px);margin-bottom:18px}
+h3{font-size:19px;margin-bottom:6px}
+p{margin-bottom:14px}
+p:last-child{margin-bottom:0}
+.kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:14px}
+.lead{font-size:clamp(16px,2.6vw,18px);line-height:1.6}
+.mut{color:var(--mut);font-size:14.5px;line-height:1.55}
+.dark .mut{color:#b6b1a2}
+
+.price-line{margin-top:20px;font-size:17px;font-weight:600;color:var(--green)}
+.price-line b{color:var(--terra);font-size:20px}
+.btn{display:block;width:100%;max-width:420px;text-align:center;text-decoration:none;background:var(--terra);color:#fff;
+  font-family:inherit;font-weight:700;font-size:17px;padding:17px 22px;border-radius:999px;border:none;cursor:pointer;margin-top:20px;
+  transition:background .15s ease}
+.btn:hover{background:var(--terra2)}
+.btn.off{opacity:.5;cursor:default}
+.under{margin-top:10px;color:var(--mut);font-size:13px;line-height:1.5}
+.dark .under{color:#b6b1a2}
+
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.badge{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;color:var(--green);font-weight:600}
+
+ul.plain{list-style:none}
+ul.plain li{position:relative;padding-left:22px;margin-bottom:11px;line-height:1.55}
+ul.plain li:last-child{margin-bottom:0}
+ul.plain li::before{content:"";position:absolute;left:0;top:10px;width:9px;height:2px;background:var(--terra)}
+.dark ul.plain li::before{background:#d98a5e}
+
+.cards{display:grid;grid-template-columns:1fr;gap:12px;margin-top:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card p{font-size:15px;line-height:1.55;margin:0;color:var(--mut)}
+.card h3{margin-bottom:8px}
+
+table.rhythm{width:100%;border-collapse:collapse;margin-top:6px;font-size:15px}
+table.rhythm td{padding:12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.rhythm td:first-child{width:104px;color:var(--terra);font-weight:700}
+table.rhythm tr:last-child td{border-bottom:0}
+
+.cols{display:grid;grid-template-columns:1fr;gap:14px}
+.col{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.col h3{color:var(--green)}
+.col.no h3{color:var(--mut)}
+.col.no ul.plain li::before{background:var(--line)}
+
+.otz{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.otz img{width:100%;border:1px solid var(--line);border-radius:10px}
+
+ol.steps{counter-reset:s;list-style:none;margin-top:6px}
+ol.steps li{counter-increment:s;position:relative;padding-left:42px;margin-bottom:14px;line-height:1.5}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:50%;
+  background:var(--terra);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+
+.pricebox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 20px;text-align:center}
+.pricebox .big{font-family:'Cormorant Garamond',serif;font-size:64px;line-height:1;color:var(--terra)}
+.pricebox .sub{color:var(--mut);font-size:15px;margin-top:6px}
+.pricebox ul.plain{text-align:left;margin-top:18px}
+.pricebox .btn{margin-left:auto;margin-right:auto}
+
+.author-grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:start}
+.author-photo{border-radius:14px;border:1px solid var(--line)}
+
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:15px 30px 15px 0;position:relative;font-weight:600;font-size:16px;line-height:1.45}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:2px;top:13px;color:var(--terra);font-size:20px}
+details[open] summary::after{content:"\2212"}
+details .ans{padding:0 0 16px;font-size:15px;line-height:1.6;color:var(--mut)}
+
+.final{text-align:center}
+.final h2{font-size:clamp(26px,6vw,38px)}
+.final .btn{margin-left:auto;margin-right:auto}
+
+footer{padding:26px 0 40px;color:var(--mut);font-size:13.5px;line-height:1.7;border-top:1px solid var(--line)}
+footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
+
+@media(min-width:720px){
+  section{padding:64px 0}
+  .cards{grid-template-columns:1fr 1fr;gap:14px}
+  .cols{grid-template-columns:1fr 1fr;gap:16px}
+  .otz{grid-template-columns:repeat(3,1fr);gap:12px}
+  .author-grid{grid-template-columns:280px 1fr;gap:28px}
+  .btn{width:auto;display:inline-block;min-width:340px}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. ПЕРВЫЙ ЭКРАН -->
+<header class="wrap" style="padding-top:38px;padding-bottom:34px">
+  <p class="kicker">Вкус жизни. Клуб</p>
+  <h1>Час в неделю, который возвращает вкус жизни</h1>
+  <p class="lead" style="margin-top:16px">Каждую среду мы встречаемся вживую, и каждый раз новая практика: медитация на желания, раскрытие сердца, цигун, дыхание. Плюс практика недели в записи и мои голосовые между встречами.</p>
+  <p class="price-line"><b>1 € первый месяц</b>, дальше 5 € в месяц. Отменить можно в любой момент.</p>
+  <a class="btn" data-pay href="#">Попробовать месяц за 1 €</a>
+  <p class="under">Отмена в один клик, после неё следующего списания не будет.</p>
+  <div class="badges">
+    <span class="badge">Живая практика каждую среду</span>
+    <span class="badge">Практика недели в записи</span>
+    <span class="badge">Голосовые от автора</span>
+    <span class="badge">Чат поддержки</span>
+  </div>
+</header>
+
+<!-- 2. БЛОК БОЛИ -->
+<section class="dark">
+  <div class="wrap">
+    <h2>Просыпаешься разбитым, днём срываешься на ровном месте, вечером ничего не радует?</h2>
+    <ul class="plain">
+      <li>Просыпаешься в 3 ночи и лежишь с мыслями.</li>
+      <li>К вечеру нет сил ни на что.</li>
+      <li>Вечер это сериалы и скролл.</li>
+      <li>Срываешься на ровном месте, потом стыдно.</li>
+      <li>И так годами, ты уже пробовал и откатывался.</li>
+    </ul>
+    <p class="lead" style="margin-top:20px">Из этого не выходят силой воли. Из этого выходят регулярностью.</p>
+    <p class="mut">Клуб это час в неделю, который не даёт состоянию копиться.</p>
+  </div>
+</section>
+
+<!-- 3. ЧТО ВНУТРИ -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Что внутри</p>
+    <h2>Семь вещей, которые работают вместе</h2>
+    <div class="cards">
+      <div class="card"><h3>Живой эфир каждую среду</h3><p>40 минут вживую, с ротацией практик по неделям месяца. Все эфиры остаются в записи.</p></div>
+      <div class="card"><h3>Практика недели в записи</h3><p>Приходит каждый понедельник, от 10 до 15 минут: дыхание, цигун, мягкий стрейчинг или вечернее расслабление. Слушать можно когда удобно и сколько угодно раз.</p></div>
+      <div class="card"><h3>Голосовые от автора</h3><p>Два до трёх раз в неделю в чат: настройка на неделю и ответы на вопросы участников.</p></div>
+      <div class="card"><h3>Ночной протокол</h3><p>Вечерняя практика расслабления, дыхание перед сном и инструкция, что делать при пробуждении среди ночи.</p></div>
+      <div class="card"><h3>Чат клуба</h3><p>Каждый вечер ритуал «три радости дня». Писать необязательно, можно просто читать.</p></div>
+      <div class="card"><h3>Библиотека</h3><p>Все записи эфиров и практик накапливаются и доступны всегда.</p></div>
+      <div class="card"><h3>Бонус месяца</h3><p>Один урок из платных курсов бесплатно, плюс скидка участникам клуба на полные курсы.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. РИТМ НЕДЕЛИ -->
+<section class="alt">
+  <div class="wrap">
+    <p class="kicker">Ритм недели</p>
+    <h2>Как выглядит неделя в клубе</h2>
+    <table class="rhythm">
+      <tr><td>Понедельник</td><td>Практика недели в записи и голосовое с настройкой</td></tr>
+      <tr><td>Среда</td><td>Живой эфир, 40 минут, в <span id="airtime">19:00 по Стамбулу</span></td></tr>
+      <tr><td>Пятница</td><td>Голосовое с ответами на вопросы</td></tr>
+      <tr><td>Воскресенье</td><td>Итоги недели и три радости дня</td></tr>
+      <tr><td>Каждый день</td><td>Практика недели, когда тебе удобно</td></tr>
+    </table>
+    <p class="mut" style="margin-top:14px">Последняя среда месяца это разбор личных ситуаций участников.</p>
+  </div>
+</section>
+
+<!-- 5. РОТАЦИЯ СРЕД -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Среды месяца</p>
+    <h2>Каждая среда своя</h2>
+    <table class="rhythm">
+      <tr><td>Первая</td><td>Медитация на желания, флагманский формат, автор ведёт его три года</td></tr>
+      <tr><td>Вторая</td><td>Живой цигун или дыхательная практика</td></tr>
+      <tr><td>Третья</td><td>Медитация месяца: раскрытие сердца, благодарность, прощение, изобилие</td></tr>
+      <tr><td>Четвёртая</td><td>Разбор личных ситуаций участников</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 6. КОМУ ПОДОЙДЁТ -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Кому подойдёт и кому нет</h2>
+    <div class="cols">
+      <div class="col">
+        <h3>Подойдёт</h3>
+        <ul class="plain">
+          <li>Тянешь всех и хочешь вернуть энергию</li>
+          <li>Пробуешь практики и бросаешь в одиночку</li>
+          <li>Хочешь ритм, а не разовый курс</li>
+          <li>Важно живое присутствие</li>
+          <li>Готов отдать себе час в неделю</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3>Не подойдёт</h3>
+        <ul class="plain">
+          <li>Ждёшь изменений без участия</li>
+          <li>Нужна медицинская или психотерапевтическая помощь</li>
+          <li>Ищешь результат за неделю</li>
+          <li>Не готов заходить в телефон хотя бы через день</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ОТЗЫВЫ -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Отзывы</p>
+    <h2>Что пишут после практик</h2>
+    <div class="otz">
+      <img src="/assets/club/otz1.jpg" alt="Отзыв участника" loading="lazy" decoding="async">
+      <img src="/assets/club/otz2.jpg" alt="Отзыв участника" loading="lazy" decoding="async">
+      <img src="/assets/club/otz3.jpg" alt="Отзыв участника" loading="lazy" decoding="async">
+      <img src="/assets/club/otz4.jpg" alt="Отзыв участника" loading="lazy" decoding="async">
+      <img src="/assets/club/otz5.jpg" alt="Отзыв участника" loading="lazy" decoding="async">
+      <img src="/assets/club/otz6.jpg" alt="Отзыв участника" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- 8. КАК ЭТО РАБОТАЕТ -->
+<section class="alt">
+  <div class="wrap">
+    <p class="kicker">Как это работает</p>
+    <h2>Шесть шагов</h2>
+    <ol class="steps">
+      <li>Оплачиваешь первый месяц за 1 евро</li>
+      <li>Бот открывает доступ сразу после оплаты</li>
+      <li>В понедельник приходит практика недели</li>
+      <li>В среду встречаемся на живом эфире</li>
+      <li>Через месяц продление 5 евро</li>
+      <li>Отмена в один клик, когда захочешь</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 9. ЦЕНА -->
+<section>
+  <div class="wrap">
+    <div class="pricebox">
+      <div class="big">1 €</div>
+      <p class="sub">первый месяц, дальше 5 € в месяц</p>
+      <ul class="plain">
+        <li>Живой эфир каждую среду, 40 минут</li>
+        <li>Практика недели в записи по понедельникам</li>
+        <li>Голосовые от автора два до трёх раз в неделю</li>
+        <li>Ночной протокол для сна</li>
+        <li>Чат клуба и три радости дня</li>
+        <li>Библиотека всех записей</li>
+        <li>Бонус месяца и скидка на курсы</li>
+      </ul>
+      <a class="btn" data-pay href="#">Попробовать месяц за 1 €</a>
+      <p class="under">Целый месяц смотришь клуб изнутри за один евро. Понравится, дальше 5 € в месяц. Нет, отменишь в один клик до конца месяца, и больше ничего не спишется.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. АВТОР -->
+<section class="alt">
+  <div class="wrap">
+    <p class="kicker">Автор</p>
+    <h2>Влад Задирака</h2>
+    <div class="author-grid">
+      <img class="author-photo" src="/assets/club/author.jpg" width="760" height="1013" alt="Влад Задирака" loading="lazy" decoding="async">
+      <div>
+        <p>Веду практики несколько лет: дыхание, цигун, медитации, работа с телом и состоянием. Провожу марафоны и курсы, веду живые практики для гостей отеля на море, работаю с людьми в Европе, СНГ, Израиле и США. Медитацию на желания по средам веду три года без перерыва.</p>
+        <p>Клуб я собрал, потому что видел, как люди проходят курс, чувствуют себя живыми, а через две недели всё возвращается. Не потому что слабые, а потому что рядом никого не осталось.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. FAQ -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Вопросы</p>
+    <h2>Что обычно спрашивают</h2>
+    <details><summary>У меня совсем нет времени, я не успею</summary><div class="ans">Клуб построен под занятую жизнь: одна живая встреча в неделю на 40 минут и одна практика в записи, которую слушаешь когда удобно. Пропустишь неделю, вернёшься на следующей, ничего не сгорит.</div></details>
+    <details><summary>Я уже проходил марафоны и курсы. Помогает, а потом всё возвращается</summary><div class="ans">Именно поэтому клуб устроен не как курс. Курс это разовый сброс нагрузки, а клуб это ритм, который не даёт ей накопиться снова. Не спринт на семь дней, а час в неделю на постоянной основе.</div></details>
+    <details><summary>Я не очень про медитации, мне бы что-то для тела</summary><div class="ans">Половина практик клуба телесные: живой цигун, дыхание, стрейчинг, суставная гимнастика, расслабление перед сном. Медитации это часть ротации, а не весь клуб.</div></details>
+    <details><summary>У меня нет опыта, будет сложно</summary><div class="ans">Нет. Всё объясняется с нуля, голосом, по шагам. Если что-то не получается, спрашиваешь в чате и я отвечаю.</div></details>
+    <details><summary>Просыпаюсь среди ночи годами. Чем тут поможет клуб</summary><div class="ans">В клубе есть ночной протокол: вечерняя практика, дыхание перед сном и инструкция при пробуждении среди ночи. Это работа с нервной системой, мягкая и регулярная. Клуб не медицина: если есть подозрение на заболевание, сначала к врачу.</div></details>
+    <details><summary>Что если я не попадаю на живой эфир или я в другом часовом поясе</summary><div class="ans">Запись каждого эфира появляется в клубе на следующий день, практика недели вообще не привязана ко времени. В клубе есть люди из Европы, Израиля и США.</div></details>
+    <details><summary>Как проходит оплата и как отменить</summary><div class="ans">Оплата картой через защищённый сервис. Первый месяц 1 €, со второго 5 €, списание раз в месяц. Отмена в один клик в любой момент, тогда следующего списания не будет, доступ останется до конца оплаченного месяца.</div></details>
+    <details><summary>А вдруг это не моё</summary><div class="ans">Для этого и сделан первый месяц за один евро: месяц смотришь клуб изнутри, ходишь на живые встречи, пробуешь практики. Не твоё, отменяешь и теряешь один евро.</div></details>
+    <details><summary>Обязательно писать в чат? Я не люблю быть на виду</summary><div class="ans">Нет. Можно молча делать практики и смотреть эфиры. Чат и три радости дня это возможность, а не обязанность.</div></details>
+  </div>
+</section>
+
+<!-- 12. ФИНАЛ -->
+<section class="alt final">
+  <div class="wrap">
+    <h2>Через месяц всё будет как раньше. Или ты начнёшь замечать разницу</h2>
+    <p class="lead">Первый месяц за один евро, меньше чашки кофе.</p>
+    <a class="btn" data-pay href="#">Попробовать месяц за 1 €</a>
+    <p class="under">Отмена в один клик, после неё следующего списания не будет.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Влад Задирака · <a href="https://zadiraka.cc">zadiraka.cc</a> · <span id="yr">2026</span></p>
+    <p class="fine">Клуб не является медицинской услугой и не заменяет консультацию врача.</p>
+  </div>
+</footer>
+
+<script>
+/* ============ КОНСТАНТЫ. Менять только здесь ============ */
+var PAY_URL   = "";                   /* Zenedu: ссылка на оплату подписки */
+var PIXEL_ID  = "1126932555241769";   /* Meta Pixel Балкон */
+var AIRTIME   = "19:00 по Стамбулу";  /* время эфира */
+/* ======================================================== */
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
+
+document.querySelectorAll('a[data-pay]').forEach(function(a){
+  if(PAY_URL){ a.setAttribute('href', PAY_URL); }
+  else { a.classList.add('off'); a.addEventListener('click', function(e){ e.preventDefault(); }); }
+  a.addEventListener('click', function(){ if(window.fbq) fbq('track','InitiateCheckout'); });
+});
+
+if(PIXEL_ID){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID); fbq('track','PageView');
+}
+</script>
+</body>
+</html>
