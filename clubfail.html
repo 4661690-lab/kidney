@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Оплата не прошла. Вкус жизни. Клуб</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6ee;--card:#fffdf8;--ink:#23291f;--green:#2f4632;--terra:#c2653a;--mut:#7d7666;--line:#e4dccb}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:560px;margin:0 auto;padding:48px 20px}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:32px;line-height:1.15;color:var(--green);margin-bottom:14px}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:22px;color:var(--green);margin-bottom:8px}
+p{margin-bottom:14px}
+.mut{color:var(--mut);font-size:14.5px;line-height:1.55}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:22px 0}
+.btn{display:block;width:100%;text-align:center;text-decoration:none;background:var(--terra);color:#fff;
+  font-weight:700;font-size:16px;padding:16px 18px;border-radius:12px;margin:18px 0 10px}
+ul{margin:0 0 0 18px}
+ul li{margin-bottom:8px;font-size:15px}
+.tick{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="tick">Оплата не прошла</p>
+  <h1>Платёж не завершён</h1>
+  <p>Деньги не списаны. Чаще всего дело в мелочи, попробуйте ещё раз.</p>
+
+  <div class="card">
+    <h2>Что обычно помогает</h2>
+    <ul>
+      <li>Проверьте, разрешены ли интернет-платежи по карте.</li>
+      <li>Попробуйте другую карту или другой банк.</li>
+      <li>Отключите VPN и повторите оплату.</li>
+    </ul>
+    <a class="btn" id="pay-again" href="#">Оплатить ещё раз</a>
+    <p class="mut">Если не получается, напишите на zadiraka.wellness@gmail.com и мы поможем.</p>
+  </div>
+
+  <p class="mut">Первый месяц 1 евро, дальше 5 евро в месяц, отмена в один клик.</p>
+</div>
+<script>
+var PAY_URL  = "https://secure.wayforpay.com/button/b092d31d57a0d";
+var PIXEL_ID = "1126932555241769";    /* Meta Pixel Балкон */
+document.getElementById('pay-again').setAttribute('href', PAY_URL);
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', PIXEL_ID); fbq('track','PageView');
+</script>
+</body>
+</html>
