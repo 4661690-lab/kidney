@@ -42,12 +42,15 @@ p:last-child{margin-bottom:0}
 .mut{color:var(--mut);font-size:14.5px;line-height:1.55}
 .dark .mut{color:#b6b1a2}
 
-.hero-row{display:grid;grid-template-columns:1fr 38%;gap:14px;align-items:start;margin-top:16px}
-.hero-row .lead{margin:0}
+.hero-row{display:grid;grid-template-columns:minmax(0,1fr) 132px;gap:14px;align-items:start;margin-top:14px}
+.hero-row .lead{margin:10px 0 0;font-size:15px;line-height:1.5}
+.hero-copy h1{font-size:26px;line-height:1.15}
 .hero-pic{display:block;margin:0}
 .hero-pic img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
 @media(min-width:720px){
-  .hero-row{grid-template-columns:1fr 260px;gap:28px}
+  .hero-row{grid-template-columns:minmax(0,1fr) 260px;gap:28px}
+  .hero-copy h1{font-size:44px}
+  .hero-row .lead{font-size:17px}
 }
 .price-line{grid-area:pr}
   .hero-text .btn{grid-area:b}
@@ -139,14 +142,17 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
 <header class="wrap hero" style="padding-top:26px;padding-bottom:30px">
   <div class="hero-text">
   <p class="kicker">Вкус жизни. Клуб</p>
-  <h1>Час в неделю, который возвращает вкус жизни</h1>
   <div class="hero-row">
-    <p class="lead">Каждую среду мы встречаемся вживую, и каждый раз новая практика: медитация на желания, раскрытие сердца, цигун, дыхание. Плюс практика недели в записи и мои голосовые между встречами.</p>
+    <div class="hero-copy">
+      <h1>Час в неделю, который возвращает вкус жизни</h1>
+      <p class="lead">Каждую среду встречаемся вживую: медитация на желания, раскрытие сердца, цигун, дыхание.</p>
+    </div>
     <picture class="hero-pic">
       <source srcset="/assets/club/hero.webp" type="image/webp">
       <img src="/assets/club/hero.jpg" width="600" height="900" alt="Влад Задирака ведёт практику" fetchpriority="high" decoding="async">
     </picture>
   </div>
+  <p class="lead" style="margin-top:14px">Плюс практика недели в записи и мои голосовые между встречами.</p>
   <p class="price-line"><b>1 € первый месяц</b>, дальше 5 € в месяц. Отменить можно в любой момент.</p>
   <a class="btn" data-pay href="#">Попробовать месяц за 1 €</a>
   <p class="under">Отмена в один клик, после неё следующего списания не будет.</p>
