@@ -1,0 +1,7 @@
+// WayForPay возвращает покупателя методом POST, статика на Vercel отвечает 405.
+// Этот обработчик принимает любой метод и перебрасывает на обычную страницу через 303,
+// после чего браузер делает нормальный GET.
+module.exports = (req, res) => {
+  res.writeHead(303, { Location: 'https://zadiraka.cc/clubsuccess' });
+  res.end();
+};
