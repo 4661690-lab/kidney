@@ -2,6 +2,6 @@
 // Этот обработчик принимает любой метод и перебрасывает на обычную страницу через 303,
 // после чего браузер делает нормальный GET.
 module.exports = (req, res) => {
-  res.writeHead(303, { Location: 'https://zadiraka.cc/clubsuccess' });
+  res.writeHead(303, { Location: '/clubsuccess' });
   res.end();
 };
