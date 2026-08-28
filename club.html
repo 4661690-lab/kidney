@@ -115,8 +115,14 @@ table.rhythm tr:last-child td{border-bottom:0}
 .col.no h3{color:var(--mut)}
 .col.no ul.plain li::before{background:var(--line)}
 
-.otz{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
-.otz img{width:100%;border:1px solid var(--line);border-radius:10px}
+.otz{display:flex;gap:10px;margin-top:6px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:none}
+.otz::-webkit-scrollbar{display:none}
+.otz img{flex:0 0 78%;max-width:320px;scroll-snap-align:center;border:1px solid var(--line);border-radius:10px}
+.otz-hint{margin-top:2px;font-size:12.5px;color:var(--mut)}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .2s ease,transform .2s ease}
+.dots i.on{background:var(--terra);transform:scale(1.35)}
 
 ol.steps{counter-reset:s;list-style:none;margin-top:6px}
 ol.steps li{counter-increment:s;position:relative;padding-left:42px;margin-bottom:14px;line-height:1.5}
@@ -151,7 +157,7 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
   section{padding:64px 0}
   .cards{grid-template-columns:1fr 1fr;gap:14px}
   .cols{grid-template-columns:1fr 1fr;gap:16px}
-  .otz{grid-template-columns:repeat(3,1fr);gap:12px}
+  .otz img{flex:0 0 32%}
   .author-grid{grid-template-columns:280px 1fr;gap:28px}
   .btn{width:auto;display:inline-block;min-width:340px}
 }
@@ -296,6 +302,9 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
       <img src="/assets/club/otz4.jpg" alt="Отзыв участника" loading="lazy" decoding="async">
       <img src="/assets/club/otz5.jpg" alt="Отзыв участника" loading="lazy" decoding="async">
       <img src="/assets/club/otz6.jpg" alt="Отзыв участника" loading="lazy" decoding="async">
+    </div>
+    <div class="dots" id="otz-dots" aria-hidden="true"></div>
+    <div style="display:none">
     </div>
   </div>
 </section>
@@ -483,6 +492,22 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
     });
     document.body.appendChild(f); f.submit();
   }
+
+  /* карусель отзывов: точки под лентой */
+  (function(){
+    var box=document.querySelector('.otz'), dots=document.getElementById('otz-dots');
+    if(!box||!dots) return;
+    var imgs=box.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){ dots.appendChild(document.createElement('i')); }
+    var marks=dots.querySelectorAll('i');
+    function upd(){
+      var idx=Math.round(box.scrollLeft/(box.scrollWidth/imgs.length));
+      if(idx>marks.length-1) idx=marks.length-1;
+      for(var i=0;i<marks.length;i++){ marks[i].className = i===idx ? 'on' : ''; }
+    }
+    upd();
+    box.addEventListener('scroll', function(){ window.requestAnimationFrame(upd); }, {passive:true});
+  })();
 
   var form=document.getElementById('lead-form');
   form.addEventListener('submit', function(e){
