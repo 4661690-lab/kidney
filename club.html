@@ -434,6 +434,11 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
   var modal=document.getElementById('lead-modal');
   var direct=document.getElementById('thanks-pay');
   if(PAY_URL) direct.setAttribute('href', PAY_URL);
+  direct.addEventListener('click', function(e){
+    e.preventDefault();
+    var f=document.getElementById('lead-form');
+    goPay(f && f.email ? f.email.value.trim() : '', f && f.phone ? f.phone.value.trim() : '');
+  });
 
   function openM(e){ if(e) e.preventDefault();
     modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
@@ -464,6 +469,17 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
     tick(); setInterval(tick,1000);
   })();
 
+  /* уводим покупателя на серверный обработчик оплаты: он подписывает запрос
+     и открывает страницу WayForPay без строки про число платежей */
+  function goPay(email, phone){
+    var f=document.createElement('form');
+    f.method='POST'; f.action='/api/club-pay'; f.style.display='none';
+    [['email',email||''],['phone',phone||'']].forEach(function(p){
+      var i=document.createElement('input'); i.type='hidden'; i.name=p[0]; i.value=p[1]; f.appendChild(i);
+    });
+    document.body.appendChild(f); f.submit();
+  }
+
   var form=document.getElementById('lead-form');
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -475,7 +491,7 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
     if(window.fbq) fbq('track','Lead');
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
-    if(PAY_URL){ setTimeout(function(){ window.location.href=PAY_URL; }, 600); }
+    setTimeout(function(){ goPay(email, phone); }, 600);
   });
 })();
 
