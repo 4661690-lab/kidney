@@ -54,7 +54,11 @@ module.exports = async (req, res) => {
       keyLength: SECRET ? SECRET.length : 0,
       merchant: MERCHANT,
       domain: DOMAIN,
-      builtAt: BUILT_AT
+      builtAt: BUILT_AT,
+      project: process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || null,
+      commit: (process.env.VERCEL_GIT_COMMIT_SHA || '').slice(0, 7) || null,
+      // только имена переменных, значения не раскрываются
+      wfpVars: Object.keys(process.env).filter(function (k) { return k.indexOf('WFP') === 0; })
     }));
   }
 
