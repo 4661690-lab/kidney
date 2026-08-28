@@ -43,7 +43,21 @@ function readBody(req) {
   });
 }
 
+const BUILT_AT = new Date().toISOString();
+
 module.exports = async (req, res) => {
+  // диагностика: сообщает только факт наличия ключа, само значение не раскрывается
+  if (req.url && req.url.indexOf('diag') !== -1) {
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+    return res.end(JSON.stringify({
+      hasKey: !!SECRET,
+      keyLength: SECRET ? SECRET.length : 0,
+      merchant: MERCHANT,
+      domain: DOMAIN,
+      builtAt: BUILT_AT
+    }));
+  }
+
   if (!SECRET) {
     res.writeHead(303, { Location: FALLBACK });
     return res.end();
