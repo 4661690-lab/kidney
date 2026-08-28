@@ -103,9 +103,6 @@ module.exports = async (req, res) => {
     regularBehavior: 'preset',
     dateNext: nextMonth()
   };
-  // временный переключатель для проверки, как страница показывает подписку
-  if (req.url && req.url.indexOf('nopreset') !== -1) { delete fields.regularBehavior; }
-  if (req.url && req.url.indexOf('langua') !== -1) { fields.language = 'AUTO'; }
   if (email) fields.clientEmail = email;
   if (phone) fields.clientPhone = phone;
 
