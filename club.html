@@ -491,7 +491,9 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
     if(window.fbq) fbq('track','Lead');
     document.getElementById('lead-step').style.display='none';
     document.getElementById('lead-thanks').style.display='block';
-    setTimeout(function(){ goPay(email, phone); }, 600);
+    /* лид уходит через sendBeacon и доставляется даже после ухода со страницы,
+       поэтому ждать не нужно: уводим на оплату сразу */
+    goPay(email, phone);
   });
 })();
 
