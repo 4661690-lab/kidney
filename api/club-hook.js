@@ -8,6 +8,7 @@ const crypto = require('crypto');
 const SECRET = process.env.WFP_SECRET_KEY || '';
 const LEAD_URL = 'https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
 const SHEET = 'ClubPayments';
+const PROBLEM_SHEET = 'ClubProblems';
 
 function readRaw(req) {
   return new Promise(resolve => {
@@ -78,6 +79,16 @@ module.exports = async (req, res) => {
     try {
       await fetch(LEAD_URL, { method: 'POST', body: row });
     } catch (e) {}
+
+    // неудачные списания дублируем в отдельный лист, чтобы был готовый список должников
+    const st = d.transactionStatus || '';
+    if (st && st !== 'Approved' && st !== 'InProcessing' && st !== 'Pending') {
+      const alarm = new URLSearchParams(row);
+      alarm.set('sheet', PROBLEM_SHEET);
+      try {
+        await fetch(LEAD_URL, { method: 'POST', body: alarm });
+      } catch (e) {}
+    }
   }
 
   // WayForPay ждёт именно такой ответ, иначе повторяет запрос четверо суток
