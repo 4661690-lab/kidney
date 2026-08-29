@@ -65,6 +65,7 @@ module.exports = async (req, res) => {
       phone: d.phone || '',
       lang: (d.currency === 'UAH' ? 'Українська (UA)' : 'Русский (RU)'),
       page: (d.currency === 'UAH' ? '/uaclub' : '/club'),
+      utm: d.clientAccountId || '',
       source: [
         d.transactionStatus || 'unknown',
         d.amount != null ? d.amount : '',

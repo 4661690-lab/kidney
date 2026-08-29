@@ -107,6 +107,13 @@ module.exports = async (req, res) => {
   if (email) fields.clientEmail = email;
   if (phone) fields.clientPhone = phone;
 
+  // рекламные метки: складываем в служебное поле, WayForPay вернёт его в уведомлении,
+  // и покупку можно будет связать с кампанией
+  const track = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbp','fbc']
+    .map(k => body[k] ? k + '=' + String(body[k]).slice(0, 120) : '')
+    .filter(Boolean).join('&');
+  if (track) fields.clientAccountId = track.slice(0, 250);
+
   const inputs = Object.keys(fields)
     .map(k => '<input type="hidden" name="' + esc(k) + '" value="' + esc(fields[k]) + '">')
     .join('\n');
