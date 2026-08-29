@@ -157,6 +157,8 @@
     { "src": "/uaclubprivacy", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/uaclubprivacy.html" },
     { "src": "/uaclub", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/uaclub.html" },
     { "src": "/uaclub", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/uaclub.html" },
+    { "src": "/api/club-hook", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/api/club-hook" },
+    { "src": "/api/club-hook", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/api/club-hook" },
     { "src": "/api/club-pay", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/api/club-pay" },
     { "src": "/api/club-pay", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/api/club-pay" },
     { "src": "/api/clubsuccess", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/api/clubsuccess" },

@@ -96,6 +96,7 @@ module.exports = async (req, res) => {
     'productCount[]': '1',
     language: 'UA',
     returnUrl: RETURN_URL,
+    serviceUrl: 'https://zadiraka.cc/api/club-hook',
     // регулярный платёж: раз в месяц, без даты окончания и без счётчика платежей
     regularMode: 'monthly',
     regularAmount: REGULAR,
