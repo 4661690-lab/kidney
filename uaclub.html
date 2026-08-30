@@ -90,6 +90,10 @@ p:last-child{margin-bottom:0}
   font-family:inherit;font-size:16px;color:var(--ink);background:#fff}
 .modal input:focus{outline:none;border-color:var(--terra)}
 .modal .btn{margin-top:6px;max-width:none}
+.agree{display:flex;gap:9px;align-items:flex-start;margin:2px 0 14px;font-size:12.5px;line-height:1.45;color:var(--mut);font-weight:400}
+.agree input{width:17px;height:17px;min-width:17px;margin:1px 0 0;accent-color:var(--terra)}
+.agree a{color:var(--terra)}
+.agree.miss{color:var(--terra2)}
 .modal-fine{font-size:12px;color:var(--mut);text-align:center;margin-top:11px;line-height:1.5}
 .modal-guard{background:#f1f5ef;border:1px solid #d8e2d4;border-radius:10px;padding:11px 13px;font-size:13.5px;
   line-height:1.45;color:var(--green);font-weight:600;margin-bottom:14px}
@@ -433,7 +437,12 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
         <form id="lead-form" novalidate>
           <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
           <label>Телефон*<input type="tel" name="phone" required placeholder="+ код країни і номер"></label>
+                    <label class="agree" id="agree-box">
+            <input type="checkbox" id="agree" name="agree">
+            <span>Я погоджуюсь, що після першого платежу 1 грн з моєї картки автоматично списуватиметься 369 грн щомісяця доти, доки я не скасую підписку, і приймаю <a href="/uaclubterms" target="_blank">умови оферти</a> та <a href="/uaclubprivacy" target="_blank">політику конфіденційності</a>.</span>
+          </label>
           <button type="submit" class="btn">Перейти до оплати</button>
+          <div class="modal-fine" style="text-align:left;margin-top:9px">Скасувати підписку можна будь-коли в особистому кабінеті WayForPay за номером телефону, вказаним під час оплати, розділ «Регулярні платежі». Докладно описано в <a href="/uaclubterms" target="_blank" style="color:var(--terra)">оферті</a>.</div>
           <div class="modal-fine">Доступ приходить у Telegram одразу після оплати</div>
         </form>
       </div>
@@ -614,6 +623,12 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
   var form=document.getElementById('lead-form');
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    var agree=document.getElementById('agree');
+    if(agree && !agree.checked){
+      document.getElementById('agree-box').classList.add('miss');
+      agree.focus();
+      return;
+    }
     var email=form.email.value.trim(), phone=form.phone.value.trim();
     if(!email||email.indexOf('@')<1){ form.email.focus(); return; }
     if(!phone){ form.phone.focus(); return; }
