@@ -558,12 +558,13 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
     /* основной путь: тариф по подписке на стороне Zenedu.
        Платформа сама ведёт списания, повторные попытки и закрытие доступа. */
     if(ZEN_URL){
+      /* Zenedu принимает исходный fbclid и utm-метки и сам превращает их в данные
+         для Conversions API. Куки _fbp и _fbc он прочитать не может, они на нашем домене,
+         поэтому их не передаём. */
       var u=ZEN_URL, sep=(u.indexOf('?')>-1?'&':'?'), q=[];
-      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){
         if(t[k]) q.push(k+'='+encodeURIComponent(t[k]));
       });
-      if(email) q.push('email='+encodeURIComponent(email));
-      if(phone) q.push('phone='+encodeURIComponent(phone));
       window.location.href = u + (q.length ? sep+q.join('&') : '');
       return;
     }
