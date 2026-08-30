@@ -15,7 +15,7 @@ const FALLBACK   = 'https://secure.wayforpay.com/sub/t_me_33629';
 
 const PRODUCT    = 'Клуб Вкус жизни';
 const FIRST      = '1';        // первый месяц
-const REGULAR    = '5';        // дальше каждый месяц
+const REGULAR    = '7';        // дальше каждый месяц
 const CURRENCY   = 'EUR';
 const RETURN_URL = 'https://zadiraka.cc/api/clubsuccess';
 
