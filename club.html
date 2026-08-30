@@ -463,6 +463,7 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
 <script>
 /* ============ КОНСТАНТЫ. Менять только здесь ============ */
 var PAY_URL   = "https://secure.wayforpay.com/sub/t_me_33629";   /* WayForPay: подписка клуба */
+var ZEN_URL   = "";                   /* Zenedu: ссылка тарифа по подписке. Пока пусто, оплата идёт через наш обработчик */
 var PIXEL_ID  = "1126932555241769";   /* Meta Pixel Балкон */
 var AIRTIME   = "8:00 утра";  /* время эфира, суббота */
 /* ======================================================== */
@@ -512,7 +513,8 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
 
   var modal=document.getElementById('lead-modal');
   var direct=document.getElementById('thanks-pay');
-  if(PAY_URL) direct.setAttribute('href', PAY_URL);
+  if(ZEN_URL) direct.setAttribute('href', ZEN_URL);
+  else if(PAY_URL) direct.setAttribute('href', PAY_URL);
   direct.addEventListener('click', function(e){
     e.preventDefault();
     var f=document.getElementById('lead-form');
@@ -551,9 +553,25 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
   /* уводим покупателя на серверный обработчик оплаты: он подписывает запрос
      и открывает страницу WayForPay без строки про число платежей */
   function goPay(email, phone){
+    var t=TRACK.all();
+
+    /* основной путь: тариф по подписке на стороне Zenedu.
+       Платформа сама ведёт списания, повторные попытки и закрытие доступа. */
+    if(ZEN_URL){
+      var u=ZEN_URL, sep=(u.indexOf('?')>-1?'&':'?'), q=[];
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+        if(t[k]) q.push(k+'='+encodeURIComponent(t[k]));
+      });
+      if(email) q.push('email='+encodeURIComponent(email));
+      if(phone) q.push('phone='+encodeURIComponent(phone));
+      window.location.href = u + (q.length ? sep+q.join('&') : '');
+      return;
+    }
+
+    /* запасной путь: наш обработчик платежа */
     var f=document.createElement('form');
     f.method='POST'; f.action='/api/club-pay'; f.style.display='none';
-    var data={email:email||'', phone:phone||''}, t=TRACK.all();
+    var data={email:email||'', phone:phone||''};
     for(var k in t){ if(t[k]) data[k]=t[k]; }
     Object.keys(data).forEach(function(k){
       var i=document.createElement('input'); i.type='hidden'; i.name=k; i.value=data[k]; f.appendChild(i);
