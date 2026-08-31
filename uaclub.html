@@ -637,11 +637,14 @@ if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
       source:SOURCE,sheet:SHEET,utm:TRACK.short(),fbp:t.fbp||'',fbc:t.fbc||'',referrer:t.referrer||''});
     try{ if(navigator.sendBeacon){ navigator.sendBeacon(LEAD_URL,pd); } else { fetch(LEAD_URL,{method:'POST',mode:'no-cors',body:pd}); } }catch(err){}
     if(window.fbq) fbq('track','Lead');
-    document.getElementById('lead-step').style.display='none';
-    document.getElementById('lead-thanks').style.display='block';
     /* лид уходит через sendBeacon и доставляется даже после ухода со страницы,
-       поэтому ждать не нужно: уводим на оплату сразу */
+       поэтому ждать не нужно: уводим на оплату сразу.
+       Промежуточный экран показываем только если переход не случился за полторы секунды. */
     goPay(email, phone);
+    setTimeout(function(){
+      document.getElementById('lead-step').style.display='none';
+      document.getElementById('lead-thanks').style.display='block';
+    }, 1500);
   });
 })();
 
