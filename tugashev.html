@@ -494,6 +494,32 @@ footer { padding: 28px 0 36px; border-top: 1px solid var(--line); color: var(--m
   setInterval(tick, 1000);
 })();
 
+</script>
+
+<div class="tg-overlay" id="tg-lead" aria-hidden="true">
+  <div class="tg-modal">
+    <button class="tg-close" id="tg-close" aria-label="Закрити">&times;</button>
+    <div class="tg-body">
+      <h3 class="tg-title">Заповни форму, щоб отримати курс</h3>
+      <div class="tg-price">390 грн</div>
+      <p class="tg-note">Дані потрібні тільки для доступу до курсу і звʼязку з тобою. Повний доступ відкриється 9 вересня, посилання прийде на цю пошту.</p>
+      <div id="tg-step">
+        <form id="tg-form" novalidate>
+          <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
+          <label>Телефон*<input type="tel" name="phone" required placeholder="+ код країни і номер"></label>
+          <button type="submit" class="tg-submit">Перейти до оплати</button>
+          <div class="tg-fine">Оплата карткою через захищений сервіс</div>
+        </form>
+      </div>
+      <div id="tg-thanks" style="display:none">
+        <p class="tg-note">Відкриваємо сторінку оплати. Якщо вона не відкрилась сама, натисни кнопку нижче.</p>
+        <a class="tg-submit" id="tg-direct" style="text-align:center;text-decoration:none;display:block" href="#">Перейти до оплати</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
 
 /* ==== сбор лидов перед оплатой ==== */
 (function(){
@@ -545,29 +571,7 @@ footer { padding: 28px 0 36px; border-top: 1px solid var(--line); color: var(--m
     }, 1500);
   });
 })();
-</script>
 
-<div class="tg-overlay" id="tg-lead" aria-hidden="true">
-  <div class="tg-modal">
-    <button class="tg-close" id="tg-close" aria-label="Закрити">&times;</button>
-    <div class="tg-body">
-      <h3 class="tg-title">Заповни форму, щоб отримати курс</h3>
-      <div class="tg-price">390 грн</div>
-      <p class="tg-note">Дані потрібні тільки для доступу до курсу і звʼязку з тобою. Повний доступ відкриється 9 вересня, посилання прийде на цю пошту.</p>
-      <div id="tg-step">
-        <form id="tg-form" novalidate>
-          <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
-          <label>Телефон*<input type="tel" name="phone" required placeholder="+ код країни і номер"></label>
-          <button type="submit" class="tg-submit">Перейти до оплати</button>
-          <div class="tg-fine">Оплата карткою через захищений сервіс</div>
-        </form>
-      </div>
-      <div id="tg-thanks" style="display:none">
-        <p class="tg-note">Відкриваємо сторінку оплати. Якщо вона не відкрилась сама, натисни кнопку нижче.</p>
-        <a class="tg-submit" id="tg-direct" style="text-align:center;text-decoration:none;display:block" href="#">Перейти до оплати</a>
-      </div>
-    </div>
-  </div>
-</div>
+</script>
 </body>
 </html>
