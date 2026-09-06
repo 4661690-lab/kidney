@@ -435,6 +435,25 @@ footer { padding: 28px 0 36px; border-top: 1px solid var(--line); color: var(--m
 .footer-legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .footer-legal a:hover{opacity:.7}
 
+
+/* ==== lead modal ==== */
+.tg-overlay{position:fixed;inset:0;background:rgba(12,12,14,.86);display:none;align-items:flex-start;justify-content:center;
+  z-index:9000;padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.tg-overlay.open{display:flex}
+.tg-modal{background:#fff;color:#111;max-width:430px;width:100%;margin:auto;position:relative;border-radius:14px;
+  box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.tg-body{padding:26px 22px 22px}
+.tg-close{position:absolute;top:6px;right:12px;background:none;border:none;color:#888;font-size:30px;line-height:1;cursor:pointer;padding:6px;font-family:inherit}
+.tg-title{font-size:22px;line-height:1.2;margin:0 0 8px;font-weight:700}
+.tg-note{font-size:14px;line-height:1.5;color:#666;margin:0 0 16px}
+.tg-price{display:inline-block;background:#111;color:#fff;font-weight:700;font-size:15px;line-height:1;padding:9px 13px;border-radius:8px;margin-bottom:14px}
+.tg-modal label{display:block;font-size:13px;font-weight:600;margin-bottom:12px}
+.tg-modal input{display:block;width:100%;margin-top:6px;padding:13px 14px;border:1px solid #ddd;border-radius:9px;
+  font-family:inherit;font-size:16px;color:#111;background:#fff}
+.tg-modal input:focus{outline:none;border-color:#111}
+.tg-submit{display:block;width:100%;border:none;border-radius:9px;background:#111;color:#fff;font-family:inherit;
+  font-weight:700;font-size:16px;padding:15px 18px;cursor:pointer;margin-top:4px}
+.tg-fine{font-size:12px;color:#888;text-align:center;margin-top:11px;line-height:1.5}
 </style>
 </head>
 <body class="antialiased">
@@ -443,13 +462,7 @@ footer { padding: 28px 0 36px; border-top: 1px solid var(--line); color: var(--m
 
 (function(){
   // === ОПЛАТА: сюда вставить ссылку WayForPay ===
-  var CHECKOUT_URL = "https://event.kwiga.com/o/Oz6TcwpSNnnP";
-  if (CHECKOUT_URL && CHECKOUT_URL.charAt(0) !== "#") {
-    document.querySelectorAll("[data-checkout]").forEach(function(a){
-      a.setAttribute("href", CHECKOUT_URL);
-      a.setAttribute("rel", "noopener");
-    });
-  }
+  /* ссылка оплаты и попап живут ниже, в блоке сбора лидов */
 
   var START = Date.UTC(2026, 8, 9, 7, 0, 0);
   var box = document.querySelector(".launch-box");
@@ -481,6 +494,80 @@ footer { padding: 28px 0 36px; border-top: 1px solid var(--line); color: var(--m
   setInterval(tick, 1000);
 })();
 
+
+/* ==== сбор лидов перед оплатой ==== */
+(function(){
+  var LEAD_URL='https://script.google.com/macros/s/AKfycbxC4EYSubfJr3OtnmogtXMWmreJ8UyG4EmE3KEU8uBJt12MxmFPVrMB_AAX0PVUyUEc/exec';
+  var SHEET='Tugashev', SOURCE='Івент як бізнес (390 грн)';
+  var PAY='https://event.kwiga.com/o/Oz6TcwpSNnnP';
+
+  var modal=document.getElementById('tg-lead');
+  var direct=document.getElementById('tg-direct');
+  if(!modal) return;
+  direct.setAttribute('href', PAY);
+
+  /* метки рекламы: запоминаем при заходе */
+  var TRACK=(function(){
+    var KEY='tg_track', keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'];
+    var saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+    var q=new URLSearchParams(location.search), fresh=false;
+    keys.forEach(function(k){ var v=q.get(k); if(v){ saved[k]=v.slice(0,200); fresh=true; } });
+    if(fresh){ try{ localStorage.setItem(KEY, JSON.stringify(saved)); }catch(e){} }
+    return { line:function(){ var p=[]; keys.forEach(function(k){ if(saved[k]) p.push(k.replace('utm_','')+':'+saved[k]); });
+      if(!p.length && document.referrer) p.push('referrer:'+document.referrer.slice(0,150)); return p.join(' | '); } };
+  })();
+
+  function open(e){ if(e) e.preventDefault();
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function close(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+
+  document.querySelectorAll('[data-checkout]').forEach(function(a){
+    a.setAttribute('href', PAY);
+    a.addEventListener('click', open);
+  });
+  document.getElementById('tg-close').addEventListener('click', close);
+  modal.addEventListener('click', function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+
+  var form=document.getElementById('tg-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email=form.email.value.trim(), phone=form.phone.value.trim();
+    if(!email||email.indexOf('@')<1){ form.email.focus(); return; }
+    if(!phone){ form.phone.focus(); return; }
+    var pd=new URLSearchParams({email:email,phone:phone,lang:'Українська (UA)',page:location.pathname,
+      source:SOURCE,sheet:SHEET,utm:TRACK.line()});
+    try{ if(navigator.sendBeacon){ navigator.sendBeacon(LEAD_URL,pd); } else { fetch(LEAD_URL,{method:'POST',mode:'no-cors',body:pd}); } }catch(err){}
+    window.location.href = PAY;
+    setTimeout(function(){
+      document.getElementById('tg-step').style.display='none';
+      document.getElementById('tg-thanks').style.display='block';
+    }, 1500);
+  });
+})();
 </script>
+
+<div class="tg-overlay" id="tg-lead" aria-hidden="true">
+  <div class="tg-modal">
+    <button class="tg-close" id="tg-close" aria-label="Закрити">&times;</button>
+    <div class="tg-body">
+      <h3 class="tg-title">Заповни форму, щоб отримати курс</h3>
+      <div class="tg-price">390 грн</div>
+      <p class="tg-note">Дані потрібні тільки для доступу до курсу і звʼязку з тобою. Повний доступ відкриється 9 вересня, посилання прийде на цю пошту.</p>
+      <div id="tg-step">
+        <form id="tg-form" novalidate>
+          <label>Email*<input type="email" name="email" required placeholder="you@email.com"></label>
+          <label>Телефон*<input type="tel" name="phone" required placeholder="+ код країни і номер"></label>
+          <button type="submit" class="tg-submit">Перейти до оплати</button>
+          <div class="tg-fine">Оплата карткою через захищений сервіс</div>
+        </form>
+      </div>
+      <div id="tg-thanks" style="display:none">
+        <p class="tg-note">Відкриваємо сторінку оплати. Якщо вона не відкрилась сама, натисни кнопку нижче.</p>
+        <a class="tg-submit" id="tg-direct" style="text-align:center;text-decoration:none;display:block" href="#">Перейти до оплати</a>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
