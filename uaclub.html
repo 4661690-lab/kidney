@@ -423,7 +423,7 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
 
 <footer>
   <div class="wrap">
-    <p>Влад Задірака · <a href="https://zadiraka.cc">zadiraka.cc</a> · <span id="yr">2026</span></p>
+    <p>Влад Задірака · <a href="https://zadiraka.cc/ua">zadiraka.cc/ua</a> · <span id="yr">2026</span></p>
     <p class="fine">Клуб не є медичною послугою і не замінює консультацію лікаря.</p>
     <p class="fine"><a href="/uaclubterms" style="color:var(--mut)">Умови та оплата</a> · <a href="/uaclubprivacy" style="color:var(--mut)">Політика конфіденційності</a></p>
   </div>
@@ -481,8 +481,10 @@ var PIXEL_ID  = "1126932555241769";   /* Meta Pixel Балкон */
 var AIRTIME   = "11:00 ранку";  /* час ефіру, субота */
 /* ======================================================== */
 
-document.getElementById('yr').textContent = new Date().getFullYear();
-if(AIRTIME) document.getElementById('airtime').textContent = AIRTIME;
+var yr=document.getElementById('yr');
+if(yr) yr.textContent = new Date().getFullYear();
+var air=document.getElementById('airtime');
+if(AIRTIME && air) air.textContent = AIRTIME;
 
 /* ==== сбор лидов и попап ==== */
 (function(){
