@@ -47,13 +47,16 @@ ul li{margin-bottom:8px;font-size:15px}
 <script>
 var PAY_URL  = "https://secure.wayforpay.com/sub/t_me_33629";
 var PIXEL_ID = "1126932555241769";    /* Meta Pixel Балкон */
+var PIXEL_CLUB = "1337603748446459";   /* Meta Pixel Клуб Вкус жизни RU */
 document.getElementById('pay-again').setAttribute('href', PAY_URL);
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', PIXEL_ID); fbq('track','PageView');
+fbq('init', PIXEL_ID);
+if(PIXEL_CLUB) fbq('init', PIXEL_CLUB);
+fbq('track','PageView');
 </script>
 </body>
 </html>
