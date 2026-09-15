@@ -470,7 +470,7 @@ footer .fine{font-size:12px;margin-top:8px;color:#9a9384}
 <script>
 /* ============ КОНСТАНТЫ. Менять только здесь ============ */
 var PAY_URL   = "https://secure.wayforpay.com/sub/t_me_33629";   /* WayForPay: подписка клуба */
-var ZEN_URL   = "https://app.zenedu.io/l/dRl51GRInoE0hEUD";   /* Zenedu: оффер «Смак Життя Клуб», бот @smakg_bot, 1 грн первый місяць, далее 369 грн */
+var ZEN_URL   = "https://app.zenedu.io/l/p/QkV3BeZxhpGljXLc";   /* Zenedu: прямая оплата оффера «Смак Життя Клуб», бот @smakg_bot, 1 грн первый месяц, далее 369 грн. Обычная страница оффера: app.zenedu.io/l/dRl51GRInoE0hEUD */
 var PIXEL_ID  = "1126932555241769";   /* Meta Pixel Балкон */
 var AIRTIME   = "11:00 ранку";  /* час ефіру, субота */
 /* ======================================================== */
@@ -625,10 +625,11 @@ if(AIRTIME && air) air.textContent = AIRTIME;
        поэтому ждать не нужно: уводим на оплату сразу.
        Промежуточный экран показываем только если переход не случился за полторы секунды. */
     goPay(email, phone);
+    /* страховка: экран показываем только если браузер за 5 секунд так и не ушёл на оплату */
     setTimeout(function(){
-      document.getElementById('lead-step').style.display='none';
-      document.getElementById('lead-thanks').style.display='block';
-    }, 1500);
+      var st=document.getElementById('lead-step'), th=document.getElementById('lead-thanks');
+      if(st && th){ st.style.display='none'; th.style.display='block'; }
+    }, 5000);
   });
 })();
 
