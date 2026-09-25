@@ -1,6 +1,12 @@
 {
   "routes": [
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/uaclub", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "https://smakg.cc/" } },
+    { "src": "/uaclubsuccess", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "https://smakg.cc/success" } },
+    { "src": "/uaclubfail", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "https://smakg.cc/fail" } },
+    { "src": "/uaclub", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "status": 308, "headers": { "Location": "https://smakg.cc/" } },
+    { "src": "/uaclubsuccess", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "status": 308, "headers": { "Location": "https://smakg.cc/success" } },
+    { "src": "/uaclubfail", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "status": 308, "headers": { "Location": "https://smakg.cc/fail" } },
     { "src": "/success", "has": [{ "type": "host", "value": "smakg.cc" }], "dest": "/uaclubsuccess.html" },
     { "src": "/fail", "has": [{ "type": "host", "value": "smakg.cc" }], "dest": "/uaclubfail.html" },
     { "src": "/terms", "has": [{ "type": "host", "value": "smakg.cc" }], "dest": "/uaclubterms.html" },
