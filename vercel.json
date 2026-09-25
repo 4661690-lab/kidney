@@ -1,6 +1,18 @@
 {
   "routes": [
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/detoxua", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/" } },
+    { "src": "/detoxuasuccess", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/success" } },
+    { "src": "/detoxuafail", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/fail" } },
+    { "src": "/detoxua", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/" } },
+    { "src": "/detoxuasuccess", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/success" } },
+    { "src": "/detoxuafail", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/fail" } },
+    { "src": "/detoxua", "has": [{ "type": "host", "value": "high-life.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/" } },
+    { "src": "/detoxuasuccess", "has": [{ "type": "host", "value": "high-life.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/success" } },
+    { "src": "/detoxuafail", "has": [{ "type": "host", "value": "high-life.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/fail" } },
+    { "src": "/detoxua", "has": [{ "type": "host", "value": "www.high-life.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/" } },
+    { "src": "/detoxuasuccess", "has": [{ "type": "host", "value": "www.high-life.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/success" } },
+    { "src": "/detoxuafail", "has": [{ "type": "host", "value": "www.high-life.cc" }], "status": 308, "headers": { "Location": "https://de-tox.cc/fail" } },
     { "src": "/uaclub", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "https://smakg.cc/" } },
     { "src": "/uaclubsuccess", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "https://smakg.cc/success" } },
     { "src": "/uaclubfail", "has": [{ "type": "host", "value": "zadiraka.cc" }], "status": 308, "headers": { "Location": "https://smakg.cc/fail" } },
