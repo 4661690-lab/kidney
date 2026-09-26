@@ -1,6 +1,12 @@
 {
   "routes": [
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/tg", "has": [{ "type": "host", "value": "smakg.cc" }], "dest": "/uasmmclub.html" },
+    { "src": "/w", "has": [{ "type": "host", "value": "smakg.cc" }], "dest": "/uasmmclub.html" },
+    { "src": "/uasmmclub", "has": [{ "type": "host", "value": "smakg.cc" }], "dest": "/uasmmclub.html" },
+    { "src": "/tg", "has": [{ "type": "host", "value": "www.smakg.cc" }], "dest": "/uasmmclub.html" },
+    { "src": "/w", "has": [{ "type": "host", "value": "www.smakg.cc" }], "dest": "/uasmmclub.html" },
+    { "src": "/uasmmclub", "has": [{ "type": "host", "value": "www.smakg.cc" }], "dest": "/uasmmclub.html" },
     { "src": "/w", "has": [{ "type": "host", "value": "vkusgizni.cc" }], "dest": "/smmclub.html" },
     { "src": "/smmclub", "has": [{ "type": "host", "value": "vkusgizni.cc" }], "dest": "/smmclub.html" },
     { "src": "/smmsuccess", "has": [{ "type": "host", "value": "vkusgizni.cc" }], "dest": "/smmsuccess.html" },
