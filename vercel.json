@@ -109,6 +109,8 @@
     { "src": "/uabook", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/uabook.html" },
     { "src": "/book", "has": [{ "type": "host", "value": "zadiraka.cc" }], "dest": "/book.html" },
     { "src": "/book", "has": [{ "type": "host", "value": "www.zadiraka.cc" }], "dest": "/book.html" },
+    { "src": "/w", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/tugashev-w.html" },
+    { "src": "/w", "has": [{ "type": "host", "value": "www.tugashev.cc" }], "dest": "/tugashev-w.html" },
     { "src": "/calculator", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/tugashev-calculator.html" },
     { "src": "/calculator", "has": [{ "type": "host", "value": "www.tugashev.cc" }], "dest": "/tugashev-calculator.html" },
     { "src": "/start", "has": [{ "type": "host", "value": "tugashev.cc" }], "dest": "/tugashev-start.html" },
